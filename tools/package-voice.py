@@ -48,7 +48,7 @@ def bundle(destination,names):
 def main():
     os.chdir(ROOT)
     runtime=json.loads(subprocess.check_output(["node","--input-type=module","-e","import {runtimeFiles,runtimeHash} from './tools/runtime-files.mjs'; console.log(JSON.stringify({files:runtimeFiles(),hash:runtimeHash()}));"],text=True))
-    common=["package.json","package-lock.json",".env.example","README.md","LICENSES.md","PLAY-START.md","tools/serve.mjs","tools/start.mjs","tools/create-voice-certificate.mjs","docs/voice-opponent.md","docs/screenshots/voice-options.png","reports/voice/verification.md","reports/voice-unified/verification.md"]
+    common=["package.json","package-lock.json",".env.example","README.md","LICENSES.md","PLAY-START.md","tools/serve.mjs","tools/start.mjs","tools/create-voice-certificate.mjs","docs/voice-opponent.md","docs/screenshots/voice-options.png","reports/voice/verification.md","reports/voice-unified/verification.md","reports/voice-conversation/verification.md"]
     common += [str(p.relative_to(ROOT)) for p in (ROOT/"licenses").iterdir() if p.is_file()]
     common += [str(p.relative_to(ROOT)) for p in (ROOT/"docs/screenshots").iterdir() if p.suffix in {".png",".json",".md"}]
     play=["dist/"+name for name in runtime["files"]]+[str(p.relative_to(ROOT)) for p in (ROOT/"dist-voice").rglob("*.js")]+common

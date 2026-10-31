@@ -40,8 +40,9 @@ const config = loadConfig({
   ...process.env,
   VOICE_PORT: "4177",
   VOICE_ALLOWED_ORIGINS: "http://127.0.0.1:4177",
-  VOICE_MAX_SESSION_SECONDS: "720",
-  VOICE_BUDGET_USD: "2",
+  VOICE_MAX_SESSION_SECONDS:
+    process.env.VOICE_PLAYTEST_CHAT_ONLY === "1" ? "150" : "720",
+  VOICE_BUDGET_USD: process.env.VOICE_PLAYTEST_CHAT_ONLY === "1" ? "0.3" : "2",
 });
 const app = await createVoiceServer(config);
 await new Promise<void>((r) => app.server.listen(config.port, "127.0.0.1", r));
@@ -103,6 +104,8 @@ await context.addInitScript(
       lastAssistant: "",
       lastUser: "",
       samples: [] as string[],
+      answers: [] as string[],
+      inputDetected: 0,
     });
     const NativeWorklet = window.AudioWorkletNode;
     (window as any).AudioWorkletNode = class extends NativeWorklet {
@@ -112,6 +115,13 @@ await context.addInitScript(
         opts?: AudioWorkletNodeOptions,
       ) {
         super(audio, name, opts);
+        if (name === "eshiritori-voice-input") {
+          this.port.addEventListener("message", (event) => {
+            if (event.data.type === "level" && event.data.value > 0.01)
+              test.inputDetected++;
+          });
+          this.port.start();
+        }
         if (name === "eshiritori-voice-output") {
           this.port.addEventListener("message", (event) => {
             if (event.data.type === "meter") {
@@ -142,6 +152,7 @@ await context.addInitScript(
               if (data.direction === "assistant") {
                 test.assistant++;
                 test.lastAssistant = data.text;
+                test.answers.push(data.text);
               } else {
                 test.user++;
                 test.lastUser = data.text;
@@ -182,7 +193,13 @@ await context.addInitScript(
       attributeFilter: ["class"],
     });
   },
-  { state: s, key: SAVE_KEY },
+  {
+    state:
+      process.env.VOICE_PLAYTEST_CHAT_ONLY === "1"
+        ? { ...initialState(), settings: s.settings }
+        : s,
+    key: SAVE_KEY,
+  },
 );
 const page = await context.newPage();
 const errors: string[] = [];
@@ -224,30 +241,51 @@ async function sample(scenario: string) {
 }
 try {
   await page.goto("http://127.0.0.1:4177");
-  await page
-    .getByRole("button", { name: "つづきから遊ぶ", exact: true })
-    .click();
-  await expect(page.locator(".picture-card:enabled").first()).toBeEnabled({
-    timeout: 20000,
+  if (process.env.VOICE_PLAYTEST_CHAT_ONLY === "1") {
+    await page.getByRole("button", { name: "会話する", exact: true }).click();
+    await expect(
+      page.getByRole("button", { name: "会話を始めて遊ぶ", exact: true }),
+    ).toBeEnabled();
+    await page
+      .getByRole("button", { name: "会話を始めて遊ぶ", exact: true })
+      .click();
+    await expect(page.locator(".voice-session-row")).toContainText(
+      "聞いています",
+      { timeout: 45000 },
+    );
+    checks.oneTitleStart = true;
+    await expect(
+      page.getByRole("meter", { name: "マイク入力レベル" }),
+    ).toBeVisible();
+    await page
+      .getByRole("button", { name: "ゲームに戻る", exact: true })
+      .click();
+  } else {
+    await page
+      .getByRole("button", { name: "つづきから遊ぶ", exact: true })
+      .click();
+    await expect(page.locator(".picture-card:enabled").first()).toBeEnabled({
+      timeout: 20000,
+    });
+    await page.getByRole("button", { name: "ひとやすみ", exact: true }).click();
+    await page.getByRole("button", { name: "会話する", exact: true }).click();
+    await expect(
+      page.getByRole("button", { name: "会話を開始", exact: true }),
+    ).toBeEnabled();
+    await page.getByRole("button", { name: "会話を開始", exact: true }).click();
+    await expect(page.locator(".voice-session-row")).toContainText(
+      "聞いています",
+      { timeout: 30000 },
+    );
+    await page
+      .getByRole("button", { name: "ゲームに戻る", exact: true })
+      .click();
+  }
+  const resume = page.getByRole("button", {
+    name: "つづきから遊ぶ",
+    exact: true,
   });
-  await page.getByRole("button", { name: "ひとやすみ", exact: true }).click();
-  await page.getByRole("button", { name: "会話する", exact: true }).click();
-  await expect(
-    page.getByRole("button", { name: "会話を開始", exact: true }),
-  ).toBeEnabled();
-  await page.getByRole("button", { name: "会話を開始", exact: true }).click();
-  await expect(
-    page.getByRole("button", { name: "ゲームに戻る", exact: true }),
-  ).toBeEnabled();
-  await expect
-    .poll(async () => page.locator(".voice-session-row").textContent(), {
-      timeout: 30000,
-    })
-    .toContain("聞いています");
-  await page.getByRole("button", { name: "ゲームに戻る", exact: true }).click();
-  await page
-    .getByRole("button", { name: "つづきから遊ぶ", exact: true })
-    .click();
+  if (await resume.isVisible()) await resume.click();
   await page.waitForTimeout(5000);
   await phrase("hello");
   await page.waitForTimeout(4000);
@@ -258,114 +296,181 @@ try {
       { timeout: 10000 },
     )
     .toBeGreaterThan(0);
-  await phrase("reject");
-  await page.waitForTimeout(3500);
-  checks.rejectNoConsume = (await saved()).hintUsed === 0;
-  await phrase("hint");
-  try {
-    await waitHint(1, 8000);
-  } catch {
-    checks.clippedShortRequestAskedForConfirmation = true;
-    await phrase("confirm");
-    await waitHint(1);
-    await page.waitForTimeout(3500);
-  }
-  await sample("hint1");
-  await phrase("repeat");
-  await page.waitForTimeout(4500);
-  checks.repeatNoConsume = (await saved()).hintUsed === 1;
-  await sample("repeat");
-  await phrase("next");
-  await waitHint(2);
-  await page.waitForTimeout(3500);
-  await sample("hint2");
-  await phrase("answer");
-  await waitHint(3);
-  await page.waitForTimeout(3500);
-  checks.answerLevel3 = true;
-  checks.referenceUnchanged = !(await saved()).answerReferenced;
-  await sample("hint3");
-  await phrase("explain");
-  await page.waitForTimeout(4000);
-  await sample("explanation");
-  await page.mouse.click(15, 100);
-  const targetSeconds = Number(process.env.VOICE_PLAYTEST_SECONDS ?? 600);
-  while (
-    (Date.now() - begin) / 1000 < targetSeconds ||
-    boards < Number(process.env.VOICE_PLAYTEST_BOARDS ?? 3)
-  ) {
-    if ((Date.now() - begin) / 1000 > 680)
-      throw Error("playtest_duration_limit");
-    const state = await saved();
-    if (state.phase === "roundResult") {
-      boards++;
-      await page.waitForTimeout(3200);
-      await sample("board" + boards + "-result");
-      if (
-        boards >= Number(process.env.VOICE_PLAYTEST_BOARDS ?? 3) &&
-        (Date.now() - begin) / 1000 >= targetSeconds
-      )
-        break;
-      await page
-        .getByRole("button", { name: "つぎの対戦へ", exact: true })
-        .click();
-      lastPlay = Date.now();
-      continue;
-    }
-    if (
-      state.phase === "playerTurn" &&
-      Date.now() - lastPlay > 10000 &&
-      (await page.locator(".picture-card:enabled").first().isVisible())
-    ) {
-      const safe = legalMoves(assets, position(state)).filter(
-        (m) => tailKana(m.reading.kana) !== "ん",
+  if (process.env.VOICE_PLAYTEST_CHAT_ONLY === "1") {
+    await page.getByRole("button", { name: "会話の操作を開く" }).click();
+    await page.getByLabel("話す頻度").selectOption("quiet");
+    await page.getByLabel("表情（Decisions）").uncheck();
+    await page.waitForTimeout(3000);
+    for (const name of [
+      "chatColor",
+      "chatRemember",
+      "chatRecall",
+      "chatFeeling",
+    ]) {
+      const before = await page.evaluate(() => {
+        const t = (window as any).__voiceTest;
+        t.answers = [];
+        return { assistant: t.assistant, played: t.audioPlayed };
+      });
+      await phrase(name);
+      try {
+        await expect
+          .poll(
+            async () =>
+              page.evaluate(
+                ({ before }) => {
+                  const t = (window as any).__voiceTest;
+                  return (
+                    t.assistant > before.assistant &&
+                    t.audioPlayed > before.played
+                  );
+                },
+                { before },
+              ),
+            { timeout: 12000 },
+          )
+          .toBe(true);
+        checks[name + "AudibleReply"] = true;
+      } catch {
+        checks[name + "AudibleReply"] = false;
+      }
+      await page.waitForTimeout(2500);
+      const text = await page.evaluate(() =>
+        (window as any).__voiceTest.answers.join(" "),
       );
-      const move =
-        (!alternative
-          ? safe.find((m) => m.reading.kind !== "basic")
-          : undefined) ??
-        chooseCpu(assets, position(state), "normal", "voice-playtest").move;
-      if (move) {
-        const card = page.locator(
-          '[data-asset-id="' + move.assetId + '"] .picture-card',
-        );
-        if (move.reading.kind !== "basic") {
-          await card.press("Shift+Enter");
-          await page
-            .getByRole("textbox", { name: "かなで回答" })
-            .fill(move.reading.kana);
-          await page.getByRole("button", { name: "回答", exact: true }).click();
-          alternative = true;
-        } else await card.click();
-        moves++;
+      if (name === "chatRecall")
+        checks.remembersColor = /青|あお|ブルー/.test(text);
+      await sample(name);
+    }
+    checks.chatDidNotConsumeHints = (await saved()).hintUsed === 0;
+    checks.inputMeterDetectedSpeech = await page.evaluate(
+      () => (window as any).__voiceTest.inputDetected > 0,
+    );
+    for (const key of [
+      "chatColorAudibleReply",
+      "chatRememberAudibleReply",
+      "chatRecallAudibleReply",
+      "chatFeelingAudibleReply",
+      "remembersColor",
+      "chatDidNotConsumeHints",
+      "inputMeterDetectedSpeech",
+    ])
+      expect(checks[key], key).toBe(true);
+    await page
+      .getByRole("button", { name: "ゲームに戻る", exact: true })
+      .click();
+  } else {
+    await phrase("reject");
+    await page.waitForTimeout(3500);
+    checks.rejectNoConsume = (await saved()).hintUsed === 0;
+    await phrase("hint");
+    try {
+      await waitHint(1, 8000);
+    } catch {
+      checks.clippedShortRequestAskedForConfirmation = true;
+      await phrase("confirm");
+      await waitHint(1);
+      await page.waitForTimeout(3500);
+    }
+    await sample("hint1");
+    await phrase("repeat");
+    await page.waitForTimeout(4500);
+    checks.repeatNoConsume = (await saved()).hintUsed === 1;
+    await sample("repeat");
+    await phrase("next");
+    await waitHint(2);
+    await page.waitForTimeout(3500);
+    await sample("hint2");
+    await phrase("answer");
+    await waitHint(3);
+    await page.waitForTimeout(3500);
+    checks.answerLevel3 = true;
+    checks.referenceUnchanged = !(await saved()).answerReferenced;
+    await sample("hint3");
+    await phrase("explain");
+    await page.waitForTimeout(4000);
+    await sample("explanation");
+    await page.mouse.click(15, 100);
+    const targetSeconds = Number(process.env.VOICE_PLAYTEST_SECONDS ?? 600);
+    while (
+      (Date.now() - begin) / 1000 < targetSeconds ||
+      boards < Number(process.env.VOICE_PLAYTEST_BOARDS ?? 3)
+    ) {
+      if ((Date.now() - begin) / 1000 > 680)
+        throw Error("playtest_duration_limit");
+      const state = await saved();
+      if (state.phase === "roundResult") {
+        boards++;
+        await page.waitForTimeout(3200);
+        await sample("board" + boards + "-result");
+        if (
+          boards >= Number(process.env.VOICE_PLAYTEST_BOARDS ?? 3) &&
+          (Date.now() - begin) / 1000 >= targetSeconds
+        )
+          break;
+        await page
+          .getByRole("button", { name: "つぎの対戦へ", exact: true })
+          .click();
         lastPlay = Date.now();
-        if (moves === 2) {
-          await phrase("memory");
-          await page.waitForTimeout(2000);
-          await sample("memory");
-        }
-        if (moves === 4) {
-          await phrase("correction");
-          checks.correctionDuringPlay = true;
-        }
-        if (moves % 6 === 0) {
-          await phrase("explain");
-          await sample("later-explanation");
+        continue;
+      }
+      if (
+        state.phase === "playerTurn" &&
+        Date.now() - lastPlay > 10000 &&
+        (await page.locator(".picture-card:enabled").first().isVisible())
+      ) {
+        const safe = legalMoves(assets, position(state)).filter(
+          (m) => tailKana(m.reading.kana) !== "ん",
+        );
+        const move =
+          (!alternative
+            ? safe.find((m) => m.reading.kind !== "basic")
+            : undefined) ??
+          chooseCpu(assets, position(state), "normal", "voice-playtest").move;
+        if (move) {
+          const card = page.locator(
+            '[data-asset-id="' + move.assetId + '"] .picture-card',
+          );
+          if (move.reading.kind !== "basic") {
+            await card.press("Shift+Enter");
+            await page
+              .getByRole("textbox", { name: "かなで回答" })
+              .fill(move.reading.kana);
+            await page
+              .getByRole("button", { name: "回答", exact: true })
+              .click();
+            alternative = true;
+          } else await card.click();
+          moves++;
+          lastPlay = Date.now();
+          if (moves === 2) {
+            await phrase("memory");
+            await page.waitForTimeout(2000);
+            await sample("memory");
+          }
+          if (moves === 4) {
+            await phrase("correction");
+            checks.correctionDuringPlay = true;
+          }
+          if (moves % 6 === 0) {
+            await phrase("explain");
+            await sample("later-explanation");
+          }
         }
       }
+      if (Date.now() - lastProgress > 60000) {
+        lastProgress = Date.now();
+        console.log(
+          JSON.stringify({
+            progress: "real_playtest",
+            seconds: Math.floor((Date.now() - begin) / 1000),
+            boards,
+            moves,
+          }),
+        );
+      }
+      await page.waitForTimeout(400);
     }
-    if (Date.now() - lastProgress > 60000) {
-      lastProgress = Date.now();
-      console.log(
-        JSON.stringify({
-          progress: "real_playtest",
-          seconds: Math.floor((Date.now() - begin) / 1000),
-          boards,
-          moves,
-        }),
-      );
-    }
-    await page.waitForTimeout(400);
   }
   await page.getByRole("button", { name: "会話の操作を開く" }).click();
   await page.screenshot({ path: "reports/voice/live-panel.png" });

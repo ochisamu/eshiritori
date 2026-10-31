@@ -33,8 +33,15 @@ test("standard game never opens paid sessions and optional voice remains keyless
     page.getByRole("dialog", { name: "会話できる対戦相手" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("button", { name: "時間なしの対戦を準備", exact: true }),
-  ).toBeEnabled();
+    page.getByRole("button", { name: "会話を始めて遊ぶ", exact: true }),
+  ).toBeDisabled();
+  await expect(
+    page.getByRole("button", { name: "開始時のマイク オン", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".voice-session-row")).toContainText(
+    "未接続・マイク未使用",
+  );
+  await expect(page.getByRole("meter")).toHaveCount(0);
   await expect(page.locator(".voice-panel")).toContainText("ホストPC");
   expect(external).toEqual([]);
 });
@@ -126,7 +133,7 @@ for (const size of [
   );
 }
 
-test("title prepares a playable untimed board without silently starting paid voice", async ({
+test("one explicit title start prepares the board and requests microphone without a second start", async ({
   page,
 }) => {
   let paired = false,
@@ -153,23 +160,24 @@ test("title prepares a playable untimed board without silently starting paid voi
     return route.fulfill({ status: 400, json: { error: "test_only" } });
   });
   await page.addInitScript(() => {
-    navigator.mediaDevices.getUserMedia = async () => {
-      throw new DOMException("denied", "NotAllowedError");
-    };
+    AudioContext.prototype.resume = async () => {};
+    Object.defineProperty(navigator, "mediaDevices", {
+      configurable: true,
+      value: {
+        getUserMedia: async () => {
+          throw new DOMException("denied", "NotAllowedError");
+        },
+      },
+    });
   });
   await page.goto("/");
   await page.getByRole("button", { name: "会話する", exact: true }).click();
   await expect(
     page.getByLabel("ホストのターミナルに表示された接続コード"),
   ).toHaveCount(0);
-  await page.getByRole("button", { name: "時間なしの対戦を準備" }).click();
+  await page.getByRole("button", { name: "会話を始めて遊ぶ" }).click();
   const tutorial = page.getByRole("button", { name: "さあ、はじめよう" });
   if (await tutorial.isVisible()) await tutorial.click();
-  await expect(
-    page.getByRole("button", { name: "会話を開始", exact: true }),
-  ).toBeEnabled({ timeout: 20000 });
-  expect(paid).toBe(0);
-  await page.getByRole("button", { name: "会話を開始", exact: true }).click();
   await expect(
     page.getByRole("status").filter({ hasText: "マイクの許可がありません" }),
   ).toBeVisible({ timeout: 10000 });

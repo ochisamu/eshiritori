@@ -6,6 +6,7 @@ class VoiceInput extends AudioWorkletProcessor {
     this.quiet = 0;
     this.voiced = 0;
     this.sequence = 0;
+    this.meterTime = 0;
   }
   process(inputs, outputs) {
     const input = inputs[0]?.[0];
@@ -13,8 +14,14 @@ class VoiceInput extends AudioWorkletProcessor {
     if (!input) return true;
     let power = 0;
     for (const sample of input) power += sample * sample;
-    const voiced = Math.sqrt(power / input.length) > 0.012,
+    const rms = Math.sqrt(power / input.length),
+      voiced = rms > 0.012,
       dt = input.length / sampleRate;
+    this.meterTime += dt;
+    if (this.meterTime >= 0.1) {
+      this.meterTime = 0;
+      this.port.postMessage({ type: "level", value: Math.min(1, rms * 8) });
+    }
     if (voiced) {
       this.voiced += dt;
       this.quiet = 0;

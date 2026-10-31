@@ -78,7 +78,7 @@ export function VoicePanel({
       )}
       {onPlay && (
         <p className="voice-disclosure">
-          まず時間なしの盤面を準備します。準備後にこの画面からマイクを許可して会話を開始できます。
+          「会話を始めて遊ぶ」で時間なしの盤面と音声をまとめて開始します。ブラウザにマイクを許可してください。
         </p>
       )}
       <div className="voice-controls">
@@ -86,7 +86,8 @@ export function VoicePanel({
           aria-pressed={ui.options.mic}
           onClick={() => update({ mic: !ui.options.mic })}
         >
-          {ui.options.mic ? <Mic /> : <MicOff />}マイク{" "}
+          {ui.options.mic ? <Mic /> : <MicOff />}
+          {ui.state === "active" ? "マイク" : "開始時のマイク"}{" "}
           {ui.options.mic ? "オン" : "停止"}
         </button>
         <button
@@ -140,13 +141,15 @@ export function VoicePanel({
             : ui.state === "connecting"
               ? ui.step === "microphone"
                 ? "マイクの許可を待っています…"
-                : ui.step === "api"
-                  ? "音声APIに接続しています…"
-                  : "接続を準備しています…"
+                : ui.step === "board"
+                  ? "盤面を準備しています…"
+                  : ui.step === "api"
+                    ? "音声APIに接続しています…"
+                    : "接続を準備しています…"
               : ui.state === "closing"
                 ? "終了・利用量を確認中…"
                 : onPlay
-                  ? "対戦の準備前"
+                  ? "未接続・マイク未使用"
                   : ui.status?.available && ui.status.paired
                     ? "会話を開始できます（未接続）"
                     : "接続準備が必要です"}
@@ -155,6 +158,7 @@ export function VoicePanel({
           接続 {ui.elapsed}秒 / 上限 {ui.status?.maxSeconds ?? 900}秒
         </span>
       </div>
+      {ui.state === "active" && <VoiceInputStatus ui={ui} />}
       {ui.usage && (
         <div className="voice-usage" aria-label="会話の利用量">
           <span>
@@ -203,9 +207,18 @@ export function VoicePanel({
             会話を終了
           </button>
         ) : onPlay ? (
-          <button className="primary" onClick={onPlay}>
+          <button
+            className="primary"
+            disabled={
+              !ui.status?.paired || !ui.status.available || ui.status.busy
+            }
+            onClick={() => {
+              void controller.start(true);
+              onPlay();
+            }}
+          >
             <Play size={17} />
-            時間なしの対戦を準備
+            会話を始めて遊ぶ
           </button>
         ) : (
           <button
@@ -230,6 +243,25 @@ export function VoicePanel({
         LAN端末では、ホストのQRコードのURLと信頼済みHTTPSを使用します。起動・証明書の手順は同梱の音声ガイドをご覧ください。
       </p>
     </section>
+  );
+}
+function VoiceInputStatus({ ui }: { ui: VoiceUI }) {
+  return (
+    <div className="voice-input-status">
+      <meter
+        aria-label="マイク入力レベル"
+        min="0"
+        max="1"
+        value={ui.options.mic ? ui.inputLevel : 0}
+      />
+      <span>
+        {!ui.options.mic
+          ? "マイク停止中"
+          : ui.inputActive
+            ? "声を検出しています"
+            : "接続済み · 話しかけてください"}
+      </span>
+    </div>
   );
 }
 function HostSettingsPanel({
@@ -353,7 +385,11 @@ export function VoiceCaption({
       </button>
       {ui.options.captions && (
         <span className="voice-caption" aria-live="off">
-          {ui.caption || ui.userCaption || "いっしょに、さがそう"}
+          {ui.state !== "active"
+            ? "音声を接続しています…"
+            : ui.inputActive
+              ? "声を検出しています…"
+              : ui.caption || ui.userCaption || "接続済み · 話しかけてください"}
         </span>
       )}
     </div>

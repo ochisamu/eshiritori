@@ -106,6 +106,8 @@ npm start
 
 ゲームと会話は同じサーバーで動きます。キーは.env、またはホストPCのゲーム内「ホスト設定」から設定できます。localhostではコード入力不要です。LAN端末の音声には信頼済みHTTPSと、一回限りのQR／リンクを使います。[音声モードの起動・証明書・利用量・配布手順](docs/voice-opponent.md)
 
+会話の開始は「会話する」→「会話を始めて遊ぶ」。接続後はマイクの入力メーターと字幕で認識状態を確認できます。[通常会話の検証](reports/voice-conversation/verification.md)
+
 ## 開発する
 
 React・TypeScript・Viteで構成しています。効果音はWeb Audioで合成し、標準ゲームでは外部API・CDN・フォント取得を行いません。追加の会話モードだけがOpenAI APIを使います。

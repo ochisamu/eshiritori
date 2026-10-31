@@ -13,7 +13,9 @@ import {
 export interface VoiceUI {
   state: "off" | "pairing" | "connecting" | "active" | "closing" | "error";
   status?: VoiceStatus;
-  step?: "audio" | "microphone" | "transport" | "api";
+  step?: "audio" | "board" | "microphone" | "transport" | "api";
+  inputLevel: number;
+  inputActive: boolean;
   code?: string;
   usage?: VoiceUsage;
   caption: string;
@@ -30,6 +32,10 @@ const labels: Record<string, string> = {
   microphone_denied:
     "マイクの許可がありません。ブラウザのマイク設定を確認してください。",
   microphone_missing: "利用できるマイクがありません。",
+  microphone_ended:
+    "マイクの接続が切れました。接続を確認して会話を開始し直してください。",
+  board_timeout:
+    "盤面の準備を確認できませんでした。ゲームを開いて会話を開始し直してください。",
   invalid_key: "ホストのAPIキーを確認してください。",
   model_access: "このキーでモデルを利用できません。",
   rate_limit: "APIの利用枠・混雑を確認してください。",
@@ -67,6 +73,8 @@ export class VoiceController {
     options: { ...defaultVoiceOptions },
     playing: false,
     elapsed: 0,
+    inputLevel: 0,
+    inputActive: false,
   };
   private listeners = new Set<(ui: VoiceUI) => void>();
   private csrf = "";
@@ -120,7 +128,10 @@ export class VoiceController {
       }
       this.csrf = status.csrf ?? "";
       this.inviteToken = undefined;
-      this.change({ status, code: undefined });
+      this.change({
+        status,
+        ...(this.ui.state === "error" ? {} : { code: undefined }),
+      });
       return status;
     } catch (error) {
       this.inviteToken = undefined;
@@ -207,6 +218,7 @@ export class VoiceController {
     this.output?.port.postMessage({ type: "enable", value: options.output });
     this.send({ type: "options", options });
     if (!options.decisions) this.change({ mood: undefined });
+    if (!options.mic) this.change({ inputLevel: 0, inputActive: false });
   }
   setGameMuted(muted: boolean) {
     if (muted && this.ui.options.output)
@@ -303,9 +315,9 @@ export class VoiceController {
       });
     }
   }
-  async start() {
+  async start(prepareBoard = false) {
     if (!["off", "error"].includes(this.ui.state)) return;
-    if (!this.view?.eligible) {
+    if (!prepareBoard && !this.view?.eligible) {
       this.notice("mode_unavailable");
       return;
     }
@@ -316,6 +328,9 @@ export class VoiceController {
       step: "audio",
       code: undefined,
       usage: undefined,
+      elapsed: 0,
+      caption: "",
+      userCaption: "",
     });
     try {
       // Unlock during the actual button gesture, before permission/network awaits (iOS/PWA).
@@ -326,12 +341,28 @@ export class VoiceController {
           setTimeout(() => reject(Error("playback_blocked")), 5000),
         ),
       ]);
+      if (generation !== this.generation) return;
       const status = await this.status();
+      if (generation !== this.generation) return;
       if (!status?.available) throw Error("key_not_configured");
       if (!status.paired) throw Error("pair_required");
       if (status.busy) throw Error("voice_slot_required");
       if (!isSecureContext || !navigator.mediaDevices?.getUserMedia)
         throw Error("secure_context");
+      if (prepareBoard) {
+        this.change({ step: "board" });
+        const deadline = Date.now() + 30000;
+        while (
+          !this.view?.eligible ||
+          !this.view.cards.length ||
+          ["title", "loading"].includes(this.view.phase)
+        ) {
+          if (generation !== this.generation) return;
+          if (Date.now() > deadline) throw Error("board_timeout");
+          await new Promise((resolve) => setTimeout(resolve, 50));
+        }
+      }
+      if (generation !== this.generation) return;
       this.change({ step: "microphone" });
       let abandonedMic = false;
       const micPromise = navigator.mediaDevices.getUserMedia({
@@ -369,9 +400,18 @@ export class VoiceController {
         this.mic.getTracks().forEach((t) => t.stop());
         return;
       }
-      this.mic
-        .getAudioTracks()
-        .forEach((t) => (t.enabled = this.ui.options.mic));
+      this.mic.getAudioTracks().forEach((track) => {
+        track.enabled = this.ui.options.mic;
+        track.addEventListener(
+          "ended",
+          () => {
+            if (generation !== this.generation) return;
+            this.notice("microphone_ended");
+            void this.stop(true);
+          },
+          { once: true },
+        );
+      });
       await this.audio.audioWorklet.addModule(outputWorkletUrl);
       this.output = new AudioWorkletNode(this.audio, "eshiritori-voice-output");
       this.output.port.postMessage({
@@ -392,12 +432,19 @@ export class VoiceController {
       );
       this.audio.createMediaStreamSource(this.mic).connect(this.inputVad);
       this.inputVad.connect(this.audio.destination);
-      this.inputVad.port.onmessage = (e) =>
-        this.send({
-          type: "input.activity",
-          active: e.data.active,
-          sequence: e.data.sequence,
-        });
+      this.inputVad.port.onmessage = (e) => {
+        if (e.data.type === "level") {
+          // Meter stays in this browser; no waveform or levels go to the host.
+          this.change({ inputLevel: this.ui.options.mic ? e.data.value : 0 });
+        } else {
+          this.change({ inputActive: this.ui.options.mic && e.data.active });
+          this.send({
+            type: "input.activity",
+            active: e.data.active,
+            sequence: e.data.sequence,
+          });
+        }
+      };
       this.change({ step: "transport" });
       this.ws = new WebSocket(
         (location.protocol === "https:" ? "wss://" : "ws://") +
@@ -552,6 +599,7 @@ export class VoiceController {
     return this.stopPromise;
   }
   private async cleanup() {
+    this.change({ inputLevel: 0, inputActive: false, step: undefined });
     if (this.heartbeat) clearInterval(this.heartbeat);
     if (this.moodTimer) clearTimeout(this.moodTimer);
     this.ws?.close();
