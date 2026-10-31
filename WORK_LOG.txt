@@ -1,0 +1,103 @@
+2026-10-23 JST — G0
+要件 Version 1.0 を全読了。spec/ に原本を保存。作業先は新規の空ディレクトリ。
+Node v22.16.0 / npm 10.9.2 / Python Pillow 10.4.0 / Google Chrome available in WSL Ubuntu.
+Built-in imagegen を利用。まず16概念の4×4シートを試作。費用情報、model、seedは返却がなければunknown。
+完成の数値条件は維持。未実施検証を合格にしない。
+
+2026-10-23T09:06:17.277Z — checkpoint: 288 generated, 256 approved concepts, 620 reading records, content pixel-aa58a2a7c83e, build af2b1209c0c05230965e766a515409be3ddca3848d315aaa9167737b4ad637ab. No release-complete claim.
+2026-10-23 — Scene QA: removed unsupported buttons on dressing, tiny embroidery needle, and unidentifiable bamboo material from basket weaving. Retained clear action and visible props only. Explicit kanji aliases were registered; these do not increase reading counts.
+
+2026-10-23T11:08:32.508Z — checkpoint: 544 generated, 512 approved concepts, 1599 reading records, content pixel-adee75118e94, build e0d985a4b3205e86e9194c408c35442601a788e1dc61059a8afc6f77b2db61be. No release-complete claim.
+
+2026-10-23 — 544概念・1725読みを審査/収録。512版で66単体テスト、主要分岐91.45%、ブラウザ操作10件合格。33/34枚目の原画と128px接触シートを実見。フォークリフトで隠れた爪読みを除去。生産パイプラインの二重キャッシュ不備を修正しv7で再変換。バッチ35/36(545〜576)は生成済み、まだ未承認。妖精/人魚の独自性と衣装を修正中。修正画像は参照元を保持し、image_jobs.pyでPNG実体検証→原子置換→イベント追記。難しい読みの相対座標/強調、候補1200、採用1000/3000読み、最終全16受入ゲートは未完了。ブロッカーなし。
+
+2026-10-23T11:23:04.723Z — checkpoint: 576 generated, 544 approved concepts, 1725 reading records, content pixel-46bf89ae13be, build 11f76e5e9c14459aba2f4cc0255521f6d05b9b61660ad534963efad5f08ff737. No release-complete claim.
+
+2026-10-23T11:34:12.894Z — checkpoint: 592 generated, 576 approved concepts, 1858 reading records, content pixel-a36104cbc243, build 68af16bc6a8189ec6a58b928135fc25582d7ba30c2fbd76682bd494e5773e9fb. No release-complete claim.
+
+未完のP0/P1追加: 再挑戦コードのエクスポート/入力がまだない（現在は同じ端末でREPLAYできるのみ）。contentVersion・盤面・開始音・初期発見・先後・CPU版を復元/不整合拒否するコードを実装する。再挑戦の記録をfresh連戦から分離し、難易度/制限時間/練習/参照別の連勝もbyModeへ分けること。現在の全体streakだけの表示は最終前に改修が必要。
+
+2026-10-23T12:33:00.768Z — checkpoint: 672 generated, 640 approved concepts, 2106 reading records, content pixel-c5f39b771f66, build 732984e2e23a2b209f8e5c2c2c9aaee9ad3b9708881605d4f771e9a3db4a5fc9. No release-complete claim.
+
+2026-10-23T13:26:21.350Z — checkpoint: 832 generated, 768 approved concepts, 2572 reading records, content pixel-84865c2f0521, build f343b580df3f3e990a5fcddbe5cc33d8ae9db6e028dac8766f2b882c5e7091e8. No release-complete claim.
+
+2026-10-23T13:35:28.801Z — checkpoint: 864 generated, 832 approved concepts, 2809 reading records, content pixel-a434e6d0c71d, build 9bc9a42f623750a0d1b632a7e10a14295444d6b13d912d12ca41bd95333d1f9b. No release-complete claim.
+
+2026-10-23 — 1024原画/1200題材候補・1024承認/3544読み、全数contact1〜16と全64原画を実見。1024版78単体テスト合格、主要分岐90.40%。192fallbackを1024素材で再作成。追加固定seed200枚拡大ページdetail01〜13およびDCT近似上位60組near01〜08をすべて実見。603持ち手切れ・271隣絵断片・135綿毛の切れ・523微小な隣絵画素を発見、修正/再確認中。200枚審査の最終SHA ledger化、全16受入検証と30分AI視覚試遊、配布ZIPはまだ未完。contentVersionにfallback表SHAも含め、同条件再生のデータ版を固定する変更を追加。ブロッカーなし。
+
+2026-10-24: User revision implemented: 256 new reviewed associative readings, finite replacement deck12/24/48, CPU2.2–3.4second visual search, portrait4x6 and compact relay, kana-length catalog masks; subsequent direct request adds immediate terminal-word loss, all-nonbasic purple/gold effects, and persistent last-panel marking.95 unit cases include terminal precedence and save-rule migration. Actual visual play found missing baseball-glove synonymてぶくろ; inspected card0963 detail and approved/corrected it before final validation. Total dictionary3801. Prior runtime validation/play intervals remain diagnostic and are not final acceptance.
+
+2026-10-24: Actual CUA typo-retry check reproduced a blocker: after invalidきりり, valid same-panelきり was ignored by the duplicate-error guard. Moved the guard into the failed-validation branch. Correct retries now commit; repeated wrong input still charges only one5second penalty. Added pure reducer regression and extended the existing IME browser journey.96 unit cases. Separate replacement save test now deliberately chooses a continuing first move, because immediate legal wins cannot exercise mid-turn save/reload.
+
+2026-10-24 JST: Final b3dfc2720b34d0dcdb3b3528ccf6258e4073378512273171156b12905f2dfb4e / pixel-b9efabddc494. Terminal loss, alternative effects, last-panel emphasis, finite refill and CPU pacing verified. Fixed pending title settings reset on opening preferences; immediate mute/motion remain applied at Start; replay imports align the next-session draft. Audit manifest preserves source reading difficulty. Final96 unit cases,91.7874% branches,69 UI+3 performance,30000 seeds/10000 rounds,0 failures,2 safe fallbacks. Actual final-build AI UI play1931.692seconds after exclusions. AT01-AT16 passed. Extracted source rebuild matched runtime. Final documentation/archive refresh follows without product changes.
+
+2026-10-24 ランダムシード修正
+通常開始が保存済みseed（初期garden-01）を使い回していたため、開始操作ごとに新しいseedを生成するよう変更。LANのHTTPでも使えるcrypto.getRandomValuesを使用し、API未対応時も開始可能。明示入力だけ固定、空欄は毎回ランダム。保存の再開と同じseedで再挑戦の決定性は維持。再挑戦コードのseedを新規開始の入力へ自動転記しない。
+配信ビルド: 54adbc8cf0b53819cd406b157c2aa683488810c151fdd7b7c2b3f79d10127599
+関連単体29件、Chromium/Firefox/WebKitの新規開始・保存復元・明示seed再現の回帰テスト3件が合格。実際のUIでも2回開始して絵と開始かなが変わることを確認。WebKit初回の環境依存不足ログは保存し、既存.cache/webkit-depsを指定した再実行は合格。reports/random-seed-verification.json参照。過去の全量受入・ZIPは以前のビルドの記録として維持。LANサーバーのdistへ反映済み。
+
+
+2026-10-30 継続性・スケール改善 完了
+097461fcc12281297e6ff39a96d28fcd0448874652b833a49ceeabfec6edd879 / pixel-446fe6d0774d
+辞書索引、通常読み18手経路と橋渡し・自由抽選2枚、8試走の継続品質検査、cpu-v3-long-playを追加。二重リスト走査と発見済み集合の再生成も除去。補充順を先読みに反映。
+通常の平均6.55→14.46手、4手以下終了108/300→8/300。8192枚相当まで合成辞書で測定。
+単体103、3エンジンUI75、性能3、20+500対戦資源検査が合格。実操作でもヒントなし15手を確認。旧CPU180ケース、最適化前後1800ケースの記録が一致。
+診断失敗は別名保持。閾値・製品の演出時間は緩和なし。詳細 reports/continuation/verification.md。初版受入・ZIPは元ビルドの記録として保持。
+
+
+2026-10-29T15:59:13.008Z ヒント・CPU開幕・時間なし補充 完了
+82a1ddc185d47fb5f829e2d43890cf4e5a02824d0b7e5b4386e14c8b2542916c / pixel-446fe6d0774d
+単体115、3エンジン32件ずつ計96ケースの最終結果を照合。新開幕90条件、再挑戦・保存・65秒の無制限待機・補充・CPU手詰まり探索・ポーズを確認。旧期待値と仮想時計の画像待ちを更新し、既存キャッシュのWebKitライブラリ環境で再実行。途中失敗はログを保持。Windowsサービス51472は継続、LAN200と現在のJSを照合。詳細reports/hints/verification.md。以前の性能・スケール・ZIPは元の版のまま。
+
+2026-10-29T22:08:41.549Z CPU・発見演出とヒント発光撤去 完了
+1cea3d3ce851adb58f25adb9e6e5cf3181ac74b3d670af9c3c0de6f25d08dcbf / pixel-446fe6d0774d
+10表情のSVGドットCPU、初手scan/compare/locked、初発見音とNEW/COMPLETE、図鑑の実発見による達成印。ヒント発光と電球は撤去。開始案内の遅延ポーズ競合を再現して修正。
+単体119、3エンジン38件ずつ計114ケースの最終結果を照合。4倍CPUで誤答入力p95 27.8ms、基準100ms以下。初手と新規「ごーる」を実操作で確認。LAN200と現在JSを照合、常駐51472継続。以前の性能資源検査とZIPは元の版を保持。詳細reports/reactions/verification.md。
+
+2026-10-29T22:25:44.490Z 表読み優先CPUとグラフ調整 完了
+4c93822a3c3734307370439b740b3ba54569b91071cbee3eea24da5768fc1a70 / pixel-446fe6d0774d
+CPU prioritizes basic readings at all difficulties and modes, uses alternatives only if no safe front reading exists
+Front-only 18-card backbone, bridges, opening and bounded quality probes; two random free slots and recency avoidance retained
+New versioned safety table preserves existing content/replay IDs and old v3 CPU behavior
+122 unit cases and 144 three-engine UI cases passed
+3000 boards and 12000 simulated matches: no generation failures or front-priority violations; all 1024 pictures seen
+LAN runtime updated without restarting the server
+Details: reports/front-reading/verification.md
+
+2026-10-30T19:10:51.661Z 対戦画面固定 完了
+61dcec3f772b02f9c344629ec8b1a9bc1d4f4e6514e256ab0b551e31d2a630b1 / pixel-446fe6d0774d
+Fixed active match to the dynamic viewport with all 24 panels visible
+Reserved feedback and action rows; hints no longer move the grid and wrong answers replace hints
+Portrait 4x6 and compact landscape 6x4 retain at least 44px card targets in all tested viewports
+Overflow clip prevents focus-induced background shifting; dialogs and result overlays retain contained scrolling
+Title page retains normal scrolling after ending a match
+122 unit and 168 final UI cases; details reports/fixed-screen/verification.md
+
+2026-10-30T19:45:00.510Z 広い盤面・相手キャラ・PWA 完了
+6048df59a79246896531b8c167d69a8328728d767db259e649b41ca937ed7352 / pixel-446fe6d0774d
+Removed the in-game global header, persistent explanation row and word history display; tools now live in the pause menu
+Hints open on demand, close on outside tap or Escape, and reopen at the same stage without another charge
+Answer presentation lasts 1600ms normally, 2200ms for alternatives/new discoveries and 2500ms for completion; tapping still skips it
+Three original SVG rival appearances retain all ten moods and are deterministic by session seed/round
+Added PWA manifest, 192/512/180px icons, secure-context service worker, home-screen guidance and supported fullscreen toggle
+122 unit and 183 final UI/PWA cases; details reports/roomy-board/verification.md
+
+
+## 2026-10-31 手詰まりで次の盤面・敗北までスコア継続
+
+全モードで手詰まりは文字切り替えをせず中立の結果へ。CPU探索を維持し、勝利数/連勝数を減らさない。得点・取得枚数・裏読み数・経過時間はNEXTをまたいで合算し、敗北後だけ0から再開。再挑戦/新規開始は独立した挑戦。旧セーブと読み込み失敗の再試行でも保持。ランキングは挑戦と集計条件ごとの最高1件を更新し、以前の記録は分離して残した。短い縦/横画面でも結果見出しと操作を収め、ゲーム内ルール文も更新。
+
+最終: 2469fc61571718cf3d400e3a23d9f7e29b3c84e4fb92a0b53a612cd641015656 / pixel-0df1e7d32469。単体155件、コア分岐90.72%、ゲームUI276件、PWA9件、450試合、制御テスト100盤面、LAN37ファイルのバイト一致を確認。詳細: reports/no-moves-chain/verification.md。実機モバイル・音声の聴感は未検証。既存LANサーバーは稼働を維持、一時PWAサーバーのみ終了。
+
+
+## 2026-10-31 連勝・練習・早押し得点/カーソル
+
+通常/ひとりの手詰まりをクリアとして連勝へ加算。表示する連勝をヒント条件別の履歴から分けた。早押しは両者の同じ加点式で現在盤面の勝敗を決め、同点は引き分け。自分の累積点とは分離。時間なしは練習でランキングを登録せず、旧記録は保存。早押しのランダム走査を廃止し、最後の650msだけキャラから回答札へ移動するカーソルへ。ユーザー先取り・回転・減動作・保存復元を確認。
+
+最終 bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a / pixel-0df1e7d32469。単体167、コア分岐90.90%、UI321、PWA9、450試合、LAN37ファイル一致。詳しくは reports/race-score/verification.md。既存LANサーバーは維持、一時PWAサーバーは終了。
+
+## 2026-10-31 Gitの初期管理
+
+ユーザーの依頼により、現行ゲームをmainブランチの初回コミットへ整理。原画・配信用画像・辞書・審査ログ・ソース・テストは追跡。node_modules/.cache/dist/artifacts/重複画像/検証の途中出力/試作をignoreにした。Windows付加情報2ファイルを削除。検証途中のreportsへ依存していた旧辞書と比較用fallback入力をtests/fixturesへ分離。行末を整え、仕様原文と原画・プロンプトのハッシュ対象バイトは維持した。
+
+Gitインデックスの追跡ファイルのみを展開してビルドと167単体テストを確認。再現した実行本体は既存の bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a と一致。既存依存を再利用し、npm ciのネットワーク再取得は行っていない。現在のLANサーバーとブラウザ保存データは維持。リモート登録/pushは行わずローカル管理。詳細はdocs/version-control.md、reports/git-baseline/verification.md。

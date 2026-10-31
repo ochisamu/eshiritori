@@ -1,0 +1,1690 @@
+{
+  "status": "complete",
+  "buildHash": "6c20985f2cf4672cdaf3f91a3a732353f7020f2f7bf69c7270f2618cbaa93633",
+  "contentVersion": "pixel-446fe6d0774d",
+  "unitTests": 134,
+  "gameUiCases": 216,
+  "pwaCases": 9,
+  "finalCases": [
+    {
+      "project": "chromium",
+      "title": "arcade title fits 320x568",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "arcade title fits 360x640",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "arcade title fits 390x844",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "arcade title fits 768x1024",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "arcade title fits 844x390",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "arcade title fits 640x360",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "arcade title fits 1440x900",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "solo accepts consecutive human panels and preserves score after pause/reload",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "race CPU visibly searches while panels stay playable, then claims without player points",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "race lets the human claim before CPU and freezes both clocks during answer/pause",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "no-move player rescues and resumes instead of losing",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "no-move cpu rescues and resumes instead of losing",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "earned score ranks after terminal loss and survives reload; terminal card earns zero",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "alternative input earns bonus with distinct score effect",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "arcade title fits 320x568",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "arcade title fits 360x640",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "arcade title fits 390x844",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "arcade title fits 768x1024",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "arcade title fits 844x390",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "arcade title fits 640x360",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "arcade title fits 1440x900",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "solo accepts consecutive human panels and preserves score after pause/reload",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "race CPU visibly searches while panels stay playable, then claims without player points",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "race lets the human claim before CPU and freezes both clocks during answer/pause",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "no-move player rescues and resumes instead of losing",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "no-move cpu rescues and resumes instead of losing",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "earned score ranks after terminal loss and survives reload; terminal card earns zero",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "alternative input earns bonus with distinct score effect",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "arcade title fits 320x568",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "arcade title fits 360x640",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "arcade title fits 390x844",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "arcade title fits 768x1024",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "arcade title fits 844x390",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "arcade title fits 640x360",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "arcade title fits 1440x900",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "solo accepts consecutive human panels and preserves score after pause/reload",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "race CPU visibly searches while panels stay playable, then claims without player points",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "race lets the human claim before CPU and freezes both clocks during answer/pause",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "no-move player rescues and resumes instead of losing",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "no-move cpu rescues and resumes instead of losing",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "earned score ranks after terminal loss and survives reload; terminal card earns zero",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "alternative input earns bonus with distinct score effect",
+      "file": "arcade.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "untimed refill starts with a CPU pick, then waits without consuming player time",
+      "file": "cpu-opening.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "a trapped CPU searches, pauses, looks puzzled and then receives rescue",
+      "file": "cpu-opening.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "untimed refill starts with a CPU pick, then waits without consuming player time",
+      "file": "cpu-opening.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "a trapped CPU searches, pauses, looks puzzled and then receives rescue",
+      "file": "cpu-opening.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "untimed refill starts with a CPU pick, then waits without consuming player time",
+      "file": "cpu-opening.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "a trapped CPU searches, pauses, looks puzzled and then receives rescue",
+      "file": "cpu-opening.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "fixed match 320x568",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "fixed match 360x640",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "fixed match 390x844",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "fixed match 768x1024",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "fixed match 844x390",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "fixed match 900x600",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "fixed match 1440x900",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "fixed match 320x568",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "fixed match 360x640",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "fixed match 390x844",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "fixed match 768x1024",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "fixed match 844x390",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "fixed match 900x600",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "fixed match 1440x900",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "fixed match 320x568",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "fixed match 360x640",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "fixed match 390x844",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "fixed match 768x1024",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "fixed match 844x390",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "fixed match 900x600",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "fixed match 1440x900",
+      "file": "fixed-screen.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "focused match uses three rival appearances and restores each without growing chrome",
+      "file": "focus-mode.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "focused match uses three rival appearances and restores each without growing chrome",
+      "file": "focus-mode.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "focused match uses three rival appearances and restores each without growing chrome",
+      "file": "focus-mode.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU front reading priority is visible in standard",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU fallback reading priority is visible in standard",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU front reading priority is visible in refill",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU fallback reading priority is visible in refill",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU front reading priority is visible in refillPractice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU fallback reading priority is visible in refillPractice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU front reading priority is visible in practice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU fallback reading priority is visible in practice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU front reading priority is visible in accessible",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU fallback reading priority is visible in accessible",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU front reading priority is visible in standard",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU fallback reading priority is visible in standard",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU front reading priority is visible in refill",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU fallback reading priority is visible in refill",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU front reading priority is visible in refillPractice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU fallback reading priority is visible in refillPractice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU front reading priority is visible in practice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU fallback reading priority is visible in practice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU front reading priority is visible in accessible",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU fallback reading priority is visible in accessible",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU front reading priority is visible in standard",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU fallback reading priority is visible in standard",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU front reading priority is visible in refill",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU fallback reading priority is visible in refill",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU front reading priority is visible in refillPractice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU fallback reading priority is visible in refillPractice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU front reading priority is visible in practice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU fallback reading priority is visible in practice",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU front reading priority is visible in accessible",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU fallback reading priority is visible in accessible",
+      "file": "front-reading.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "title, board, detail, IME, hints, timeout, next, restore and catalog",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "layout 360x800",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "layout 390x844",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "layout 768x1024",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "layout 1440x900",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "title, board, detail, IME, hints, timeout, next, restore and catalog",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "layout 360x800",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "layout 390x844",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "layout 768x1024",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "layout 1440x900",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "title, board, detail, IME, hints, timeout, next, restore and catalog",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "layout 360x800",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "layout 390x844",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "layout 768x1024",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "layout 1440x900",
+      "file": "game.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "hints get concrete on the second use: standard",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "hints get concrete on the second use: refill",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "hints get concrete on the second use: refillPractice",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "hints get concrete on the second use: practice",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "hints get concrete on the second use: accessible",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "hints get concrete on the second use: standard",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "hints get concrete on the second use: refill",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "hints get concrete on the second use: refillPractice",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "hints get concrete on the second use: practice",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "hints get concrete on the second use: accessible",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "hints get concrete on the second use: standard",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "hints get concrete on the second use: refill",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "hints get concrete on the second use: refillPractice",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "hints get concrete on the second use: practice",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "hints get concrete on the second use: accessible",
+      "file": "hints.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "a double tap commits once, then shows the complete round review",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "hidden kana answer respects IME composition and discovers the approved reading",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "known alternative with another tail is selected explicitly",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "the generated winning witness is playable through the real UI and replay keeps the board",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "packaged game remains playable with every external request blocked",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "an additional reading shows its actual visual evidence after a successful answer",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "a portable code restores the exact round and keeps replay records separate",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "a double tap commits once, then shows the complete round review",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "hidden kana answer respects IME composition and discovers the approved reading",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "known alternative with another tail is selected explicitly",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "the generated winning witness is playable through the real UI and replay keeps the board",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "packaged game remains playable with every external request blocked",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "an additional reading shows its actual visual evidence after a successful answer",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "a portable code restores the exact round and keeps replay records separate",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "a double tap commits once, then shows the complete round review",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "hidden kana answer respects IME composition and discovers the approved reading",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "known alternative with another tail is selected explicitly",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "the generated winning witness is playable through the real UI and replay keeps the board",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "packaged game remains playable with every external request blocked",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "an additional reading shows its actual visual evidence after a successful answer",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "a portable code restores the exact round and keeps replay records separate",
+      "file": "journeys.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU visibly continues the exchange when it could end the game immediately",
+      "file": "long-play.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU visibly continues the exchange when it could end the game immediately",
+      "file": "long-play.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU visibly continues the exchange when it could end the game immediately",
+      "file": "long-play.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "new alternative has a one-time stamp and surprised CPU, then expires",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "complete picture gets a persistent gold catalog mark, and showing answers earns no marks",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "known alternatives still surprise CPU but never earn a fresh discovery stamp",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "opening visibly scans, compares, locks its selected panel and commits it",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "reduced motion keeps the new reward and CPU readable without animation",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "closing tutorial at the first CPU selection cannot leave a stale pause",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "normal answer remains readable for 1.6 seconds without spending thinking time",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "new alternative has a one-time stamp and surprised CPU, then expires",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "complete picture gets a persistent gold catalog mark, and showing answers earns no marks",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "known alternatives still surprise CPU but never earn a fresh discovery stamp",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "opening visibly scans, compares, locks its selected panel and commits it",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "reduced motion keeps the new reward and CPU readable without animation",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "closing tutorial at the first CPU selection cannot leave a stale pause",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "normal answer remains readable for 1.6 seconds without spending thinking time",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "new alternative has a one-time stamp and surprised CPU, then expires",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "complete picture gets a persistent gold catalog mark, and showing answers earns no marks",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "known alternatives still surprise CPU but never earn a fresh discovery stamp",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "opening visibly scans, compares, locks its selected panel and commits it",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "reduced motion keeps the new reward and CPU readable without animation",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "closing tutorial at the first CPU selection cannot leave a stale pause",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "normal answer remains readable for 1.6 seconds without spending thinking time",
+      "file": "reactions.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "keyboard alone completes start, answer, result, review, next and catalog",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "kana entry and confirmation fit a reduced viewport and rotation",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "image-load failure is recoverable without recording a loss",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "storage unavailable still permits play and displays a warning",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "corrupt current data restores backup, preserves original, and reload does not duplicate a move",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "offline local package decodes every approved board and detail image",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "keyboard alone completes start, answer, result, review, next and catalog",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "kana entry and confirmation fit a reduced viewport and rotation",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "image-load failure is recoverable without recording a loss",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "storage unavailable still permits play and displays a warning",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "corrupt current data restores backup, preserves original, and reload does not duplicate a move",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "offline local package decodes every approved board and detail image",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "keyboard alone completes start, answer, result, review, next and catalog",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "kana entry and confirmation fit a reduced viewport and rotation",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "image-load failure is recoverable without recording a loss",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "storage unavailable still permits play and displays a warning",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "corrupt current data restores backup, preserves original, and reload does not duplicate a move",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "offline local package decodes every approved board and detail image",
+      "file": "recovery.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "replacement mode deals by difficulty and replaces in the same slot across save/reload",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "CPU searches several pictures before selecting and freezes on pause",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "catalog masks each unknown reading by its kana length and reveals only by explicit choice",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "choosing a terminal word immediately loses and survives reload without double-counting",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "alternative readings have their own effect and the most recent panel remains emphasized through CPU search",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "replacement mode deals by difficulty and replaces in the same slot across save/reload",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "CPU searches several pictures before selecting and freezes on pause",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "catalog masks each unknown reading by its kana length and reveals only by explicit choice",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "choosing a terminal word immediately loses and survives reload without double-counting",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "alternative readings have their own effect and the most recent panel remains emphasized through CPU search",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "replacement mode deals by difficulty and replaces in the same slot across save/reload",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "CPU searches several pictures before selecting and freezes on pause",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "catalog masks each unknown reading by its kana length and reveals only by explicit choice",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "choosing a terminal word immediately loses and survives reload without double-counting",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "alternative readings have their own effect and the most recent panel remains emphasized through CPU search",
+      "file": "refill.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "title stays fixed before and after a match and catalog scroll stays inside its dialog",
+      "file": "scroll-containment.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "firefox",
+      "title": "title stays fixed before and after a match and catalog scroll stays inside its dialog",
+      "file": "scroll-containment.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "webkit",
+      "title": "title stays fixed before and after a match and catalog scroll stays inside its dialog",
+      "file": "scroll-containment.spec.ts",
+      "status": "passed",
+      "source": "ui-recheck.json"
+    },
+    {
+      "project": "chromium",
+      "title": "new sessions randomize, reload preserves play, and only an explicit seed repeats the board",
+      "file": "session-seed.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "firefox",
+      "title": "new sessions randomize, reload preserves play, and only an explicit seed repeats the board",
+      "file": "session-seed.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "webkit",
+      "title": "new sessions randomize, reload preserves play, and only an explicit seed repeats the board",
+      "file": "session-seed.spec.ts",
+      "status": "passed",
+      "source": "final-e2e.json"
+    },
+    {
+      "project": "chromium",
+      "title": "PWA manifest and every install icon decode",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "chromium",
+      "title": "installed shell can reopen offline with previously loaded title pictures",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "chromium",
+      "title": "picture cache is bounded while installation guidance and fullscreen remain usable",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "firefox",
+      "title": "PWA manifest and every install icon decode",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "firefox",
+      "title": "installed shell can reopen offline with previously loaded title pictures",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "firefox",
+      "title": "picture cache is bounded while installation guidance and fullscreen remain usable",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "webkit",
+      "title": "PWA manifest and every install icon decode",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "webkit",
+      "title": "installed shell can reopen offline with previously loaded title pictures",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    },
+    {
+      "project": "webkit",
+      "title": "picture cache is bounded while installation guidance and fullscreen remain usable",
+      "file": "app.spec.ts",
+      "status": "passed",
+      "source": "pwa.json"
+    }
+  ],
+  "browserEventsVerified": true,
+  "simulation": {
+    "cases": 360,
+    "failures": [],
+    "groups": [
+      {
+        "opponent": "turns",
+        "cases": 120,
+        "meanMoves": 37.90833333333333,
+        "meanRescues": 11.808333333333334,
+        "maxCpuStates": 116
+      },
+      {
+        "opponent": "solo",
+        "cases": 120,
+        "meanMoves": 37.925,
+        "meanRescues": 12.825,
+        "maxCpuStates": 0
+      },
+      {
+        "opponent": "race",
+        "cases": 120,
+        "meanMoves": 37.94166666666667,
+        "meanRescues": 12.075,
+        "maxCpuStates": 131
+      }
+    ]
+  },
+  "diversity": {
+    "boards": 1500,
+    "failures": 0,
+    "fallbacks": 0,
+    "unionInitialAssets": 1021,
+    "comparison": [
+      {
+        "name": "fresh-normal",
+        "boards": 300,
+        "uniqueSets": 300,
+        "before": 918,
+        "after": 969,
+        "top10Before": 0.09027777777777778,
+        "top10After": 0.05527777777777778,
+        "generationP95Ms": 36.60305200000005
+      },
+      {
+        "name": "continuous-normal",
+        "boards": 300,
+        "uniqueSets": 300,
+        "before": 947,
+        "after": 1002,
+        "top10Before": 0.07291666666666667,
+        "top10After": 0.05444444444444444,
+        "generationP95Ms": 33.02502999999979
+      },
+      {
+        "name": "fresh-easy",
+        "boards": 300,
+        "uniqueSets": 300,
+        "before": 905,
+        "after": 971,
+        "top10Before": 0.09666666666666666,
+        "top10After": 0.05708333333333333,
+        "generationP95Ms": 108.59072000000015
+      },
+      {
+        "name": "fresh-hard",
+        "boards": 300,
+        "uniqueSets": 300,
+        "before": 918,
+        "after": 969,
+        "top10Before": 0.09027777777777778,
+        "top10After": 0.05527777777777778,
+        "generationP95Ms": 34.76950299999953
+      },
+      {
+        "name": "all-discovered-normal",
+        "boards": 300,
+        "uniqueSets": 300,
+        "before": 918,
+        "after": 969,
+        "top10Before": 0.09027777777777778,
+        "top10After": 0.055,
+        "generationP95Ms": 212.16297399999894
+      }
+    ]
+  },
+  "lan": {
+    "url": "http://192.168.0.111:4173/",
+    "verifiedFiles": [
+      "assets/index-2QoerQNI.js",
+      "assets/index-CVVRvZza.css"
+    ]
+  },
+  "testCorrections": "Nine initial failures were obsolete fixed-title/CPU-concession expectations or a test-helper save timing assumption. The corrected 24-case run supersedes those cases; the runtime did not change between runs.",
+  "screenshots": [
+    "shiritori-arcade-title.png",
+    "shiritori-arcade-score.png"
+  ],
+  "limitations": [
+    "Rankings are local to this browser/origin, not shared over the LAN or internet.",
+    "Physical mobile devices, OS installation and speaker audition were not tested.",
+    "PWA installation still needs trusted HTTPS; current LAN HTTP is for browser play.",
+    "Existing 500-round resource and throttled performance measurements belong to prior builds and were not rerun.",
+    "Original distribution ZIPs remain unchanged."
+  ]
+}

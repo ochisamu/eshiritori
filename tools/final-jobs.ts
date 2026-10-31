@@ -1,0 +1,20 @@
+import {readFileSync,writeFileSync,existsSync,appendFileSync} from "node:fs";
+import {createHash} from "node:crypto";
+import {assets as candidates} from "./content-source";
+const hash=(path:string)=>createHash("sha256").update(readFileSync(path)).digest("hex");
+const images=JSON.parse(readFileSync("content/image-manifest.json","utf8"));
+const events=readFileSync("content/generation-events.jsonl","utf8").trim().split("\n").map(line=>JSON.parse(line));
+const at=new Date().toISOString();
+const rows=candidates.map((asset,i)=>{
+ const base=`content/originals/pixel-${String(Math.floor(i/16)+1).padStart(3,"0")}.png`;
+ const m=images.find((row:{assetId:string})=>row.assetId===asset.id);
+ const sources=[...new Set([base,...(m?[m.source]:[])])].filter(existsSync);
+ const outputs=events.filter(event=>event.stage==="generated"&&sources.includes(event.source));
+ const prompts=sources.map(source=>source.replace(/\.png$/,"-prompt.txt")).filter(existsSync);
+ const packed=m&&Object.values(m.images).every((image:any)=>existsSync(image.path.replace(/^public\//,"dist/"))&&hash(image.path.replace(/^public\//,"dist/"))===image.sha256);
+ return {jobId:`pixel-${asset.id}`,assetId:asset.id,conceptKey:asset.conceptKey,stage:packed?"packaged":m?"generated":"planned",status:packed?"approved":m?"awaiting_technicalQA":"preproduction_unselected",attempts:sources.length,attemptsMeaning:"Distinct saved native outputs used/replaced for this concept, not an inferred billable API call count. Shared atlases count once per actual file; generation-events.jsonl retains actual dispatch/import history.",inputHash:prompts.length?createHash("sha256").update(prompts.map(hash).join(":" )).digest("hex"):null,outputHash:packed?m.images["256"].sha256:null,source:m?.source??null,sourceOutputs:sources.map(path=>({path,sha256:hash(path)})),nativeEvents:outputs.map(event=>({jobId:event.jobId,observedAt:event.observedAt,sha256:event.sha256})),error:null,nextRetryAt:null,cost:null,observedAt:at};
+});
+const data=rows.map(row=>JSON.stringify(row)).join("\n")+"\n";
+if(existsSync("content/jobs.jsonl"))appendFileSync("content/jobs-history.jsonl",readFileSync("content/jobs.jsonl"));
+writeFileSync("content/jobs.jsonl",data);
+console.log({at,planned:rows.length,packaged:rows.filter(r=>r.stage==="packaged").length,preproduction:rows.filter(r=>r.stage==="planned").length});

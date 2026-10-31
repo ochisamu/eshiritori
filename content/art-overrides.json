@@ -1,0 +1,106 @@
+{
+  "13": {
+    "source": "content/originals/pixel-repair-001.png",
+    "cell": 0,
+    "grid": 2
+  },
+  "208": {
+    "source": "content/originals/pixel-repair-001.png",
+    "cell": 1,
+    "grid": 2
+  },
+  "184": {
+    "source": "content/originals/pixel-repair-001.png",
+    "cell": 2,
+    "grid": 2
+  },
+  "252": {
+    "source": "content/originals/pixel-repair-001.png",
+    "cell": 3,
+    "grid": 2
+  },
+  "309": {
+    "source": "content/originals/sports-corrected.png",
+    "cell": 4,
+    "grid": 4
+  },
+  "310": {
+    "source": "content/originals/sports-corrected.png",
+    "cell": 5,
+    "grid": 4
+  },
+  "333": {
+    "source": "content/originals/kitchen-repair.png",
+    "grid": 2,
+    "cell": 0,
+    "bounds": [
+      20,
+      20,
+      610,
+      575
+    ]
+  },
+  "334": {
+    "source": "content/originals/kitchen-repair.png",
+    "grid": 2,
+    "cell": 1,
+    "bounds": [
+      643,
+      20,
+      1233,
+      575
+    ]
+  },
+  "389": {
+    "source": "content/originals/kitchen-repair.png",
+    "grid": 2,
+    "cell": 2,
+    "bounds": [
+      20,
+      607,
+      610,
+      1233
+    ]
+  },
+  "377": {
+    "source": "content/originals/kitchen-repair.png",
+    "grid": 2,
+    "cell": 3,
+    "bounds": [
+      643,
+      607,
+      1233,
+      1233
+    ]
+  },
+  "447": {
+    "cell": 0,
+    "source": "content/originals/swallow-repair.png",
+    "grid": 1
+  },
+  "562": {
+    "source": "content/originals/fantasy-corrected.png",
+    "grid": 4,
+    "cell": 1
+  },
+  "563": {
+    "source": "content/originals/fantasy-corrected.png",
+    "grid": 4,
+    "cell": 2
+  },
+  "584": {
+    "source": "content/originals/microphone-corrected.png",
+    "grid": 4,
+    "cell": 7
+  },
+  "917": {
+    "grid": 4,
+    "cell": 4,
+    "source": "content/originals/chives-corrected.png"
+  },
+  "946": {
+    "grid": 4,
+    "cell": 1,
+    "source": "content/originals/unlocking-corrected.png"
+  }
+}

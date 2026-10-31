@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-10-30T23:16:53.606Z",
+  "scope": [
+    "normalization.ts",
+    "rules.ts",
+    "state.ts",
+    "cpu.ts",
+    "boardGenerator.ts",
+    "refill.ts",
+    "cpuPresentation.ts"
+  ],
+  "covered": 655,
+  "total": 722,
+  "branchPercent": 90.7202216066482,
+  "required": 90,
+  "passed": true,
+  "files": [
+    {
+      "file": "boardGenerator.ts",
+      "covered": 187,
+      "total": 220
+    },
+    {
+      "file": "cpu.ts",
+      "covered": 111,
+      "total": 128
+    },
+    {
+      "file": "cpuPresentation.ts",
+      "covered": 21,
+      "total": 22
+    },
+    {
+      "file": "normalization.ts",
+      "covered": 15,
+      "total": 15
+    },
+    {
+      "file": "refill.ts",
+      "covered": 16,
+      "total": 18
+    },
+    {
+      "file": "rules.ts",
+      "covered": 57,
+      "total": 62
+    },
+    {
+      "file": "state.ts",
+      "covered": 248,
+      "total": 257
+    }
+  ]
+}

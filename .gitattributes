@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+# Preserve authoritative requirement and provenance bytes exactly.
+spec/*.txt -text
+content/originals/** -text
+public/assets/** -text
+*.png -text
+*.webp -text
+*.ico -text
+*.zip -text

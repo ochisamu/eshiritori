@@ -1,0 +1,34 @@
+import {readFileSync,writeFileSync,appendFileSync} from 'node:fs';
+import {stripVTControlCharacters} from 'node:util';
+import {runtimeHash} from './runtime-files.mjs';
+const dir='reports/arcade-update/', hash=runtimeHash();
+const canonical=t=>t.trim().replace('hints, surrender, next','hints, timeout, next').replace('a trapped CPU searches, pauses, looks puzzled and only then concedes','a trapped CPU searches, pauses, looks puzzled and then receives rescue').replace('title scroll returns after a match and catalog scroll stays inside its dialog','title stays fixed before and after a match and catalog scroll stays inside its dialog');
+const cases=new Map();
+function ingest(suites,source){for(const suite of suites??[]){for(const spec of suite.specs??[])for(const test of spec.tests??[]){const title=canonical(spec.title);cases.set(test.projectName+'|'+title,{project:test.projectName,title,file:spec.file,status:test.results.at(-1)?.status,source});}ingest(suite.suites,source);}}
+for(const file of ['final-e2e.json','ui-recheck.json','pwa.json'])ingest(JSON.parse(readFileSync(dir+file,'utf8')).suites,file);
+if(cases.size!==225||[...cases.values()].some(c=>c.status!=='passed'))throw Error('Final UI cases incomplete');
+const events=new Map();
+for(const file of ['final-events.jsonl','ui-recheck-events.jsonl','pwa-events.jsonl'])for(const line of readFileSync(dir+file,'utf8').trim().split('\n')){const e=JSON.parse(line);events.set(e.project+'|'+canonical(e.test),e);}
+for(const key of cases.keys()){const e=events.get(key);if(!e||e.buildHash!==hash||e.status!=='passed'||(!e.intentional&&e.errors.length))throw Error('Unverified browser event '+key);}
+const unit=stripVTControlCharacters(readFileSync(dir+'unit.log','utf8'));if(!/Tests\s+134\s+passed\s+\(134\)/.test(unit))throw Error('Unit results missing');
+const sim=JSON.parse(readFileSync(dir+'simulation.json','utf8'));if(sim.cases!==360||sim.failures.length)throw Error('Simulation failures');
+const before=JSON.parse(readFileSync('reports/diversity/verification.json','utf8')),after=JSON.parse(readFileSync(dir+'diversity/verification.json','utf8'));
+if(after.groups.some(g=>g.boards!==300||g.errors.length||g.fallbacks))throw Error('Diversity audit incomplete');
+const manifest=JSON.parse(readFileSync('dist/.vite/manifest.json','utf8'));
+const files=[...new Set(Object.values(manifest).flatMap(e=>[e.file,...(e.css??[])]))];
+const home=await fetch('http://192.168.0.111:4173/');if(!home.ok||!(await home.text()).includes(manifest['index.html'].file))throw Error('LAN entry mismatch');
+for(const file of files){const res=await fetch('http://192.168.0.111:4173/'+file);if(!res.ok||!Buffer.from(await res.arrayBuffer()).equals(readFileSync('dist/'+file)))throw Error('LAN byte mismatch '+file);}
+const comparison=after.groups.map(g=>{const b=before.groups.find(b=>b.name===g.name);return{name:g.name,boards:g.boards,uniqueSets:g.uniqueSets,before:b.initial.uniqueAssets,after:g.initial.uniqueAssets,top10Before:b.initial.top10SlotShare,top10After:g.initial.top10SlotShare,generationP95Ms:g.generationP95Ms};});
+const report={status:'complete',buildHash:hash,contentVersion:JSON.parse(readFileSync('src/generated/version.json','utf8')).version,unitTests:134,gameUiCases:216,pwaCases:9,finalCases:[...cases.values()],browserEventsVerified:true,simulation:{cases:sim.cases,failures:sim.failures,groups:sim.groups},diversity:{boards:1500,failures:0,fallbacks:0,unionInitialAssets:after.unionInitialAssets,comparison},lan:{url:'http://192.168.0.111:4173/',verifiedFiles:files},testCorrections:'Nine initial failures were obsolete fixed-title/CPU-concession expectations or a test-helper save timing assumption. The corrected 24-case run supersedes those cases; the runtime did not change between runs.',screenshots:['shiritori-arcade-title.png','shiritori-arcade-score.png'],limitations:['Rankings are local to this browser/origin, not shared over the LAN or internet.','Physical mobile devices, OS installation and speaker audition were not tested.','PWA installation still needs trusted HTTPS; current LAN HTTP is for browser play.','Existing 500-round resource and throttled performance measurements belong to prior builds and were not rerun.','Original distribution ZIPs remain unchanged.']};
+writeFileSync(dir+'verification.json',JSON.stringify(report,null,2)+'\n');
+let md='# ゲームメニュー・多様性・スコア・対戦方式の更新\n\nLAN版に反映済み。Runtime: `'+hash+'`\n\n交互・一人・早押しの3方式、手詰まり救済、1枚100点＋裏読み150点＋時間ありの速度最大100点、端末内ランキング、画面内に収まるトップを実装。旧保存は任意フィールドとして引き継ぎ、救済中もポーズと復元を可能にした。\n\n134単体、216ゲームUI＋9PWA（各3ブラウザー）、360対戦シミュレーションが合格。全体実行207合格/9失敗を保存し、テストの旧仕様と補助処理を修正した24件の再確認で該当ケースを差し替えた最終225件。実行時コードは両実行で同一hash。全最終ケースに同hashのイベント記録があり、意図しないブラウザー/資産エラーなし。\n\n|条件（各300盤面）|出現種類数・前|後|上位10札の枠占有率・前|後|\n|---|---:|---:|---:|---:|\n';
+for(const r of comparison)md+='|'+r.name+'|'+r.before+'|'+r.after+'|'+(r.top10Before*100).toFixed(2)+'%|'+(r.top10After*100).toFixed(2)+'%|\n';
+md+='\n全1500生成で失敗・fallback0、条件ごとの24枚セット重複0。表読み18手経路と有限の探索上限を維持。自由枠4、需要/供給を使う経路抽選、過去20盤面の出現頻度で集中を軽減。初期札の累計出現は全条件で1021/1024。有限標本であり均等確率の証明ではない。補充込みの出現数は実際に引く前の山札を含む。\n\n![スマホのトップ](shiritori-arcade-title.png)\n\n![一人モードのスコア](shiritori-arcade-score.png)\n\nランキングは端末内・1対戦単位で、方式/補充/難度/秒数/補助/再挑戦を分離。実機モバイル、OSインストール、聴感評価は未実施。LANはHTTPのためPWAインストールにはHTTPS配信が別途必要。過去の性能/500対戦資源測定と初版ZIPは旧ビルドの記録として保持。\n';
+writeFileSync(dir+'verification.md',md);
+const state=JSON.parse(readFileSync('NEXT_ACTIONS.json','utf8'));
+if(state.buildHash!==hash)state.previousVerification={buildHash:state.buildHash,verification:state.latestVerification,report:state.latestReport,previous:state.previousVerification};
+state.buildHash=hash;state.contentVersion=report.contentVersion;state.status='complete';state.blockers=[];state.remaining=[];
+state.completed=['Reduced panel concentration: 1500 seeds passed; continuous coverage 947 to 1002 of 1024','No-move positions receive bounded letter rescue; losses only terminal words/time expiry','Human-only and simultaneous CPU race modes with visible searching and atomic first claims','Panel/alternative/speed scoring, score effects and categorized local top-ten rankings','Viewport-fitting title game buttons and compact navigation','134 unit tests, 216 game UI and 9 PWA cases; 360 full simulations; LAN byte-verified'];
+state.latestVerification=dir+'verification.json';state.latestReport=dir+'verification.md';state.verificationLimitations=report.limitations;writeFileSync('NEXT_ACTIONS.json',JSON.stringify(state,null,2)+'\n');
+appendFileSync('WORK_LOG.md','\n## 2026-10-31 アーケード更新\n3対戦方式、手詰まり救済、スコア/加点演出/端末内ランキング、固定トップを実装。多様性1500盤面、全134単体、最終216ゲームUI＋9PWA、360対戦シミュレーションを確認。テストの旧仕様9件は修正して3ブラウザー24件の再確認を記録。途中の大規模一括変更は自動承認レビューで拒否され、元ソース保管後、独立ヘルパー・救済・採点・方式・保存・UIごとのテスト付き段階変更で解決。拒否コマンドは実行されず、利用者データを書き換えていない。LANの現在ファイルをbyte照合し、一時PWAサーバー4174のみ停止。詳しくは '+dir+'verification.md。\n');
+console.log(JSON.stringify({hash,unit:134,finalUi:cases.size,simulations:sim.cases,lan:'verified',comparison:comparison.slice(0,2)}));

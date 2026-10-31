@@ -1,0 +1,115 @@
+{
+  "status": "complete",
+  "verifiedAt": "2026-10-30T23:25:25.044Z",
+  "buildHash": "2469fc61571718cf3d400e3a23d9f7e29b3c84e4fb92a0b53a612cd641015656",
+  "contentVersion": "pixel-0df1e7d32469",
+  "rulesVersion": "alternating-24-no-moves-chain-v5",
+  "sourceHashes": {
+    "src/game/state.ts": "5908840c2932967a76aa10528bcee2ac4f3bca52ef5c0a4af6b08232d3a3b14f",
+    "src/game/types.ts": "88903523fce217dbd05a7f75abe65b57f2f20955ff513ca54cf2263868108ea9",
+    "src/game/config.ts": "8ec647a1c92b659ea04f54ee73334712f48b65adcaef27fb5bfdaa2238214a2e",
+    "src/game/scoring.ts": "72b0032d99b680da8adb731437299fb9dd21bf4d97cbfc00138684e8d89e55a8",
+    "src/storage/save.ts": "282fff5ee837a2e3a24d863570328e0431282ca7ff37996cf4865e35b20257e3",
+    "src/App.tsx": "231f337bc3487de669c7c6d1671a150ffbada2a5ecfeac353f9d2cb80fcaddbc",
+    "src/style.css": "eb72353cdaf7aff9a0865020f03b99a41313d973139ec683faa7ddd50ffab3b7",
+    "src/ui/Ranking.tsx": "5b6b9d401c7edbd8d2dd6c594ed5a15323cf065563ec3aba86503279b9975704",
+    "tests/unit/no-moves-chain.test.ts": "f182d9584a530adde44274a06d2b77501d8cc66185475641fddd10921b1b171f"
+  },
+  "behavior": [
+    "No safe executable move ends the board without a winner or letter replacement in every mode",
+    "CPU retains its search animation before a neutral end",
+    "Neutral rounds preserve wins/streak and increment played once",
+    "NEXT carries points, panels, alternatives and elapsed time unless the player lost",
+    "Player loss shows final total; NEXT resets. Explicit replay/new start is a separate zero-score run",
+    "Reload and failed-board retry preserve totals; prior hints/reference remain classified",
+    "One ranking snapshot per attempt/category; legacy single-board ranks remain accessible separately"
+  ],
+  "unit": {
+    "cases": 155,
+    "passed": 155,
+    "files": 19,
+    "coreBranchPercent": 90.7202216066482,
+    "minimum": 90,
+    "source": "reports/no-moves-chain/unit-results.json"
+  },
+  "scale": {
+    "controlledReducerRounds": 100,
+    "expectedPoints": 20000,
+    "expectedPanels": 200,
+    "movesRetainedPerBoard": 2,
+    "rankRowsForSameCategory": 1,
+    "note": "Controlled fixture checks cumulative arithmetic and bounded state, not 100 human-played matches."
+  },
+  "ui": {
+    "cases": 276,
+    "passed": 276,
+    "engines": [
+      "Chromium",
+      "Firefox",
+      "WebKit"
+    ],
+    "unexpectedRuntimeErrors": 0,
+    "source": "reports/no-moves-chain/resolved-e2e.json",
+    "rawSuite": "reports/no-moves-chain/final-e2e.json",
+    "recheck": "reports/no-moves-chain/recheck-e2e.json",
+    "notes": "Includes current result layout, continuation/reload, loss/reset, old rankings, hint classification, error retry, full 4096 picture decodes per engine, and existing game regressions."
+  },
+  "pwa": {
+    "cases": 9,
+    "passed": 9,
+    "source": "reports/no-moves-chain/pwa.json"
+  },
+  "simulation": {
+    "cases": 450,
+    "failures": 0,
+    "groups": [
+      {
+        "opponent": "turns",
+        "cases": 150,
+        "meanMoves": 14.566666666666666,
+        "meanRescues": 0,
+        "maxCpuStates": 112
+      },
+      {
+        "opponent": "solo",
+        "cases": 150,
+        "meanMoves": 13.326666666666666,
+        "meanRescues": 0,
+        "maxCpuStates": 0
+      },
+      {
+        "opponent": "race",
+        "cases": 150,
+        "meanMoves": 14.373333333333333,
+        "meanRescues": 0,
+        "maxCpuStates": 92
+      }
+    ],
+    "source": "reports/no-moves-chain/simulation.json",
+    "dictionarySha256": "52938aec01cb44b5f762b20c07fa9cfaa6b8b56450ed3c04a0cae5898f30ab99"
+  },
+  "lan": {
+    "url": "http://192.168.0.111:4173/",
+    "filesChecked": 37,
+    "mismatches": 0,
+    "source": "reports/no-moves-chain/lan.json"
+  },
+  "visuals": [
+    "reports/no-moves-chain/result-320-chromium.png",
+    "reports/no-moves-chain/result-390-chromium.png",
+    "reports/no-moves-chain/result-844-chromium.png",
+    "reports/no-moves-chain/carried-chromium.png"
+  ],
+  "resolvedEarlierChecks": [
+    "The first scoped suite exposed a test fixture that depended on automatic letter replacement; replaced it with a real safe route.",
+    "Before the final result layout, 267/270 UI cases passed; three obsolete victory-heading assertions were updated to assert the neutral result and exact reducer winner.",
+    "Two final Firefox cases exposed prefetch-before-fault and an insufficient CPU reveal wait; six focused cases across all engines passed after correcting the test setup on the same runtime.",
+    "Initial core coverage was 87.95%; added legacy save/timer/replay/pause behavior tests and reached 90.72% without lowering the threshold."
+  ],
+  "limitations": [
+    "Desktop browser automation and viewport resizing, not physical iOS/Android devices or OS keyboard tests.",
+    "Audio playback was not auditioned through a speaker.",
+    "Scores/rankings are local to this browser origin; LAN sharing of rankings is not provided.",
+    "Earlier release ZIPs remain the original release; the active dist/LAN game contains this update."
+  ]
+}

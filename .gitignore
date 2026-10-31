@@ -1,0 +1,63 @@
+# Dependencies, downloaded test browsers and local caches
+node_modules/
+/.cache/
+**/__pycache__/
+*.py[cod]
+
+# Build outputs and duplicated raster staging files
+/dist/
+/artifacts/
+/output/
+/content/derived-assets/
+/content/assets.manifest.json
+/src/generated/*
+!/src/generated/reading-migrations.json
+*.tsbuildinfo
+coverage/
+test-results/
+playwright-report/
+blob-report/
+*.log
+*.tmp
+*.part
+
+# Unused early art/style experiments (reviewed production originals stay tracked)
+/content/originals/style-gouache-trial.png
+/content/originals/style-pop-trial.png
+/content/originals/sheet-001.png
+
+# Keep verification summaries; raw screenshots, logs and scratch backups are local.
+/reports/**
+!/reports/**/
+!/reports/**/verification.md
+!/reports/**/verification.json
+!/reports/**/core-coverage.json
+!/reports/verification-summary.md
+!/reports/acceptance-report.json
+!/reports/reading-review/panel-review.md
+!/reports/reading-review/decisions.jsonl
+!/reports/reading-review/editorial-audit.json
+
+# Retain detailed evidence for the current playable baseline.
+!/reports/race-score/unit-results.json
+!/reports/race-score/final-e2e.json
+!/reports/race-score/recheck-e2e.json
+!/reports/race-score/resolved-e2e.json
+!/reports/race-score/pwa.json
+!/reports/race-score/simulation.json
+!/reports/race-score/lan.json
+!/reports/race-score/final-events.jsonl
+!/reports/race-score/recheck-events.jsonl
+!/reports/race-score/pwa-events.jsonl
+/reports/**/before/**
+/reports/**/coverage/**
+
+# Machine-specific files, credentials and OS download metadata
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+*Zone.Identifier

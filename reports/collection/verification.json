@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "buildHash": "0ab0211c4bc4394b8c3af50bb9e33fb2164a69fd9c02bfc17a6edf8279c43c74",
+  "contentVersion": "pixel-446fe6d0774d",
+  "unitCases": 137,
+  "uiCases": 69,
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "viewports": [
+    "320x568",
+    "390x844",
+    "768x1024",
+    "844x390",
+    "1440x900"
+  ],
+  "features": [
+    "48-picture shelf with 22 pages covering all 1024 assets once",
+    "missing/partial/complete states from existing approved discovery IDs",
+    "faint monochrome/color/gold-star visuals and reading progress",
+    "all/missing/found/one-left/complete filters; number and known-word search",
+    "detail word-length masks; explicit answer reference never grants progress",
+    "internal shelf/detail scroll, keyboard focus and scroll restoration"
+  ],
+  "lan": {
+    "url": "http://192.168.0.111:4173/",
+    "verifiedFiles": [
+      "assets/index-o3nyfuuQ.js",
+      "assets/index-m02wZSVR.css"
+    ]
+  },
+  "screenshots": {
+    "manual": "manual-empty.png",
+    "stateExample": "shelf-390-chromium.png",
+    "desktop": "shelf-1440-chromium.png"
+  },
+  "limitations": [
+    "Mixed-state screenshot uses automated-test discovery data; it is not the user's collection progress.",
+    "Physical mobile devices and their OS keyboards were not tested.",
+    "The preceding full UI/PWA/performance and simulation results remain attached to their earlier runtime; this increment used scoped collection/related UI tests.",
+    "Original release ZIPs remain unchanged."
+  ]
+}

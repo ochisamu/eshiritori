@@ -1,0 +1,667 @@
+{
+  "verifiedAt": "2026-10-30T22:51:40.892Z",
+  "status": "complete",
+  "buildHash": "b1bebc42b2fef68f628ef0edcf47b24bd352f034c2aea6c07adea9586664c6db",
+  "contentVersion": "pixel-0df1e7d32469",
+  "dictionarySha256": "52938aec01cb44b5f762b20c07fa9cfaa6b8b56450ed3c04a0cae5898f30ab99",
+  "editorial": {
+    "panels": 1024,
+    "existingReadings": 3801,
+    "unreviewedPanels": 0,
+    "unreviewedReadings": 0,
+    "kept": 2722,
+    "removed": 1079,
+    "added": 400,
+    "unchangedIds": true,
+    "unchangedArt": true
+  },
+  "vocabulary": {
+    "before": {
+      "panels": 1024,
+      "readingRecords": 3801,
+      "distinctWords": 2120,
+      "kinds": {
+        "basic": 1024,
+        "category": 100,
+        "wordplay": 257,
+        "part": 2012,
+        "synonym": 278,
+        "action": 116,
+        "scene": 14
+      },
+      "distinctWordHeads": {
+        "り": 18,
+        "く": 57,
+        "ほ": 34,
+        "に": 19,
+        "ば": 36,
+        "お": 78,
+        "み": 35,
+        "し": 85,
+        "ど": 27,
+        "も": 31,
+        "ひ": 35,
+        "は": 79,
+        "た": 67,
+        "な": 31,
+        "ち": 45,
+        "す": 89,
+        "か": 136,
+        "こ": 71,
+        "あ": 76,
+        "の": 14,
+        "さ": 49,
+        "ふ": 58,
+        "い": 41,
+        "れ": 21,
+        "き": 60,
+        "う": 48,
+        "つ": 42,
+        "ゆ": 24,
+        "ね": 22,
+        "じ": 27,
+        "ま": 62,
+        "ろ": 15,
+        "ご": 18,
+        "む": 12,
+        "ら": 23,
+        "と": 56,
+        "が": 19,
+        "ぱ": 32,
+        "る": 3,
+        "び": 14,
+        "ぶ": 20,
+        "て": 45,
+        "だ": 24,
+        "そ": 25,
+        "え": 27,
+        "め": 16,
+        "ぼ": 18,
+        "わ": 19,
+        "ぬ": 5,
+        "よ": 13,
+        "へ": 14,
+        "け": 27,
+        "ず": 4,
+        "せ": 36,
+        "ざ": 6,
+        "ぎ": 7,
+        "げ": 5,
+        "ぽ": 9,
+        "で": 14,
+        "ぺ": 6,
+        "ぴ": 15,
+        "ぷ": 9,
+        "や": 26,
+        "べ": 9,
+        "ぞ": 2,
+        "ぐ": 9,
+        "ぜ": 1
+      },
+      "distinctWordTails": {
+        "ご": 19,
+        "の": 16,
+        "ぺ": 2,
+        "つ": 44,
+        "な": 31,
+        "き": 118,
+        "す": 67,
+        "ぽ": 7,
+        "り": 105,
+        "ん": 204,
+        "こ": 46,
+        "ね": 24,
+        "ま": 51,
+        "お": 14,
+        "ぷ": 38,
+        "め": 30,
+        "か": 32,
+        "み": 45,
+        "し": 88,
+        "ら": 52,
+        "ち": 59,
+        "や": 56,
+        "ぼ": 6,
+        "ぐ": 27,
+        "る": 104,
+        "ぎ": 15,
+        "び": 27,
+        "じ": 23,
+        "い": 70,
+        "ひ": 2,
+        "げ": 11,
+        "え": 18,
+        "さ": 7,
+        "く": 81,
+        "う": 111,
+        "ぱ": 11,
+        "と": 90,
+        "ず": 12,
+        "わ": 23,
+        "ぶ": 20,
+        "だ": 15,
+        "も": 22,
+        "け": 29,
+        "ど": 23,
+        "ろ": 23,
+        "ぬ": 2,
+        "あ": 10,
+        "に": 9,
+        "た": 41,
+        "ば": 21,
+        "ほ": 2,
+        "せ": 3,
+        "は": 1,
+        "む": 19,
+        "で": 8,
+        "て": 11,
+        "れ": 15,
+        "ざ": 4,
+        "が": 10,
+        "よ": 11,
+        "そ": 5,
+        "ふ": 8,
+        "べ": 5,
+        "ゆ": 14,
+        "ぞ": 1,
+        "ぜ": 2
+      },
+      "frequent": [
+        [
+          "あし",
+          43
+        ],
+        [
+          "は",
+          42
+        ],
+        [
+          "かわ",
+          35
+        ],
+        [
+          "はな",
+          34
+        ],
+        [
+          "しっぽ",
+          33
+        ],
+        [
+          "あな",
+          31
+        ],
+        [
+          "はね",
+          24
+        ],
+        [
+          "とって",
+          22
+        ],
+        [
+          "かみ",
+          21
+        ],
+        [
+          "ぼう",
+          21
+        ],
+        [
+          "ひも",
+          20
+        ],
+        [
+          "て",
+          20
+        ],
+        [
+          "もちて",
+          19
+        ],
+        [
+          "たね",
+          18
+        ],
+        [
+          "はり",
+          18
+        ],
+        [
+          "みず",
+          18
+        ],
+        [
+          "ふた",
+          18
+        ],
+        [
+          "くだもの",
+          16
+        ],
+        [
+          "とり",
+          16
+        ],
+        [
+          "ひれ",
+          16
+        ]
+      ],
+      "singleReadingPanels": 8
+    },
+    "after": {
+      "panels": 1024,
+      "readingRecords": 3122,
+      "distinctWords": 2275,
+      "kinds": {
+        "basic": 1024,
+        "category": 100,
+        "wordplay": 215,
+        "synonym": 559,
+        "part": 1051,
+        "action": 131,
+        "scene": 42
+      },
+      "distinctWordHeads": {
+        "り": 20,
+        "く": 58,
+        "ほ": 42,
+        "あ": 81,
+        "ば": 39,
+        "お": 86,
+        "み": 32,
+        "し": 102,
+        "ど": 30,
+        "も": 30,
+        "ひ": 30,
+        "は": 86,
+        "た": 66,
+        "ち": 44,
+        "す": 89,
+        "か": 148,
+        "こ": 79,
+        "さ": 52,
+        "ふ": 65,
+        "い": 45,
+        "れ": 24,
+        "き": 62,
+        "う": 57,
+        "つ": 38,
+        "な": 30,
+        "ら": 28,
+        "ゆ": 26,
+        "ね": 24,
+        "じ": 36,
+        "ま": 64,
+        "ろ": 16,
+        "と": 60,
+        "ご": 18,
+        "む": 11,
+        "が": 20,
+        "ぱ": 34,
+        "る": 3,
+        "び": 14,
+        "ぶ": 22,
+        "ぴ": 18,
+        "だ": 29,
+        "え": 31,
+        "め": 18,
+        "ぼ": 17,
+        "わ": 16,
+        "ぬ": 6,
+        "て": 45,
+        "よ": 18,
+        "に": 22,
+        "へ": 12,
+        "け": 31,
+        "ず": 3,
+        "ぐ": 14,
+        "ざ": 5,
+        "ぎ": 8,
+        "げ": 5,
+        "の": 12,
+        "そ": 23,
+        "で": 19,
+        "ぺ": 9,
+        "ぷ": 12,
+        "せ": 40,
+        "や": 27,
+        "べ": 11,
+        "ぽ": 9,
+        "ぞ": 2,
+        "ぜ": 2
+      },
+      "distinctWordTails": {
+        "ご": 23,
+        "の": 20,
+        "ぺ": 2,
+        "る": 123,
+        "な": 30,
+        "つ": 49,
+        "き": 128,
+        "す": 80,
+        "ぽ": 5,
+        "り": 106,
+        "こ": 52,
+        "ね": 27,
+        "ま": 49,
+        "ぷ": 45,
+        "め": 26,
+        "か": 33,
+        "し": 95,
+        "ら": 53,
+        "ち": 50,
+        "ぼ": 6,
+        "ぐ": 35,
+        "ん": 228,
+        "ぎ": 17,
+        "み": 47,
+        "と": 95,
+        "び": 25,
+        "い": 79,
+        "ひ": 2,
+        "げ": 12,
+        "や": 60,
+        "さ": 7,
+        "く": 86,
+        "お": 12,
+        "う": 125,
+        "ぱ": 12,
+        "わ": 23,
+        "ぶ": 17,
+        "ろ": 31,
+        "だ": 15,
+        "も": 19,
+        "ず": 13,
+        "ど": 30,
+        "ぬ": 2,
+        "あ": 11,
+        "に": 10,
+        "た": 41,
+        "け": 32,
+        "ば": 24,
+        "ほ": 2,
+        "せ": 3,
+        "は": 1,
+        "む": 19,
+        "で": 6,
+        "て": 9,
+        "え": 22,
+        "じ": 22,
+        "れ": 14,
+        "ざ": 3,
+        "が": 11,
+        "べ": 5,
+        "ふ": 11,
+        "よ": 11,
+        "そ": 4,
+        "ゆ": 17,
+        "ぞ": 1,
+        "ぜ": 2
+      },
+      "frequent": [
+        [
+          "はな",
+          28
+        ],
+        [
+          "はり",
+          18
+        ],
+        [
+          "しっぽ",
+          17
+        ],
+        [
+          "くだもの",
+          16
+        ],
+        [
+          "とり",
+          16
+        ],
+        [
+          "は",
+          15
+        ],
+        [
+          "ちょうりきぐ",
+          15
+        ],
+        [
+          "たね",
+          13
+        ],
+        [
+          "つの",
+          11
+        ],
+        [
+          "はね",
+          11
+        ],
+        [
+          "げん",
+          10
+        ],
+        [
+          "はさみ",
+          9
+        ],
+        [
+          "かわ",
+          9
+        ],
+        [
+          "しょっき",
+          9
+        ],
+        [
+          "さかな",
+          8
+        ],
+        [
+          "あみ",
+          8
+        ],
+        [
+          "から",
+          8
+        ],
+        [
+          "きる",
+          7
+        ],
+        [
+          "がっき",
+          7
+        ],
+        [
+          "しま",
+          7
+        ]
+      ],
+      "singleReadingPanels": 30
+    }
+  },
+  "tests": {
+    "unitPassed": 142,
+    "uiUniqueCases": 249,
+    "uiPassed": 249,
+    "pwaPassed": 9,
+    "initialFinalSuite": {
+      "passed": 248,
+      "failed": 1
+    },
+    "targetedRecheck": {
+      "cases": 3,
+      "passed": 3,
+      "reason": "Storage-unavailable test used a 5-second input wait although the CPU opening search plus answer reveal can exceed that. Failure screenshot showed normal NICE answer reveal. Test now waits for the complete opening; all three browsers rechecked on the same runtime."
+    },
+    "browserErrors": 0,
+    "simulatedGames": 450,
+    "generatedBoards": 1500,
+    "rescueCostCalls": 400,
+    "fallbackFront": 192,
+    "fallbackLegacy": 192
+  },
+  "comparison": {
+    "before": {
+      "games": 450,
+      "meanMoves": 35.135555555555555,
+      "meanRescues": 10.882222222222222
+    },
+    "after": {
+      "games": 450,
+      "meanMoves": 34.888888888888886,
+      "meanRescues": 10.893333333333333
+    },
+    "byMode": [
+      {
+        "mode": "standard",
+        "before": {
+          "games": 90,
+          "meanMoves": 23.988888888888887,
+          "meanRescues": 5.433333333333334
+        },
+        "after": {
+          "games": 90,
+          "meanMoves": 23.88888888888889,
+          "meanRescues": 5.188888888888889
+        }
+      },
+      {
+        "mode": "practice",
+        "before": {
+          "games": 90,
+          "meanMoves": 23.966666666666665,
+          "meanRescues": 5.311111111111111
+        },
+        "after": {
+          "games": 90,
+          "meanMoves": 23.955555555555556,
+          "meanRescues": 5.4222222222222225
+        }
+      },
+      {
+        "mode": "refill",
+        "before": {
+          "games": 90,
+          "meanMoves": 51.86666666666667,
+          "meanRescues": 19.08888888888889
+        },
+        "after": {
+          "games": 90,
+          "meanMoves": 51.21111111111111,
+          "meanRescues": 19.11111111111111
+        }
+      },
+      {
+        "mode": "refillPractice",
+        "before": {
+          "games": 90,
+          "meanMoves": 51.87777777777778,
+          "meanRescues": 19.11111111111111
+        },
+        "after": {
+          "games": 90,
+          "meanMoves": 51.51111111111111,
+          "meanRescues": 19.566666666666666
+        }
+      },
+      {
+        "mode": "accessible",
+        "before": {
+          "games": 90,
+          "meanMoves": 23.977777777777778,
+          "meanRescues": 5.466666666666667
+        },
+        "after": {
+          "games": 90,
+          "meanMoves": 23.877777777777776,
+          "meanRescues": 5.177777777777778
+        }
+      }
+    ],
+    "diversity": [
+      {
+        "name": "fresh-normal",
+        "beforeUnique": 969,
+        "afterUnique": 963,
+        "beforeTop10": 0.05527777777777778,
+        "afterTop10": 0.05402777777777778,
+        "reserveUnique": 1023
+      },
+      {
+        "name": "continuous-normal",
+        "beforeUnique": 1002,
+        "afterUnique": 1000,
+        "beforeTop10": 0.05444444444444444,
+        "afterTop10": 0.05513888888888889,
+        "reserveUnique": 1024
+      },
+      {
+        "name": "fresh-easy",
+        "beforeUnique": 971,
+        "afterUnique": 961,
+        "beforeTop10": 0.05708333333333333,
+        "afterTop10": 0.059305555555555556,
+        "reserveUnique": 1021
+      },
+      {
+        "name": "fresh-hard",
+        "beforeUnique": 969,
+        "afterUnique": 963,
+        "beforeTop10": 0.05527777777777778,
+        "afterTop10": 0.05388888888888889,
+        "reserveUnique": 1024
+      },
+      {
+        "name": "all-discovered-normal",
+        "beforeUnique": 969,
+        "afterUnique": 965,
+        "beforeTop10": 0.055,
+        "afterTop10": 0.05388888888888889,
+        "reserveUnique": 1023
+      }
+    ]
+  },
+  "lan": {
+    "url": "http://192.168.0.111:4173/",
+    "filesChecked": 37,
+    "errors": []
+  },
+  "rescueCost": {
+    "calls": 400,
+    "liveSlots": 24,
+    "discoveryCases": [
+      "none",
+      "all"
+    ],
+    "meanMs": 4.665546152499998,
+    "p95Ms": 10.776395999999977,
+    "maxMs": 16.433331000000067,
+    "method": "Current live board, all restart letters, at most one extra legal-move ply for each of <=24 basic answers; no retained state tree. Timings under concurrent browser test load."
+  },
+  "limits": [
+    "AI editorial review, not human fun/vocabulary ratings.",
+    "Finite 300-board scenarios do not prove uniform exposure. Hidden reserve coverage is not necessarily played coverage.",
+    "Generation timing samples were collected under concurrent UI load and are not an isolated before/after speed benchmark.",
+    "No new physical mobile/iOS or speaker listening test; desktop Chromium/Firefox/WebKit and responsive viewports tested.",
+    "Removed readings do not award replacement discoveries. Old rounds that used removed readings return to title with records and valid discoveries preserved.",
+    "Earlier release ZIPs were not regenerated for this source/LAN update."
+  ],
+  "evidence": {
+    "editorialAudit": "1c231e3f52770d2ca11a5e8e20c40a34e83889e5b22031ba2d530f9b850ae950",
+    "decisions": "86855990a3fff711a1e836da6008260cd7e81a6a2f82722487e0ab770822662f",
+    "policy": "8c9e7e656dd460af5749197545738cc26f8cb0c5f2ee507ef8dddb7496328b44",
+    "ui": "d290c44f27b766f285f38c0810fb5bb714ac31f028417178b7cc7e348060d8b7",
+    "recheck": "b0ddcf265640cf0a01d50978909e6266bab0ff1436c0d31461de2309846028e6",
+    "pwa": "ff40a9d435285eab608c4be1c6c3847f2eb9f2e332c62fd76e73d9f4801a20ec",
+    "simulation": "58020dedb72ed46b49630539071ae86a0c8c1bd3a3930a02143c066ac3f294d0",
+    "diversity": "876a395794ebad32716ec19e3ded8ddc62b924108c34205dcded36eaa1d64d19",
+    "lan": "0083141c73d49c3f4b5a59e75fb0cfa8887dced9ad7d5d072dbe56167044a6a5"
+  },
+  "errors": []
+}

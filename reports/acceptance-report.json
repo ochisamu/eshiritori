@@ -1,0 +1,434 @@
+{
+  "specVersion": "1.0",
+  "specHash": "20dda5540be376e4bc1dd0bac0fc69e8315d6722844fb90e458b9df99f2fa4cd",
+  "overrides": [
+    "24 cards; desktop6x4 /portrait4x6",
+    "Pop pixel-art touch",
+    "256 additional playful readings with explicit explanations",
+    "Difficulty-dependent finite replacement mode",
+    "CPU search presentation and compact image-led interface",
+    "Immediate loss on terminalん, distinct alternative-reading feedback, persistent most-recent panel"
+  ],
+  "overrideEvidence": "spec/decisions.md",
+  "buildHash": "b3dfc2720b34d0dcdb3b3528ccf6258e4073378512273171156b12905f2dfb4e",
+  "contentVersion": "pixel-b9efabddc494",
+  "generatedAt": "2026-10-23T18:39:14.655Z",
+  "status": "complete",
+  "stage": "1024 approved concepts; all AT01–AT16 mandatory gates passed",
+  "counts": {
+    "planned": 1200,
+    "generated": 1024,
+    "technicalPassed": 1024,
+    "semanticPassed": 1024,
+    "approvedUniqueConcepts": 1024,
+    "packaged": 1024,
+    "approvedReadings": 3801,
+    "globallyDistinctNormalizedReadings": 2120,
+    "assetsWith2Readings": 1016,
+    "assetsWith3Readings": 955,
+    "assetsWith4Readings": 744,
+    "assetsWithMultipleEdgeOptions": 1015,
+    "assetsWithSameHeadDifferentSafeTails": 249,
+    "quarantined": 0
+  },
+  "tests": [
+    {
+      "id": "AT01",
+      "result": "pass",
+      "commandOrProcedure": "npm run audit",
+      "startedAt": "2026-10-23T18:22:46.078Z",
+      "duration": 1471.2704400000002,
+      "sampleSize": 1024,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/content-audit.json",
+        "content/assets.manifest.json"
+      ],
+      "failureCount": 0,
+      "notes": "Every approved source and packaged image hash checked. Four responsive sizes are one concept, not four."
+    },
+    {
+      "id": "AT02",
+      "result": "pass",
+      "commandOrProcedure": "Full candidate/family review + DCT near-pair visual review",
+      "startedAt": "2026-10-23T18:22:48.480Z",
+      "duration": 764.1502360000013,
+      "sampleSize": {
+        "candidates": 1200,
+        "selected": 1024,
+        "nearPairs": 60
+      },
+      "seedRange": null,
+      "evidencePath": [
+        "reports/editorial-audit.json",
+        "reports/visual-audit/review.json",
+        "content/semantic-reviews.jsonl"
+      ],
+      "failureCount": 0,
+      "notes": "AI editorial review, explicit family caps and full high-frequency inventories. Nearest pairs actually opened; no colour/pose-only duplicate inflation found."
+    },
+    {
+      "id": "AT03",
+      "result": "pass",
+      "commandOrProcedure": "npm run audit + hash-bound per-reading semantic decisions",
+      "startedAt": "2026-10-23T18:22:46.078Z",
+      "duration": 1471.2704400000002,
+      "sampleSize": 3801,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/content-audit.json",
+        "content/semantic-reviews.jsonl"
+      ],
+      "failureCount": 0,
+      "notes": "Includes256 original playful associative readings added after the user revision. Counts and optional5,000-word gap are computed in counts/optionalTargets. Per-asset aliases are excluded."
+    },
+    {
+      "id": "AT04",
+      "result": "pass",
+      "commandOrProcedure": "Actually opened all contacts, detailed-reading sources, random200, every remaining basic-only detail, and responsive-size sheets",
+      "startedAt": "2026-10-23T14:32:53.308Z",
+      "duration": "Not separately aggregated; timestamped review decisions retained",
+      "sampleSize": {
+        "allArt": 1024,
+        "mandatoryDetailed": 940,
+        "remainingCensus": 84,
+        "additionalRandom": 200
+      },
+      "seedRange": null,
+      "evidencePath": [
+        "content/review.json",
+        "reports/visual-audit/review.json",
+        "reports/remaining-review/review.json",
+        "reports/thumbnail-review.json",
+        "reports/tiny-review.json",
+        "reports/last-cleanup-variants.png",
+        "reports/playful-review/review.json"
+      ],
+      "failureCount": 0,
+      "notes": "AI review. Only 84 cards remain after the 940 detailed-reading cards; inspected all 84, plus the separate fixed random200 from the full population. Thus every card has detailed review. Detected fragments/clipped parts were fixed and reopened."
+    },
+    {
+      "id": "AT05",
+      "result": "pass",
+      "commandOrProcedure": "npm run test:coverage",
+      "startedAt": "2026-10-23T18:22:11.800Z",
+      "duration": 34074.165029,
+      "sampleSize": 96,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/unit-results.json",
+        "reports/core-coverage.json",
+        "reports/unit-final.txt"
+      ],
+      "failureCount": 0,
+      "notes": "Meaningful normalization, shared rules, reducer, timer, terminal-word, save, replay, and worker cancellation/coalescing assertions. Core branch coverage includes the replacement stack and CPU presentation helpers; exact measured percentage is in core-coverage.json."
+    },
+    {
+      "id": "AT06",
+      "result": "pass",
+      "commandOrProcedure": "node tools/stress-parallel.mjs",
+      "startedAt": "2026-10-23T18:00:28.377Z",
+      "duration": 1008412.838293,
+      "sampleSize": 30000,
+      "seedRange": "acceptance-0…9999 × easy/normal/hard; round=seedIndex%2",
+      "evidencePath": [
+        "reports/stress-results.json",
+        "reports/stress-shards"
+      ],
+      "failureCount": 0,
+      "notes": "Independent cases use the unchanged bounded generator and its real CPU-policy winning proof. Eight OS processes are used; they are not simulated visual play. Per-shard seed intervals retained."
+    },
+    {
+      "id": "AT07",
+      "result": "pass",
+      "commandOrProcedure": "10 independently seeded reducer/CPU round simulations",
+      "startedAt": "2026-10-23T18:00:28.377Z",
+      "duration": 1611547.117172,
+      "sampleSize": 10000,
+      "seedRange": "stress-0…9, each1000 rounds; difficulty rotates easy/normal/hard",
+      "evidencePath": [
+        "reports/stress-results.json",
+        "reports/stress-shards"
+      ],
+      "failureCount": 0,
+      "notes": "Summed per-simulation wall time may overlap under concurrency. Checks legal moves, duplicate delivery, negative time, bounded move/history storage, a displayed-result state, repeats and fallback counts."
+    },
+    {
+      "id": "AT08",
+      "result": "pass",
+      "commandOrProcedure": "npx tsx tools/determinism-audit.ts",
+      "startedAt": "2026-10-23T18:22:49.122Z",
+      "duration": 24338,
+      "sampleSize": 270,
+      "seedRange": "determinism-final-0…29 ×3 difficulties ×3 executions",
+      "evidencePath": [
+        "reports/determinism-results.json",
+        "tests/unit/replay.test.ts"
+      ],
+      "failureCount": 0,
+      "notes": "90 cases each replayed twice with identical clock/input/state, plus motion setting changed. Full saved-state equality, board hashes, CPU choices and results asserted."
+    },
+    {
+      "id": "AT09",
+      "result": "pass",
+      "commandOrProcedure": "Shared-rule CPU validation, bounded/cancelled unit cases, matched CPU comparison and full stress",
+      "startedAt": "2026-10-23T18:23:14.303Z",
+      "duration": 7151,
+      "sampleSize": {
+        "matchedRounds": 300,
+        "stressCpuOutputs": 30319
+      },
+      "seedRange": "cpu-compare-0…99; same board and opponent RNG across levels",
+      "evidencePath": [
+        "reports/cpu-comparison.json",
+        "reports/stress-results.json",
+        "tests/unit/cpu-budget.test.ts"
+      ],
+      "failureCount": 0,
+      "notes": "Matched100 boards vs the same seeded uniform random executable-move opponent. See cpu-comparison.json for current matched CPU win counts; these are not measured human win rates."
+    },
+    {
+      "id": "AT10",
+      "result": "pass",
+      "commandOrProcedure": "Title→answers→discovery→explicit known→kana→hint→win/loss→next→save/resume→catalog, practice and portable replay",
+      "startedAt": "2026-10-23T18:00:28.796Z",
+      "duration": 317556.196,
+      "sampleSize": 69,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/e2e-final.json",
+        "reports/browser-events.jsonl",
+        "tests/e2e"
+      ],
+      "failureCount": 0,
+      "notes": "All69 cases passed across Chromium, Firefox and WebKit. Shared full-suite duration shown. Physical iOS Safari and physical virtual keyboard remain untested; Linux WebKit and viewport-shrink proxy are explicitly distinguished."
+    },
+    {
+      "id": "AT11",
+      "result": "pass",
+      "commandOrProcedure": "Four viewports, touch targets, keyboard-only, IME composition, kana pad, reduced viewport and rotation",
+      "startedAt": "2026-10-23T18:00:28.796Z",
+      "duration": 317556.196,
+      "sampleSize": 69,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/e2e-final.json",
+        "reports/browser-events.jsonl",
+        "tests/e2e"
+      ],
+      "failureCount": 0,
+      "notes": "All69 cases passed across Chromium, Firefox and WebKit. Shared full-suite duration shown. Physical iOS Safari and physical virtual keyboard remain untested; Linux WebKit and viewport-shrink proxy are explicitly distinguished."
+    },
+    {
+      "id": "AT12",
+      "result": "pass",
+      "commandOrProcedure": "Reload, CPU turn restoration, corrupt/interrupted writes, migration, unavailable storage and duplicate delivery",
+      "startedAt": "2026-10-23T18:00:28.796Z",
+      "duration": 317556.196,
+      "sampleSize": 69,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/e2e-final.json",
+        "reports/browser-events.jsonl",
+        "tests/e2e"
+      ],
+      "failureCount": 0,
+      "notes": "All69 cases passed across Chromium, Firefox and WebKit. Shared full-suite duration shown. Physical iOS Safari and physical virtual keyboard remain untested; Linux WebKit and viewport-shrink proxy are explicitly distinguished."
+    },
+    {
+      "id": "AT13",
+      "result": "pass",
+      "commandOrProcedure": "External traffic blocked; initial play, next round, catalog, decode every approved4096 image file",
+      "startedAt": "2026-10-23T18:00:28.796Z",
+      "duration": 317556.196,
+      "sampleSize": 69,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/e2e-final.json",
+        "reports/browser-events.jsonl",
+        "tests/e2e"
+      ],
+      "failureCount": 0,
+      "notes": "All69 cases passed across Chromium, Firefox and WebKit. Shared full-suite duration shown. Physical iOS Safari and physical virtual keyboard remain untested; Linux WebKit and viewport-shrink proxy are explicitly distinguished."
+    },
+    {
+      "id": "AT14",
+      "result": "pass",
+      "commandOrProcedure": "Chromium4x CPU,4Mbps/150ms; actual event-to-paint timings;520 UI rounds including20 warmup",
+      "startedAt": "2026-10-23T17:56:24.232Z",
+      "duration": 243680.807,
+      "sampleSize": {
+        "cold": 5,
+        "warm": 20,
+        "latency": 19,
+        "measuredRounds": 500
+      },
+      "seedRange": null,
+      "evidencePath": [
+        "reports/e2e-performance-release.json",
+        "reports/performance-results.json",
+        "reports/input-latency-results.json",
+        "reports/resource-results.json",
+        "reports/browser-events.jsonl"
+      ],
+      "failureCount": 0,
+      "notes": "Warm timing is captured in the browser from a trusted Next click to the rendering frame after decoded images/loader removal; raw harness/assertion overhead is retained separately. No scripted prewarming/dwell. Intentional fault logs are a separate bucket."
+    },
+    {
+      "id": "AT15",
+      "result": "pass",
+      "commandOrProcedure": "Real local restart helpers with disposable interruption stubs, actual cache replay, extracted-runtime and extracted-source build verification",
+      "startedAt": "2026-10-23T18:23:21.959220+00:00",
+      "duration": 9999,
+      "sampleSize": {
+        "cacheFiles": 4099,
+        "packagedConcepts": 1024
+      },
+      "seedRange": null,
+      "evidencePath": [
+        "reports/restart-results.json",
+        "reports/package-verification.json",
+        "content/generation-events.jsonl",
+        "content/jobs.jsonl"
+      ],
+      "failureCount": 0,
+      "notes": "Zero generation requests in restart test. Existing native output is idempotent and protected. Provider-side interruption/charging cannot be forced; that limit is explicit. QA remains bound to exact pixels and reading signatures."
+    },
+    {
+      "id": "AT16",
+      "result": "pass",
+      "commandOrProcedure": "Actual CUA visual operation and image/reading assessment; implementation breaks excluded",
+      "startedAt": "2026-10-23T17:56:50.041Z",
+      "duration": 1931692,
+      "sampleSize": 1931.692,
+      "seedRange": null,
+      "evidencePath": [
+        "reports/visual-play/review.json",
+        "reports/visual-play"
+      ],
+      "failureCount": 0,
+      "notes": "Reviewer is AI. Only segments on the final runtime count; earlier diagnosis segment is retained separately. Background stress simulation never counts as visual play. Human user play is optional."
+    }
+  ],
+  "environment": {
+    "platform": "linux",
+    "node": "v22.16.0",
+    "browsers": "Chromium137.0.7151.119, Firefox157, WebKit27.2 through Playwright1.64.1",
+    "server": "dependency-free local Node HTTP server; no external assets/API keys",
+    "unavailableTests": [
+      "physical iOS Safari",
+      "physical virtual keyboard"
+    ],
+    "imageGeneration": {
+      "tool": "built-in image_gen.imagegen",
+      "model": "unknown",
+      "providerSeed": "unknown",
+      "cost": "not returned",
+      "observedAtlasDimensions": "1254×1254",
+      "detailPolicy": "512px nearest-neighbour output; individual native crop sizes are recorded, not claimed all native512"
+    }
+  },
+  "reviewCoverage": {
+    "reviewerType": "AI",
+    "totalCount": 1024,
+    "unreviewedCount": 0,
+    "detailedCount": 1024,
+    "additionalRandomCount": 200,
+    "method": "All source/contact sheets plus detailed high-risk/action/scene/part/wordplay review, remaining84 census, fixed random200 extra review, and all96/128px sheets. Independent post-generation verification stage; not provider self-scoring or human review.",
+    "evidence": [
+      "content/review.json",
+      "content/semantic-reviews.jsonl",
+      "reports/visual-audit/review.json",
+      "reports/remaining-review/review.json",
+      "reports/thumbnail-review.json",
+      "reports/tiny-review.json",
+      "reports/playful-review/review.json"
+    ],
+    "disagreementHandling": "Removed unjustified readings, regenerated ambiguous concepts, restored missing visible parts, removed neighbouring fragments, and reopened corrected files."
+  },
+  "performance": {
+    "result": "pass",
+    "assetBytes": 113819388,
+    "cold": [
+      3089.583261,
+      2935.1558239999995,
+      2966.735121999999,
+      3037.377280999999,
+      2994.432225999999
+    ],
+    "warm": [
+      185.69999992847443,
+      116.5,
+      481.2000000476837,
+      139.5,
+      459.7999999523163,
+      115,
+      369.39999997615814,
+      114.30000007152557,
+      489.09999990463257,
+      131.69999992847443,
+      398.39999997615814,
+      174.89999997615814,
+      210.5,
+      166.79999995231628,
+      653.5,
+      117,
+      318,
+      133.80000007152557,
+      334.89999997615814,
+      136.89999997615814
+    ],
+    "coldPasses": 5,
+    "warmPasses": 20,
+    "initialTransfer": 817598,
+    "inputP95": 30.200000047683716,
+    "heapDelta": 10564620,
+    "resources": {
+      "round": 520,
+      "heap": 21272272,
+      "deltaFromWarmup": 10564620,
+      "eventListeners": {
+        "counts": {
+          "window": 14,
+          "document": 2,
+          "document.getElementById(\"root\")": 143
+        },
+        "total": 159
+      },
+      "workers": {
+        "active": 1,
+        "maximum": 1,
+        "created": 1,
+        "terminated": 0
+      },
+      "images": 25
+    }
+  },
+  "optionalTargets": {
+    "readingTarget": 5000,
+    "actual": 3801,
+    "gap": 1199
+  },
+  "limitations": [
+    "AI semantic/art review and visual play; no claim of independent human vocabulary/likability measurement.",
+    "Physical iOS Safari/physical keyboard overlays were not available; Linux WebKit and reduced viewport proxy were actually tested.",
+    "Native source cells are generally below512px. Detailed512px pixel art is explicitly nearest-neighbour enlargement.",
+    "Original Wagyan uses target points; this original game follows the attachment’s alternating CPU/card-consumption rules."
+  ],
+  "knownIssues": [],
+  "blockers": [],
+  "nextActions": [],
+  "artifactPaths": {
+    "playZip": "artifacts/eshiritori-play.zip",
+    "sourceZip": "artifacts/eshiritori-source.zip",
+    "source": "src",
+    "dist": "dist",
+    "manifest": "content/assets.manifest.json",
+    "dictionary": "src/generated/content.json",
+    "originals": "content/originals",
+    "jobs": "content/jobs.jsonl",
+    "readme": "README.md",
+    "verificationSummary": "reports/verification-summary.md",
+    "archiveHashes": "reports/package-results.json"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-29T22:25:44.490Z",
+  "buildHash": "4c93822a3c3734307370439b740b3ba54569b91071cbee3eea24da5768fc1a70",
+  "contentVersion": "pixel-446fe6d0774d",
+  "cpuVersion": "cpu-v4-front-first",
+  "generatorVersion": "graph-path-v5-front-backbone",
+  "fallbackTableSha256": "4185a35b5bea8833822d449f074423d41569d4692ab6a439f09438e436988603",
+  "unit": {
+    "passed": 122,
+    "files": 12
+  },
+  "ui": {
+    "screenshots": [
+      "reports/front-reading/cpu-front-chromium.png",
+      "reports/front-reading/cpu-front-firefox.png",
+      "reports/front-reading/cpu-front-webkit.png"
+    ],
+    "passed": 144,
+    "byProject": {
+      "chromium": 48,
+      "firefox": 48,
+      "webkit": 48
+    }
+  },
+  "comparison": {
+    "before": {
+      "meanTurns": 13.883333333333335,
+      "shortGames": 11,
+      "cases": 300
+    },
+    "after": {
+      "meanTurns": 15.146666666666667,
+      "shortGames": 6,
+      "cases": 300
+    }
+  },
+  "scale": {
+    "boards": 3000,
+    "matches": 12000,
+    "uniqueAssets": 1024,
+    "uniqueConfigurationsAcrossDifficulties": 2774,
+    "failures": 0,
+    "priorityViolations": 0,
+    "maxGenerationStates": 8225,
+    "generationP95Ms": 46.878937000000406
+  },
+  "compatibility": {
+    "verifiedBoards": 192,
+    "decisions": 7680,
+    "policy": "cpu-v3-long-play",
+    "differences": 0
+  },
+  "lan": {
+    "url": "http://192.168.0.111:4173/",
+    "entry": "assets/index-Cm7j9uWq.js",
+    "status": 200,
+    "restarted": false
+  },
+  "sources": [
+    "reports/front-reading/before.json",
+    "reports/front-reading/after.json",
+    "reports/front-reading/scale.json",
+    "reports/front-reading/dictionary-graph.json",
+    "reports/front-reading/compatibility.json",
+    "reports/front-reading/unit.log",
+    "reports/front-reading/e2e.json",
+    "reports/front-reading/browser-events.jsonl"
+  ],
+  "limitations": [
+    "Results describe simulated legal choices, not human play duration. Some choices can still end early.",
+    "The same seed is deliberately compared across difficulties; combined unique configuration counts include cross-difficulty duplicates.",
+    "Earlier input, cold/warm and 500-round resource measurements remain bound to their previous runtime and were not rerun for this algorithm increment.",
+    "Physical iOS Safari and speaker audition were not performed. Initial release ZIPs remain unchanged.",
+    "Ongoing saved games retain their original CPU policy; new sessions use the new policy."
+  ]
+}

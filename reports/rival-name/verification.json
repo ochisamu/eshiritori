@@ -1,0 +1,19 @@
+{
+  "scope": "Hide opponent character names; retain appearance variants and mood accessibility",
+  "buildHash": "acced4528fee4cd438a50d20af5b93305944c21b4925a15d3628703cd161ac1d",
+  "contentVersion": "pixel-446fe6d0774d",
+  "build": "passed (TypeScript + Vite)",
+  "ui": {
+    "test": "focus-mode.spec.ts",
+    "project": "chromium",
+    "passed": 1
+  },
+  "lan": {
+    "url": "http://192.168.0.111:4173/",
+    "entry": "assets/index-Co9flf4A.js",
+    "status": 200
+  },
+  "limitations": [
+    "Full prior regression suite was not rerun for this display-only change."
+  ]
+}

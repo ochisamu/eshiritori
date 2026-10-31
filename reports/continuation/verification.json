@@ -1,0 +1,208 @@
+{
+  "at": "2026-10-29T15:30:51.349Z",
+  "status": "passed",
+  "buildHash": "097461fcc12281297e6ff39a96d28fcd0448874652b833a49ceeabfec6edd879",
+  "contentVersion": "pixel-446fe6d0774d",
+  "simulation": {
+    "conditionsPerVersion": 900,
+    "gamesPerVersion": 1800,
+    "normal": {
+      "before": {
+        "games": 300,
+        "meanTurns": 6.553333333333334,
+        "medianTurns": 6,
+        "endedWithin4": 108,
+        "endedWithin6": 152,
+        "maxStates": 26
+      },
+      "after": {
+        "games": 300,
+        "meanTurns": 14.46,
+        "medianTurns": 15,
+        "endedWithin4": 8,
+        "endedWithin6": 16,
+        "maxStates": 199
+      }
+    },
+    "player": "Seeded common/basic-or-synonym random legal moves, falling back to other legal moves. Both actors combined turns. No terminal mistakes/timeouts; not human-play evidence.",
+    "varietyByDifficulty": {
+      "easy": {
+        "boards": 300,
+        "uniqueBoards": 300,
+        "uniquePictures": 887
+      },
+      "normal": {
+        "boards": 300,
+        "uniqueBoards": 300,
+        "uniquePictures": 881
+      },
+      "hard": {
+        "boards": 300,
+        "uniqueBoards": 300,
+        "uniquePictures": 881
+      }
+    },
+    "variety": {
+      "uniquePictures": 929,
+      "totalPictures": 1024,
+      "uniqueOrderedBoards": 423
+    }
+  },
+  "bounds": {
+    "generationStates": 20000,
+    "cpuStates": {
+      "easy": 192,
+      "normal": 384,
+      "hard": 768
+    },
+    "lookaheadPlies": {
+      "easy": 4,
+      "normal": 6,
+      "hard": 8
+    },
+    "boardQuality": "8 walks of at most 16 turns; no full game-state graph"
+  },
+  "timings": {
+    "generationMs": {
+      "p50": 11.043725999999879,
+      "p95": 31.4362459999993,
+      "max": 89.28242299999965
+    },
+    "cpuMs": {
+      "calls": 10897,
+      "p50": 0.04977099999996426,
+      "p95": 0.2724899999993795,
+      "max": 1.0689370000000054
+    },
+    "fullDiscovery": {
+      "calls": 450,
+      "p95Ms": 0.8283029999993232,
+      "maxMs": 1.2632979999998497,
+      "maxStates": 225
+    },
+    "scaleRows": [
+      {
+        "pictures": 1024,
+        "readingEdges": 3801,
+        "indexMs": 7.944334999999995,
+        "indexHeapBytes": 3515128,
+        "fullDiscoveryCpu": {
+          "discovered": 3801,
+          "samples": 30,
+          "p95Ms": 0.8228399999999851,
+          "maxMs": 1.0152499999999804,
+          "maxStates": 67
+        },
+        "generation": {
+          "samples": 5,
+          "p95Ms": 33.380048999999985,
+          "maxStates": 2504,
+          "failures": []
+        },
+        "cpu": {
+          "samples": 100,
+          "p95Ms": 0.36319800000001123,
+          "maxMs": 0.6847529999999438,
+          "maxStates": 66
+        }
+      },
+      {
+        "pictures": 4096,
+        "readingEdges": 15204,
+        "indexMs": 29.81818199999998,
+        "indexHeapBytes": 7805008,
+        "fullDiscoveryCpu": {
+          "discovered": 15204,
+          "samples": 30,
+          "p95Ms": 1.6997860000000173,
+          "maxMs": 1.9745550000000094,
+          "maxStates": 67
+        },
+        "generation": {
+          "samples": 5,
+          "p95Ms": 96.77305999999999,
+          "maxStates": 2017,
+          "failures": []
+        },
+        "cpu": {
+          "samples": 100,
+          "p95Ms": 0.28162299999996776,
+          "maxMs": 0.7798269999999548,
+          "maxStates": 66
+        }
+      },
+      {
+        "pictures": 8192,
+        "readingEdges": 30408,
+        "indexMs": 47.008181000000036,
+        "indexHeapBytes": 15122984,
+        "fullDiscoveryCpu": {
+          "discovered": 30408,
+          "samples": 30,
+          "p95Ms": 2.7943390000000363,
+          "maxMs": 4.480792000000065,
+          "maxStates": 67
+        },
+        "generation": {
+          "samples": 5,
+          "p95Ms": 220.20663200000013,
+          "maxStates": 1237,
+          "failures": []
+        },
+        "cpu": {
+          "samples": 100,
+          "p95Ms": 0.3869950000000699,
+          "maxMs": 0.7459000000001197,
+          "maxStates": 66
+        }
+      }
+    ]
+  },
+  "verification": {
+    "unitTests": 103,
+    "uiTests": 75,
+    "engines": [
+      "Chromium",
+      "Firefox",
+      "Linux WebKit"
+    ],
+    "performanceTests": 3,
+    "coldMs": {
+      "min": 2801.804927,
+      "max": 2886.731349
+    },
+    "warmMs": {
+      "min": 97.39999985694885,
+      "max": 443.2000000476837
+    },
+    "inputP95Ms": 23.90000009536743,
+    "resource": {
+      "rounds": 520,
+      "warmup": 20,
+      "measuredRounds": 500,
+      "heapIncreaseBytes": 10356916,
+      "workers": 1,
+      "images": 25,
+      "listeners": 159
+    },
+    "legacyCaseRecordsPreserved": 180,
+    "knowledgeCacheCaseRecordsPreserved": 1800,
+    "extremeBranchingChoices": 768
+  },
+  "manual": {
+    "turns": 15,
+    "hints": 0,
+    "mode": "practice",
+    "difficulty": "normal",
+    "result": "player win",
+    "screenshot": "manual-15-turns-final.png",
+    "note": "Actual UI play on v3 before the call-local cache optimization; restored and visually verified on final runtime. Recorded simulation metrics remain identical."
+  },
+  "limitations": [
+    "4096/8192-picture dictionaries are synthetic topology-preserving expansions, not additional reviewed artwork.",
+    "Scale timing samples are PC Node measurements, with five generation samples per size; browser throttling is separate.",
+    "Physical iOS Safari and OS virtual keyboards were not tested.",
+    "Short games remain possible; sampled quality is not an all-path guarantee.",
+    "Prior full-acceptance records and ZIPs remain tied to the initial release, not this incremental runtime."
+  ]
+}

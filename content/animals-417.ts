@@ -1,0 +1,36 @@
+import type {ConceptRow} from './concepts';
+const lines=`horse|うま|茶色い四足の動物に、長いたてがみと尾、足先の硬いひづめがある。|たてがみ:part:首の上にたてがみがあります。;ひづめ:part:足先に硬いひづめがあります。;しっぽ:part:後ろに長い尻尾があります。|single chestnut horse side view with conspicuous dark flowing mane long tail and four clear dark hooves
+sheep|ひつじ|丸い白い巻き毛の体に、黒い顔と短い脚が付いている。|け:part:体を白い毛が覆っています。;ひづめ:part:足先にひづめがあります。|single fluffy white sheep with obvious curly wool black face and four short legs with dark hooves
+goat|やぎ|白い四足の動物の頭に二本の角があり、あごから長い毛が下がる。|つの:part:頭に二本の角があります。;あごひげ:part:あごから長いひげが下がっています。;ひづめ:part:足先がひづめになっています。|single white goat with two swept back horns pronounced chin beard and cloven hooves
+pig|ぶた|桃色の丸い体、前を向く鼻、くるりと巻いた短い尾の動物。|はな:part:顔の前に丸い鼻があります。;しっぽ:part:後ろに巻いた尻尾があります。;ひづめ:part:脚の先に分かれたひづめがあります。|single pink pig with obvious flat round snout two nostrils curly tail and cloven trotters
+deer|しか|茶色い細い脚の動物の頭に、枝分かれした大きな角がある。|つの:part:頭に大きな枝角があります。;えだづの:part:角が枝分かれしています。;ひづめ:part:脚の先にひづめがあります。|single brown deer stag side view with large branching antlers and slender legs with hooves
+wild-boar|いのしし|茶色い剛毛の丸い体に、口から白い牙が突き出した動物。|きば:part:口の横から白い牙が出ています。;はな:part:前に突き出た鼻があります。;たてがみ:part:背中に逆立った毛があります。|single stocky brown wild boar with two pronounced white tusks protruding snout and bristly dorsal mane
+hippopotamus|かば|灰紫の大きな丸い体の動物が、白い大きな歯のある口を開く。|くち:part:大きな口を開けています。;きば:part:口の中に長い牙が見えます。;みみ:part:頭の上に小さな丸い耳があります。|single purple grey hippopotamus with mouth wide open showing four large white tusks and tiny round ears
+rhinoceros|さい|厚い灰色の体の動物で、鼻の上に大きな角がある。|つの:part:鼻の上に大きな角があります。;みみ:part:頭の上に二つの耳があります。|single grey rhinoceros with two clearly different sized nasal horns thick skin folds and small ears
+kangaroo|かんがるー|茶色い動物に、大きな後ろ脚と長い尾、お腹からのぞく小さな顔がある。|ふくろ:part:お腹に子を入れる袋があります。;こども:part:袋から小さな子が顔を出しています。;しっぽ:part:後ろに太く長い尻尾があります。|single brown mother kangaroo with large hind feet thick long tail and small joey visibly peeking from belly pouch
+anteater|ありくい|細長い鼻の動物が、土の塚に赤い舌を伸ばしている。|はな:part:顔が細長い鼻になっています。;した:part:口から長い舌が出ています。;しっぽ:part:後ろに大きく毛深い尻尾があります。|single giant anteater with long thin snout bushy tail black diagonal shoulder stripe and long pink tongue reaching toward small anthill
+sloth|なまけもの|長い腕の茶色い動物が、曲がった爪で枝から逆さに下がる。|つめ:part:手足に長く曲がった爪があります。;えだ:part:上に太い木の枝があります。;ぶらさがる:action:枝からぶら下がっています。|single brown sloth hanging upside down from clear horizontal tree branch with conspicuous curved claws and face mask
+hedgehog|はりねずみ|小さな茶色い動物の背中が、とがった短い針で覆われている。|はり:part:背中にとがった針が並びます。;はな:part:顔の先に小さな黒い鼻があります。|single small brown hedgehog side view with obvious dense short pointed back spines pale face tiny black nose
+mole|もぐら|土の山から小さな動物が顔を出し、左右に大きな手と爪がある。|つめ:part:両手に長い爪があります。;つち:part:周りに土の山があります。;て:part:左右に大きな手が見えます。|single cute dark mole emerging from small brown soil mound with two large pink digging paws long claws and pointed pink nose
+mouse|ねずみ|灰色の小さな動物に、大きな丸い耳と細長い尾、口のひげがある。|みみ:part:頭に大きな丸い耳があります。;ひげ:part:鼻の横から細いひげが伸びています。;しっぽ:part:後ろに細長い尻尾があります。|single small grey mouse with large round pink ears long thin pink tail and conspicuous whiskers
+hamster|はむすたー|金色と白の丸い小動物が、両手で黒いしまの種を抱えている。|たね:part:両手に大きな種を抱えています。;ほお:part:顔の両側の頬が膨らんでいます。;まえば:part:口元に二本の前歯が見えます。|single golden white hamster with bulging cheeks two visible front teeth holding one large striped sunflower seed in paws
+beaver|びーばー|茶色い動物に、平たく広い尾と大きな前歯があり、かじった丸太を抱える。|しっぽ:part:後ろに平たい尻尾があります。;まえば:part:口に大きな前歯があります。;まるた:part:かじり跡のある丸太を抱えています。|single brown beaver with broad flat crosshatched paddle tail two large orange incisors and gnawed short log held in paws
+duck|あひる|白い水鳥に、平たい黄色のくちばしと水かきのある足がある。|くちばし:part:顔に平たい黄色いくちばしがあります。;みずかき:part:足の指の間に水かきがあります。;とり:category:羽のある鳥です。|single white domestic duck with wide flat yellow bill orange webbed feet short neck side view
+goose|がちょう|白い大きな鳥が、長い首を上へ伸ばし、橙色の足で立っている。|くび:part:長い首が上へ伸びています。;みずかき:part:足の指に水かきがあります。;とり:category:羽のある鳥です。|single tall white domestic goose with long upright neck orange wedge bill orange webbed feet distinct from duck
+sparrow|すずめ|小さな茶色い鳥の頬に黒い点、首の周りに白い帯がある。|くちばし:part:顔に短いくちばしがあります。;はね:part:体に茶色い羽があります。;とり:category:羽のある鳥です。|single small Japanese tree sparrow with brown cap black cheek spot white cheek and streaked brown wings perched on short twig
+crow|からす|全身が黒い鳥が、大きなくちばしを横に向けて立つ。|くちばし:part:前に太いくちばしがあります。;つばさ:part:体の横に畳んだ翼があります。;とり:category:羽のある鳥です。|single glossy black crow with stout black beak folded wings and black feet side profile
+pigeon|はと|灰色の鳥の首に緑と紫の光沢があり、赤い足で立っている。|つばさ:part:体の横に翼があります。;くび:part:首に緑と紫の模様があります。;とり:category:羽のある鳥です。|single grey rock pigeon with green purple iridescent neck two dark wing bars and red feet
+owl|ふくろう|丸い茶色い鳥に、大きな二つの目と丸い顔、曲がった爪がある。|め:part:顔に大きな目が二つあります。;つめ:part:枝をつかむ爪があります。;とり:category:羽のある鳥です。|single round brown owl without ear tufts with huge amber eyes round facial disk and hooked talons perched on branch
+eagle|わし|大きな褐色の鳥が、黄色く曲がったくちばしと鋭い爪を見せる。|くちばし:part:黄色いくちばしの先が曲がっています。;つめ:part:足に鋭い爪があります。;つばさ:part:大きな翼が広がっています。|single majestic golden eagle with brown feathered head golden neck feathers huge spread wings curved yellow beak and talons no symbols
+swan|はくちょう|白い水鳥が、長い首をS字に曲げ、青い水面に浮かんでいる。|くび:part:長い首が曲がっています。;みず:part:下に青い水があります。;とり:category:羽のある鳥です。|single white swan floating on small blue water patch with graceful long S curved neck orange bill and lifted white wing
+flamingo|ふらみんご|桃色の鳥が、細長い一本の脚で立ち、首を大きく曲げている。|あし:part:細長い脚で立っています。;くび:part:首が長く曲がっています。;とり:category:羽のある鳥です。|single pink flamingo standing on one long thin leg other leg tucked curved neck bent black tipped bill
+peacock|くじゃく|青い首の鳥の後ろで、緑の大きな羽が扇形に広がる。|おばね:part:後ろに大きな尾羽が広がっています。;めだまもよう:part:羽に目玉のような模様が並んでいます。;とり:category:羽のある鳥です。|single blue peacock with huge fanned green tail feathers conspicuous blue gold eye spots and small crest
+cockatoo|おうむ|白い鳥の頭に黄色い冠のような羽が立ち、曲がったくちばしがある。|かんう:part:頭に黄色い冠羽があります。;くちばし:part:顔に曲がったくちばしがあります。;とり:category:羽のある鳥です。|single white sulphur crested cockatoo with prominent yellow upright crest curved dark bill perched on simple branch
+woodpecker|きつつき|赤い頭と白黒の羽の鳥が、木の幹に足を掛け、くちばしを当てている。|き:part:縦に太い木の幹があります。;くちばし:part:木に細長いくちばしを当てています。;つつく:action:木の幹をつついています。|single black white woodpecker with red crown clinging to vertical tree trunk beak contacting bark with tiny wood chips
+pelican|ぺりかん|白い大きな鳥の長い黄色いくちばしの下に、大きく膨らんだ袋がある。|くちばし:part:顔に長い黄色いくちばしがあります。;ふくろ:part:くちばしの下に大きな袋があります。;とり:category:羽のある鳥です。|single white pelican with huge yellow long bill and visibly distended orange throat pouch webbed feet
+crane|つる|白黒の細身の鳥が、頭の赤い部分と長い首、長い脚を見せる。|くび:part:細長い首があります。;あし:part:細長い脚で立っています。;とり:category:羽のある鳥です。|single red crowned crane with white body black neck markings distinct red crown long thin legs and pointed beak
+swallow|つばめ|青黒い小さな鳥が、先の二つに分かれた尾を広げて飛ぶ。|おばね:part:尾羽が深く二つに分かれています。;つばさ:part:尖った翼が広がっています。;とぶ:action:翼を広げて飛んでいます。|single barn swallow flying with deep forked tail long pointed blue black wings white belly red throat
+kingfisher|かわせみ|鮮やかな青い背中と橙色の胸の鳥が、長いくちばしを横に向けている。|くちばし:part:顔から長い尖ったくちばしが伸びています。;はね:part:背中に青い羽があります。;とり:category:羽のある鳥です。|single common kingfisher with vivid turquoise blue back orange breast oversized long pointed dark beak perched on short branch`;
+const rows=lines.split('\n').map(l=>l.split('|'));
+export const animal417Concepts:ConceptRow[]=rows.map(([k,r,d,e])=>[k,'animal',r,d,e?e.split(';'):[]]);
+export const animal417Prompts=Array.from({length:2},(_,i)=>rows.slice(i*16,i*16+16).map(r=>r[4]).join('; '));

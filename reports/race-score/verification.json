@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "verifiedAt": "2026-10-31T00:22:52.858Z",
+  "buildHash": "bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a",
+  "contentVersion": "pixel-0df1e7d32469",
+  "rulesVersion": "alternating-24-race-score-v6",
+  "sourceHashes": {
+    "src/game/state.ts": "4f79b4db86b9870720fd4c3d36a76b944bfd099492c774a085024ecf461460e3",
+    "src/game/types.ts": "498a8a46ffeac79a94f0c5c3c895a6d601a32a41abd55f50eac2dca77880f8f1",
+    "src/game/scoring.ts": "4d627ddf278e8de90d901f84b8edad7127a390a9fafc020bbae724818d328899",
+    "src/game/cpuPresentation.ts": "dbee54df01c870988d9c5ef5e76e14cf0859a3177365158c70772e66f4b0eaec",
+    "src/game/config.ts": "f997db055d7a1f351d016b4cb2561b2e8003b40f0d91499d87f0c4ad97074903",
+    "src/storage/save.ts": "2d04d6bea1b05df1e0ac1f1d7a6cafaada841c5021db70015c8bc10fb54005ea",
+    "src/App.tsx": "fbae479f9d24693bf552da29a3106aaf5114553b04c4789765a27fd987e9692b",
+    "src/ui/Ranking.tsx": "4804f3bbdfb8c6043745cb0f21c0f4be049b1edccfdf793329fff72e52018ccf",
+    "src/ui/RaceCursor.tsx": "0f0d45fd083cf5c736de335cb8a61a7f60cce168cbf2f0c7aff3d14347b0d59d",
+    "src/style.css": "d919b7a8ef349368b5851481b69b6f6c8350c54a04ddbd4e025ed52f8fff3a9d"
+  },
+  "changes": [
+    "Normal/solo no-move boards count as player clears; active streak is independent of hint/reference record categories",
+    "Race CPU and player earn the same panel/alternate/speed awards; current board points settle no-move and full-board results, with equal scores drawn",
+    "Own cumulative score is separate; CPU claims never inflate player totals; the existing loss/NEXT reset remains",
+    "Untimed practice modes never insert ranks; old untimed records remain saved but excluded from ranking filters and title BEST",
+    "Race cards are quiet during CPU thinking; a pointer approaches only the answer during the final 650ms, remains interruptible by a faster player and is hidden for reduced motion",
+    "Legacy CPU claims recover base/alternate awards only; save/reload preserves current CPU points and streak"
+  ],
+  "unit": {
+    "cases": 167,
+    "passed": 167,
+    "files": 20,
+    "coreBranchPercent": 90.89692101740295,
+    "required": 90,
+    "source": "reports/race-score/unit-results.json"
+  },
+  "ui": {
+    "cases": 321,
+    "passed": 321,
+    "engines": [
+      "Chromium",
+      "Firefox",
+      "WebKit"
+    ],
+    "unexpectedErrors": 0,
+    "source": "reports/race-score/resolved-e2e.json",
+    "rawSuite": "reports/race-score/final-e2e.json",
+    "recheck": "reports/race-score/recheck-e2e.json",
+    "newCases": 45,
+    "note": "New cases include win/loss/draw at 320x568/390x844/844x390, direct approach interruption, practice ranking exclusion and two real consecutive boards with a hint and reload."
+  },
+  "pwa": {
+    "cases": 9,
+    "passed": 9,
+    "source": "reports/race-score/pwa.json"
+  },
+  "simulation": {
+    "cases": 450,
+    "failures": 0,
+    "outcomes": {
+      "turns": {
+        "player": 150,
+        "cpu": 0,
+        "draw": 0
+      },
+      "solo": {
+        "player": 150,
+        "cpu": 0,
+        "draw": 0
+      },
+      "race": {
+        "player": 127,
+        "cpu": 19,
+        "draw": 4
+      }
+    },
+    "groups": [
+      {
+        "opponent": "turns",
+        "cases": 150,
+        "meanMoves": 14.566666666666666,
+        "meanRescues": 0,
+        "maxCpuStates": 112
+      },
+      {
+        "opponent": "solo",
+        "cases": 150,
+        "meanMoves": 13.326666666666666,
+        "meanRescues": 0,
+        "maxCpuStates": 0
+      },
+      {
+        "opponent": "race",
+        "cases": 150,
+        "meanMoves": 14.373333333333333,
+        "meanRescues": 0,
+        "maxCpuStates": 92
+      }
+    ],
+    "dictionarySha256": "52938aec01cb44b5f762b20c07fa9cfaa6b8b56450ed3c04a0cae5898f30ab99",
+    "source": "reports/race-score/simulation.json"
+  },
+  "lan": {
+    "url": "http://192.168.0.111:4173/",
+    "filesChecked": 37,
+    "mismatches": 0,
+    "source": "reports/race-score/lan.json"
+  },
+  "visuals": [
+    "reports/race-score/result-320-chromium.png",
+    "reports/race-score/result-390-chromium.png",
+    "reports/race-score/result-844-chromium.png",
+    "reports/race-score/approach-390-chromium.png",
+    "reports/race-score/approach-844-chromium.png"
+  ],
+  "resolvedDevelopmentChecks": [
+    "Updated previous neutral-end and untimed-rank expectations to the user's revised rules.",
+    "The first smoke test attempted an unnecessary title button after FINISH; corrected the test route, stopped the obsolete waiting run, and verified the final suite.",
+    "The consecutive-board helper originally read the throttled saved loading phase; now advances the test clock and waits for saved playerTurn before continuing.",
+    "The final full suite passed 319/321; two WebKit cursor deadline cases spent real time during screenshots. Freeze the test clock, then six focused cursor cases across all engines pass on the same runtime. These replace the earlier results without increasing unique case count."
+  ],
+  "limitations": [
+    "Browser automation/viewport resizing, not physical phone or tablet testing.",
+    "No speaker audition was performed.",
+    "Rankings remain local to this origin/device.",
+    "Earlier release ZIPs are unchanged; current dist and the running LAN game are updated."
+  ]
+}

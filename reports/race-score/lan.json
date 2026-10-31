@@ -1,0 +1,233 @@
+{
+  "checkedAt": "2026-10-31T00:14:14.039Z",
+  "base": "http://192.168.0.111:4173/",
+  "buildHash": "bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a",
+  "contentVersion": "pixel-0df1e7d32469",
+  "filesChecked": 37,
+  "rows": [
+    {
+      "path": "assets/card-0001-tiny.webp",
+      "status": 200,
+      "bytes": 2828,
+      "sha256": "25663848b64af8aded8c2f2f2cadb55480feed039e0c33f4d37293342d41552b"
+    },
+    {
+      "path": "assets/card-0001-small.webp",
+      "status": 200,
+      "bytes": 4472,
+      "sha256": "d59a1d5709cdd6c09aef0ad15a504f9440481ea32ab5d70d70891a9e9c295a58"
+    },
+    {
+      "path": "assets/card-0001-detail.webp",
+      "status": 200,
+      "bytes": 58484,
+      "sha256": "a7fd5b670db2517c6897dcd77b3ef0117427dcf18df0aa916a00483c0246694b"
+    },
+    {
+      "path": "assets/board.worker-CWVWbXmH.js",
+      "status": 200,
+      "bytes": 2114118,
+      "sha256": "5684eb3cace1ba92e7c1b8403d92b7f1f6300afb4dc14508d34ad24bc6e33913"
+    },
+    {
+      "path": "assets/card-0001.webp",
+      "status": 200,
+      "bytes": 13040,
+      "sha256": "eb0bdff283a9acb3e2f0af06557eb7d394f894ef7b0472fbd2d0748dd8370cc8"
+    },
+    {
+      "path": "assets/card-0055-small.webp",
+      "status": 200,
+      "bytes": 5650,
+      "sha256": "b90a18748eb6324558db0336ea8d3eeb9dd208e4b0cb4f33b1ec6db1372a2172"
+    },
+    {
+      "path": "assets/card-0055-tiny.webp",
+      "status": 200,
+      "bytes": 3584,
+      "sha256": "d9727dacb285844acf2047b7104df961550c00442cf9dd7197dfda66b6ddea39"
+    },
+    {
+      "path": "assets/card-0055-detail.webp",
+      "status": 200,
+      "bytes": 96100,
+      "sha256": "ed724d69202f1ac28269dfee6dc3f1e0e9060f830be124fa950036ddd8085bcb"
+    },
+    {
+      "path": "assets/card-0225-small.webp",
+      "status": 200,
+      "bytes": 5492,
+      "sha256": "ddba201a64e9c2a83326f084343bbf55d672e68e12cd228cc3be91ef122ace37"
+    },
+    {
+      "path": "assets/card-0055.webp",
+      "status": 200,
+      "bytes": 16494,
+      "sha256": "163089311fb85f77135f8bb82b7371bc1e8053afc4b00c142cbe6df9a278bce2"
+    },
+    {
+      "path": "assets/card-0225-detail.webp",
+      "status": 200,
+      "bytes": 91616,
+      "sha256": "d0f1891507ec3bb7303f67093cf52d54cb4115bb2928491beee9657ee135e6e8"
+    },
+    {
+      "path": "assets/card-0225-tiny.webp",
+      "status": 200,
+      "bytes": 3318,
+      "sha256": "bae2592c49f33ec1bc884c0c92a8508e231d725ee40826fe087edf3d16b534da"
+    },
+    {
+      "path": "assets/card-0431-tiny.webp",
+      "status": 200,
+      "bytes": 3302,
+      "sha256": "ae997e28b0b162ed7d83e6431436dfdec477709daba0954d1a65554753b7f3ea"
+    },
+    {
+      "path": "assets/card-0225.webp",
+      "status": 200,
+      "bytes": 16720,
+      "sha256": "4178590dcb7c0999486d6a6a2c01193e81d2edf30f19c1ba08d33335b5466521"
+    },
+    {
+      "path": "assets/card-0431-small.webp",
+      "status": 200,
+      "bytes": 5448,
+      "sha256": "79de47dbf649e7c07d1a53d05e39c00ccbce7ab150b92b92171ea569ea2eee57"
+    },
+    {
+      "path": "assets/card-0431-detail.webp",
+      "status": 200,
+      "bytes": 88170,
+      "sha256": "7b36e6e78627d92750d55d08856d484607e46a412f5e206fb69ed28a9eac9233"
+    },
+    {
+      "path": "assets/card-0431.webp",
+      "status": 200,
+      "bytes": 15694,
+      "sha256": "c14ff9510b416a198da72f76546fb4d4a38d3cea3cf7fa0d99c80c0ae1b0ebf5"
+    },
+    {
+      "path": "assets/card-0705-tiny.webp",
+      "status": 200,
+      "bytes": 2856,
+      "sha256": "3a95b7932cdc4a1ba76a0c4904b4ca797967012d580555265ca39e77b62d2bd8"
+    },
+    {
+      "path": "assets/card-0705-small.webp",
+      "status": 200,
+      "bytes": 4544,
+      "sha256": "df0165bf8ab0167a8f31f7f8955bb1b8011d4546822278f8cdf7e93cb671a4ef"
+    },
+    {
+      "path": "assets/card-0705-detail.webp",
+      "status": 200,
+      "bytes": 88140,
+      "sha256": "1c3eafa084f80e579ad92f035468e6be3c0b25efa0014d8976aba084312f04af"
+    },
+    {
+      "path": "assets/card-1005-tiny.webp",
+      "status": 200,
+      "bytes": 3572,
+      "sha256": "6ad268c04feb6d65ddba7178f8dec82790dbcca4115cd7f83bf038769ec42821"
+    },
+    {
+      "path": "assets/card-1005-small.webp",
+      "status": 200,
+      "bytes": 6190,
+      "sha256": "e0fe1aa770d05b992c5f4d1e878e08af434e9ee751e1b8d0b962737d712b5722"
+    },
+    {
+      "path": "assets/card-0705.webp",
+      "status": 200,
+      "bytes": 14036,
+      "sha256": "32bad7c15e0e5388b82214ec5b09c173b8f67311aadfc09fda4db2e5b6d91a69"
+    },
+    {
+      "path": "assets/card-1005-detail.webp",
+      "status": 200,
+      "bytes": 100248,
+      "sha256": "948c4a40333e21977bef66eb751964f63cc52f7e431d0b5fe733272a9a413396"
+    },
+    {
+      "path": "assets/card-1024-small.webp",
+      "status": 200,
+      "bytes": 5080,
+      "sha256": "ec168b1ac206ec93108759bebf79369031e51160ba9ff0d582f99c02d4eb0ae2"
+    },
+    {
+      "path": "assets/card-1005.webp",
+      "status": 200,
+      "bytes": 18906,
+      "sha256": "08039c48cc613f120e9d4766507b92341102fa9059d12dfa0697b7f9674ac0c8"
+    },
+    {
+      "path": "assets/card-1024-tiny.webp",
+      "status": 200,
+      "bytes": 3140,
+      "sha256": "3a2e44a2ca6ec36a9399059de1476c9233d9143433aceb612cc5677429ff4093"
+    },
+    {
+      "path": "assets/card-1024-detail.webp",
+      "status": 200,
+      "bytes": 111534,
+      "sha256": "97367dd3bc464533eb4431a67a1c6ae5f4a0aabb195262731482ad673337c388"
+    },
+    {
+      "path": "assets/card-1024.webp",
+      "status": 200,
+      "bytes": 15418,
+      "sha256": "0791f6aa1914d6963064d259b2328cd781cc8f90b4a1821967084217d651c5b1"
+    },
+    {
+      "path": "icons/app-180.png",
+      "status": 200,
+      "bytes": 636,
+      "sha256": "21c26c5d6839f7b29d863c8bd54db665b030439460ddc72a766114c9633751ca"
+    },
+    {
+      "path": "assets/index-CquZLUib.css",
+      "status": 200,
+      "bytes": 75655,
+      "sha256": "523be61bb3f9f1de0e7d269094ba5e7eb47348a999c8a56a0cb483d5a0f5abf1"
+    },
+    {
+      "path": "assets/index-RG1bi7zA.js",
+      "status": 200,
+      "bytes": 2365487,
+      "sha256": "e80b83a73403280a6861e2e7bbb1506266298a2135f9a51a0f328455a6663ee8"
+    },
+    {
+      "path": "icons/app-192.png",
+      "status": 200,
+      "bytes": 684,
+      "sha256": "7d7556bda15f8739f38ad59b5e589df0c0cc74e99359d6f0fb6725dfcc024c34"
+    },
+    {
+      "path": "icons/app-512.png",
+      "status": 200,
+      "bytes": 2037,
+      "sha256": "a2aabfad39a432db04c41f6a2eccb4fe15d0a96b315dcb06f7ef7ef0ecf40bec"
+    },
+    {
+      "path": "manifest.json",
+      "status": 200,
+      "bytes": 614,
+      "sha256": "d759df219264f27c231202071838e261492f4cb2dc63f2acdee76d22dec00f75"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 1190,
+      "sha256": "c8be078a02962a0a745798d9e10b2b483482473abfe43415584a4fa2ff0697be"
+    },
+    {
+      "path": "sw.js",
+      "status": 200,
+      "bytes": 2003,
+      "sha256": "fa8a0db010776262958c5273258bc56aa374d4384e517436d1f82d822d7b74e8"
+    }
+  ],
+  "errors": [],
+  "note": "Current shell, worker, JS/CSS, manifest/icons and all image sizes for 7 representative pictures byte-compared over LAN. Complete image bytes also checked locally by content build/audit."
+}

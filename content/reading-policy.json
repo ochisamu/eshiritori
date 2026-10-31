@@ -1,0 +1,6511 @@
+{
+  "version": "editorial-2026-10-31",
+  "criterion": "主役の自然な別名、特徴的な部位、描かれた動作、形や役割に根拠のある見立て。数合わせの一般部位・無関係な細部・遠い連想を除く。",
+  "panels": {
+    "card-0001": {
+      "alternatives": ["くだもの", "ほっぺ"],
+      "additions": [
+        {
+          "kana": "あっぷる",
+          "kind": "synonym",
+          "explanation": "りんごを英語でアップルと呼びます。"
+        }
+      ]
+    },
+    "card-0002": {
+      "alternatives": ["みかづき", "おさるのおやつ"],
+      "additions": []
+    },
+    "card-0003": {
+      "alternatives": ["しっぽ", "どんぐり", "もりのちょきんばこ"],
+      "additions": []
+    },
+    "card-0004": {
+      "alternatives": ["はな", "たね", "おひさま"],
+      "additions": []
+    },
+    "card-0005": {
+      "alternatives": ["はな", "はるのこっぷ", "おやゆびひめ"],
+      "additions": []
+    },
+    "card-0006": {
+      "alternatives": ["たね", "たねとばし"],
+      "additions": []
+    },
+    "card-0007": {
+      "alternatives": ["こうら", "あるくおうち"],
+      "additions": []
+    },
+    "card-0008": {
+      "alternatives": ["ちぇりー", "くだもの", "ふたご", "いやりんぐ"],
+      "additions": []
+    },
+    "card-0009": {
+      "alternatives": ["かんきつ", "きいろいらぐびーぼーる"],
+      "additions": []
+    },
+    "card-0010": {
+      "alternatives": ["みみ", "つきのもちつき", "ながいあんてな"],
+      "additions": [
+        {
+          "kana": "らびっと",
+          "kind": "synonym",
+          "explanation": "うさぎの英語名、ラビットです。"
+        }
+      ]
+    },
+    "card-0011": {
+      "alternatives": ["きる", "ちょき", "かみのさんぱつ"],
+      "additions": []
+    },
+    "card-0012": {
+      "alternatives": ["くび", "もりのてんぼうだい"],
+      "additions": []
+    },
+    "card-0013": {
+      "alternatives": ["かっぷ", "ゆげ", "ねむけざまし"],
+      "additions": []
+    },
+    "card-0014": {
+      "alternatives": ["くるま", "じどうしゃ", "まちのあし"],
+      "additions": []
+    },
+    "card-0015": {
+      "alternatives": ["あまがさ", "あめのやね"],
+      "additions": []
+    },
+    "card-0016": {
+      "alternatives": ["きゃんどる", "ほのお", "ひ", "ちいさなたいよう"],
+      "additions": [
+        {
+          "kana": "ともしび",
+          "kind": "scene",
+          "explanation": "ろうそくの先に小さくともる火を、ともしびと読みます。"
+        }
+      ]
+    },
+    "card-0017": {
+      "alternatives": ["もりのちからもち", "むねたたき"],
+      "additions": []
+    },
+    "card-0018": {
+      "alternatives": ["とらんぺっと", "がっき", "ぱっぱらぱー"],
+      "additions": []
+    },
+    "card-0019": {
+      "alternatives": ["ぱいん", "くだもの", "とげとげおうさま"],
+      "additions": []
+    },
+    "card-0020": {
+      "alternatives": ["ほうせき", "ほしのかけら"],
+      "additions": []
+    },
+    "card-0021": {
+      "alternatives": ["じょっき", "あわ", "あわのぼうし"],
+      "additions": []
+    },
+    "card-0022": {
+      "alternatives": ["じどうしゃ", "ぶーぶー"],
+      "additions": [
+        {
+          "kana": "おーぷんかー",
+          "kind": "synonym",
+          "explanation": "屋根が開き、座席が見えるオープンカーです。"
+        }
+      ]
+    },
+    "card-0023": {
+      "alternatives": ["あたまのざぶとん"],
+      "additions": [
+        {
+          "kana": "ぴろー",
+          "kind": "synonym",
+          "explanation": "まくらを英語でピローと呼びます。"
+        }
+      ]
+    },
+    "card-0024": {
+      "alternatives": ["こぶ", "さばくのたくしー", "ふたつやま"],
+      "additions": [
+        {
+          "kana": "ふたこぶらくだ",
+          "kind": "synonym",
+          "explanation": "背中にこぶが二つある、フタコブラクダです。"
+        }
+      ]
+    },
+    "card-0025": {
+      "alternatives": ["とり", "はしるとり"],
+      "additions": []
+    },
+    "card-0026": {
+      "alternatives": ["つの", "みるくこうじょう", "もーもー"],
+      "additions": []
+    },
+    "card-0027": {
+      "alternatives": ["しま", "あるくおうだんほどう"],
+      "additions": []
+    },
+    "card-0028": {
+      "alternatives": [
+        "えだまめ",
+        "さや",
+        "みどりのさんきょうだい",
+        "おつまみ"
+      ],
+      "additions": []
+    },
+    "card-0029": {
+      "alternatives": ["れんず", "かおのまど"],
+      "additions": []
+    },
+    "card-0030": {
+      "alternatives": ["ねる", "すいみん", "まるいけだま"],
+      "additions": [
+        {
+          "kana": "みけねこ",
+          "kind": "synonym",
+          "explanation": "白・茶・黒の三色の毛をした三毛猫です。"
+        }
+      ]
+    },
+    "card-0031": {
+      "alternatives": ["くるくる"],
+      "additions": []
+    },
+    "card-0032": {
+      "alternatives": ["ぼーる", "ころころ"],
+      "additions": []
+    },
+    "card-0033": {
+      "alternatives": ["わんわん", "さんぽのあいぼう"],
+      "additions": []
+    },
+    "card-0034": {
+      "alternatives": ["てでぃべあ", "だきしめともだち"],
+      "additions": [
+        {
+          "kana": "くま",
+          "kind": "synonym",
+          "explanation": "くまの形をしたぬいぐるみなので、形からくまとも読めます。"
+        }
+      ]
+    },
+    "card-0035": {
+      "alternatives": ["かんきつ", "かわ", "こたつのとも"],
+      "additions": []
+    },
+    "card-0036": {
+      "alternatives": ["はさみ", "よこあるき", "うみのちょき"],
+      "additions": []
+    },
+    "card-0037": {
+      "alternatives": ["とさか", "とり", "あさのめざまし", "こけこっこー"],
+      "additions": []
+    },
+    "card-0038": {
+      "alternatives": ["へた", "けちゃっぷのふるさと"],
+      "additions": []
+    },
+    "card-0039": {
+      "alternatives": ["うでどけい", "はり", "じかんのみはり"],
+      "additions": [
+        {
+          "kana": "うぉっち",
+          "kind": "synonym",
+          "explanation": "腕時計の英語名、ウォッチです。"
+        }
+      ]
+    },
+    "card-0040": {
+      "alternatives": ["こしかけ", "おしりのやすみば"],
+      "additions": []
+    },
+    "card-0041": {
+      "alternatives": ["ちりんちりん", "おとのたま"],
+      "additions": []
+    },
+    "card-0042": {
+      "alternatives": ["ぱんつ", "あしのふく"],
+      "additions": [
+        {
+          "kana": "じーんず",
+          "kind": "synonym",
+          "explanation": "青いデニムのズボンは、ジーンズです。"
+        }
+      ]
+    },
+    "card-0043": {
+      "alternatives": ["むぎわらぼうし", "あたまのやね", "ひざしよけ"],
+      "additions": []
+    },
+    "card-0044": {
+      "alternatives": ["きのうのできごと"],
+      "additions": [
+        {
+          "kana": "にゅーす",
+          "kind": "scene",
+          "explanation": "新聞が伝えるものは、世の中のニュースです。"
+        }
+      ]
+    },
+    "card-0045": {
+      "alternatives": ["くだもの", "わいんのふるさと"],
+      "additions": [
+        {
+          "kana": "ぐれーぷ",
+          "kind": "synonym",
+          "explanation": "ぶどうの英語名、グレープです。"
+        }
+      ]
+    },
+    "card-0046": {
+      "alternatives": ["なみ", "しょっぱいみず", "ざぶーん"],
+      "additions": []
+    },
+    "card-0047": {
+      "alternatives": ["いきてるひも"],
+      "additions": []
+    },
+    "card-0048": {
+      "alternatives": ["ほね"],
+      "additions": [
+        {
+          "kana": "どくろ",
+          "kind": "synonym",
+          "explanation": "頭の骨を表す、どくろの絵です。"
+        }
+      ]
+    },
+    "card-0049": {
+      "alternatives": ["ぶろっく", "かたちのさんきょうだい"],
+      "additions": []
+    },
+    "card-0050": {
+      "alternatives": ["しっぽ", "こんこん"],
+      "additions": [
+        {
+          "kana": "ふぉっくす",
+          "kind": "synonym",
+          "explanation": "きつねの英語名、フォックスです。"
+        }
+      ]
+    },
+    "card-0051": {
+      "alternatives": ["なべのおとも"],
+      "additions": []
+    },
+    "card-0052": {
+      "alternatives": ["げん", "がっき", "じゃかじゃか"],
+      "additions": [
+        {
+          "kana": "あこーすてぃっくぎたー",
+          "kind": "synonym",
+          "explanation": "木の胴に丸い響き穴がある、アコースティックギターです。"
+        }
+      ]
+    },
+    "card-0053": {
+      "alternatives": ["はらつづみ"],
+      "additions": []
+    },
+    "card-0054": {
+      "alternatives": ["かさ", "もりのぱらそる"],
+      "additions": []
+    },
+    "card-0055": {
+      "alternatives": ["はな", "きのだっこ", "ゆーかりずき"],
+      "additions": []
+    },
+    "card-0056": {
+      "alternatives": ["あんてな", "こえのはこ"],
+      "additions": []
+    },
+    "card-0057": {
+      "alternatives": ["おむすび", "のり", "ごはんのやま"],
+      "additions": []
+    },
+    "card-0058": {
+      "alternatives": ["ちょうむすび", "ちょうちょのまね"],
+      "additions": [
+        {
+          "kana": "ぼう",
+          "kind": "synonym",
+          "explanation": "蝶結びのリボンを英語でボウと呼びます。"
+        }
+      ]
+    },
+    "card-0059": {
+      "alternatives": ["ふね", "おーる", "こぎこぎ"],
+      "additions": []
+    },
+    "card-0060": {
+      "alternatives": ["こーん", "きいろいはならび"],
+      "additions": []
+    },
+    "card-0061": {
+      "alternatives": ["うみのおくりもの"],
+      "additions": []
+    },
+    "card-0062": {
+      "alternatives": ["れーどる", "すーぷのしゃべる"],
+      "additions": []
+    },
+    "card-0063": {
+      "alternatives": ["ひ", "ほのお", "もえるぼう"],
+      "additions": []
+    },
+    "card-0064": {
+      "alternatives": ["みち", "まよごのたすけ"],
+      "additions": []
+    },
+    "card-0065": {
+      "alternatives": ["ほのお", "そらへのえんぴつ", "うちゅうのたくしー"],
+      "additions": []
+    },
+    "card-0066": {
+      "alternatives": ["がたんごとん"],
+      "additions": [
+        {
+          "kana": "れーる",
+          "kind": "part",
+          "explanation": "電車の下に二本のレールが伸びています。"
+        }
+      ]
+    },
+    "card-0067": {
+      "alternatives": ["じょうききかんしゃ", "えんとつ", "しゅっぽっぽ"],
+      "additions": []
+    },
+    "card-0068": {
+      "alternatives": ["ぺだる", "さどる", "にりんのおうま"],
+      "additions": []
+    },
+    "card-0069": {
+      "alternatives": ["ばいく", "ぶろろろ"],
+      "additions": []
+    },
+    "card-0070": {
+      "alternatives": ["みんなのあし", "まちのながばこ"],
+      "additions": [
+        {
+          "kana": "ろせんばす",
+          "kind": "synonym",
+          "explanation": "乗り降りする扉と多くの窓のある、路線バスです。"
+        }
+      ]
+    },
+    "card-0071": {
+      "alternatives": ["はしご", "ほーす", "まちのひーろー"],
+      "additions": []
+    },
+    "card-0072": {
+      "alternatives": ["ぴーぽー", "いのちのたすけ"],
+      "additions": []
+    },
+    "card-0073": {
+      "alternatives": ["つばさ", "てつのことり"],
+      "additions": [
+        {
+          "kana": "じぇっとき",
+          "kind": "synonym",
+          "explanation": "翼の下にジェットエンジンがある、ジェット機です。"
+        }
+      ]
+    },
+    "card-0074": {
+      "alternatives": ["へり", "ぷろぺら", "そらのせんぷうき", "ばたばた"],
+      "additions": []
+    },
+    "card-0075": {
+      "alternatives": ["ふね", "うかぶほてる"],
+      "additions": []
+    },
+    "card-0076": {
+      "alternatives": ["ほ", "かぜまかせ"],
+      "additions": [
+        {
+          "kana": "はんせん",
+          "kind": "synonym",
+          "explanation": "帆に風を受けて進む船なので、帆船です。"
+        }
+      ]
+    },
+    "card-0077": {
+      "alternatives": ["せんぼうきょう", "てつのくじら"],
+      "additions": []
+    },
+    "card-0078": {
+      "alternatives": ["たいや", "はたけのちからもち"],
+      "additions": []
+    },
+    "card-0079": {
+      "alternatives": ["ゆき", "ゆきのそうじや"],
+      "additions": []
+    },
+    "card-0080": {
+      "alternatives": ["かご", "そらのさんぽかご"],
+      "additions": []
+    },
+    "card-0081": {
+      "alternatives": ["はんまー", "とんとん", "くぎのあいぼう"],
+      "additions": []
+    },
+    "card-0082": {
+      "alternatives": ["は", "ぎこぎこ", "きのさんぱつや"],
+      "additions": []
+    },
+    "card-0083": {
+      "alternatives": ["ねじまわし", "ねじのあいぼう"],
+      "additions": []
+    },
+    "card-0084": {
+      "alternatives": ["れんち", "てつのあご"],
+      "additions": []
+    },
+    "card-0085": {
+      "alternatives": ["てつのゆび", "ぎゅっとつかむ"],
+      "additions": []
+    },
+    "card-0086": {
+      "alternatives": ["しゃべる", "つちのすぷーん", "あなほり"],
+      "additions": []
+    },
+    "card-0087": {
+      "alternatives": ["れーき", "つちのくし", "おちばあつめ"],
+      "additions": []
+    },
+    "card-0088": {
+      "alternatives": ["まじょののりもの"],
+      "additions": []
+    },
+    "card-0089": {
+      "alternatives": ["ほうきのあいぼう"],
+      "additions": []
+    },
+    "card-0090": {
+      "alternatives": ["はこぶうつわ"],
+      "additions": []
+    },
+    "card-0091": {
+      "alternatives": ["そそぎぐち", "ちいさなあまぐも"],
+      "additions": [
+        {
+          "kana": "はすぐち",
+          "kind": "part",
+          "explanation": "水を細かく出す、穴の並んだ先端は、はす口です。"
+        }
+      ]
+    },
+    "card-0092": {
+      "alternatives": ["かべのおけしょう", "ぬりぬり"],
+      "additions": []
+    },
+    "card-0093": {
+      "alternatives": ["まきじゃく", "ながさのものさし"],
+      "additions": []
+    },
+    "card-0094": {
+      "alternatives": ["るーぺ", "れんず", "たんていごっこ"],
+      "additions": []
+    },
+    "card-0095": {
+      "alternatives": ["こんぱす", "はり", "きたをさがす"],
+      "additions": [
+        {
+          "kana": "らしんばん",
+          "kind": "synonym",
+          "explanation": "針で方角を示す、羅針盤です。"
+        }
+      ]
+    },
+    "card-0096": {
+      "alternatives": ["れんず", "ふたごのめ"],
+      "additions": []
+    },
+    "card-0097": {
+      "alternatives": ["きー", "がちゃり"],
+      "additions": []
+    },
+    "card-0098": {
+      "alternatives": ["じょうまえ", "ひみつのもんばん"],
+      "additions": []
+    },
+    "card-0099": {
+      "alternatives": ["とびら", "どあのぶ", "ただいま"],
+      "additions": []
+    },
+    "card-0100": {
+      "alternatives": ["がらす", "おうちのめ"],
+      "additions": [
+        {
+          "kana": "うぃんどう",
+          "kind": "synonym",
+          "explanation": "窓の英語名、ウィンドウです。"
+        }
+      ]
+    },
+    "card-0101": {
+      "alternatives": ["てかがみ", "もうひとりのじぶん", "まねっこ"],
+      "additions": []
+    },
+    "card-0102": {
+      "alternatives": ["ぶらし", "はのおそうじ", "むしばのてき"],
+      "additions": []
+    },
+    "card-0103": {
+      "alternatives": ["ちゅーぶ", "すーすー"],
+      "additions": []
+    },
+    "card-0104": {
+      "alternatives": ["そーぷ", "あわ", "よごれおとし"],
+      "additions": []
+    },
+    "card-0105": {
+      "alternatives": ["こーむ", "かみのこうつうせいり", "あたまのくまで"],
+      "additions": []
+    },
+    "card-0106": {
+      "alternatives": ["おふろあがり"],
+      "additions": []
+    },
+    "card-0107": {
+      "alternatives": ["おうちのくつ", "ぱたぱた"],
+      "additions": [
+        {
+          "kana": "しつないばき",
+          "kind": "synonym",
+          "explanation": "家の中で履く、室内履きです。"
+        }
+      ]
+    },
+    "card-0108": {
+      "alternatives": ["すにーかー", "くつひも", "あしのおうち"],
+      "additions": []
+    },
+    "card-0109": {
+      "alternatives": ["れいんぶーつ", "あしのあまがさ"],
+      "additions": []
+    },
+    "card-0110": {
+      "alternatives": ["そっくす", "あしのてぶくろ"],
+      "additions": []
+    },
+    "card-0111": {
+      "alternatives": ["ばっぐ"],
+      "additions": [
+        {
+          "kana": "てさげ",
+          "kind": "synonym",
+          "explanation": "二つの持ち手を手に下げる、手提げかばんです。"
+        }
+      ]
+    },
+    "card-0112": {
+      "alternatives": ["りゅっくさっく", "せなかのそうこ", "えんそくのとも"],
+      "additions": []
+    },
+    "card-0113": {
+      "alternatives": ["しょくぱん", "みみ"],
+      "additions": []
+    },
+    "card-0114": {
+      "alternatives": ["ばげっと", "たべるぼう"],
+      "additions": []
+    },
+    "card-0115": {
+      "alternatives": ["あな", "おやつのわ", "うきわのまね"],
+      "additions": [
+        {
+          "kana": "りんぐどーなつ",
+          "kind": "synonym",
+          "explanation": "真ん中に穴がある、リングドーナツです。"
+        }
+      ]
+    },
+    "card-0116": {
+      "alternatives": ["いちご", "くりーむ", "あまいおやま"],
+      "additions": [
+        {
+          "kana": "しょーとけーき",
+          "kind": "synonym",
+          "explanation": "いちごと白いクリームの、ショートケーキです。"
+        }
+      ]
+    },
+    "card-0117": {
+      "alternatives": ["からめる", "ぷるぷる", "からめるのぼうし"],
+      "additions": []
+    },
+    "card-0118": {
+      "alternatives": ["あいす", "こーん", "とけるおやつ"],
+      "additions": []
+    },
+    "card-0119": {
+      "alternatives": ["こおり", "しろっぷ", "たべるゆき"],
+      "additions": []
+    },
+    "card-0120": {
+      "alternatives": ["にぎりずし", "さかな", "ごはんのぼうし"],
+      "additions": []
+    },
+    "card-0121": {
+      "alternatives": ["めん", "たまご", "ずるずる"],
+      "additions": []
+    },
+    "card-0122": {
+      "alternatives": ["ざるそば", "ざる", "つるつる"],
+      "additions": []
+    },
+    "card-0123": {
+      "alternatives": ["めん", "ねぎ", "しろいながひも"],
+      "additions": []
+    },
+    "card-0124": {
+      "alternatives": ["かれー", "ごはんのおふとん"],
+      "additions": []
+    },
+    "card-0125": {
+      "alternatives": ["ちーず", "たべるえんばん"],
+      "additions": []
+    },
+    "card-0126": {
+      "alternatives": ["ばーがー", "ちーず", "たべるたわー"],
+      "additions": []
+    },
+    "card-0127": {
+      "alternatives": ["たまご", "きみ", "しろいそらのたいよう"],
+      "additions": [
+        {
+          "kana": "ふらいどえっぐ",
+          "kind": "synonym",
+          "explanation": "目玉焼きの英語名、フライドエッグです。"
+        }
+      ]
+    },
+    "card-0128": {
+      "alternatives": ["けちゃっぷ", "たまごのまくら"],
+      "additions": []
+    },
+    "card-0129": {
+      "alternatives": ["はな"],
+      "additions": []
+    },
+    "card-0130": {
+      "alternatives": ["もみじ"],
+      "additions": [
+        {
+          "kana": "こうよう",
+          "kind": "scene",
+          "explanation": "赤く色付いたもみじの葉は、紅葉です。"
+        }
+      ]
+    },
+    "card-0131": {
+      "alternatives": ["まつぼっくり"],
+      "additions": []
+    },
+    "card-0132": {
+      "alternatives": ["ふし"],
+      "additions": []
+    },
+    "card-0133": {
+      "alternatives": ["とげ"],
+      "additions": [
+        {
+          "kana": "はりやま",
+          "kind": "wordplay",
+          "explanation": "とげが何本も立つ姿を、針を刺した針山に見立てました。"
+        }
+      ]
+    },
+    "card-0134": {
+      "alternatives": ["はな", "とげ"],
+      "additions": []
+    },
+    "card-0135": {
+      "alternatives": ["わたげ"],
+      "additions": []
+    },
+    "card-0136": {
+      "alternatives": ["はな"],
+      "additions": [
+        {
+          "kana": "れんげ",
+          "kind": "synonym",
+          "explanation": "はすの花は、蓮華とも呼びます。"
+        }
+      ]
+    },
+    "card-0137": {
+      "alternatives": ["つる", "はな"],
+      "additions": []
+    },
+    "card-0138": {
+      "alternatives": ["はな"],
+      "additions": []
+    },
+    "card-0139": {
+      "alternatives": ["はな"],
+      "additions": []
+    },
+    "card-0140": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "きのみ",
+          "kind": "synonym",
+          "explanation": "どんぐりは、木になる実です。"
+        }
+      ]
+    },
+    "card-0141": {
+      "alternatives": ["いが"],
+      "additions": [
+        {
+          "kana": "まろん",
+          "kind": "synonym",
+          "explanation": "栗を表す呼び名、マロンです。"
+        }
+      ]
+    },
+    "card-0142": {
+      "alternatives": ["へた"],
+      "additions": []
+    },
+    "card-0143": {
+      "alternatives": ["へた"],
+      "additions": []
+    },
+    "card-0144": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0145": {
+      "alternatives": ["ゆき"],
+      "additions": []
+    },
+    "card-0146": {
+      "alternatives": ["ふんか", "ようがん"],
+      "additions": []
+    },
+    "card-0147": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "みずのかーてん",
+          "kind": "wordplay",
+          "explanation": "崖から幅広く流れ落ちる水を、水のカーテンに見立てました。"
+        }
+      ]
+    },
+    "card-0148": {
+      "alternatives": ["ながれ"],
+      "additions": []
+    },
+    "card-0149": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "はすいけ",
+          "kind": "synonym",
+          "explanation": "はすの葉と花が浮かぶ池なので、はす池です。"
+        }
+      ]
+    },
+    "card-0150": {
+      "alternatives": ["みかづき"],
+      "additions": [
+        {
+          "kana": "よぞら",
+          "kind": "scene",
+          "explanation": "三日月と星の浮かぶ、暗い夜空の絵です。"
+        }
+      ]
+    },
+    "card-0151": {
+      "alternatives": ["おひさま"],
+      "additions": []
+    },
+    "card-0152": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "すたー",
+          "kind": "synonym",
+          "explanation": "星の英語名、スターです。"
+        }
+      ]
+    },
+    "card-0153": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "れいんぼー",
+          "kind": "synonym",
+          "explanation": "虹の英語名、レインボーです。"
+        }
+      ]
+    },
+    "card-0154": {
+      "alternatives": ["しらくも"],
+      "additions": []
+    },
+    "card-0155": {
+      "alternatives": ["しずく"],
+      "additions": []
+    },
+    "card-0156": {
+      "alternatives": ["ゆきげしき"],
+      "additions": [
+        {
+          "kana": "けっしょう",
+          "kind": "part",
+          "explanation": "六方向に枝の伸びた、雪の結晶が大きく描かれています。"
+        }
+      ]
+    },
+    "card-0157": {
+      "alternatives": ["いなずま"],
+      "additions": []
+    },
+    "card-0158": {
+      "alternatives": ["けっしょう"],
+      "additions": []
+    },
+    "card-0159": {
+      "alternatives": ["いし"],
+      "additions": []
+    },
+    "card-0160": {
+      "alternatives": ["ほたてがい"],
+      "additions": [
+        {
+          "kana": "しぇる",
+          "kind": "synonym",
+          "explanation": "貝殻の英語名、シェルです。"
+        }
+      ]
+    },
+    "card-0161": {
+      "alternatives": ["おうち", "やね"],
+      "additions": [
+        {
+          "kana": "じゅうたく",
+          "kind": "synonym",
+          "explanation": "人の住む家なので、住宅です。"
+        }
+      ]
+    },
+    "card-0162": {
+      "alternatives": ["おしろ", "とう"],
+      "additions": []
+    },
+    "card-0163": {
+      "alternatives": ["とう"],
+      "additions": [
+        {
+          "kana": "てっとう",
+          "kind": "synonym",
+          "explanation": "赤い鉄骨を組んだ、高い鉄塔です。"
+        }
+      ]
+    },
+    "card-0164": {
+      "alternatives": ["かわ"],
+      "additions": [
+        {
+          "kana": "あーちばし",
+          "kind": "synonym",
+          "explanation": "丸いアーチを描いて川を渡る、アーチ橋です。"
+        }
+      ]
+    },
+    "card-0165": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "うみのみちしるべ",
+          "kind": "wordplay",
+          "explanation": "海を照らして船に場所を知らせる灯台を、海の道しるべに見立てました。"
+        }
+      ]
+    },
+    "card-0166": {
+      "alternatives": ["はね"],
+      "additions": []
+    },
+    "card-0167": {
+      "alternatives": ["おけ"],
+      "additions": []
+    },
+    "card-0168": {
+      "alternatives": ["おてら"],
+      "additions": []
+    },
+    "card-0169": {
+      "alternatives": ["しめなわ"],
+      "additions": [
+        {
+          "kana": "おやしろ",
+          "kind": "synonym",
+          "explanation": "神社の神様をまつる建物は、お社です。"
+        }
+      ]
+    },
+    "card-0170": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0171": {
+      "alternatives": ["ほーむ", "せんろ"],
+      "additions": []
+    },
+    "card-0172": {
+      "alternatives": ["こうしゃ", "とけい"],
+      "additions": []
+    },
+    "card-0173": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ほすぴたる",
+          "kind": "synonym",
+          "explanation": "病院の英語名、ホスピタルです。"
+        }
+      ]
+    },
+    "card-0174": {
+      "alternatives": ["べーかりー", "ぱん"],
+      "additions": []
+    },
+    "card-0175": {
+      "alternatives": ["ゆうびんぽすと"],
+      "additions": []
+    },
+    "card-0176": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0177": {
+      "alternatives": ["ちょうりし", "おたま"],
+      "additions": [
+        {
+          "kana": "しぇふ",
+          "kind": "synonym",
+          "explanation": "料理を作るコックを、シェフとも呼びます。"
+        }
+      ]
+    },
+    "card-0178": {
+      "alternatives": ["いし", "はくい", "ちょうしんき"],
+      "additions": []
+    },
+    "card-0179": {
+      "alternatives": ["ほーす"],
+      "additions": []
+    },
+    "card-0180": {
+      "alternatives": ["おまわりさん"],
+      "additions": []
+    },
+    "card-0181": {
+      "alternatives": ["にんじん"],
+      "additions": []
+    },
+    "card-0182": {
+      "alternatives": ["あみ", "さかな"],
+      "additions": []
+    },
+    "card-0183": {
+      "alternatives": ["かなづち"],
+      "additions": []
+    },
+    "card-0184": {
+      "alternatives": ["うちゅうふく"],
+      "additions": [
+        {
+          "kana": "うちゅうゆうえい",
+          "kind": "scene",
+          "explanation": "宇宙服で空間に浮いている姿は、宇宙遊泳です。"
+        }
+      ]
+    },
+    "card-0185": {
+      "alternatives": ["しきぼう"],
+      "additions": []
+    },
+    "card-0186": {
+      "alternatives": ["がか", "ぱれっと", "ふで"],
+      "additions": []
+    },
+    "card-0187": {
+      "alternatives": ["ぱん"],
+      "additions": []
+    },
+    "card-0188": {
+      "alternatives": ["てじなし", "はと", "しるくはっと"],
+      "additions": []
+    },
+    "card-0189": {
+      "alternatives": ["よろい", "たて", "けん"],
+      "additions": [
+        {
+          "kana": "ないと",
+          "kind": "synonym",
+          "explanation": "よろいと剣で身を固めた騎士は、ナイトです。"
+        }
+      ]
+    },
+    "card-0190": {
+      "alternatives": ["あしひれ", "すいちゅうめがね"],
+      "additions": [
+        {
+          "kana": "せんすい",
+          "kind": "scene",
+          "explanation": "空気ボンベと足ひれを使って水中に潜る、潜水の姿です。"
+        }
+      ]
+    },
+    "card-0191": {
+      "alternatives": ["ふうとう"],
+      "additions": [
+        {
+          "kana": "はいたつ",
+          "kind": "scene",
+          "explanation": "郵便のかばんから封筒を取り出し届ける、配達の姿です。"
+        }
+      ]
+    },
+    "card-0192": {
+      "alternatives": ["しゃしんか", "かめら", "とる"],
+      "additions": []
+    },
+    "card-0193": {
+      "alternatives": ["よむ", "ほん", "しょもつ"],
+      "additions": []
+    },
+    "card-0194": {
+      "alternatives": ["つる", "つりざお", "さかな"],
+      "additions": []
+    },
+    "card-0195": {
+      "alternatives": ["いためる", "ふらいぱん"],
+      "additions": []
+    },
+    "card-0196": {
+      "alternatives": ["かく", "くれよん"],
+      "additions": []
+    },
+    "card-0197": {
+      "alternatives": ["ねる", "まくら", "ふとん"],
+      "additions": []
+    },
+    "card-0198": {
+      "alternatives": ["およぐ"],
+      "additions": []
+    },
+    "card-0199": {
+      "alternatives": ["はしる", "らんにんぐ"],
+      "additions": [
+        {
+          "kana": "きょうそう",
+          "kind": "scene",
+          "explanation": "二人が並んで走る、かけっこの競走です。"
+        }
+      ]
+    },
+    "card-0200": {
+      "alternatives": ["とぶ", "なわ"],
+      "additions": [
+        {
+          "kana": "じゃんぷ",
+          "kind": "action",
+          "explanation": "縄を飛び越えて、ジャンプしています。"
+        }
+      ]
+    },
+    "card-0201": {
+      "alternatives": ["とざん", "のぼる", "りゅっく"],
+      "additions": []
+    },
+    "card-0202": {
+      "alternatives": ["ひく", "えんそう", "ゆみ"],
+      "additions": []
+    },
+    "card-0203": {
+      "alternatives": ["すべる", "ゆき", "すとっく"],
+      "additions": []
+    },
+    "card-0204": {
+      "alternatives": ["だんす", "おどる", "とぅしゅーず"],
+      "additions": []
+    },
+    "card-0205": {
+      "alternatives": ["はく", "ほうき", "ちりとり"],
+      "additions": []
+    },
+    "card-0206": {
+      "alternatives": ["あらう", "たらい", "あわ"],
+      "additions": []
+    },
+    "card-0207": {
+      "alternatives": ["そそぐ", "じょうろ", "はな"],
+      "additions": []
+    },
+    "card-0208": {
+      "alternatives": ["まく", "たね", "はたけ"],
+      "additions": []
+    },
+    "card-0209": {
+      "alternatives": ["たこあげ"],
+      "additions": []
+    },
+    "card-0210": {
+      "alternatives": ["おりづる", "つる"],
+      "additions": []
+    },
+    "card-0211": {
+      "alternatives": ["くさり"],
+      "additions": [
+        {
+          "kana": "そらとぶいす",
+          "kind": "wordplay",
+          "explanation": "鎖でつられた座面を、空を行き来する椅子に見立てました。"
+        }
+      ]
+    },
+    "card-0212": {
+      "alternatives": ["かいだん"],
+      "additions": []
+    },
+    "card-0213": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ぎったんばっこん",
+          "kind": "wordplay",
+          "explanation": "板の両端が上下する、シーソー遊びの呼び名です。"
+        }
+      ]
+    },
+    "card-0214": {
+      "alternatives": ["かいてんもくば", "うま"],
+      "additions": []
+    },
+    "card-0215": {
+      "alternatives": ["ごんどら"],
+      "additions": []
+    },
+    "card-0216": {
+      "alternatives": ["じぐそーぱずる", "ぴーす"],
+      "additions": []
+    },
+    "card-0217": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "だいす",
+          "kind": "synonym",
+          "explanation": "さいころの英語名、ダイスです。"
+        }
+      ]
+    },
+    "card-0218": {
+      "alternatives": ["かーど", "はーと"],
+      "additions": []
+    },
+    "card-0219": {
+      "alternatives": ["たま"],
+      "additions": []
+    },
+    "card-0220": {
+      "alternatives": ["ひげ"],
+      "additions": []
+    },
+    "card-0221": {
+      "alternatives": ["おにんぎょう"],
+      "additions": []
+    },
+    "card-0222": {
+      "alternatives": ["あわ"],
+      "additions": []
+    },
+    "card-0223": {
+      "alternatives": ["うちあげはなび"],
+      "additions": [
+        {
+          "kana": "なつのほし",
+          "kind": "wordplay",
+          "explanation": "夜空に大きく開く花火を、夏の星に見立てました。"
+        }
+      ]
+    },
+    "card-0224": {
+      "alternatives": ["ゆき", "にんじん", "まふらー"],
+      "additions": []
+    },
+    "card-0225": {
+      "alternatives": ["はな", "みみ"],
+      "additions": []
+    },
+    "card-0226": {
+      "alternatives": ["たてがみ"],
+      "additions": []
+    },
+    "card-0227": {
+      "alternatives": ["しま"],
+      "additions": []
+    },
+    "card-0228": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "べあ",
+          "kind": "synonym",
+          "explanation": "くまの英語名、ベアです。"
+        }
+      ]
+    },
+    "card-0229": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "じゃいあんとぱんだ",
+          "kind": "synonym",
+          "explanation": "白黒の体で竹を持つ、ジャイアントパンダです。"
+        }
+      ]
+    },
+    "card-0230": {
+      "alternatives": ["とり"],
+      "additions": []
+    },
+    "card-0231": {
+      "alternatives": ["ひげ"],
+      "additions": []
+    },
+    "card-0232": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "どるふぃん",
+          "kind": "synonym",
+          "explanation": "いるかの英語名、ドルフィンです。"
+        }
+      ]
+    },
+    "card-0233": {
+      "alternatives": ["しおふき", "おびれ"],
+      "additions": [
+        {
+          "kana": "ほえーる",
+          "kind": "synonym",
+          "explanation": "くじらの英語名、ホエールです。"
+        }
+      ]
+    },
+    "card-0234": {
+      "alternatives": ["きゅうばん"],
+      "additions": [
+        {
+          "kana": "おくとぱす",
+          "kind": "synonym",
+          "explanation": "たこの英語名、オクトパスです。"
+        }
+      ]
+    },
+    "card-0235": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "すくいっど",
+          "kind": "synonym",
+          "explanation": "いかの英語名、スクイッドです。"
+        }
+      ]
+    },
+    "card-0236": {
+      "alternatives": ["さかな", "おびれ"],
+      "additions": []
+    },
+    "card-0237": {
+      "alternatives": ["ちょう", "はね"],
+      "additions": []
+    },
+    "card-0238": {
+      "alternatives": ["はね"],
+      "additions": []
+    },
+    "card-0239": {
+      "alternatives": ["みずたま"],
+      "additions": []
+    },
+    "card-0240": {
+      "alternatives": ["はち"],
+      "additions": []
+    },
+    "card-0241": {
+      "alternatives": ["わだいこ", "ばち"],
+      "additions": []
+    },
+    "card-0242": {
+      "alternatives": ["けんばん", "がっき"],
+      "additions": [
+        {
+          "kana": "ぐらんどぴあの",
+          "kind": "synonym",
+          "explanation": "大きなふたを開いた、グランドピアノです。"
+        }
+      ]
+    },
+    "card-0243": {
+      "alternatives": ["しろふぉん", "ばち"],
+      "additions": []
+    },
+    "card-0244": {
+      "alternatives": ["がっき"],
+      "additions": [
+        {
+          "kana": "よこぶえ",
+          "kind": "synonym",
+          "explanation": "横向きに構えて吹くので、横笛です。"
+        }
+      ]
+    },
+    "card-0245": {
+      "alternatives": ["じゃばら", "けんばん"],
+      "additions": []
+    },
+    "card-0246": {
+      "alternatives": ["がっき"],
+      "additions": [
+        {
+          "kana": "くちふうきん",
+          "kind": "synonym",
+          "explanation": "ハーモニカは、口風琴とも呼びます。"
+        }
+      ]
+    },
+    "card-0247": {
+      "alternatives": ["がっき"],
+      "additions": [
+        {
+          "kana": "しゃかしゃか",
+          "kind": "wordplay",
+          "explanation": "二本を振ると鳴る、マラカスの音の読みです。"
+        }
+      ]
+    },
+    "card-0248": {
+      "alternatives": ["がっき"],
+      "additions": []
+    },
+    "card-0249": {
+      "alternatives": ["ぼーる"],
+      "additions": [
+        {
+          "kana": "ふっとぼーる",
+          "kind": "synonym",
+          "explanation": "サッカーで使うボールを、フットボールとも呼びます。"
+        }
+      ]
+    },
+    "card-0250": {
+      "alternatives": ["やきゅう", "ぼーる"],
+      "additions": []
+    },
+    "card-0251": {
+      "alternatives": ["てにすらけっと", "がっと"],
+      "additions": []
+    },
+    "card-0252": {
+      "alternatives": ["ぴん", "ぼーる"],
+      "additions": []
+    },
+    "card-0253": {
+      "alternatives": ["てつあれい"],
+      "additions": [
+        {
+          "kana": "おもり",
+          "kind": "synonym",
+          "explanation": "筋力を鍛えるための、手に持つ重りです。"
+        }
+      ]
+    },
+    "card-0254": {
+      "alternatives": ["すけぼー"],
+      "additions": []
+    },
+    "card-0255": {
+      "alternatives": ["ぶれーど"],
+      "additions": []
+    },
+    "card-0256": {
+      "alternatives": ["すいちゅうめがね"],
+      "additions": [
+        {
+          "kana": "すいえいめがね",
+          "kind": "synonym",
+          "explanation": "泳ぐときに目を守る、水泳眼鏡です。"
+        }
+      ]
+    },
+    "card-0257": {
+      "alternatives": ["みがく", "はぶらし"],
+      "additions": []
+    },
+    "card-0258": {
+      "alternatives": ["あらう", "せんめんだい"],
+      "additions": [
+        {
+          "kana": "かおあらい",
+          "kind": "synonym",
+          "explanation": "顔を水で洗っているので、顔洗いです。"
+        }
+      ]
+    },
+    "card-0259": {
+      "alternatives": ["おふろ", "ゆげ"],
+      "additions": [
+        {
+          "kana": "ふろ",
+          "kind": "synonym",
+          "explanation": "湯船に入って温まる、お風呂の場面です。"
+        }
+      ]
+    },
+    "card-0260": {
+      "alternatives": ["とかす", "くし", "かみのけ"],
+      "additions": []
+    },
+    "card-0261": {
+      "alternatives": ["かわかす"],
+      "additions": []
+    },
+    "card-0262": {
+      "alternatives": ["きる", "しゃつ"],
+      "additions": [
+        {
+          "kana": "うわぎ",
+          "kind": "part",
+          "explanation": "羽織っている青い服は、上着です。"
+        }
+      ]
+    },
+    "card-0263": {
+      "alternatives": ["むすぶ", "くつひも"],
+      "additions": []
+    },
+    "card-0264": {
+      "alternatives": ["しーつ", "まくら", "ととのえる"],
+      "additions": [
+        {
+          "kana": "べっどめいく",
+          "kind": "synonym",
+          "explanation": "シーツと枕を整える、ベッドメイクです。"
+        }
+      ]
+    },
+    "card-0265": {
+      "alternatives": ["あいろん", "のばす", "しゃつ"],
+      "additions": [
+        {
+          "kana": "ぷれす",
+          "kind": "action",
+          "explanation": "アイロンでシャツを押さえ、プレスしています。"
+        }
+      ]
+    },
+    "card-0266": {
+      "alternatives": ["そうじき", "すう"],
+      "additions": []
+    },
+    "card-0267": {
+      "alternatives": ["もっぷ", "ふく"],
+      "additions": []
+    },
+    "card-0268": {
+      "alternatives": ["まど", "ぞうきん", "ふく"],
+      "additions": [
+        {
+          "kana": "そうじ",
+          "kind": "synonym",
+          "explanation": "布で窓をきれいにする、掃除の場面です。"
+        }
+      ]
+    },
+    "card-0269": {
+      "alternatives": ["あらう", "すぽんじ", "さら"],
+      "additions": []
+    },
+    "card-0270": {
+      "alternatives": ["ほす", "せんたくばさみ"],
+      "additions": [
+        {
+          "kana": "せんたくもの",
+          "kind": "part",
+          "explanation": "ひもに掛けて干しているのは、洗濯物です。"
+        }
+      ]
+    },
+    "card-0271": {
+      "alternatives": ["たたむ", "たおる"],
+      "additions": []
+    },
+    "card-0272": {
+      "alternatives": ["はたき", "ほこり"],
+      "additions": [
+        {
+          "kana": "はらう",
+          "kind": "action",
+          "explanation": "はたきで棚のほこりを払っています。"
+        }
+      ]
+    },
+    "card-0273": {
+      "alternatives": ["あむ", "けいと", "あみぼう"],
+      "additions": []
+    },
+    "card-0274": {
+      "alternatives": ["ぬう", "はり", "いと"],
+      "additions": [
+        {
+          "kana": "ぬいもの",
+          "kind": "synonym",
+          "explanation": "針と糸で布を縫う、縫い物です。"
+        }
+      ]
+    },
+    "card-0275": {
+      "alternatives": ["さす", "ししゅうわく"],
+      "additions": []
+    },
+    "card-0276": {
+      "alternatives": ["ひこうき", "おりがみ"],
+      "additions": [
+        {
+          "kana": "ぐらいだー",
+          "kind": "wordplay",
+          "explanation": "エンジンなしで滑る紙飛行機を、小さなグライダーに見立てました。"
+        }
+      ]
+    },
+    "card-0277": {
+      "alternatives": ["ふね", "おりがみ"],
+      "additions": []
+    },
+    "card-0278": {
+      "alternatives": ["きる", "はさみ"],
+      "additions": []
+    },
+    "card-0279": {
+      "alternatives": ["はる", "のり"],
+      "additions": [
+        {
+          "kana": "こらーじゅ",
+          "kind": "synonym",
+          "explanation": "紙片を貼り合わせて作る、コラージュです。"
+        }
+      ]
+    },
+    "card-0280": {
+      "alternatives": ["こねる", "ねんど"],
+      "additions": [
+        {
+          "kana": "ねんどざいく",
+          "kind": "synonym",
+          "explanation": "粘土をこねて形を作る、粘土細工です。"
+        }
+      ]
+    },
+    "card-0281": {
+      "alternatives": ["ろくろ", "つぼ", "つくる"],
+      "additions": [
+        {
+          "kana": "やきもの",
+          "kind": "synonym",
+          "explanation": "土から器を作る、焼き物の制作です。"
+        }
+      ]
+    },
+    "card-0282": {
+      "alternatives": ["のこぎり", "きる"],
+      "additions": []
+    },
+    "card-0283": {
+      "alternatives": ["はかる", "めじゃー"],
+      "additions": []
+    },
+    "card-0284": {
+      "alternatives": ["ふく", "がらす", "ふきざお"],
+      "additions": []
+    },
+    "card-0285": {
+      "alternatives": ["あむ", "かご"],
+      "additions": []
+    },
+    "card-0286": {
+      "alternatives": ["きる", "はさみ", "ぼんさい"],
+      "additions": [
+        {
+          "kana": "えだきり",
+          "kind": "synonym",
+          "explanation": "伸びた枝をはさみで切る、枝切りです。"
+        }
+      ]
+    },
+    "card-0287": {
+      "alternatives": ["くつ", "ぬう"],
+      "additions": []
+    },
+    "card-0288": {
+      "alternatives": ["とけい", "ぴんせっと", "はぐるま"],
+      "additions": [
+        {
+          "kana": "しゅうり",
+          "kind": "synonym",
+          "explanation": "時計の中の歯車を直す、修理の場面です。"
+        }
+      ]
+    },
+    "card-0289": {
+      "alternatives": ["きる", "ほうちょう", "まないた"],
+      "additions": []
+    },
+    "card-0290": {
+      "alternatives": ["むく", "りんご"],
+      "additions": []
+    },
+    "card-0291": {
+      "alternatives": ["おろす", "だいこん", "おろしがね"],
+      "additions": []
+    },
+    "card-0292": {
+      "alternatives": ["あわだてき", "ぼうる"],
+      "additions": [
+        {
+          "kana": "まぜる",
+          "kind": "action",
+          "explanation": "器の中を泡立て器で混ぜています。"
+        }
+      ]
+    },
+    "card-0293": {
+      "alternatives": ["こねる", "きじ"],
+      "additions": []
+    },
+    "card-0294": {
+      "alternatives": ["のばす", "めんぼう", "かたぬき"],
+      "additions": []
+    },
+    "card-0295": {
+      "alternatives": ["やく", "ぱん", "てんぱん"],
+      "additions": []
+    },
+    "card-0296": {
+      "alternatives": ["あげる", "なべ"],
+      "additions": []
+    },
+    "card-0297": {
+      "alternatives": ["なべ", "たまご", "おたま"],
+      "additions": []
+    },
+    "card-0298": {
+      "alternatives": ["むす", "せいろ", "ゆげ"],
+      "additions": [
+        {
+          "kana": "むしもの",
+          "kind": "synonym",
+          "explanation": "せいろで蒸して作る、蒸し物です。"
+        }
+      ]
+    },
+    "card-0299": {
+      "alternatives": ["やく", "さかな", "あみ"],
+      "additions": []
+    },
+    "card-0300": {
+      "alternatives": ["やく", "とーすたー", "しょくぱん"],
+      "additions": []
+    },
+    "card-0301": {
+      "alternatives": ["そそぐ", "きゅうす", "ゆのみ"],
+      "additions": []
+    },
+    "card-0302": {
+      "alternatives": ["たく", "すいはんき", "しゃもじ"],
+      "additions": []
+    },
+    "card-0303": {
+      "alternatives": ["わる", "から", "たまご"],
+      "additions": []
+    },
+    "card-0304": {
+      "alternatives": ["ぱんけーき", "かえす", "ふらいぱん"],
+      "additions": []
+    },
+    "card-0305": {
+      "alternatives": ["しゅーと", "ぼーる", "ごーる"],
+      "additions": [
+        {
+          "kana": "ばすけ",
+          "kind": "synonym",
+          "explanation": "バスケットボールの短い呼び名、バスケです。"
+        }
+      ]
+    },
+    "card-0306": {
+      "alternatives": ["ける", "さっかーぼーる", "ごーる"],
+      "additions": []
+    },
+    "card-0307": {
+      "alternatives": ["うつ", "らけっと", "てにすぼーる"],
+      "additions": []
+    },
+    "card-0308": {
+      "alternatives": ["なげる", "とうしゅ", "やきゅうぼーる"],
+      "additions": [
+        {
+          "kana": "とうきゅう",
+          "kind": "synonym",
+          "explanation": "投手が球を投げる、投球の場面です。"
+        }
+      ]
+    },
+    "card-0309": {
+      "alternatives": ["うつ", "ばっと"],
+      "additions": [
+        {
+          "kana": "だげき",
+          "kind": "synonym",
+          "explanation": "バットで球を打つ、打撃の場面です。"
+        }
+      ]
+    },
+    "card-0310": {
+      "alternatives": ["ねっと", "ぼーる"],
+      "additions": [
+        {
+          "kana": "あたっく",
+          "kind": "action",
+          "explanation": "網のそばで球を打ち込む、アタックです。"
+        }
+      ]
+    },
+    "card-0311": {
+      "alternatives": ["うつ", "しゃとる", "らけっと"],
+      "additions": []
+    },
+    "card-0312": {
+      "alternatives": ["ぴんぽん", "うつ", "らけっと", "たっきゅうだい"],
+      "additions": []
+    },
+    "card-0313": {
+      "alternatives": ["うつ", "くらぶ"],
+      "additions": [
+        {
+          "kana": "すいんぐ",
+          "kind": "action",
+          "explanation": "クラブを振り抜く、スイングの動作です。"
+        }
+      ]
+    },
+    "card-0314": {
+      "alternatives": ["ゆみ", "や", "ひく"],
+      "additions": []
+    },
+    "card-0315": {
+      "alternatives": ["なげる", "どうぎ", "おび"],
+      "additions": [
+        {
+          "kana": "せおいなげ",
+          "kind": "action",
+          "explanation": "相手を背中越しに投げる、背負い投げです。"
+        }
+      ]
+    },
+    "card-0316": {
+      "alternatives": ["りきし", "どひょう", "まわし"],
+      "additions": []
+    },
+    "card-0317": {
+      "alternatives": ["ぱんち", "ぐろーぶ", "りんぐ"],
+      "additions": []
+    },
+    "card-0318": {
+      "alternatives": ["つく", "けん"],
+      "additions": []
+    },
+    "card-0319": {
+      "alternatives": ["とぶ", "はーどる"],
+      "additions": []
+    },
+    "card-0320": {
+      "alternatives": ["とぶ"],
+      "additions": [
+        {
+          "kana": "かいきゃくとび",
+          "kind": "action",
+          "explanation": "脚を左右に開いて跳び箱を越える、開脚跳びです。"
+        }
+      ]
+    },
+    "card-0321": {
+      "alternatives": ["さじ", "しょっき"],
+      "additions": []
+    },
+    "card-0322": {
+      "alternatives": ["しょっき"],
+      "additions": []
+    },
+    "card-0323": {
+      "alternatives": ["てーぶるないふ", "しょっき"],
+      "additions": []
+    },
+    "card-0324": {
+      "alternatives": ["しょっき"],
+      "additions": [
+        {
+          "kana": "おはし",
+          "kind": "synonym",
+          "explanation": "二本一組で食事に使う、お箸です。"
+        }
+      ]
+    },
+    "card-0325": {
+      "alternatives": ["ひらざら", "しょっき"],
+      "additions": []
+    },
+    "card-0326": {
+      "alternatives": ["はち", "しょっき"],
+      "additions": [
+        {
+          "kana": "みきしんぐぼうる",
+          "kind": "synonym",
+          "explanation": "食材を混ぜる深い金属の、ミキシングボウルです。"
+        }
+      ]
+    },
+    "card-0327": {
+      "alternatives": ["かっぷ", "しょっき"],
+      "additions": []
+    },
+    "card-0328": {
+      "alternatives": ["てぃーぽっと", "そそぎぐち"],
+      "additions": []
+    },
+    "card-0329": {
+      "alternatives": ["こっぷ", "しょっき"],
+      "additions": []
+    },
+    "card-0330": {
+      "alternatives": ["ぐらす", "しょっき"],
+      "additions": []
+    },
+    "card-0331": {
+      "alternatives": ["がらすびん", "こるく"],
+      "additions": []
+    },
+    "card-0332": {
+      "alternatives": ["けとる", "そそぎぐち"],
+      "additions": []
+    },
+    "card-0333": {
+      "alternatives": ["かたてなべ"],
+      "additions": [
+        {
+          "kana": "そーすぱん",
+          "kind": "synonym",
+          "explanation": "長い柄の付いた片手鍋を、ソースパンとも呼びます。"
+        }
+      ]
+    },
+    "card-0334": {
+      "alternatives": ["ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0335": {
+      "alternatives": ["ほいっぱー", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0336": {
+      "alternatives": ["みずきり", "あな", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0337": {
+      "alternatives": ["なべ", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0338": {
+      "alternatives": ["すとれーなー", "あみ", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0339": {
+      "alternatives": ["めもり", "ちょうりきぐ"],
+      "additions": [
+        {
+          "kana": "めじゃーかっぷ",
+          "kind": "synonym",
+          "explanation": "目盛りで量を測る、メジャーカップです。"
+        }
+      ]
+    },
+    "card-0340": {
+      "alternatives": ["きっちんすけーる", "はり"],
+      "additions": []
+    },
+    "card-0341": {
+      "alternatives": ["かわむきき", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0342": {
+      "alternatives": ["ぐれーたー", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0343": {
+      "alternatives": ["はち", "みぞ", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0344": {
+      "alternatives": ["ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0345": {
+      "alternatives": ["ろーりんぐぴん", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0346": {
+      "alternatives": ["なべつかみ", "てぶくろ"],
+      "additions": []
+    },
+    "card-0347": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "まえかけ",
+          "kind": "synonym",
+          "explanation": "服の前をおおう、前掛けです。"
+        }
+      ]
+    },
+    "card-0348": {
+      "alternatives": ["たーなー", "へら", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0349": {
+      "alternatives": ["ちょうりきぐ"],
+      "additions": [
+        {
+          "kana": "かんおーぷなー",
+          "kind": "synonym",
+          "explanation": "缶切りの英語の呼び名、缶オープナーです。"
+        }
+      ]
+    },
+    "card-0350": {
+      "alternatives": ["こるくすくりゅー", "らせん"],
+      "additions": []
+    },
+    "card-0351": {
+      "alternatives": ["じょうご", "ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0352": {
+      "alternatives": ["ちょうりきぐ"],
+      "additions": []
+    },
+    "card-0353": {
+      "alternatives": ["ですく", "ひきだし"],
+      "additions": []
+    },
+    "card-0354": {
+      "alternatives": ["まるてーぶる"],
+      "additions": []
+    },
+    "card-0355": {
+      "alternatives": ["ながいす", "くっしょん"],
+      "additions": []
+    },
+    "card-0356": {
+      "alternatives": ["ねだい", "まくら", "もうふ", "まっとれす"],
+      "additions": []
+    },
+    "card-0357": {
+      "alternatives": ["ようふくだんす"],
+      "additions": [
+        {
+          "kana": "くろーぜっと",
+          "kind": "synonym",
+          "explanation": "洋服をしまう、扉付きのクローゼットです。"
+        }
+      ]
+    },
+    "card-0358": {
+      "alternatives": ["たな", "ほん", "せびょうし"],
+      "additions": []
+    },
+    "card-0359": {
+      "alternatives": ["とだな", "さら"],
+      "additions": []
+    },
+    "card-0360": {
+      "alternatives": ["ひきだし"],
+      "additions": [
+        {
+          "kana": "たんす",
+          "kind": "synonym",
+          "explanation": "引き出しに物をしまう、たんすです。"
+        }
+      ]
+    },
+    "card-0361": {
+      "alternatives": ["ろっきんぐちぇあ"],
+      "additions": []
+    },
+    "card-0362": {
+      "alternatives": ["まるいす"],
+      "additions": [
+        {
+          "kana": "いす",
+          "kind": "synonym",
+          "explanation": "背もたれのない形の、椅子です。"
+        }
+      ]
+    },
+    "card-0363": {
+      "alternatives": ["ぱーてぃしょん", "びょうぶ"],
+      "additions": []
+    },
+    "card-0364": {
+      "alternatives": ["すたんどらいと", "でんきゅう"],
+      "additions": []
+    },
+    "card-0365": {
+      "alternatives": ["たっせる"],
+      "additions": []
+    },
+    "card-0366": {
+      "alternatives": ["らぐ", "かーぺっと"],
+      "additions": []
+    },
+    "card-0367": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "つりどこ",
+          "kind": "synonym",
+          "explanation": "木の間につるして寝る、つり床です。"
+        }
+      ]
+    },
+    "card-0368": {
+      "alternatives": ["こーとはんがー", "こーと"],
+      "additions": []
+    },
+    "card-0369": {
+      "alternatives": ["ぎゅうにゅう"],
+      "additions": []
+    },
+    "card-0370": {
+      "alternatives": ["どらむ"],
+      "additions": []
+    },
+    "card-0371": {
+      "alternatives": ["れんじ"],
+      "additions": [
+        {
+          "kana": "れんじでちん",
+          "kind": "wordplay",
+          "explanation": "電子レンジで温めるときの、おなじみの言い回しです。"
+        }
+      ]
+    },
+    "card-0372": {
+      "alternatives": ["てれびじょん", "がめん"],
+      "additions": []
+    },
+    "card-0373": {
+      "alternatives": ["はね"],
+      "additions": [
+        {
+          "kana": "かぜおこし",
+          "kind": "wordplay",
+          "explanation": "羽根を回して風を作る、風起こしに見立てました。"
+        }
+      ]
+    },
+    "card-0374": {
+      "alternatives": ["ほーす", "のずる"],
+      "additions": []
+    },
+    "card-0375": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0376": {
+      "alternatives": ["とーすたー", "しょくぱん"],
+      "additions": []
+    },
+    "card-0377": {
+      "alternatives": ["ごはん", "しゃもじ"],
+      "additions": []
+    },
+    "card-0378": {
+      "alternatives": ["どらいやー"],
+      "additions": []
+    },
+    "card-0379": {
+      "alternatives": ["はり", "はずみぐるま"],
+      "additions": []
+    },
+    "card-0380": {
+      "alternatives": ["くうちょうき", "かぜ"],
+      "additions": []
+    },
+    "card-0381": {
+      "alternatives": ["でんきすとーぶ"],
+      "additions": [
+        {
+          "kana": "ひーたー",
+          "kind": "synonym",
+          "explanation": "電気で発熱して温める、ヒーターです。"
+        }
+      ]
+    },
+    "card-0382": {
+      "alternatives": ["こていでんわ", "じゅわき"],
+      "additions": []
+    },
+    "card-0383": {
+      "alternatives": ["すまほ"],
+      "additions": [
+        {
+          "kana": "けいたいでんわ",
+          "kind": "synonym",
+          "explanation": "持ち歩いて通話する、携帯電話です。"
+        }
+      ]
+    },
+    "card-0384": {
+      "alternatives": ["りもーとこんとろーらー", "ぼたん"],
+      "additions": []
+    },
+    "card-0385": {
+      "alternatives": ["しん", "けしごむ"],
+      "additions": []
+    },
+    "card-0386": {
+      "alternatives": ["ぺん"],
+      "additions": []
+    },
+    "card-0387": {
+      "alternatives": ["ぺんさき"],
+      "additions": []
+    },
+    "card-0388": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "いれーさー",
+          "kind": "synonym",
+          "explanation": "消しゴムの英語名、イレーサーです。"
+        }
+      ]
+    },
+    "card-0389": {
+      "alternatives": ["けずりき", "けずりかす"],
+      "additions": []
+    },
+    "card-0390": {
+      "alternatives": ["ものさし", "めもり"],
+      "additions": []
+    },
+    "card-0391": {
+      "alternatives": ["めもり"],
+      "additions": []
+    },
+    "card-0392": {
+      "alternatives": ["はり", "えんぴつ"],
+      "additions": []
+    },
+    "card-0393": {
+      "alternatives": ["すてーぷらー", "はり"],
+      "additions": []
+    },
+    "card-0394": {
+      "alternatives": ["ぜむくりっぷ"],
+      "additions": []
+    },
+    "card-0395": {
+      "alternatives": ["くりっぷ"],
+      "additions": []
+    },
+    "card-0396": {
+      "alternatives": ["のり"],
+      "additions": []
+    },
+    "card-0397": {
+      "alternatives": ["てーぷ", "てーぷかったー"],
+      "additions": []
+    },
+    "card-0398": {
+      "alternatives": ["のーとぶっく"],
+      "additions": [
+        {
+          "kana": "ちょうめん",
+          "kind": "synonym",
+          "explanation": "書くための紙をとじた、帳面です。"
+        }
+      ]
+    },
+    "card-0399": {
+      "alternatives": ["りんぐばいんだー", "りんぐ"],
+      "additions": []
+    },
+    "card-0400": {
+      "alternatives": ["てがみ"],
+      "additions": []
+    },
+    "card-0401": {
+      "alternatives": ["しゃつ", "えり"],
+      "additions": [
+        {
+          "kana": "どれすしゃつ",
+          "kind": "synonym",
+          "explanation": "襟とボタンの付いた、ドレスシャツです。"
+        }
+      ]
+    },
+    "card-0402": {
+      "alternatives": ["しゃつ"],
+      "additions": []
+    },
+    "card-0403": {
+      "alternatives": ["にっと", "あみめ"],
+      "additions": [
+        {
+          "kana": "けいとのふく",
+          "kind": "wordplay",
+          "explanation": "毛糸で編んだ服なので、毛糸の服と読めます。"
+        }
+      ]
+    },
+    "card-0404": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0405": {
+      "alternatives": ["ふーど"],
+      "additions": [
+        {
+          "kana": "ふーでぃー",
+          "kind": "synonym",
+          "explanation": "フードの付いた上着を、フーディーとも呼びます。"
+        }
+      ]
+    },
+    "card-0406": {
+      "alternatives": ["ぶるぞん", "ふぁすなー"],
+      "additions": []
+    },
+    "card-0407": {
+      "alternatives": ["おーばーこーと"],
+      "additions": []
+    },
+    "card-0408": {
+      "alternatives": ["あまがっぱ"],
+      "additions": []
+    },
+    "card-0409": {
+      "alternatives": ["ぷりーつすかーと", "ひだ"],
+      "additions": []
+    },
+    "card-0410": {
+      "alternatives": ["どれす", "りぼん"],
+      "additions": []
+    },
+    "card-0411": {
+      "alternatives": ["さろぺっと", "かたひも"],
+      "additions": []
+    },
+    "card-0412": {
+      "alternatives": ["ばっくる"],
+      "additions": []
+    },
+    "card-0413": {
+      "alternatives": ["たい"],
+      "additions": []
+    },
+    "card-0414": {
+      "alternatives": ["ぼうたい"],
+      "additions": []
+    },
+    "card-0415": {
+      "alternatives": ["ふさ"],
+      "additions": [
+        {
+          "kana": "えりまき",
+          "kind": "synonym",
+          "explanation": "首に巻いて温める、襟巻きです。"
+        }
+      ]
+    },
+    "card-0416": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ぐろーぶ",
+          "kind": "synonym",
+          "explanation": "手袋の英語名、グローブです。"
+        }
+      ]
+    },
+    "card-0417": {
+      "alternatives": ["たてがみ", "ひづめ"],
+      "additions": []
+    },
+    "card-0418": {
+      "alternatives": ["け"],
+      "additions": [
+        {
+          "kana": "ようもう",
+          "kind": "part",
+          "explanation": "丸く巻いた白い毛が目立つ、羊毛です。"
+        },
+        {
+          "kana": "うーる",
+          "kind": "part",
+          "explanation": "白い巻き毛が目立ちます。羊の毛は、ウールとも呼びます。"
+        }
+      ]
+    },
+    "card-0419": {
+      "alternatives": ["つの", "あごひげ"],
+      "additions": []
+    },
+    "card-0420": {
+      "alternatives": ["はな", "しっぽ"],
+      "additions": [
+        {
+          "kana": "ぴっぐ",
+          "kind": "synonym",
+          "explanation": "ぶたの英語名、ピッグです。"
+        }
+      ]
+    },
+    "card-0421": {
+      "alternatives": ["つの", "えだづの"],
+      "additions": []
+    },
+    "card-0422": {
+      "alternatives": ["きば"],
+      "additions": []
+    },
+    "card-0423": {
+      "alternatives": ["くち", "きば"],
+      "additions": []
+    },
+    "card-0424": {
+      "alternatives": ["つの"],
+      "additions": []
+    },
+    "card-0425": {
+      "alternatives": ["ふくろ", "こども"],
+      "additions": [
+        {
+          "kana": "こそだて",
+          "kind": "scene",
+          "explanation": "お腹の袋から子どもが顔を出す、子育ての姿です。"
+        }
+      ]
+    },
+    "card-0426": {
+      "alternatives": ["した"],
+      "additions": []
+    },
+    "card-0427": {
+      "alternatives": ["つめ", "ぶらさがる"],
+      "additions": []
+    },
+    "card-0428": {
+      "alternatives": ["はり"],
+      "additions": [
+        {
+          "kana": "はりのよろい",
+          "kind": "wordplay",
+          "explanation": "背中一面の針を、身を守るよろいに見立てました。"
+        }
+      ]
+    },
+    "card-0429": {
+      "alternatives": ["つめ"],
+      "additions": []
+    },
+    "card-0430": {
+      "alternatives": ["しっぽ"],
+      "additions": [
+        {
+          "kana": "まうす",
+          "kind": "synonym",
+          "explanation": "ねずみの英語名、マウスです。"
+        }
+      ]
+    },
+    "card-0431": {
+      "alternatives": ["たね", "ほお"],
+      "additions": [
+        {
+          "kana": "ひまわりのたね",
+          "kind": "part",
+          "explanation": "両手に抱える、黒と白のしまのあるひまわりの種です。"
+        }
+      ]
+    },
+    "card-0432": {
+      "alternatives": ["しっぽ", "まえば", "まるた"],
+      "additions": []
+    },
+    "card-0433": {
+      "alternatives": ["くちばし", "みずかき", "とり"],
+      "additions": []
+    },
+    "card-0434": {
+      "alternatives": ["とり"],
+      "additions": [
+        {
+          "kana": "ぐーす",
+          "kind": "synonym",
+          "explanation": "がちょうの英語名、グースです。"
+        }
+      ]
+    },
+    "card-0435": {
+      "alternatives": ["とり"],
+      "additions": []
+    },
+    "card-0436": {
+      "alternatives": ["くちばし", "とり"],
+      "additions": [
+        {
+          "kana": "くろう",
+          "kind": "synonym",
+          "explanation": "からすの英語名、クロウです。"
+        }
+      ]
+    },
+    "card-0437": {
+      "alternatives": ["とり"],
+      "additions": []
+    },
+    "card-0438": {
+      "alternatives": ["め", "とり"],
+      "additions": [
+        {
+          "kana": "あうる",
+          "kind": "synonym",
+          "explanation": "ふくろうの英語名、アウルです。"
+        }
+      ]
+    },
+    "card-0439": {
+      "alternatives": ["くちばし", "つめ"],
+      "additions": [
+        {
+          "kana": "いーぐる",
+          "kind": "synonym",
+          "explanation": "わしの英語名、イーグルです。"
+        }
+      ]
+    },
+    "card-0440": {
+      "alternatives": ["とり"],
+      "additions": [
+        {
+          "kana": "すわん",
+          "kind": "synonym",
+          "explanation": "白鳥の英語名、スワンです。"
+        }
+      ]
+    },
+    "card-0441": {
+      "alternatives": ["あし", "とり"],
+      "additions": []
+    },
+    "card-0442": {
+      "alternatives": ["おばね", "めだまもよう", "とり"],
+      "additions": [
+        {
+          "kana": "うちわ",
+          "kind": "wordplay",
+          "explanation": "扇形に大きく広げた尾羽を、うちわに見立てました。"
+        }
+      ]
+    },
+    "card-0443": {
+      "alternatives": ["かんう", "とり"],
+      "additions": []
+    },
+    "card-0444": {
+      "alternatives": ["つつく"],
+      "additions": [
+        {
+          "kana": "もりのだいく",
+          "kind": "wordplay",
+          "explanation": "木をくちばしでたたく姿を、森の大工に見立てました。"
+        }
+      ]
+    },
+    "card-0445": {
+      "alternatives": ["くちばし", "ふくろ", "とり"],
+      "additions": []
+    },
+    "card-0446": {
+      "alternatives": ["とり"],
+      "additions": []
+    },
+    "card-0447": {
+      "alternatives": ["おばね", "とぶ"],
+      "additions": [
+        {
+          "kana": "えんび",
+          "kind": "part",
+          "explanation": "尾の先が二つに分かれた、燕尾です。"
+        }
+      ]
+    },
+    "card-0448": {
+      "alternatives": ["とり"],
+      "additions": []
+    },
+    "card-0449": {
+      "alternatives": ["たね", "くだもの"],
+      "additions": []
+    },
+    "card-0450": {
+      "alternatives": ["くだもの"],
+      "additions": []
+    },
+    "card-0451": {
+      "alternatives": ["きういふるーつ", "たね"],
+      "additions": []
+    },
+    "card-0452": {
+      "alternatives": ["くだもの"],
+      "additions": []
+    },
+    "card-0453": {
+      "alternatives": ["たね", "くだもの"],
+      "additions": []
+    },
+    "card-0454": {
+      "alternatives": ["ここなっつ", "から"],
+      "additions": []
+    },
+    "card-0455": {
+      "alternatives": ["たね"],
+      "additions": []
+    },
+    "card-0456": {
+      "alternatives": ["へた", "くだもの"],
+      "additions": []
+    },
+    "card-0457": {
+      "alternatives": ["たね", "くだもの"],
+      "additions": []
+    },
+    "card-0458": {
+      "alternatives": ["くだもの"],
+      "additions": []
+    },
+    "card-0459": {
+      "alternatives": ["たね", "くだもの"],
+      "additions": [
+        {
+          "kana": "あみめ",
+          "kind": "part",
+          "explanation": "皮の表面をおおう、メロン特有の網目です。"
+        }
+      ]
+    },
+    "card-0460": {
+      "alternatives": ["くだもの"],
+      "additions": []
+    },
+    "card-0461": {
+      "alternatives": ["きいちご", "くだもの"],
+      "additions": []
+    },
+    "card-0462": {
+      "alternatives": ["かわ", "くだもの"],
+      "additions": []
+    },
+    "card-0463": {
+      "alternatives": ["かんきつ"],
+      "additions": []
+    },
+    "card-0464": {
+      "alternatives": ["たね", "くだもの"],
+      "additions": []
+    },
+    "card-0465": {
+      "alternatives": ["かわ"],
+      "additions": [
+        {
+          "kana": "おにおん",
+          "kind": "synonym",
+          "explanation": "たまねぎの英語名、オニオンです。"
+        }
+      ]
+    },
+    "card-0466": {
+      "alternatives": ["りんぺん"],
+      "additions": [
+        {
+          "kana": "がーりっく",
+          "kind": "synonym",
+          "explanation": "にんにくの英語名、ガーリックです。"
+        }
+      ]
+    },
+    "card-0467": {
+      "alternatives": ["ばれいしょ", "め"],
+      "additions": [
+        {
+          "kana": "ぽてと",
+          "kind": "synonym",
+          "explanation": "じゃがいもの英語名、ポテトです。"
+        }
+      ]
+    },
+    "card-0468": {
+      "alternatives": ["かんしょ"],
+      "additions": []
+    },
+    "card-0469": {
+      "alternatives": ["ひげね"],
+      "additions": [
+        {
+          "kana": "すずしろ",
+          "kind": "synonym",
+          "explanation": "大根の昔からの呼び名、すずしろです。"
+        }
+      ]
+    },
+    "card-0470": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "かっぱのごちそう",
+          "kind": "wordplay",
+          "explanation": "きゅうり好きの河童の物語から、ごちそうに見立てました。"
+        }
+      ]
+    },
+    "card-0471": {
+      "alternatives": ["たね", "くうどう"],
+      "additions": []
+    },
+    "card-0472": {
+      "alternatives": ["たね"],
+      "additions": [
+        {
+          "kana": "ぱんぷきん",
+          "kind": "synonym",
+          "explanation": "かぼちゃの英語の呼び名、パンプキンです。"
+        }
+      ]
+    },
+    "card-0473": {
+      "alternatives": ["しん"],
+      "additions": []
+    },
+    "card-0474": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ちしゃ",
+          "kind": "synonym",
+          "explanation": "レタスの和名、ちしゃです。"
+        }
+      ]
+    },
+    "card-0475": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0476": {
+      "alternatives": ["つぼみ"],
+      "additions": []
+    },
+    "card-0477": {
+      "alternatives": ["つぼみ"],
+      "additions": []
+    },
+    "card-0478": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0479": {
+      "alternatives": ["あな"],
+      "additions": [
+        {
+          "kana": "はすね",
+          "kind": "synonym",
+          "explanation": "れんこんは、はす根とも呼びます。"
+        }
+      ]
+    },
+    "card-0480": {
+      "alternatives": ["ねしょうが"],
+      "additions": [
+        {
+          "kana": "じんじゃー",
+          "kind": "synonym",
+          "explanation": "しょうがの英語名、ジンジャーです。"
+        }
+      ]
+    },
+    "card-0481": {
+      "alternatives": ["たまご", "けちゃっぷ"],
+      "additions": []
+    },
+    "card-0482": {
+      "alternatives": ["やきめし", "れんげ"],
+      "additions": []
+    },
+    "card-0483": {
+      "alternatives": ["くりーむしちゅー"],
+      "additions": []
+    },
+    "card-0484": {
+      "alternatives": ["めだまやき"],
+      "additions": []
+    },
+    "card-0485": {
+      "alternatives": ["にく"],
+      "additions": []
+    },
+    "card-0486": {
+      "alternatives": ["めん", "きゃべつ"],
+      "additions": []
+    },
+    "card-0487": {
+      "alternatives": ["そーす", "てこ", "へら"],
+      "additions": [
+        {
+          "kana": "こなもの",
+          "kind": "synonym",
+          "explanation": "小麦粉の生地を焼く料理なので、粉ものです。"
+        }
+      ]
+    },
+    "card-0488": {
+      "alternatives": ["つまようじ", "ふねざら"],
+      "additions": []
+    },
+    "card-0489": {
+      "alternatives": ["だいこん", "たまご", "ちくわ"],
+      "additions": []
+    },
+    "card-0490": {
+      "alternatives": ["なべ", "にく"],
+      "additions": []
+    },
+    "card-0491": {
+      "alternatives": ["なべ", "とうふ", "ねぎ"],
+      "additions": []
+    },
+    "card-0492": {
+      "alternatives": ["さかな", "わさび"],
+      "additions": [
+        {
+          "kana": "おつくり",
+          "kind": "synonym",
+          "explanation": "刺身を盛り付けた料理は、お造りとも呼びます。"
+        }
+      ]
+    },
+    "card-0493": {
+      "alternatives": ["えび", "ころも"],
+      "additions": []
+    },
+    "card-0494": {
+      "alternatives": ["かつ", "ころも", "きゃべつ"],
+      "additions": []
+    },
+    "card-0495": {
+      "alternatives": ["ころも"],
+      "additions": []
+    },
+    "card-0496": {
+      "alternatives": ["えび", "ころも"],
+      "additions": []
+    },
+    "card-0497": {
+      "alternatives": ["はなたば", "みせ"],
+      "additions": [
+        {
+          "kana": "ふらわーしょっぷ",
+          "kind": "synonym",
+          "explanation": "花屋の英語の呼び名、フラワーショップです。"
+        }
+      ]
+    },
+    "card-0498": {
+      "alternatives": ["やさい"],
+      "additions": [
+        {
+          "kana": "せいかてん",
+          "kind": "synonym",
+          "explanation": "野菜や果物を売る、青果店です。"
+        }
+      ]
+    },
+    "card-0499": {
+      "alternatives": ["さかな", "こおり", "みせ"],
+      "additions": [
+        {
+          "kana": "せんぎょてん",
+          "kind": "synonym",
+          "explanation": "新鮮な魚を売る、鮮魚店です。"
+        }
+      ]
+    },
+    "card-0500": {
+      "alternatives": ["にく", "そーせーじ"],
+      "additions": [
+        {
+          "kana": "せいにくてん",
+          "kind": "synonym",
+          "explanation": "肉を切り分けて売る、精肉店です。"
+        }
+      ]
+    },
+    "card-0501": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "しょくどう",
+          "kind": "synonym",
+          "explanation": "料理を出して食べてもらう店なので、食堂です。"
+        }
+      ]
+    },
+    "card-0502": {
+      "alternatives": ["きっさてん", "けーき"],
+      "additions": []
+    },
+    "card-0503": {
+      "alternatives": ["すーぱーまーけっと", "かーと"],
+      "additions": []
+    },
+    "card-0504": {
+      "alternatives": ["こんびにえんすすとあ", "かいものかご"],
+      "additions": []
+    },
+    "card-0505": {
+      "alternatives": ["すくりーん", "ざせき"],
+      "additions": [
+        {
+          "kana": "しねま",
+          "kind": "synonym",
+          "explanation": "映画館を表す、シネマという呼び名です。"
+        }
+      ]
+    },
+    "card-0506": {
+      "alternatives": ["ぶたい", "まく", "すぽっとらいと"],
+      "additions": [
+        {
+          "kana": "しばい",
+          "kind": "scene",
+          "explanation": "幕のある舞台で演じている、芝居の場面です。"
+        }
+      ]
+    },
+    "card-0507": {
+      "alternatives": ["きょうりゅう", "ほね"],
+      "additions": []
+    },
+    "card-0508": {
+      "alternatives": ["え", "がくぶち", "ちょうこく"],
+      "additions": [
+        {
+          "kana": "あーとぎゃらりー",
+          "kind": "synonym",
+          "explanation": "絵や彫刻を展示する、アートギャラリーです。"
+        }
+      ]
+    },
+    "card-0509": {
+      "alternatives": ["すいそう", "さかな", "かいそう"],
+      "additions": []
+    },
+    "card-0510": {
+      "alternatives": ["きりん", "しまうま"],
+      "additions": []
+    },
+    "card-0511": {
+      "alternatives": ["かんらんしゃ", "じぇっとこーすたー", "ふうせん"],
+      "additions": []
+    },
+    "card-0512": {
+      "alternatives": ["べんち", "すべりだい"],
+      "additions": []
+    },
+    "card-0513": {
+      "alternatives": ["だんぷ", "にだい"],
+      "additions": []
+    },
+    "card-0514": {
+      "alternatives": ["こんくりーとみきさーしゃ", "どらむ"],
+      "additions": []
+    },
+    "card-0515": {
+      "alternatives": ["ばけっと", "あーむ", "くろーらー"],
+      "additions": [
+        {
+          "kana": "ゆあつしょべる",
+          "kind": "synonym",
+          "explanation": "関節のある腕で掘る、油圧ショベルです。"
+        }
+      ]
+    },
+    "card-0516": {
+      "alternatives": ["ぶれーど", "くろーらー"],
+      "additions": []
+    },
+    "card-0517": {
+      "alternatives": ["くれーん", "ふっく"],
+      "additions": []
+    },
+    "card-0518": {
+      "alternatives": ["ろーらー"],
+      "additions": []
+    },
+    "card-0519": {
+      "alternatives": ["ぱれっと"],
+      "additions": []
+    },
+    "card-0520": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "せいそうしゃ",
+          "kind": "synonym",
+          "explanation": "ごみを集めて運ぶ、清掃車です。"
+        }
+      ]
+    },
+    "card-0521": {
+      "alternatives": ["ぱとろーるかー", "かいてんとう"],
+      "additions": []
+    },
+    "card-0522": {
+      "alternatives": ["きゃんぱー"],
+      "additions": []
+    },
+    "card-0523": {
+      "alternatives": ["たんく", "とらっく"],
+      "additions": []
+    },
+    "card-0524": {
+      "alternatives": ["すきー"],
+      "additions": []
+    },
+    "card-0525": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ばいく",
+          "kind": "synonym",
+          "explanation": "エンジンで走る二輪車なので、バイクです。"
+        }
+      ]
+    },
+    "card-0526": {
+      "alternatives": ["しゃりん", "さどる", "ぺだる"],
+      "additions": []
+    },
+    "card-0527": {
+      "alternatives": ["ぺだる", "しゃりん"],
+      "additions": []
+    },
+    "card-0528": {
+      "alternatives": ["うばぐるま", "ひよけ"],
+      "additions": []
+    },
+    "card-0529": {
+      "alternatives": ["せんろ"],
+      "additions": [
+        {
+          "kana": "こうそくてつどう",
+          "kind": "synonym",
+          "explanation": "速く走る新幹線は、高速鉄道です。"
+        }
+      ]
+    },
+    "card-0530": {
+      "alternatives": ["ちんちんでんしゃ", "ぱんたぐらふ", "せんろ"],
+      "additions": []
+    },
+    "card-0531": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0532": {
+      "alternatives": ["せんろ", "しゃりょう"],
+      "additions": []
+    },
+    "card-0533": {
+      "alternatives": ["ごんどら", "けーぶる"],
+      "additions": []
+    },
+    "card-0534": {
+      "alternatives": ["ぷろぺら"],
+      "additions": []
+    },
+    "card-0535": {
+      "alternatives": ["つばさ"],
+      "additions": [
+        {
+          "kana": "かっくうき",
+          "kind": "synonym",
+          "explanation": "エンジンを使わず滑空する、滑空機です。"
+        }
+      ]
+    },
+    "card-0536": {
+      "alternatives": ["こんてな", "ふね"],
+      "additions": [
+        {
+          "kana": "こんてなせん",
+          "kind": "synonym",
+          "explanation": "甲板にコンテナを積んだ、コンテナ船です。"
+        }
+      ]
+    },
+    "card-0537": {
+      "alternatives": ["かーふぇりー", "くるま", "らんぷうぇい"],
+      "additions": []
+    },
+    "card-0538": {
+      "alternatives": ["ふね", "あみ", "うき"],
+      "additions": []
+    },
+    "card-0539": {
+      "alternatives": ["ほ", "ますと", "いかり"],
+      "additions": []
+    },
+    "card-0540": {
+      "alternatives": ["ぱどる", "ふね", "こぐ"],
+      "additions": []
+    },
+    "card-0541": {
+      "alternatives": ["まるた"],
+      "additions": [
+        {
+          "kana": "まるたぶね",
+          "kind": "synonym",
+          "explanation": "丸太を組んで水に浮かべる、丸太舟です。"
+        }
+      ]
+    },
+    "card-0542": {
+      "alternatives": ["うぉーたーくらふと", "しぶき"],
+      "additions": []
+    },
+    "card-0543": {
+      "alternatives": ["しゃりん"],
+      "additions": []
+    },
+    "card-0544": {
+      "alternatives": ["うま"],
+      "additions": []
+    },
+    "card-0545": {
+      "alternatives": ["なーす", "たいおんけい"],
+      "additions": [
+        {
+          "kana": "かんご",
+          "kind": "scene",
+          "explanation": "患者のそばで体温などを調べる、看護の場面です。"
+        }
+      ]
+    },
+    "card-0546": {
+      "alternatives": ["しかい", "かがみ"],
+      "additions": [
+        {
+          "kana": "しかけんしん",
+          "kind": "scene",
+          "explanation": "開いた口を鏡で調べる、歯科検診の場面です。"
+        }
+      ]
+    },
+    "card-0547": {
+      "alternatives": ["はさみ", "くし", "きる"],
+      "additions": [
+        {
+          "kana": "さんぱつ",
+          "kind": "scene",
+          "explanation": "はさみとくしで髪を切る、散髪の場面です。"
+        }
+      ]
+    },
+    "card-0548": {
+      "alternatives": ["きっぷ"],
+      "additions": [
+        {
+          "kana": "かいさつ",
+          "kind": "scene",
+          "explanation": "切符を確かめて通す、改札の場面です。"
+        }
+      ]
+    },
+    "card-0549": {
+      "alternatives": ["どらいばー", "はんどる"],
+      "additions": [
+        {
+          "kana": "うんてん",
+          "kind": "scene",
+          "explanation": "運転席でハンドルを握る、運転の場面です。"
+        }
+      ]
+    },
+    "card-0550": {
+      "alternatives": ["そうじゅうし", "こっくぴっと"],
+      "additions": []
+    },
+    "card-0551": {
+      "alternatives": ["かじ"],
+      "additions": [
+        {
+          "kana": "きゃぷてん",
+          "kind": "synonym",
+          "explanation": "船長を英語でキャプテンと呼びます。"
+        }
+      ]
+    },
+    "card-0552": {
+      "alternatives": ["てんいん", "れじ", "すきゃなー"],
+      "additions": []
+    },
+    "card-0553": {
+      "alternatives": ["せんせい", "こくばん", "さしぼう"],
+      "additions": []
+    },
+    "card-0554": {
+      "alternatives": ["せいと", "ほん"],
+      "additions": []
+    },
+    "card-0555": {
+      "alternatives": ["たいこ", "しんばる", "すてぃっく"],
+      "additions": [
+        {
+          "kana": "どらむ",
+          "kind": "part",
+          "explanation": "人物がばちで演奏しているのは、ドラムです。"
+        }
+      ]
+    },
+    "card-0556": {
+      "alternatives": ["うたう", "まいく"],
+      "additions": [
+        {
+          "kana": "しんがー",
+          "kind": "synonym",
+          "explanation": "歌手の英語名、シンガーです。"
+        }
+      ]
+    },
+    "card-0557": {
+      "alternatives": ["しゅうじ", "ふで", "すずり"],
+      "additions": []
+    },
+    "card-0558": {
+      "alternatives": [
+        "けんきゅうしゃ",
+        "ふらすこ",
+        "ほごめがね",
+        "しけんかん"
+      ],
+      "additions": [
+        {
+          "kana": "じっけん",
+          "kind": "scene",
+          "explanation": "試験管とフラスコを使う、実験の場面です。"
+        }
+      ]
+    },
+    "card-0559": {
+      "alternatives": ["かなづち", "かなとこ", "たたく"],
+      "additions": [
+        {
+          "kana": "たんぞう",
+          "kind": "scene",
+          "explanation": "熱した金属を金づちでたたく、鍛造の作業です。"
+        }
+      ]
+    },
+    "card-0560": {
+      "alternatives": ["はちのす", "ぼうごふく", "みつばち"],
+      "additions": []
+    },
+    "card-0561": {
+      "alternatives": ["ほうき", "とんがりぼうし", "まんと"],
+      "additions": []
+    },
+    "card-0562": {
+      "alternatives": ["はね", "すてっき"],
+      "additions": [
+        {
+          "kana": "ふぇありー",
+          "kind": "synonym",
+          "explanation": "妖精の英語名、フェアリーです。"
+        }
+      ]
+    },
+    "card-0563": {
+      "alternatives": ["ひれ", "うろこ"],
+      "additions": [
+        {
+          "kana": "まーめいど",
+          "kind": "synonym",
+          "explanation": "人魚の英語名、マーメイドです。"
+        }
+      ]
+    },
+    "card-0564": {
+      "alternatives": ["しゅりけん", "くない"],
+      "additions": []
+    },
+    "card-0565": {
+      "alternatives": ["ぶし", "かたな", "はかま"],
+      "additions": []
+    },
+    "card-0566": {
+      "alternatives": ["がんたい", "たからばこ"],
+      "additions": []
+    },
+    "card-0567": {
+      "alternatives": ["おうかん", "おうしゃく"],
+      "additions": []
+    },
+    "card-0568": {
+      "alternatives": ["ひめ", "てぃあら", "どれす"],
+      "additions": [
+        {
+          "kana": "ぷりんせす",
+          "kind": "synonym",
+          "explanation": "王女の英語名、プリンセスです。"
+        }
+      ]
+    },
+    "card-0569": {
+      "alternatives": ["しょっかく", "ゆーふぉー"],
+      "additions": [
+        {
+          "kana": "えいりあん",
+          "kind": "synonym",
+          "explanation": "宇宙人を表す英語の呼び名、エイリアンです。"
+        }
+      ]
+    },
+    "card-0570": {
+      "alternatives": ["あんてな", "まきねじ"],
+      "additions": []
+    },
+    "card-0571": {
+      "alternatives": ["さんた", "ひげ", "ふくろ", "ぷれぜんと"],
+      "additions": []
+    },
+    "card-0572": {
+      "alternatives": ["はな", "うちわ", "げた"],
+      "additions": []
+    },
+    "card-0573": {
+      "alternatives": ["つの", "こんぼう", "きば"],
+      "additions": [
+        {
+          "kana": "おににかなぼう",
+          "kind": "wordplay",
+          "explanation": "鬼が大きな金棒を持つ姿を、そのままことわざの鬼に金棒と読みます。"
+        }
+      ]
+    },
+    "card-0574": {
+      "alternatives": ["どらごん", "うろこ", "つの"],
+      "additions": []
+    },
+    "card-0575": {
+      "alternatives": ["はね", "わ"],
+      "additions": [
+        {
+          "kana": "えんじぇる",
+          "kind": "synonym",
+          "explanation": "天使の英語名、エンジェルです。"
+        }
+      ]
+    },
+    "card-0576": {
+      "alternatives": ["つの", "やり"],
+      "additions": [
+        {
+          "kana": "でびる",
+          "kind": "synonym",
+          "explanation": "悪魔の英語名、デビルです。"
+        }
+      ]
+    },
+    "card-0577": {
+      "alternatives": ["こんぴゅーたー", "もにたー", "きーぼーど", "まうす"],
+      "additions": []
+    },
+    "card-0578": {
+      "alternatives": ["らっぷとっぷ", "きーぼーど", "たっちぱっど"],
+      "additions": []
+    },
+    "card-0579": {
+      "alternatives": ["きー", "すぺーすきー"],
+      "additions": []
+    },
+    "card-0580": {
+      "alternatives": ["ほいーる"],
+      "additions": []
+    },
+    "card-0581": {
+      "alternatives": ["しゃしんき", "れんず", "しゃったー"],
+      "additions": []
+    },
+    "card-0582": {
+      "alternatives": ["かむこーだー", "れんず"],
+      "additions": []
+    },
+    "card-0583": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "とらいぽっど",
+          "kind": "synonym",
+          "explanation": "三脚の英語名、トライポッドです。"
+        }
+      ]
+    },
+    "card-0584": {
+      "alternatives": ["まいくろふぉん"],
+      "additions": []
+    },
+    "card-0585": {
+      "alternatives": ["いやーぱっど"],
+      "additions": []
+    },
+    "card-0586": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0587": {
+      "alternatives": ["すぴーかーぼっくす", "うーふぁー", "ついーたー"],
+      "additions": []
+    },
+    "card-0588": {
+      "alternatives": ["ぎたーあんぷ", "すぴーかー"],
+      "additions": []
+    },
+    "card-0589": {
+      "alternatives": ["たーんてーぶる", "れこーど", "はり"],
+      "additions": []
+    },
+    "card-0590": {
+      "alternatives": ["みぞ"],
+      "additions": [
+        {
+          "kana": "おんばん",
+          "kind": "synonym",
+          "explanation": "音を記録した円盤なので、音盤です。"
+        }
+      ]
+    },
+    "card-0591": {
+      "alternatives": ["こんぱくとでぃすく"],
+      "additions": [
+        {
+          "kana": "でぃすく",
+          "kind": "synonym",
+          "explanation": "CDは薄い円盤、ディスクです。"
+        }
+      ]
+    },
+    "card-0592": {
+      "alternatives": ["かせっと", "りーる", "てーぷ"],
+      "additions": []
+    },
+    "card-0593": {
+      "alternatives": ["えいしゃき", "れんず"],
+      "additions": [
+        {
+          "kana": "とうえいき",
+          "kind": "synonym",
+          "explanation": "光で映像を投影する、投影機です。"
+        }
+      ]
+    },
+    "card-0594": {
+      "alternatives": ["いんさつき", "かみ"],
+      "additions": [
+        {
+          "kana": "いんさつ",
+          "kind": "action",
+          "explanation": "機械から紙を出して、印刷しています。"
+        }
+      ]
+    },
+    "card-0595": {
+      "alternatives": ["けいさんき"],
+      "additions": [
+        {
+          "kana": "でんしそろばん",
+          "kind": "wordplay",
+          "explanation": "ボタンで計算する道具を、電子そろばんに見立てました。"
+        }
+      ]
+    },
+    "card-0596": {
+      "alternatives": ["ふらっしゅめもり"],
+      "additions": []
+    },
+    "card-0597": {
+      "alternatives": ["えーしーあだぷたー", "ぷらぐ"],
+      "additions": []
+    },
+    "card-0598": {
+      "alternatives": ["かんでんち"],
+      "additions": [
+        {
+          "kana": "ばってりー",
+          "kind": "synonym",
+          "explanation": "電池の英語名、バッテリーです。"
+        }
+      ]
+    },
+    "card-0599": {
+      "alternatives": ["ふぃらめんと"],
+      "additions": [
+        {
+          "kana": "ひらめき",
+          "kind": "wordplay",
+          "explanation": "ぱっと光る電球を、考えがひらめくときの記号に見立てました。"
+        }
+      ]
+    },
+    "card-0600": {
+      "alternatives": ["さしこみぐち"],
+      "additions": [
+        {
+          "kana": "でんげんそけっと",
+          "kind": "synonym",
+          "explanation": "プラグを差す、電源ソケットです。"
+        }
+      ]
+    },
+    "card-0601": {
+      "alternatives": ["でんげんたっぷ", "こんせんと"],
+      "additions": [
+        {
+          "kana": "えんちょうこーど",
+          "kind": "synonym",
+          "explanation": "電源を先まで延ばす、延長コードです。"
+        }
+      ]
+    },
+    "card-0602": {
+      "alternatives": ["らいと"],
+      "additions": [
+        {
+          "kana": "とーち",
+          "kind": "synonym",
+          "explanation": "懐中電灯の英語の呼び名、トーチです。"
+        }
+      ]
+    },
+    "card-0603": {
+      "alternatives": ["らんぷ", "ほや"],
+      "additions": []
+    },
+    "card-0604": {
+      "alternatives": ["べる", "はり", "もじばん"],
+      "additions": [
+        {
+          "kana": "あらーむ",
+          "kind": "synonym",
+          "explanation": "決まった時刻に鳴る、アラーム時計です。"
+        }
+      ]
+    },
+    "card-0605": {
+      "alternatives": ["すな"],
+      "additions": [
+        {
+          "kana": "ときのすな",
+          "kind": "wordplay",
+          "explanation": "落ちる砂で時間を示すので、時の砂に見立てました。"
+        }
+      ]
+    },
+    "card-0606": {
+      "alternatives": ["ふりこ"],
+      "additions": [
+        {
+          "kana": "てんぽきーぱー",
+          "kind": "wordplay",
+          "explanation": "一定の速さを刻むメトロノームを、テンポを守る係に見立てました。"
+        }
+      ]
+    },
+    "card-0607": {
+      "alternatives": ["れんず", "さんきゃく"],
+      "additions": []
+    },
+    "card-0608": {
+      "alternatives": ["ぷれぱらーと"],
+      "additions": []
+    },
+    "card-0609": {
+      "alternatives": ["はな"],
+      "additions": [
+        {
+          "kana": "べる",
+          "kind": "wordplay",
+          "explanation": "下を向く小さな白い花を、ベルに見立てました。"
+        }
+      ]
+    },
+    "card-0610": {
+      "alternatives": ["はな", "はなびら"],
+      "additions": []
+    },
+    "card-0611": {
+      "alternatives": ["はな"],
+      "additions": []
+    },
+    "card-0612": {
+      "alternatives": ["はな"],
+      "additions": []
+    },
+    "card-0613": {
+      "alternatives": ["はな"],
+      "additions": [
+        {
+          "kana": "あきざくら",
+          "kind": "synonym",
+          "explanation": "コスモスの和名、秋桜です。"
+        }
+      ]
+    },
+    "card-0614": {
+      "alternatives": ["まんじゅしゃげ", "はな"],
+      "additions": []
+    },
+    "card-0615": {
+      "alternatives": ["はな"],
+      "additions": []
+    },
+    "card-0616": {
+      "alternatives": ["はな"],
+      "additions": [
+        {
+          "kana": "ほしがた",
+          "kind": "wordplay",
+          "explanation": "五つにとがって開いた花を、星形に見立てました。"
+        }
+      ]
+    },
+    "card-0617": {
+      "alternatives": ["はな"],
+      "additions": []
+    },
+    "card-0618": {
+      "alternatives": ["は", "はち"],
+      "additions": []
+    },
+    "card-0619": {
+      "alternatives": ["はな", "しべ"],
+      "additions": []
+    },
+    "card-0620": {
+      "alternatives": ["はな", "つぼみ"],
+      "additions": []
+    },
+    "card-0621": {
+      "alternatives": ["こちょうらん", "はな"],
+      "additions": []
+    },
+    "card-0622": {
+      "alternatives": ["はち"],
+      "additions": []
+    },
+    "card-0623": {
+      "alternatives": ["は"],
+      "additions": []
+    },
+    "card-0624": {
+      "alternatives": ["こっとん", "から"],
+      "additions": [
+        {
+          "kana": "めんか",
+          "kind": "synonym",
+          "explanation": "綿を採る植物の実なので、綿花です。"
+        }
+      ]
+    },
+    "card-0625": {
+      "alternatives": ["はやし", "き", "こみち"],
+      "additions": [
+        {
+          "kana": "しんりん",
+          "kind": "synonym",
+          "explanation": "木がたくさん集まる、森林です。"
+        }
+      ]
+    },
+    "card-0626": {
+      "alternatives": ["うみ", "すなはま", "やし"],
+      "additions": []
+    },
+    "card-0627": {
+      "alternatives": ["すな", "かいがら", "ぱらそる"],
+      "additions": []
+    },
+    "card-0628": {
+      "alternatives": ["ほらあな"],
+      "additions": [
+        {
+          "kana": "いわや",
+          "kind": "synonym",
+          "explanation": "岩に開いた洞穴を、岩屋とも呼びます。"
+        }
+      ]
+    },
+    "card-0629": {
+      "alternatives": ["かわ", "がけ"],
+      "additions": [
+        {
+          "kana": "きょうこく",
+          "kind": "synonym",
+          "explanation": "険しい崖の間の深い谷は、峡谷です。"
+        }
+      ]
+    },
+    "card-0630": {
+      "alternatives": ["こみち"],
+      "additions": []
+    },
+    "card-0631": {
+      "alternatives": ["こおり"],
+      "additions": [
+        {
+          "kana": "あいすばーぐ",
+          "kind": "synonym",
+          "explanation": "氷山の英語名、アイスバーグです。"
+        }
+      ]
+    },
+    "card-0632": {
+      "alternatives": ["ゆげ"],
+      "additions": [
+        {
+          "kana": "ろてんぶろ",
+          "kind": "synonym",
+          "explanation": "岩で囲まれた屋外の温泉は、露天風呂です。"
+        }
+      ]
+    },
+    "card-0633": {
+      "alternatives": ["うず"],
+      "additions": [
+        {
+          "kana": "とるねーど",
+          "kind": "synonym",
+          "explanation": "竜巻の英語名、トルネードです。"
+        }
+      ]
+    },
+    "card-0634": {
+      "alternatives": ["もや"],
+      "additions": []
+    },
+    "card-0635": {
+      "alternatives": ["すいてき"],
+      "additions": [
+        {
+          "kana": "つゆ",
+          "kind": "synonym",
+          "explanation": "葉の先にたまった水の粒は、露です。"
+        }
+      ]
+    },
+    "card-0636": {
+      "alternatives": ["こおり"],
+      "additions": []
+    },
+    "card-0637": {
+      "alternatives": ["あんもないと", "うずまき"],
+      "additions": [
+        {
+          "kana": "いしのきおく",
+          "kind": "wordplay",
+          "explanation": "昔の生き物の形が石に残る化石を、石の記憶に見立てました。"
+        }
+      ]
+    },
+    "card-0638": {
+      "alternatives": ["ほのお", "まき", "ひ"],
+      "additions": []
+    },
+    "card-0639": {
+      "alternatives": ["たいりく", "うみ"],
+      "additions": [
+        {
+          "kana": "あおいほし",
+          "kind": "wordplay",
+          "explanation": "海の青さが目立つ地球を、青い星と読みます。"
+        }
+      ]
+    },
+    "card-0640": {
+      "alternatives": ["わ"],
+      "additions": [
+        {
+          "kana": "うちゅうのふらふーぷ",
+          "kind": "wordplay",
+          "explanation": "星の周りの大きな輪を、宇宙のフラフープに見立てました。"
+        }
+      ]
+    },
+    "card-0641": {
+      "alternatives": ["ばるーん"],
+      "additions": []
+    },
+    "card-0642": {
+      "alternatives": ["ふうせん"],
+      "additions": []
+    },
+    "card-0643": {
+      "alternatives": ["はね"],
+      "additions": [
+        {
+          "kana": "ふうしゃ",
+          "kind": "synonym",
+          "explanation": "風で羽根を回すので、小さな風車です。"
+        }
+      ]
+    },
+    "card-0644": {
+      "alternatives": ["たんざく"],
+      "additions": [
+        {
+          "kana": "なつのおと",
+          "kind": "wordplay",
+          "explanation": "涼しげに鳴る風鈴を、夏の音に見立てました。"
+        }
+      ]
+    },
+    "card-0645": {
+      "alternatives": ["もよう"],
+      "additions": [
+        {
+          "kana": "かれいどすこーぷ",
+          "kind": "synonym",
+          "explanation": "万華鏡の英語名、カレイドスコープです。"
+        }
+      ]
+    },
+    "card-0646": {
+      "alternatives": ["はり"],
+      "additions": []
+    },
+    "card-0647": {
+      "alternatives": ["わ"],
+      "additions": []
+    },
+    "card-0648": {
+      "alternatives": ["はごいた", "はね", "うつ"],
+      "additions": []
+    },
+    "card-0649": {
+      "alternatives": ["こま", "まわす"],
+      "additions": []
+    },
+    "card-0650": {
+      "alternatives": ["なげる"],
+      "additions": [
+        {
+          "kana": "じゃぐりんぐ",
+          "kind": "synonym",
+          "explanation": "複数の小さな袋を投げて受ける、ジャグリングです。"
+        }
+      ]
+    },
+    "card-0651": {
+      "alternatives": ["きづち", "だるま"],
+      "additions": []
+    },
+    "card-0652": {
+      "alternatives": ["め", "はな", "くち"],
+      "additions": []
+    },
+    "card-0653": {
+      "alternatives": ["さいころ", "こま", "ます"],
+      "additions": []
+    },
+    "card-0654": {
+      "alternatives": ["しょうぎばん", "こま"],
+      "additions": []
+    },
+    "card-0655": {
+      "alternatives": ["ごいし", "ごばん", "ごけ"],
+      "additions": []
+    },
+    "card-0656": {
+      "alternatives": ["ないと", "ぽーん", "ちぇすばん"],
+      "additions": []
+    },
+    "card-0657": {
+      "alternatives": ["どみのたおし", "たおれる"],
+      "additions": []
+    },
+    "card-0658": {
+      "alternatives": ["いと", "たま"],
+      "additions": []
+    },
+    "card-0659": {
+      "alternatives": ["ひも"],
+      "additions": []
+    },
+    "card-0660": {
+      "alternatives": ["でぃすく", "なげる"],
+      "additions": [
+        {
+          "kana": "ふりすびー",
+          "kind": "synonym",
+          "explanation": "フライングディスクのよく知られた呼び名、フリスビーです。"
+        }
+      ]
+    },
+    "card-0661": {
+      "alternatives": ["わ", "まわす"],
+      "additions": []
+    },
+    "card-0662": {
+      "alternatives": ["ばね", "のる"],
+      "additions": [
+        {
+          "kana": "ぽごすてぃっく",
+          "kind": "synonym",
+          "explanation": "ばねで跳ねる遊具の英語名、ポゴスティックです。"
+        }
+      ]
+    },
+    "card-0663": {
+      "alternatives": ["とぶ", "ばね"],
+      "additions": []
+    },
+    "card-0664": {
+      "alternatives": ["てつぼう", "まわる"],
+      "additions": [
+        {
+          "kana": "きかいたいそう",
+          "kind": "scene",
+          "explanation": "鉄棒を使った、器械体操の動きです。"
+        }
+      ]
+    },
+    "card-0665": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "とうりつ",
+          "kind": "synonym",
+          "explanation": "両手で支えて逆さに立つ、倒立です。"
+        }
+      ]
+    },
+    "card-0666": {
+      "alternatives": ["ころがる"],
+      "additions": [
+        {
+          "kana": "まえてん",
+          "kind": "synonym",
+          "explanation": "体を丸めて前へ転がる、前転です。"
+        }
+      ]
+    },
+    "card-0667": {
+      "alternatives": ["まわる"],
+      "additions": [
+        {
+          "kana": "そくほうてんかい",
+          "kind": "synonym",
+          "explanation": "側転の正式な呼び方、側方転回です。"
+        }
+      ]
+    },
+    "card-0668": {
+      "alternatives": ["のばす"],
+      "additions": []
+    },
+    "card-0669": {
+      "alternatives": ["のばす"],
+      "additions": [
+        {
+          "kana": "じゅうなん",
+          "kind": "synonym",
+          "explanation": "体を伸ばして柔らかくする、柔軟の運動です。"
+        }
+      ]
+    },
+    "card-0670": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ぷっしゅあっぷ",
+          "kind": "synonym",
+          "explanation": "腕立て伏せの英語名、プッシュアップです。"
+        }
+      ]
+    },
+    "card-0671": {
+      "alternatives": ["おなか"],
+      "additions": [
+        {
+          "kana": "じょうたいおこし",
+          "kind": "synonym",
+          "explanation": "寝た姿勢から上体を上げる、上体起こしです。"
+        }
+      ]
+    },
+    "card-0672": {
+      "alternatives": ["わたる"],
+      "additions": [
+        {
+          "kana": "ばらんす",
+          "kind": "scene",
+          "explanation": "細い台の上で両腕を広げ、バランスを取っています。"
+        }
+      ]
+    },
+    "card-0673": {
+      "alternatives": ["まさかり", "は"],
+      "additions": []
+    },
+    "card-0674": {
+      "alternatives": ["は"],
+      "additions": [
+        {
+          "kana": "くさかりがま",
+          "kind": "synonym",
+          "explanation": "草を刈るための、草刈り鎌です。"
+        }
+      ]
+    },
+    "card-0675": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0676": {
+      "alternatives": ["は"],
+      "additions": []
+    },
+    "card-0677": {
+      "alternatives": ["けずりば", "けずりくず"],
+      "additions": []
+    },
+    "card-0678": {
+      "alternatives": ["やすりめ"],
+      "additions": []
+    },
+    "card-0679": {
+      "alternatives": ["こてさき"],
+      "additions": []
+    },
+    "card-0680": {
+      "alternatives": ["のずる", "ひきがね", "すてぃっく"],
+      "additions": [
+        {
+          "kana": "ほっとぼんど",
+          "kind": "synonym",
+          "explanation": "熱で棒を溶かして接着する、ホットボンドです。"
+        }
+      ]
+    },
+    "card-0681": {
+      "alternatives": ["ねじ"],
+      "additions": [
+        {
+          "kana": "しゃこまんりき",
+          "kind": "synonym",
+          "explanation": "C字の枠とねじで挟む、しゃこ万力です。"
+        }
+      ]
+    },
+    "card-0682": {
+      "alternatives": ["ばいす"],
+      "additions": [
+        {
+          "kana": "だいまんりき",
+          "kind": "synonym",
+          "explanation": "台に固定して材料を挟む、台万力です。"
+        }
+      ]
+    },
+    "card-0683": {
+      "alternatives": ["ねじ", "ねじやま"],
+      "additions": []
+    },
+    "card-0684": {
+      "alternatives": ["ねじやま"],
+      "additions": [
+        {
+          "kana": "めねじ",
+          "kind": "part",
+          "explanation": "ナットの穴の内側にある、雌ねじです。"
+        }
+      ]
+    },
+    "card-0685": {
+      "alternatives": ["すくりゅー", "ねじやま"],
+      "additions": []
+    },
+    "card-0686": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ねいる",
+          "kind": "synonym",
+          "explanation": "釘の英語名、ネイルです。"
+        }
+      ]
+    },
+    "card-0687": {
+      "alternatives": ["はり", "はりあな", "いと"],
+      "additions": []
+    },
+    "card-0688": {
+      "alternatives": ["はり"],
+      "additions": []
+    },
+    "card-0689": {
+      "alternatives": ["ぴん", "とめぐ"],
+      "additions": []
+    },
+    "card-0690": {
+      "alternatives": ["いと"],
+      "additions": []
+    },
+    "card-0691": {
+      "alternatives": ["はさみ", "いと"],
+      "additions": [
+        {
+          "kana": "そーいんぐぼっくす",
+          "kind": "synonym",
+          "explanation": "裁縫箱の英語の呼び名、ソーイングボックスです。"
+        }
+      ]
+    },
+    "card-0692": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0693": {
+      "alternatives": ["ぬの"],
+      "additions": []
+    },
+    "card-0694": {
+      "alternatives": ["けいと", "いと"],
+      "additions": []
+    },
+    "card-0695": {
+      "alternatives": ["は"],
+      "additions": [
+        {
+          "kana": "かったーないふ",
+          "kind": "synonym",
+          "explanation": "薄い刃を出して切る、カッターナイフです。"
+        }
+      ]
+    },
+    "card-0696": {
+      "alternatives": ["ますめ", "めもり"],
+      "additions": [
+        {
+          "kana": "かってぃんぐまっと",
+          "kind": "synonym",
+          "explanation": "刃から机を守る、カッティングマットです。"
+        }
+      ]
+    },
+    "card-0697": {
+      "alternatives": ["ぱんち", "あな"],
+      "additions": []
+    },
+    "card-0698": {
+      "alternatives": ["かいてんば"],
+      "additions": []
+    },
+    "card-0699": {
+      "alternatives": ["てーぷ"],
+      "additions": [
+        {
+          "kana": "こんぽうてーぷ",
+          "kind": "synonym",
+          "explanation": "箱などを包んで留める、梱包テープです。"
+        }
+      ]
+    },
+    "card-0700": {
+      "alternatives": ["すいへいき", "きほう"],
+      "additions": []
+    },
+    "card-0701": {
+      "alternatives": ["のこぎり"],
+      "additions": [
+        {
+          "kana": "いとのこぎり",
+          "kind": "synonym",
+          "explanation": "細い刃を張った、糸のこぎりです。"
+        }
+      ]
+    },
+    "card-0702": {
+      "alternatives": ["でんどうどりる", "どりるびっと"],
+      "additions": []
+    },
+    "card-0703": {
+      "alternatives": ["おいるさし"],
+      "additions": []
+    },
+    "card-0704": {
+      "alternatives": ["はもの", "とぐ"],
+      "additions": [
+        {
+          "kana": "はとぎ",
+          "kind": "action",
+          "explanation": "石に包丁を当てて刃を研ぐ、刃研ぎの場面です。"
+        }
+      ]
+    },
+    "card-0705": {
+      "alternatives": ["きば", "うろこ"],
+      "additions": [
+        {
+          "kana": "くろこだいる",
+          "kind": "synonym",
+          "explanation": "わにの英語の呼び名、クロコダイルです。"
+        }
+      ]
+    },
+    "card-0706": {
+      "alternatives": ["した", "とぐろ", "うろこ"],
+      "additions": [
+        {
+          "kana": "すねーく",
+          "kind": "synonym",
+          "explanation": "へびの英語名、スネークです。"
+        }
+      ]
+    },
+    "card-0707": {
+      "alternatives": ["しっぽ", "め"],
+      "additions": []
+    },
+    "card-0708": {
+      "alternatives": ["とさか"],
+      "additions": []
+    },
+    "card-0709": {
+      "alternatives": ["ゆび"],
+      "additions": []
+    },
+    "card-0710": {
+      "alternatives": ["あし"],
+      "additions": [
+        {
+          "kana": "けろけろ",
+          "kind": "wordplay",
+          "explanation": "かえるの鳴き声から、けろけろと読みます。"
+        }
+      ]
+    },
+    "card-0711": {
+      "alternatives": ["しっぽ"],
+      "additions": [
+        {
+          "kana": "かえるのこ",
+          "kind": "synonym",
+          "explanation": "おたまじゃくしは、かえるの子どもです。"
+        }
+      ]
+    },
+    "card-0712": {
+      "alternatives": ["おなか"],
+      "additions": []
+    },
+    "card-0713": {
+      "alternatives": ["えら"],
+      "additions": [
+        {
+          "kana": "あほろーとる",
+          "kind": "synonym",
+          "explanation": "ウーパールーパーの別名、アホロートルです。"
+        }
+      ]
+    },
+    "card-0714": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0715": {
+      "alternatives": ["きば", "ひげ"],
+      "additions": []
+    },
+    "card-0716": {
+      "alternatives": ["かい", "うく"],
+      "additions": []
+    },
+    "card-0717": {
+      "alternatives": ["せびれ"],
+      "additions": []
+    },
+    "card-0718": {
+      "alternatives": ["は", "せびれ"],
+      "additions": [
+        {
+          "kana": "しゃーく",
+          "kind": "synonym",
+          "explanation": "さめの英語名、シャークです。"
+        }
+      ]
+    },
+    "card-0719": {
+      "alternatives": ["しっぽ"],
+      "additions": [
+        {
+          "kana": "うみのたこ",
+          "kind": "wordplay",
+          "explanation": "ひし形の体と長い尾を、海を泳ぐ凧に見立てました。"
+        }
+      ]
+    },
+    "card-0720": {
+      "alternatives": ["しっぽ"],
+      "additions": [
+        {
+          "kana": "しーほーす",
+          "kind": "synonym",
+          "explanation": "タツノオトシゴの英語名、シーホースです。"
+        }
+      ]
+    },
+    "card-0721": {
+      "alternatives": ["かさ", "しょくしゅ"],
+      "additions": [
+        {
+          "kana": "うみのぱらそる",
+          "kind": "wordplay",
+          "explanation": "丸い傘と長い触手の姿を、海のパラソルに見立てました。"
+        }
+      ]
+    },
+    "card-0722": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ほし",
+          "kind": "wordplay",
+          "explanation": "五本の腕が放射状に広がる姿を、星に見立てました。"
+        }
+      ]
+    },
+    "card-0723": {
+      "alternatives": ["とげ", "はり"],
+      "additions": []
+    },
+    "card-0724": {
+      "alternatives": ["ひげ", "しっぽ"],
+      "additions": []
+    },
+    "card-0725": {
+      "alternatives": ["かいがら", "はさみ"],
+      "additions": []
+    },
+    "card-0726": {
+      "alternatives": ["かいがら"],
+      "additions": []
+    },
+    "card-0727": {
+      "alternatives": ["かいばしら", "かいがら"],
+      "additions": []
+    },
+    "card-0728": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "うみのきゅうり",
+          "kind": "wordplay",
+          "explanation": "細長いなまこを、英語名にもなる海のきゅうりに見立てました。"
+        }
+      ]
+    },
+    "card-0729": {
+      "alternatives": ["から", "つの", "うずまき"],
+      "additions": [
+        {
+          "kana": "でんでんむし",
+          "kind": "synonym",
+          "explanation": "かたつむりのよく知られた別名、でんでんむしです。"
+        }
+      ]
+    },
+    "card-0730": {
+      "alternatives": ["つの"],
+      "additions": []
+    },
+    "card-0731": {
+      "alternatives": ["しょっかく"],
+      "additions": []
+    },
+    "card-0732": {
+      "alternatives": ["あし"],
+      "additions": []
+    },
+    "card-0733": {
+      "alternatives": ["かま"],
+      "additions": [
+        {
+          "kana": "かりうど",
+          "kind": "wordplay",
+          "explanation": "鎌のような前脚で獲物を捕るかまきりを、狩人に見立てました。"
+        }
+      ]
+    },
+    "card-0734": {
+      "alternatives": ["はね"],
+      "additions": []
+    },
+    "card-0735": {
+      "alternatives": ["あご"],
+      "additions": [
+        {
+          "kana": "くわがたむし",
+          "kind": "synonym",
+          "explanation": "大きなあごが特徴の、クワガタムシです。"
+        }
+      ]
+    },
+    "card-0736": {
+      "alternatives": ["つの"],
+      "additions": []
+    },
+    "card-0737": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "しゅーほーん",
+          "kind": "synonym",
+          "explanation": "靴べらの英語名、シューホーンです。"
+        }
+      ]
+    },
+    "card-0738": {
+      "alternatives": ["ぶらし", "け"],
+      "additions": []
+    },
+    "card-0739": {
+      "alternatives": ["かさ"],
+      "additions": [
+        {
+          "kana": "あんぶれらすたんど",
+          "kind": "synonym",
+          "explanation": "傘立ての英語の呼び名、アンブレラスタンドです。"
+        }
+      ]
+    },
+    "card-0740": {
+      "alternatives": ["くつ", "たな"],
+      "additions": [
+        {
+          "kana": "くつばこ",
+          "kind": "synonym",
+          "explanation": "靴をしまう箱形の収納なので、靴箱です。"
+        }
+      ]
+    },
+    "card-0741": {
+      "alternatives": ["ふっく"],
+      "additions": [
+        {
+          "kana": "えもんかけ",
+          "kind": "synonym",
+          "explanation": "ハンガーの昔からの呼び名、衣紋掛けです。"
+        }
+      ]
+    },
+    "card-0742": {
+      "alternatives": ["ぴんち", "ばね"],
+      "additions": []
+    },
+    "card-0743": {
+      "alternatives": ["かご", "ふく"],
+      "additions": [
+        {
+          "kana": "らんどりーばすけっと",
+          "kind": "synonym",
+          "explanation": "洗濯かごの英語の呼び名、ランドリーバスケットです。"
+        }
+      ]
+    },
+    "card-0744": {
+      "alternatives": ["みぞ"],
+      "additions": []
+    },
+    "card-0745": {
+      "alternatives": ["わ"],
+      "additions": []
+    },
+    "card-0746": {
+      "alternatives": ["ろーらー"],
+      "additions": [
+        {
+          "kana": "ころころ",
+          "kind": "wordplay",
+          "explanation": "転がしてごみを取る、ころころする道具です。"
+        }
+      ]
+    },
+    "card-0747": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "だすとぼっくす",
+          "kind": "synonym",
+          "explanation": "ごみ箱を表す呼び名、ダストボックスです。"
+        }
+      ]
+    },
+    "card-0748": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "はながみ",
+          "kind": "synonym",
+          "explanation": "鼻をかむための薄い紙なので、鼻紙です。"
+        }
+      ]
+    },
+    "card-0749": {
+      "alternatives": ["しん"],
+      "additions": []
+    },
+    "card-0750": {
+      "alternatives": ["べんき", "たんく"],
+      "additions": []
+    },
+    "card-0751": {
+      "alternatives": ["ばすたぶ", "あわ"],
+      "additions": []
+    },
+    "card-0752": {
+      "alternatives": ["じゃぐち", "ぼうる"],
+      "additions": []
+    },
+    "card-0753": {
+      "alternatives": ["ほーす", "みず"],
+      "additions": [
+        {
+          "kana": "あめふらし",
+          "kind": "wordplay",
+          "explanation": "丸い口から水が降るシャワーを、雨を降らせる道具に見立てました。"
+        }
+      ]
+    },
+    "card-0754": {
+      "alternatives": ["おけ"],
+      "additions": []
+    },
+    "card-0755": {
+      "alternatives": ["せっけん"],
+      "additions": []
+    },
+    "card-0756": {
+      "alternatives": ["みぞ"],
+      "additions": []
+    },
+    "card-0757": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "けんおんき",
+          "kind": "synonym",
+          "explanation": "体温を測る道具の、検温器です。"
+        }
+      ]
+    },
+    "card-0758": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "おいしゃさんのみみ",
+          "kind": "wordplay",
+          "explanation": "胸の音を聞く聴診器を、お医者さんの耳に見立てました。"
+        }
+      ]
+    },
+    "card-0759": {
+      "alternatives": ["はり", "ぴすとん"],
+      "additions": []
+    },
+    "card-0760": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "まきほうたい",
+          "kind": "synonym",
+          "explanation": "巻いた形の、巻き包帯です。"
+        }
+      ]
+    },
+    "card-0761": {
+      "alternatives": ["がーぜ"],
+      "additions": []
+    },
+    "card-0762": {
+      "alternatives": ["つえ"],
+      "additions": []
+    },
+    "card-0763": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "すとれっちゃー",
+          "kind": "synonym",
+          "explanation": "担架の英語の呼び名、ストレッチャーです。"
+        }
+      ]
+    },
+    "card-0764": {
+      "alternatives": ["ほうたい", "はさみ"],
+      "additions": [
+        {
+          "kana": "きゅうきゅうせっと",
+          "kind": "synonym",
+          "explanation": "応急手当ての道具を集めた、救急セットです。"
+        }
+      ]
+    },
+    "card-0765": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0766": {
+      "alternatives": ["こおり"],
+      "additions": [
+        {
+          "kana": "ひょうのう",
+          "kind": "synonym",
+          "explanation": "氷を入れて体を冷やす、氷嚢です。"
+        }
+      ]
+    },
+    "card-0767": {
+      "alternatives": ["わた"],
+      "additions": []
+    },
+    "card-0768": {
+      "alternatives": ["はさむ"],
+      "additions": []
+    },
+    "card-0769": {
+      "alternatives": ["もち", "は"],
+      "additions": []
+    },
+    "card-0770": {
+      "alternatives": ["もち", "あんこ"],
+      "additions": [
+        {
+          "kana": "だいふくもち",
+          "kind": "synonym",
+          "explanation": "あんを餅で包んだ、大福餅です。"
+        }
+      ]
+    },
+    "card-0771": {
+      "alternatives": ["あんこ"],
+      "additions": [
+        {
+          "kana": "みかさ",
+          "kind": "synonym",
+          "explanation": "どら焼きの別の呼び名、三笠です。"
+        }
+      ]
+    },
+    "card-0772": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "さかなのおかし",
+          "kind": "wordplay",
+          "explanation": "魚の形をした甘い菓子なので、魚のお菓子と読みます。"
+        }
+      ]
+    },
+    "card-0773": {
+      "alternatives": ["あんこ"],
+      "additions": [
+        {
+          "kana": "おまんじゅう",
+          "kind": "synonym",
+          "explanation": "あんの入った、おまんじゅうです。"
+        }
+      ]
+    },
+    "card-0774": {
+      "alternatives": ["くし", "もち"],
+      "additions": [
+        {
+          "kana": "さんしょくだんご",
+          "kind": "synonym",
+          "explanation": "桃色・白・緑の、三色団子です。"
+        }
+      ]
+    },
+    "card-0775": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0776": {
+      "alternatives": ["のり"],
+      "additions": []
+    },
+    "card-0777": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0778": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ほしのさとう",
+          "kind": "wordplay",
+          "explanation": "角がとがった砂糖菓子を、星の砂糖に見立てました。"
+        }
+      ]
+    },
+    "card-0779": {
+      "alternatives": ["つつみがみ"],
+      "additions": [
+        {
+          "kana": "きゃんでぃー",
+          "kind": "synonym",
+          "explanation": "あめの英語名、キャンディーです。"
+        }
+      ]
+    },
+    "card-0780": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "いたちょこ",
+          "kind": "synonym",
+          "explanation": "格子に区切った板の形なので、板チョコです。"
+        }
+      ]
+    },
+    "card-0781": {
+      "alternatives": ["くま", "わ"],
+      "additions": []
+    },
+    "card-0782": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "くっきー",
+          "kind": "synonym",
+          "explanation": "小麦粉の生地を薄く焼いた、クッキーの仲間です。"
+        }
+      ]
+    },
+    "card-0783": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0784": {
+      "alternatives": ["ちっぷす"],
+      "additions": [
+        {
+          "kana": "ぽてち",
+          "kind": "synonym",
+          "explanation": "ポテトチップスの短い呼び名、ポテチです。"
+        }
+      ]
+    },
+    "card-0785": {
+      "alternatives": ["ひだ", "かわ"],
+      "additions": []
+    },
+    "card-0786": {
+      "alternatives": ["まめ"],
+      "additions": [
+        {
+          "kana": "しゅーまい",
+          "kind": "synonym",
+          "explanation": "しゅうまいの長音での呼び方、シューマイです。"
+        }
+      ]
+    },
+    "card-0787": {
+      "alternatives": ["やさい"],
+      "additions": []
+    },
+    "card-0788": {
+      "alternatives": ["ひだ", "ぐ"],
+      "additions": [
+        {
+          "kana": "ぶたまん",
+          "kind": "synonym",
+          "explanation": "豚肉の具を包む肉まんは、豚まんとも呼びます。"
+        }
+      ]
+    },
+    "card-0789": {
+      "alternatives": ["は", "こめ"],
+      "additions": [
+        {
+          "kana": "ささづつみ",
+          "kind": "synonym",
+          "explanation": "笹の葉で包んだ形なので、笹包みです。"
+        }
+      ]
+    },
+    "card-0790": {
+      "alternatives": ["やきめ"],
+      "additions": []
+    },
+    "card-0791": {
+      "alternatives": ["そう", "ちーず"],
+      "additions": [
+        {
+          "kana": "らざーにゃ",
+          "kind": "synonym",
+          "explanation": "ラザニアの別の発音、ラザーニャです。"
+        }
+      ]
+    },
+    "card-0792": {
+      "alternatives": ["えび", "こめ"],
+      "additions": []
+    },
+    "card-0793": {
+      "alternatives": ["めだまやき", "やさい"],
+      "additions": []
+    },
+    "card-0794": {
+      "alternatives": ["ごはん", "のり"],
+      "additions": []
+    },
+    "card-0795": {
+      "alternatives": ["たまご", "そう"],
+      "additions": [
+        {
+          "kana": "あつやきたまご",
+          "kind": "synonym",
+          "explanation": "厚く焼いて巻いた、厚焼き卵です。"
+        }
+      ]
+    },
+    "card-0796": {
+      "alternatives": ["えび", "しいたけ"],
+      "additions": []
+    },
+    "card-0797": {
+      "alternatives": ["ごはん", "しきり"],
+      "additions": [
+        {
+          "kana": "おべんとう",
+          "kind": "synonym",
+          "explanation": "箱にご飯とおかずを詰めた、お弁当です。"
+        }
+      ]
+    },
+    "card-0798": {
+      "alternatives": ["ぱん", "やさい"],
+      "additions": []
+    },
+    "card-0799": {
+      "alternatives": ["もも"],
+      "additions": [
+        {
+          "kana": "とりのまるやき",
+          "kind": "synonym",
+          "explanation": "鶏を丸ごと焼いた、鶏の丸焼きです。"
+        }
+      ]
+    },
+    "card-0800": {
+      "alternatives": ["ちーず", "ぱん"],
+      "additions": []
+    },
+    "card-0801": {
+      "alternatives": ["ほん", "ほんだな"],
+      "additions": [
+        {
+          "kana": "ほんのいえ",
+          "kind": "wordplay",
+          "explanation": "たくさんの本が暮らす家に見立てた、図書館です。"
+        }
+      ]
+    },
+    "card-0802": {
+      "alternatives": ["しょうぼうしゃ", "しゃこ"],
+      "additions": [
+        {
+          "kana": "ふぁいやーすてーしょん",
+          "kind": "synonym",
+          "explanation": "消防署の英語名、ファイヤーステーションです。"
+        }
+      ]
+    },
+    "card-0803": {
+      "alternatives": ["ぽすと", "ふうとう"],
+      "additions": [
+        {
+          "kana": "ゆうびん",
+          "kind": "scene",
+          "explanation": "封筒を扱い、赤いポストのある、郵便の窓口です。"
+        }
+      ]
+    },
+    "card-0804": {
+      "alternatives": ["えんとつ", "けむり"],
+      "additions": [
+        {
+          "kana": "こうば",
+          "kind": "synonym",
+          "explanation": "品物を作る工場を、こうばとも読みます。"
+        }
+      ]
+    },
+    "card-0805": {
+      "alternatives": ["うし", "こや"],
+      "additions": []
+    },
+    "card-0806": {
+      "alternatives": ["たんぼ", "なえ"],
+      "additions": []
+    },
+    "card-0807": {
+      "alternatives": ["うね", "にんじん"],
+      "additions": []
+    },
+    "card-0808": {
+      "alternatives": ["はち"],
+      "additions": [
+        {
+          "kana": "ぐりーんはうす",
+          "kind": "synonym",
+          "explanation": "温室の英語名、グリーンハウスです。"
+        }
+      ]
+    },
+    "card-0809": {
+      "alternatives": ["みずうみ"],
+      "additions": []
+    },
+    "card-0810": {
+      "alternatives": ["れんが", "けむり"],
+      "additions": []
+    },
+    "card-0811": {
+      "alternatives": ["すいしゃ", "はね"],
+      "additions": [
+        {
+          "kana": "みずのふうしゃ",
+          "kind": "wordplay",
+          "explanation": "流れに押されて回る輪を、水の風車に見立てました。"
+        }
+      ]
+    },
+    "card-0812": {
+      "alternatives": ["あな", "どうろ"],
+      "additions": []
+    },
+    "card-0813": {
+      "alternatives": ["はし", "かいだん"],
+      "additions": []
+    },
+    "card-0814": {
+      "alternatives": ["しゃだんき", "せんろ"],
+      "additions": []
+    },
+    "card-0815": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "しんごうき",
+          "kind": "synonym",
+          "explanation": "赤・黄・青で交通を知らせる、信号機です。"
+        }
+      ]
+    },
+    "card-0816": {
+      "alternatives": ["やじるし"],
+      "additions": [
+        {
+          "kana": "どうろひょうしき",
+          "kind": "synonym",
+          "explanation": "道路に立つ、道路標識です。"
+        }
+      ]
+    },
+    "card-0817": {
+      "alternatives": ["しま", "どうろ"],
+      "additions": []
+    },
+    "card-0818": {
+      "alternatives": ["すな", "ばけつ", "しゃべる"],
+      "additions": []
+    },
+    "card-0819": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0820": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "よこばしご",
+          "kind": "synonym",
+          "explanation": "横向きにはしごを渡した遊具なので、横はしごです。"
+        }
+      ]
+    },
+    "card-0821": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0822": {
+      "alternatives": ["せもたれ"],
+      "additions": []
+    },
+    "card-0823": {
+      "alternatives": ["でんわ", "じゅわき"],
+      "additions": [
+        {
+          "kana": "こうしゅうでんわ",
+          "kind": "part",
+          "explanation": "箱の中の緑の電話は、公衆電話です。"
+        }
+      ]
+    },
+    "card-0824": {
+      "alternatives": ["かん"],
+      "additions": [
+        {
+          "kana": "じはんき",
+          "kind": "synonym",
+          "explanation": "自動販売機の短い呼び名、自販機です。"
+        }
+      ]
+    },
+    "card-0825": {
+      "alternatives": ["じゃぐち", "みず"],
+      "additions": [
+        {
+          "kana": "みずのみ",
+          "kind": "synonym",
+          "explanation": "飲み水が出る設備なので、水飲みです。"
+        }
+      ]
+    },
+    "card-0826": {
+      "alternatives": ["みず", "ふきあがる"],
+      "additions": []
+    },
+    "card-0827": {
+      "alternatives": ["ふらっぐ"],
+      "additions": [
+        {
+          "kana": "めじるし",
+          "kind": "scene",
+          "explanation": "遠くから見える旗を、目印として読めます。"
+        }
+      ]
+    },
+    "card-0828": {
+      "alternatives": ["ゆき", "あかり"],
+      "additions": []
+    },
+    "card-0829": {
+      "alternatives": ["どて", "かわ"],
+      "additions": []
+    },
+    "card-0830": {
+      "alternatives": ["くい"],
+      "additions": [
+        {
+          "kana": "ふなつきば",
+          "kind": "synonym",
+          "explanation": "船に乗り降りするための、船着き場です。"
+        }
+      ]
+    },
+    "card-0831": {
+      "alternatives": ["たま", "かご", "なげる"],
+      "additions": [
+        {
+          "kana": "うんどうかい",
+          "kind": "scene",
+          "explanation": "赤白の玉をかごに投げる、運動会の玉入れです。"
+        }
+      ]
+    },
+    "card-0832": {
+      "alternatives": ["つな", "ひく"],
+      "additions": []
+    },
+    "card-0833": {
+      "alternatives": ["さくそふぉん"],
+      "additions": [
+        {
+          "kana": "さきそふぉん",
+          "kind": "synonym",
+          "explanation": "サックスの別の呼び方、サキソフォンです。"
+        }
+      ]
+    },
+    "card-0834": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0835": {
+      "alternatives": ["りーど"],
+      "additions": []
+    },
+    "card-0836": {
+      "alternatives": ["ばすーん"],
+      "additions": []
+    },
+    "card-0837": {
+      "alternatives": ["ばるぶ"],
+      "additions": []
+    },
+    "card-0838": {
+      "alternatives": ["すらいど"],
+      "additions": []
+    },
+    "card-0839": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ふれんちほるん",
+          "kind": "synonym",
+          "explanation": "丸く巻いた管の、フレンチホルンです。"
+        }
+      ]
+    },
+    "card-0840": {
+      "alternatives": ["げん"],
+      "additions": [
+        {
+          "kana": "たてごと",
+          "kind": "synonym",
+          "explanation": "ハープの和名、竪琴です。"
+        }
+      ]
+    },
+    "card-0841": {
+      "alternatives": ["げん", "ことじ"],
+      "additions": [
+        {
+          "kana": "そう",
+          "kind": "synonym",
+          "explanation": "長い胴に柱を立てて弦を張った、箏です。"
+        }
+      ]
+    },
+    "card-0842": {
+      "alternatives": ["げん", "いとまき"],
+      "additions": []
+    },
+    "card-0843": {
+      "alternatives": ["ばち", "げん"],
+      "additions": []
+    },
+    "card-0844": {
+      "alternatives": ["げん", "いとまき"],
+      "additions": []
+    },
+    "card-0845": {
+      "alternatives": ["げん"],
+      "additions": []
+    },
+    "card-0846": {
+      "alternatives": ["げん"],
+      "additions": []
+    },
+    "card-0847": {
+      "alternatives": ["げん", "ゆみ", "えんどぴん"],
+      "additions": [
+        {
+          "kana": "せろ",
+          "kind": "synonym",
+          "explanation": "チェロの別の表記、セロです。"
+        }
+      ]
+    },
+    "card-0848": {
+      "alternatives": ["げん", "ゆみ", "ひく"],
+      "additions": [
+        {
+          "kana": "だぶるべーす",
+          "kind": "synonym",
+          "explanation": "コントラバスの英語名、ダブルベースです。"
+        }
+      ]
+    },
+    "card-0849": {
+      "alternatives": ["けんばん", "ぱいぷ"],
+      "additions": [
+        {
+          "kana": "おるがん",
+          "kind": "synonym",
+          "explanation": "たくさんの管と鍵盤を持つ、オルガンです。"
+        }
+      ]
+    },
+    "card-0850": {
+      "alternatives": ["ばち"],
+      "additions": [
+        {
+          "kana": "ぐろっけん",
+          "kind": "synonym",
+          "explanation": "金属の音板をばちでたたく、グロッケンです。"
+        }
+      ]
+    },
+    "card-0851": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "あわせしんばる",
+          "kind": "synonym",
+          "explanation": "二枚を打ち合わせて鳴らす、合わせシンバルです。"
+        }
+      ]
+    },
+    "card-0852": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "さんかく",
+          "kind": "wordplay",
+          "explanation": "楽器の形をそのまま、三角と読めます。"
+        }
+      ]
+    },
+    "card-0853": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0854": {
+      "alternatives": ["ばち"],
+      "additions": [
+        {
+          "kana": "ごんぐ",
+          "kind": "synonym",
+          "explanation": "どらの英語名、ゴングです。"
+        }
+      ]
+    },
+    "card-0855": {
+      "alternatives": ["べる"],
+      "additions": [
+        {
+          "kana": "うしのすず",
+          "kind": "synonym",
+          "explanation": "カウベルは、もともと牛に付けた鈴です。"
+        }
+      ]
+    },
+    "card-0856": {
+      "alternatives": ["あな", "ふきぐち"],
+      "additions": [
+        {
+          "kana": "つちぶえ",
+          "kind": "synonym",
+          "explanation": "土を焼いて作る、土笛です。"
+        }
+      ]
+    },
+    "card-0857": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0858": {
+      "alternatives": ["あな", "ふきぐち"],
+      "additions": [
+        {
+          "kana": "たてぶえ",
+          "kind": "synonym",
+          "explanation": "縦に構えて吹く、縦笛です。"
+        }
+      ]
+    },
+    "card-0859": {
+      "alternatives": ["ふくろ"],
+      "additions": [
+        {
+          "kana": "ふくろぶえ",
+          "kind": "synonym",
+          "explanation": "袋にためた空気で吹く、袋笛です。"
+        }
+      ]
+    },
+    "card-0860": {
+      "alternatives": ["ぺだる", "ばち"],
+      "additions": []
+    },
+    "card-0861": {
+      "alternatives": ["たいこ"],
+      "additions": []
+    },
+    "card-0862": {
+      "alternatives": ["たいこ", "ばち"],
+      "additions": [
+        {
+          "kana": "こだいこ",
+          "kind": "synonym",
+          "explanation": "スネアドラムの和名、小太鼓です。"
+        }
+      ]
+    },
+    "card-0863": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "おやゆびぴあの",
+          "kind": "synonym",
+          "explanation": "指で金属の板をはじく、親指ピアノです。"
+        }
+      ]
+    },
+    "card-0864": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0865": {
+      "alternatives": ["くびかざり"],
+      "additions": []
+    },
+    "card-0866": {
+      "alternatives": ["みみかざり"],
+      "additions": [
+        {
+          "kana": "しずく",
+          "kind": "wordplay",
+          "explanation": "青い石のとがった丸い形を、水のしずくに見立てました。"
+        }
+      ]
+    },
+    "card-0867": {
+      "alternatives": ["りんぐ", "いし"],
+      "additions": [
+        {
+          "kana": "ほうせき",
+          "kind": "part",
+          "explanation": "輪の上に大きく輝く宝石が付いています。"
+        }
+      ]
+    },
+    "card-0868": {
+      "alternatives": ["うでわ", "くさり"],
+      "additions": []
+    },
+    "card-0869": {
+      "alternatives": ["はな", "はり"],
+      "additions": [
+        {
+          "kana": "はなかざり",
+          "kind": "synonym",
+          "explanation": "花の形の飾りなので、花飾りです。"
+        }
+      ]
+    },
+    "card-0870": {
+      "alternatives": ["かんむり"],
+      "additions": []
+    },
+    "card-0871": {
+      "alternatives": ["りぼん", "ほし"],
+      "additions": [
+        {
+          "kana": "きんめだる",
+          "kind": "synonym",
+          "explanation": "金色の丸い板が下がる、金メダルです。"
+        }
+      ]
+    },
+    "card-0872": {
+      "alternatives": ["かっぷ"],
+      "additions": [
+        {
+          "kana": "ゆうしょうかっぷ",
+          "kind": "synonym",
+          "explanation": "勝者に贈る、優勝カップです。"
+        }
+      ]
+    },
+    "card-0873": {
+      "alternatives": ["りっぷすてぃっく"],
+      "additions": []
+    },
+    "card-0874": {
+      "alternatives": ["びん", "はけ"],
+      "additions": [
+        {
+          "kana": "ねいるぽりっしゅ",
+          "kind": "synonym",
+          "explanation": "マニキュア液の英語名、ネイルポリッシュです。"
+        }
+      ]
+    },
+    "card-0875": {
+      "alternatives": ["びん", "きり"],
+      "additions": [
+        {
+          "kana": "ぱふゅーむ",
+          "kind": "synonym",
+          "explanation": "香水の英語名、パフュームです。"
+        }
+      ]
+    },
+    "card-0876": {
+      "alternatives": ["かがみ", "ぱふ"],
+      "additions": [
+        {
+          "kana": "けしょうどうぐ",
+          "kind": "synonym",
+          "explanation": "鏡とパフのある、化粧道具です。"
+        }
+      ]
+    },
+    "card-0877": {
+      "alternatives": ["ぶらし", "け"],
+      "additions": []
+    },
+    "card-0878": {
+      "alternatives": ["ばね"],
+      "additions": []
+    },
+    "card-0879": {
+      "alternatives": ["ぴん"],
+      "additions": []
+    },
+    "card-0880": {
+      "alternatives": ["ればー", "は"],
+      "additions": []
+    },
+    "card-0881": {
+      "alternatives": ["け"],
+      "additions": [
+        {
+          "kana": "もうひつ",
+          "kind": "synonym",
+          "explanation": "動物の毛を束ねて作る、毛筆です。"
+        }
+      ]
+    },
+    "card-0882": {
+      "alternatives": ["えのぐ"],
+      "additions": [
+        {
+          "kana": "いろのさら",
+          "kind": "wordplay",
+          "explanation": "絵の具を載せるパレットを、色のお皿に見立てました。"
+        }
+      ]
+    },
+    "card-0883": {
+      "alternatives": ["きゃんばす"],
+      "additions": [
+        {
+          "kana": "がか",
+          "kind": "synonym",
+          "explanation": "絵を支える画架です。絵描きの画家と同じ読みになります。"
+        }
+      ]
+    },
+    "card-0884": {
+      "alternatives": ["ちゅーぶ"],
+      "additions": []
+    },
+    "card-0885": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0886": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "がようし",
+          "kind": "part",
+          "explanation": "絵を描くための、厚い画用紙がとじられています。"
+        }
+      ]
+    },
+    "card-0887": {
+      "alternatives": ["すみ"],
+      "additions": []
+    },
+    "card-0888": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "かみおさえ",
+          "kind": "synonym",
+          "explanation": "紙が動かないよう押さえる、紙押さえです。"
+        }
+      ]
+    },
+    "card-0889": {
+      "alternatives": ["ふで"],
+      "additions": [
+        {
+          "kana": "ひっか",
+          "kind": "synonym",
+          "explanation": "筆を横に置いて休ませる、筆架です。"
+        }
+      ]
+    },
+    "card-0890": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "つる",
+          "kind": "wordplay",
+          "explanation": "紙で折った鳥の形を、そのまま鶴と読みます。"
+        }
+      ]
+    },
+    "card-0891": {
+      "alternatives": ["つの"],
+      "additions": [
+        {
+          "kana": "かぶと",
+          "kind": "wordplay",
+          "explanation": "折った紙を、武将のかぶとに見立てました。"
+        }
+      ]
+    },
+    "card-0892": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "きつねめん",
+          "kind": "synonym",
+          "explanation": "白い狐の顔を描いた、狐面です。"
+        }
+      ]
+    },
+    "card-0893": {
+      "alternatives": ["ほね"],
+      "additions": []
+    },
+    "card-0894": {
+      "alternatives": ["ほね", "かなめ"],
+      "additions": []
+    },
+    "card-0895": {
+      "alternatives": ["ほね"],
+      "additions": []
+    },
+    "card-0896": {
+      "alternatives": ["ししがしら"],
+      "additions": [
+        {
+          "kana": "おまつり",
+          "kind": "scene",
+          "explanation": "獅子頭をかぶって舞う、お祭りの芸能です。"
+        }
+      ]
+    },
+    "card-0897": {
+      "alternatives": ["とげ"],
+      "additions": []
+    },
+    "card-0898": {
+      "alternatives": ["うろこ", "せびれ"],
+      "additions": []
+    },
+    "card-0899": {
+      "alternatives": ["おびれ"],
+      "additions": []
+    },
+    "card-0900": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "にょろにょろ",
+          "kind": "wordplay",
+          "explanation": "細長い体を曲げる、うなぎの動きの読みです。"
+        }
+      ]
+    },
+    "card-0901": {
+      "alternatives": ["ひげ"],
+      "additions": []
+    },
+    "card-0902": {
+      "alternatives": ["ひげ", "うろこ"],
+      "additions": []
+    },
+    "card-0903": {
+      "alternatives": ["さーもん"],
+      "additions": [
+        {
+          "kana": "しゃけ",
+          "kind": "synonym",
+          "explanation": "鮭の別の読み方、しゃけです。"
+        }
+      ]
+    },
+    "card-0904": {
+      "alternatives": ["くち", "せびれ"],
+      "additions": []
+    },
+    "card-0905": {
+      "alternatives": ["あかり", "くち"],
+      "additions": [
+        {
+          "kana": "うみのちょうちん",
+          "kind": "wordplay",
+          "explanation": "頭の先に光る器官を持つ姿を、海のちょうちんに見立てました。"
+        }
+      ]
+    },
+    "card-0906": {
+      "alternatives": ["ひれ"],
+      "additions": []
+    },
+    "card-0907": {
+      "alternatives": ["ひかり"],
+      "additions": [
+        {
+          "kana": "ほたるび",
+          "kind": "part",
+          "explanation": "腹の先で光る、蛍火です。"
+        }
+      ]
+    },
+    "card-0908": {
+      "alternatives": ["あし"],
+      "additions": []
+    },
+    "card-0909": {
+      "alternatives": ["はさみ", "しっぽ", "はり"],
+      "additions": []
+    },
+    "card-0910": {
+      "alternatives": ["ふし"],
+      "additions": [
+        {
+          "kana": "まるむし",
+          "kind": "synonym",
+          "explanation": "だんごむしの別の呼び名、丸虫です。"
+        }
+      ]
+    },
+    "card-0911": {
+      "alternatives": ["あし", "ふし"],
+      "additions": []
+    },
+    "card-0912": {
+      "alternatives": ["こうら", "しっぽ"],
+      "additions": []
+    },
+    "card-0913": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ちりぺっぱー",
+          "kind": "synonym",
+          "explanation": "とうがらしの英語名、チリペッパーです。"
+        }
+      ]
+    },
+    "card-0914": {
+      "alternatives": ["きりくち"],
+      "additions": []
+    },
+    "card-0915": {
+      "alternatives": ["にがうり", "とっき"],
+      "additions": [
+        {
+          "kana": "ごーやー",
+          "kind": "synonym",
+          "explanation": "ごーやを長く伸ばして呼ぶ、ゴーヤーです。"
+        }
+      ]
+    },
+    "card-0916": {
+      "alternatives": ["かわ"],
+      "additions": []
+    },
+    "card-0917": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0918": {
+      "alternatives": ["は", "はみゃく"],
+      "additions": [
+        {
+          "kana": "おおば",
+          "kind": "synonym",
+          "explanation": "食用の青じその葉は、大葉です。"
+        }
+      ]
+    },
+    "card-0919": {
+      "alternatives": ["め"],
+      "additions": []
+    },
+    "card-0920": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0921": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "かいわれ",
+          "kind": "synonym",
+          "explanation": "かいわれだいこんの短い呼び名、かいわれです。"
+        }
+      ]
+    },
+    "card-0922": {
+      "alternatives": ["まめ", "め"],
+      "additions": []
+    },
+    "card-0923": {
+      "alternatives": ["から", "しわ"],
+      "additions": [
+        {
+          "kana": "うぉーるなっつ",
+          "kind": "synonym",
+          "explanation": "くるみの英語名、ウォールナッツです。"
+        }
+      ]
+    },
+    "card-0924": {
+      "alternatives": ["ぴーなっつ", "から"],
+      "additions": [
+        {
+          "kana": "なんきんまめ",
+          "kind": "synonym",
+          "explanation": "落花生の別名、南京豆です。"
+        }
+      ]
+    },
+    "card-0925": {
+      "alternatives": ["から"],
+      "additions": []
+    },
+    "card-0926": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0927": {
+      "alternatives": ["から"],
+      "additions": []
+    },
+    "card-0928": {
+      "alternatives": ["まめ"],
+      "additions": [
+        {
+          "kana": "ちょこのもと",
+          "kind": "wordplay",
+          "explanation": "カカオの実からチョコレートができるので、チョコのもとです。"
+        }
+      ]
+    },
+    "card-0929": {
+      "alternatives": ["おじぎ"],
+      "additions": [
+        {
+          "kana": "れい",
+          "kind": "synonym",
+          "explanation": "上体を倒してあいさつする、礼です。"
+        }
+      ]
+    },
+    "card-0930": {
+      "alternatives": ["て"],
+      "additions": []
+    },
+    "card-0931": {
+      "alternatives": ["て"],
+      "additions": [
+        {
+          "kana": "ばいばい",
+          "kind": "scene",
+          "explanation": "開いた手を振る、バイバイのしぐさです。"
+        }
+      ]
+    },
+    "card-0932": {
+      "alternatives": ["てのひら"],
+      "additions": [
+        {
+          "kana": "ぱちぱち",
+          "kind": "wordplay",
+          "explanation": "両手を打ち合わせる、拍手の音の読みです。"
+        }
+      ]
+    },
+    "card-0933": {
+      "alternatives": ["ゆび"],
+      "additions": [
+        {
+          "kana": "さす",
+          "kind": "action",
+          "explanation": "人差し指で前を指しています。"
+        }
+      ]
+    },
+    "card-0934": {
+      "alternatives": ["なみだ"],
+      "additions": [
+        {
+          "kana": "なきむし",
+          "kind": "wordplay",
+          "explanation": "大粒の涙を流す人物を、泣き虫に見立てました。"
+        }
+      ]
+    },
+    "card-0935": {
+      "alternatives": ["えがお"],
+      "additions": [
+        {
+          "kana": "にこにこ",
+          "kind": "scene",
+          "explanation": "楽しそうに笑う顔の、にこにこです。"
+        }
+      ]
+    },
+    "card-0936": {
+      "alternatives": ["くち"],
+      "additions": [
+        {
+          "kana": "ねむけ",
+          "kind": "scene",
+          "explanation": "大きなあくびから、眠気が伝わります。"
+        }
+      ]
+    },
+    "card-0937": {
+      "alternatives": ["てぃっしゅ"],
+      "additions": []
+    },
+    "card-0938": {
+      "alternatives": ["いし"],
+      "additions": [
+        {
+          "kana": "つまずく",
+          "kind": "action",
+          "explanation": "つま先が石に当たって、つまずいています。"
+        }
+      ]
+    },
+    "card-0939": {
+      "alternatives": ["せなか"],
+      "additions": [
+        {
+          "kana": "せおう",
+          "kind": "action",
+          "explanation": "背中に子どもを背負っています。"
+        }
+      ]
+    },
+    "card-0940": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "だく",
+          "kind": "action",
+          "explanation": "両腕で小さな子どもを抱いています。"
+        }
+      ]
+    },
+    "card-0941": {
+      "alternatives": ["かた"],
+      "additions": []
+    },
+    "card-0942": {
+      "alternatives": ["はこ"],
+      "additions": [
+        {
+          "kana": "にもつはこび",
+          "kind": "synonym",
+          "explanation": "箱の荷物を抱えて歩く、荷物運びです。"
+        }
+      ]
+    },
+    "card-0943": {
+      "alternatives": ["だいしゃ"],
+      "additions": [
+        {
+          "kana": "うんぱん",
+          "kind": "scene",
+          "explanation": "台車に載せた荷物を運ぶ、運搬の場面です。"
+        }
+      ]
+    },
+    "card-0944": {
+      "alternatives": ["かなづち", "くぎ"],
+      "additions": [
+        {
+          "kana": "うつ",
+          "kind": "action",
+          "explanation": "金づちで釘を打っています。"
+        }
+      ]
+    },
+    "card-0945": {
+      "alternatives": ["どらいばー", "ねじ"],
+      "additions": [
+        {
+          "kana": "しめる",
+          "kind": "action",
+          "explanation": "ドライバーでねじを締めています。"
+        }
+      ]
+    },
+    "card-0946": {
+      "alternatives": ["かぎ", "かぎあな"],
+      "additions": [
+        {
+          "kana": "かいじょう",
+          "kind": "synonym",
+          "explanation": "鍵を開けることを、解錠と呼びます。"
+        }
+      ]
+    },
+    "card-0947": {
+      "alternatives": ["どあ"],
+      "additions": [
+        {
+          "kana": "たたく",
+          "kind": "action",
+          "explanation": "扉を指の関節でたたいています。"
+        }
+      ]
+    },
+    "card-0948": {
+      "alternatives": ["さんどいっち"],
+      "additions": []
+    },
+    "card-0949": {
+      "alternatives": ["あみ", "とんぐ", "やく"],
+      "additions": []
+    },
+    "card-0950": {
+      "alternatives": ["さくら", "はなびら"],
+      "additions": [
+        {
+          "kana": "おはなみ",
+          "kind": "synonym",
+          "explanation": "満開の桜の下で楽しむ、お花見です。"
+        }
+      ]
+    },
+    "card-0951": {
+      "alternatives": ["つき", "だんご", "すすき"],
+      "additions": [
+        {
+          "kana": "おつきみ",
+          "kind": "synonym",
+          "explanation": "月と団子とすすきを供えた、お月見です。"
+        }
+      ]
+    },
+    "card-0952": {
+      "alternatives": ["ちょうちん", "やぐら", "おどる"],
+      "additions": []
+    },
+    "card-0953": {
+      "alternatives": ["まめ", "おに", "なげる"],
+      "additions": [
+        {
+          "kana": "せつぶん",
+          "kind": "scene",
+          "explanation": "鬼へ豆をまいて追い払う、節分の場面です。"
+        }
+      ]
+    },
+    "card-0954": {
+      "alternatives": ["きね", "うす", "もち"],
+      "additions": [
+        {
+          "kana": "ぺったんぺったん",
+          "kind": "wordplay",
+          "explanation": "きねで餅をつく、ぺったんぺったんという音の読みです。"
+        }
+      ]
+    },
+    "card-0955": {
+      "alternatives": ["くまで", "かい"],
+      "additions": []
+    },
+    "card-0956": {
+      "alternatives": ["いも", "つる"],
+      "additions": [
+        {
+          "kana": "さつまいも",
+          "kind": "part",
+          "explanation": "土から掘り出した、赤紫色のさつまいもです。"
+        }
+      ]
+    },
+    "card-0957": {
+      "alternatives": ["りんご"],
+      "additions": [
+        {
+          "kana": "りんごがり",
+          "kind": "synonym",
+          "explanation": "木のりんごを採る、りんご狩りの場面です。"
+        }
+      ]
+    },
+    "card-0958": {
+      "alternatives": ["なえ", "うえる"],
+      "additions": []
+    },
+    "card-0959": {
+      "alternatives": ["かま", "ほ", "かる"],
+      "additions": [
+        {
+          "kana": "しゅうかく",
+          "kind": "synonym",
+          "explanation": "実った稲を刈り取る、収穫の場面です。"
+        }
+      ]
+    },
+    "card-0960": {
+      "alternatives": ["すこっぷ", "ゆき", "すくう"],
+      "additions": []
+    },
+    "card-0961": {
+      "alternatives": ["あごひも"],
+      "additions": [
+        {
+          "kana": "あんぜんぼう",
+          "kind": "synonym",
+          "explanation": "頭を守る硬い帽子なので、安全帽です。"
+        }
+      ]
+    },
+    "card-0962": {
+      "alternatives": ["らいふじゃけっと"],
+      "additions": []
+    },
+    "card-0963": {
+      "alternatives": ["ぼーる", "てぶくろ"],
+      "additions": []
+    },
+    "card-0964": {
+      "alternatives": ["ふえ"],
+      "additions": [
+        {
+          "kana": "よびこ",
+          "kind": "synonym",
+          "explanation": "合図を出すために吹く、呼び子です。"
+        }
+      ]
+    },
+    "card-0965": {
+      "alternatives": ["かくせいき"],
+      "additions": []
+    },
+    "card-0966": {
+      "alternatives": ["はり"],
+      "additions": [
+        {
+          "kana": "びょうどけい",
+          "kind": "synonym",
+          "explanation": "経過した秒を測る、秒時計です。"
+        }
+      ]
+    },
+    "card-0967": {
+      "alternatives": ["なわ"],
+      "additions": [
+        {
+          "kana": "なわとび",
+          "kind": "synonym",
+          "explanation": "縄跳びに使う縄なので、縄跳びとも呼びます。"
+        }
+      ]
+    },
+    "card-0968": {
+      "alternatives": ["こーん"],
+      "additions": [
+        {
+          "kana": "ぱいろん",
+          "kind": "synonym",
+          "explanation": "道路などに置く三角コーンを、パイロンとも呼びます。"
+        }
+      ]
+    },
+    "card-0969": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "しょうがいぶつ",
+          "kind": "synonym",
+          "explanation": "走り越えるために置く、障害物です。"
+        }
+      ]
+    },
+    "card-0970": {
+      "alternatives": ["ごーる", "あみ"],
+      "additions": []
+    },
+    "card-0971": {
+      "alternatives": ["りんぐ", "あみ"],
+      "additions": [
+        {
+          "kana": "ごーる",
+          "kind": "synonym",
+          "explanation": "球を入れる場所なので、ゴールです。"
+        }
+      ]
+    },
+    "card-0972": {
+      "alternatives": ["たま", "きゅー"],
+      "additions": []
+    },
+    "card-0973": {
+      "alternatives": ["まと", "や"],
+      "additions": []
+    },
+    "card-0974": {
+      "alternatives": ["つる", "や"],
+      "additions": []
+    },
+    "card-0975": {
+      "alternatives": ["やじり", "はね"],
+      "additions": []
+    },
+    "card-0976": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "にんじゃのほし",
+          "kind": "wordplay",
+          "explanation": "星形の手裏剣を、忍者の星に見立てました。"
+        }
+      ]
+    },
+    "card-0977": {
+      "alternatives": ["つるぎ", "は", "つば"],
+      "additions": []
+    },
+    "card-0978": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "しーるど",
+          "kind": "synonym",
+          "explanation": "盾の英語名、シールドです。"
+        }
+      ]
+    },
+    "card-0979": {
+      "alternatives": ["かっちゅう", "こて"],
+      "additions": [
+        {
+          "kana": "あーまー",
+          "kind": "synonym",
+          "explanation": "よろいの英語名、アーマーです。"
+        }
+      ]
+    },
+    "card-0980": {
+      "alternatives": ["みず", "ひきがね"],
+      "additions": [
+        {
+          "kana": "うぉーたーがん",
+          "kind": "synonym",
+          "explanation": "水鉄砲の英語名、ウォーターガンです。"
+        }
+      ]
+    },
+    "card-0981": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "うぉーたーぼとる",
+          "kind": "synonym",
+          "explanation": "飲み水を持ち歩く、ウォーターボトルです。"
+        }
+      ]
+    },
+    "card-0982": {
+      "alternatives": ["ふぁすなー"],
+      "additions": [
+        {
+          "kana": "しゅらふ",
+          "kind": "synonym",
+          "explanation": "寝袋の別名、シュラフです。"
+        }
+      ]
+    },
+    "card-0983": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0984": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ほれいばこ",
+          "kind": "synonym",
+          "explanation": "中を冷たく保つ、保冷箱です。"
+        }
+      ]
+    },
+    "card-0985": {
+      "alternatives": ["くさり", "は"],
+      "additions": [
+        {
+          "kana": "でんどうのこぎり",
+          "kind": "synonym",
+          "explanation": "鎖の刃を動力で回す、電動のこぎりです。"
+        }
+      ]
+    },
+    "card-0986": {
+      "alternatives": ["は"],
+      "additions": [
+        {
+          "kana": "かりばらいき",
+          "kind": "synonym",
+          "explanation": "回転する刃で草を刈る、刈払機です。"
+        }
+      ]
+    },
+    "card-0987": {
+      "alternatives": ["ねこぐるま", "しゃりん"],
+      "additions": [
+        {
+          "kana": "ておしぐるま",
+          "kind": "synonym",
+          "explanation": "手で押して荷物を運ぶ、手押し車です。"
+        }
+      ]
+    },
+    "card-0988": {
+      "alternatives": ["だん"],
+      "additions": []
+    },
+    "card-0989": {
+      "alternatives": ["だん"],
+      "additions": []
+    },
+    "card-0990": {
+      "alternatives": ["なわ", "ひも", "むすびめ"],
+      "additions": []
+    },
+    "card-0991": {
+      "alternatives": ["わ"],
+      "additions": [
+        {
+          "kana": "ちぇーん",
+          "kind": "synonym",
+          "explanation": "鎖の英語名、チェーンです。"
+        }
+      ]
+    },
+    "card-0992": {
+      "alternatives": ["げーと"],
+      "additions": []
+    },
+    "card-0993": {
+      "alternatives": ["しっぽ", "しま"],
+      "additions": []
+    },
+    "card-0994": {
+      "alternatives": ["しっぽ", "しま"],
+      "additions": [
+        {
+          "kana": "どろぼうかお",
+          "kind": "wordplay",
+          "explanation": "目の周りの黒い模様を、泥棒の目隠しのように見立てました。"
+        }
+      ]
+    },
+    "card-0995": {
+      "alternatives": ["しっぽ", "しま"],
+      "additions": []
+    },
+    "card-0996": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0997": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-0998": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "しーがる",
+          "kind": "synonym",
+          "explanation": "かもめの英語名、シーガルです。"
+        }
+      ]
+    },
+    "card-0999": {
+      "alternatives": ["おばね"],
+      "additions": []
+    },
+    "card-1000": {
+      "alternatives": ["くちばし", "はな"],
+      "additions": [
+        {
+          "kana": "はみんぐばーど",
+          "kind": "synonym",
+          "explanation": "ハチドリの英語名、ハミングバードです。"
+        }
+      ]
+    },
+    "card-1001": {
+      "alternatives": ["しっぽ"],
+      "additions": [
+        {
+          "kana": "もんきー",
+          "kind": "synonym",
+          "explanation": "さるの英語名、モンキーです。"
+        }
+      ]
+    },
+    "card-1002": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ゆめくい",
+          "kind": "wordplay",
+          "explanation": "夢を食べるという伝説の獏に掛けた、見立ての読みです。"
+        }
+      ]
+    },
+    "card-1003": {
+      "alternatives": [],
+      "additions": []
+    },
+    "card-1004": {
+      "alternatives": ["こうら"],
+      "additions": [
+        {
+          "kana": "よろいねずみ",
+          "kind": "wordplay",
+          "explanation": "硬い甲が並ぶ体を、よろいを着たねずみに見立てました。"
+        }
+      ]
+    },
+    "card-1005": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "おにてんじくねずみ",
+          "kind": "synonym",
+          "explanation": "カピバラの別名、オニテンジクネズミです。大きなネズミの仲間に付いた、実際の呼び名です。"
+        }
+      ]
+    },
+    "card-1006": {
+      "alternatives": ["くちばし", "しっぽ", "みずかき"],
+      "additions": []
+    },
+    "card-1007": {
+      "alternatives": ["まく", "とぶ"],
+      "additions": [
+        {
+          "kana": "ぐらいだー",
+          "kind": "wordplay",
+          "explanation": "脚の間の膜を広げて飛ぶ姿を、グライダーに見立てました。"
+        }
+      ]
+    },
+    "card-1008": {
+      "alternatives": ["つばさ"],
+      "additions": []
+    },
+    "card-1009": {
+      "alternatives": ["ちきゅう"],
+      "additions": [
+        {
+          "kana": "ぐろーぶ",
+          "kind": "synonym",
+          "explanation": "地球儀の英語名、グローブです。"
+        }
+      ]
+    },
+    "card-1010": {
+      "alternatives": ["たま"],
+      "additions": [
+        {
+          "kana": "けいさん",
+          "kind": "scene",
+          "explanation": "玉を動かして計算する道具なので、計算と読みます。"
+        }
+      ]
+    },
+    "card-1011": {
+      "alternatives": [],
+      "additions": [
+        {
+          "kana": "ぶらっくぼーど",
+          "kind": "synonym",
+          "explanation": "黒板の英語名、ブラックボードです。"
+        }
+      ]
+    },
+    "card-1012": {
+      "alternatives": ["ふぇると"],
+      "additions": [
+        {
+          "kana": "らーふる",
+          "kind": "synonym",
+          "explanation": "黒板消しの別の呼び名、ラーフルです。"
+        }
+      ]
+    },
+    "card-1013": {
+      "alternatives": ["ふくろ"],
+      "additions": [
+        {
+          "kana": "ぺーぱーばっぐ",
+          "kind": "synonym",
+          "explanation": "紙袋の英語名、ペーパーバッグです。"
+        }
+      ]
+    },
+    "card-1014": {
+      "alternatives": ["はこ"],
+      "additions": [
+        {
+          "kana": "こんぽうばこ",
+          "kind": "synonym",
+          "explanation": "荷物を包んで送る、梱包箱です。"
+        }
+      ]
+    },
+    "card-1015": {
+      "alternatives": ["かーど", "さつ"],
+      "additions": [
+        {
+          "kana": "うぉれっと",
+          "kind": "synonym",
+          "explanation": "財布の英語名、ウォレットです。"
+        }
+      ]
+    },
+    "card-1016": {
+      "alternatives": ["さいふ", "つまみ"],
+      "additions": [
+        {
+          "kana": "こぜにいれ",
+          "kind": "synonym",
+          "explanation": "小銭を入れる、小銭入れです。"
+        }
+      ]
+    },
+    "card-1017": {
+      "alternatives": ["ぶた", "こうか"],
+      "additions": [
+        {
+          "kana": "ぴぎーばんく",
+          "kind": "synonym",
+          "explanation": "豚の形の貯金箱を英語で、ピギーバンクと呼びます。"
+        }
+      ]
+    },
+    "card-1018": {
+      "alternatives": ["こうか", "さつ"],
+      "additions": [
+        {
+          "kana": "ぜに",
+          "kind": "synonym",
+          "explanation": "お金を表す、銭という呼び名です。"
+        }
+      ]
+    },
+    "card-1019": {
+      "alternatives": ["かみふぶき", "りぼん"],
+      "additions": []
+    },
+    "card-1020": {
+      "alternatives": ["けむり"],
+      "additions": [
+        {
+          "kana": "おこう",
+          "kind": "synonym",
+          "explanation": "香りを出すためにたく、御香です。"
+        }
+      ]
+    },
+    "card-1021": {
+      "alternatives": ["あみ"],
+      "additions": [
+        {
+          "kana": "はえのてき",
+          "kind": "wordplay",
+          "explanation": "はえをたたく道具なので、はえの敵に見立てました。"
+        }
+      ]
+    },
+    "card-1022": {
+      "alternatives": ["うずまき", "けむり"],
+      "additions": [
+        {
+          "kana": "かよけ",
+          "kind": "synonym",
+          "explanation": "蚊を寄せ付けないための、蚊よけの道具です。"
+        }
+      ]
+    },
+    "card-1023": {
+      "alternatives": ["はんこ", "ほし"],
+      "additions": [
+        {
+          "kana": "ごむいん",
+          "kind": "synonym",
+          "explanation": "ゴムの面で印を押す、ゴム印です。"
+        }
+      ]
+    },
+    "card-1024": {
+      "alternatives": ["えんぴつ", "けしごむ"],
+      "additions": [
+        {
+          "kana": "ぺんけーす",
+          "kind": "synonym",
+          "explanation": "筆箱の英語の呼び名、ペンケースです。"
+        }
+      ]
+    }
+  }
+}

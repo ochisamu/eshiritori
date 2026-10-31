@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "verifiedAt": "2026-10-31T10:22:12.240433+09:00",
+  "sourceTree": "36b58b5df20f342175fd4d5391b57d5cc8d2ef05",
+  "cleanBuildHash": "bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a",
+  "matchesRunningBuild": true,
+  "unitTests": 167,
+  "dependencyNote": "Reused existing node_modules through a local symlink; npm ci/network reinstall was not performed.",
+  "note": "The verified source tree precedes the final documentation/status-record append; executable code, assets and fixtures are checked unchanged before the commit.",
+  "scope": {
+    "branch": "main",
+    "localOnly": true,
+    "remoteConfigured": false,
+    "trackedPolicy": "docs/version-control.md",
+    "generatedReports": "Summaries and current race-score evidence are versioned; raw development output stays local."
+  },
+  "checks": {
+    "build": "passed",
+    "unitTests": 167,
+    "unitFiles": 20,
+    "runtimeHashMatchesRunningGame": true,
+    "ignoreRulesChecked": 27,
+    "credentialPatternFindings": 0,
+    "fixedInputs": [
+      "tests/fixtures/reading-review-before.json",
+      "tests/fixtures/continuation-baseline-fallbacks.json"
+    ],
+    "downloadMetadataRemoved": [
+      "spec/codex-start.txt:Zone.Identifier",
+      "spec/requirements-v1.0.txt:Zone.Identifier"
+    ]
+  }
+}

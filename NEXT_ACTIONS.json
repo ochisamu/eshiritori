@@ -1,0 +1,172 @@
+{
+  "status": "complete",
+  "buildHash": "bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a",
+  "contentVersion": "pixel-0df1e7d32469",
+  "blockers": [],
+  "remaining": [],
+  "completed": [
+    "Count normal/solo board clears as wins and preserve visible active streak across help categories",
+    "Separate race CPU/player board scores and own cumulative totals; compare current board points for win/loss/draw",
+    "Exclude untimed practice from rankings while preserving old data",
+    "Use one direct race cursor approach only during the final 650ms",
+    "167 unit, 321 final UI, 9 PWA, 450 simulated games and 37 LAN byte checks passed"
+  ],
+  "latestVerification": "reports/race-score/verification.json",
+  "latestReport": "reports/race-score/verification.md",
+  "initialRelease": {
+    "blockers": [],
+    "status": "complete",
+    "buildHash": "b3dfc2720b34d0dcdb3b3528ccf6258e4073378512273171156b12905f2dfb4e",
+    "contentVersion": "pixel-b9efabddc494",
+    "remaining": [],
+    "completed": [
+      "1024 unique approved pixel-art concepts",
+      "3801 approved per-picture readings; 2120 globally distinct words; 1200 candidate decisions",
+      "all art contacts, 200 random details, remaining84 census, 96/128 variants reviewed",
+      "96 unit tests; 91.7874 percent core branches",
+      "69 cross-engine UI tests including all4096 image decodes, plus3 performance tests",
+      "throttled performance gates and 500 measured UI rounds passed",
+      "determinism270 runs and CPU matched300 rounds passed",
+      "interruption/restart helpers verified",
+      "30000 seeds and10000 simulated rounds; zero failures and2 safe fallbacks",
+      "1931.692 seconds of final-build AI visual UI play after exclusions",
+      "Terminal loss, alternative effects, last-panel emphasis, finite refill, CPU search and portrait4x6",
+      "AT01-AT16 mandatory gates passed; play/source archives verified against exact runtime",
+      "Extracted source restored and rebuilt to the identical runtime hash"
+    ],
+    "verificationLimitations": [
+      "Physical iOS Safari and OS virtual keyboards were not tested",
+      "AI review only; no human play or speaker audition claimed",
+      "Optional5000-reading stretch target is not claimed"
+    ]
+  },
+  "distribution": "LAN dist updated; earlier release ZIPs preserved as original release.",
+  "verificationLimitations": [
+    "Browser automation/viewport resizing, not physical phone or tablet testing.",
+    "No speaker audition was performed.",
+    "Rankings remain local to this origin/device.",
+    "Earlier release ZIPs are unchanged; current dist and the running LAN game are updated."
+  ],
+  "previousVerification": {
+    "buildHash": "2469fc61571718cf3d400e3a23d9f7e29b3c84e4fb92a0b53a612cd641015656",
+    "contentVersion": "pixel-0df1e7d32469",
+    "verification": "reports/no-moves-chain/verification.json",
+    "report": "reports/no-moves-chain/verification.md",
+    "previous": {
+      "buildHash": "b1bebc42b2fef68f628ef0edcf47b24bd352f034c2aea6c07adea9586664c6db",
+      "contentVersion": "pixel-0df1e7d32469",
+      "verification": "reports/reading-review/verification.json",
+      "report": "reports/reading-review/verification.md",
+      "previous": {
+        "buildHash": "6c20985f2cf4672cdaf3f91a3a732353f7020f2f7bf69c7270f2618cbaa93633",
+        "verification": "reports/arcade-update/verification.json",
+        "report": "reports/arcade-update/verification.md",
+        "previous": {
+          "buildHash": "acced4528fee4cd438a50d20af5b93305944c21b4925a15d3628703cd161ac1d",
+          "verification": "reports/rival-name/verification.json",
+          "report": "reports/rival-name/verification.md",
+          "previous": {
+            "buildHash": "6048df59a79246896531b8c167d69a8328728d767db259e649b41ca937ed7352",
+            "verification": "reports/roomy-board/verification.json",
+            "report": "reports/roomy-board/verification.md",
+            "previous": {
+              "buildHash": "61dcec3f772b02f9c344629ec8b1a9bc1d4f4e6514e256ab0b551e31d2a630b1",
+              "verification": "reports/fixed-screen/verification.json",
+              "report": "reports/fixed-screen/verification.md",
+              "previous": {
+                "buildHash": "4c93822a3c3734307370439b740b3ba54569b91071cbee3eea24da5768fc1a70",
+                "verification": "reports/front-reading/verification.json",
+                "report": "reports/front-reading/verification.md",
+                "previous": {
+                  "buildHash": "1cea3d3ce851adb58f25adb9e6e5cf3181ac74b3d670af9c3c0de6f25d08dcbf",
+                  "verification": "reports/reactions/verification.json",
+                  "report": "reports/reactions/verification.md",
+                  "previous": {
+                    "buildHash": "82a1ddc185d47fb5f829e2d43890cf4e5a02824d0b7e5b4386e14c8b2542916c",
+                    "verification": "reports/hints/verification.json",
+                    "report": "reports/hints/verification.md",
+                    "previous": {
+                      "buildHash": "097461fcc12281297e6ff39a96d28fcd0448874652b833a49ceeabfec6edd879",
+                      "verification": "reports/continuation/verification.json",
+                      "report": "reports/continuation/verification.md"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "previousUpdate": {
+    "status": "complete",
+    "buildHash": "0ab0211c4bc4394b8c3af50bb9e33fb2164a69fd9c02bfc17a6edf8279c43c74",
+    "contentVersion": "pixel-446fe6d0774d",
+    "blockers": [],
+    "remaining": [],
+    "completed": [
+      "Picture-first collection album, 48 per page covering 1024 assets",
+      "Missing monochrome, discovered color and completed gold-star states derived from existing discoveries",
+      "Progress, collection filters, one-left shelf, number/known-word search and masked detail readings",
+      "Reference never earns collection progress; detail restores shelf focus and scroll",
+      "137 unit and 69 three-engine related UI cases; LAN runtime byte-verified"
+    ],
+    "latestVerification": "reports/collection/verification.json",
+    "latestReport": "reports/collection/verification.md",
+    "distribution": "LAN dist updated; earlier release ZIPs preserved as original release.",
+    "verificationLimitations": [
+      "Mixed-state screenshot uses automated-test discovery data; it is not the user's collection progress.",
+      "Physical mobile devices and their OS keyboards were not tested.",
+      "The preceding full UI/PWA/performance and simulation results remain attached to their earlier runtime; this increment used scoped collection/related UI tests.",
+      "Original release ZIPs remain unchanged."
+    ],
+    "previousVerification": {
+      "buildHash": "6c20985f2cf4672cdaf3f91a3a732353f7020f2f7bf69c7270f2618cbaa93633",
+      "verification": "reports/arcade-update/verification.json",
+      "report": "reports/arcade-update/verification.md",
+      "previous": {
+        "buildHash": "acced4528fee4cd438a50d20af5b93305944c21b4925a15d3628703cd161ac1d",
+        "verification": "reports/rival-name/verification.json",
+        "report": "reports/rival-name/verification.md",
+        "previous": {
+          "buildHash": "6048df59a79246896531b8c167d69a8328728d767db259e649b41ca937ed7352",
+          "verification": "reports/roomy-board/verification.json",
+          "report": "reports/roomy-board/verification.md",
+          "previous": {
+            "buildHash": "61dcec3f772b02f9c344629ec8b1a9bc1d4f4e6514e256ab0b551e31d2a630b1",
+            "verification": "reports/fixed-screen/verification.json",
+            "report": "reports/fixed-screen/verification.md",
+            "previous": {
+              "buildHash": "4c93822a3c3734307370439b740b3ba54569b91071cbee3eea24da5768fc1a70",
+              "verification": "reports/front-reading/verification.json",
+              "report": "reports/front-reading/verification.md",
+              "previous": {
+                "buildHash": "1cea3d3ce851adb58f25adb9e6e5cf3181ac74b3d670af9c3c0de6f25d08dcbf",
+                "verification": "reports/reactions/verification.json",
+                "report": "reports/reactions/verification.md",
+                "previous": {
+                  "buildHash": "82a1ddc185d47fb5f829e2d43890cf4e5a02824d0b7e5b4386e14c8b2542916c",
+                  "verification": "reports/hints/verification.json",
+                  "report": "reports/hints/verification.md",
+                  "previous": {
+                    "buildHash": "097461fcc12281297e6ff39a96d28fcd0448874652b833a49ceeabfec6edd879",
+                    "verification": "reports/continuation/verification.json",
+                    "report": "reports/continuation/verification.md"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "history": [],
+  "repository": {
+    "branch": "main",
+    "localOnly": true,
+    "policy": "docs/version-control.md",
+    "baselineVerification": "reports/git-baseline/verification.json"
+  }
+}

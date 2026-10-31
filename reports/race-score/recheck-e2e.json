@@ -1,0 +1,428 @@
+{
+  "config": {
+    "argv": [
+      "/usr/bin/node",
+      "/home/ikai/workspace/shiritori/node_modules/.bin/playwright",
+      "test",
+      "race-score.spec.ts",
+      "--grep",
+      "cursor approaches",
+      "--workers=3",
+      "--output=test-results/race-score-recheck"
+    ],
+    "configFile": "/home/ikai/workspace/shiritori/playwright.config.ts",
+    "rootDir": "/home/ikai/workspace/shiritori/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runId": "race-score-cursor-recheck",
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ikai/workspace/shiritori/test-results/race-score-recheck",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runId": "race-score-cursor-recheck",
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/home/ikai/workspace/shiritori/test-results/race-score-recheck",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runId": "race-score-cursor-recheck",
+          "actualWorkers": 3
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "testIgnore": [
+          "/performance\\.spec\\.ts/"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/home/ikai/workspace/shiritori/test-results/race-score-recheck",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runId": "race-score-cursor-recheck",
+          "actualWorkers": 3
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "testIgnore": [
+          "/performance\\.spec\\.ts/"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/ikai/workspace/shiritori/test-results/race-score-recheck",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runId": "race-score-cursor-recheck",
+          "actualWorkers": 3
+        },
+        "name": "chromium",
+        "testDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "snapshotDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://192.168.0.111:4173",
+          "headless": true,
+          "screenshot": "only-on-failure",
+          "browserName": "chromium",
+          "launchOptions": {
+            "executablePath": "/usr/bin/google-chrome",
+            "args": [
+              "--no-sandbox"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/ikai/workspace/shiritori/test-results/race-score-recheck",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runId": "race-score-cursor-recheck",
+          "actualWorkers": 3
+        },
+        "name": "firefox",
+        "testDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "snapshotDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "testIgnore": {},
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://192.168.0.111:4173",
+          "headless": true,
+          "screenshot": "only-on-failure",
+          "browserName": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/ikai/workspace/shiritori/test-results/race-score-recheck",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runId": "race-score-cursor-recheck",
+          "actualWorkers": 3
+        },
+        "name": "webkit",
+        "testDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "snapshotDir": "/home/ikai/workspace/shiritori/tests/e2e",
+        "testIgnore": {},
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://192.168.0.111:4173",
+          "headless": true,
+          "screenshot": "only-on-failure",
+          "browserName": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/race-score/recheck-e2e.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 3,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "race-score.spec.ts",
+      "file": "race-score.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "race cursor approaches only its answer and human can beat it at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2775,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T00:21:59.498Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f6d1c1b003cc817d79c8-e800ea1a7e8a41c25d76",
+          "file": "race-score.spec.ts",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "race cursor approaches only its answer and human can beat it at 844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2761,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T00:22:02.408Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f6d1c1b003cc817d79c8-07900359bcc4bb675314",
+          "file": "race-score.spec.ts",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "race cursor approaches only its answer and human can beat it at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3891,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-31T00:21:59.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f6d1c1b003cc817d79c8-a19645f3cf76539c5637",
+          "file": "race-score.spec.ts",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "race cursor approaches only its answer and human can beat it at 844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3027,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T00:22:03.767Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f6d1c1b003cc817d79c8-8c8e9d1091881f203516",
+          "file": "race-score.spec.ts",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "race cursor approaches only its answer and human can beat it at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 5916,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-31T00:21:59.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f6d1c1b003cc817d79c8-7a8d342891816e0f2c57",
+          "file": "race-score.spec.ts",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "race cursor approaches only its answer and human can beat it at 844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 5411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T00:22:05.513Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f6d1c1b003cc817d79c8-d61ae873f3f310002db9",
+          "file": "race-score.spec.ts",
+          "line": 121,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-31T00:21:58.886Z",
+    "duration": 12152.012,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
