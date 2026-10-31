@@ -342,4 +342,79 @@ describe("voice temporal safety", () => {
     expect(x.messages.filter((m) => m.type === "operation")).toHaveLength(1);
     await x.director.stop();
   });
+  it("keeps an ordinary answer audible when a move changes the turn during the question", async () => {
+    const x = await setup();
+    x.director.inputActivity(true, 1);
+    x.transcript("好きな色は何色？");
+    x.director.update({
+      ...view,
+      revision: 2,
+      moveCount: 1,
+      phase: "cpuThinking",
+      turnId: "b:1:cpu",
+      actor: "cpu",
+    });
+    x.director.inputActivity(false, 1);
+    await vi.advanceTimersByTimeAsync(1100);
+    x.emit({
+      type: "session.output_audio.delta",
+      event_id: "reply",
+      delta: "AAAA",
+    } as ServerEvent);
+    expect(x.messages.filter((m) => m.type === "audio")).toHaveLength(1);
+    expect(
+      x.sent
+        .filter((e) => e.type === "session.instructions.append")
+        .some((e) => e.content?.includes("静かにし")),
+    ).toBe(false);
+    await x.director.stop();
+  });
+  it("does not discard ordinary reply audio on a CPU move after recognition", async () => {
+    const x = await setup();
+    x.director.inputActivity(true, 1);
+    x.transcript("今日はちょっと疲れたな");
+    x.director.inputActivity(false, 1);
+    await vi.advanceTimersByTimeAsync(1200);
+    x.messages.length = 0;
+    x.director.update({
+      ...view,
+      revision: 2,
+      moveCount: 1,
+      turnId: "b:1:player",
+    });
+    await vi.advanceTimersByTimeAsync(100);
+    x.emit({
+      type: "session.output_audio.delta",
+      event_id: "reply",
+      delta: "AAAA",
+    } as ServerEvent);
+    expect(x.messages.some((m) => m.type === "audio")).toBe(true);
+    expect(x.messages.some((m) => m.type === "discard")).toBe(false);
+    await x.director.stop();
+  });
+  it("treats a casual comment about a panel as conversation rather than an engine hint request", async () => {
+    const x = await setup();
+    x.director.inputActivity(true, 1);
+    x.transcript("このパネル、かわいいね");
+    x.director.inputActivity(false, 1);
+    await vi.advanceTimersByTimeAsync(1200);
+    x.messages.length = 0;
+    x.director.update({
+      ...view,
+      revision: 2,
+      moveCount: 1,
+      turnId: "b:1:player",
+    });
+    await vi.advanceTimersByTimeAsync(100);
+    x.emit({
+      type: "session.output_audio.delta",
+      event_id: "casual",
+      delta: "AAAA",
+    } as ServerEvent);
+    expect(
+      x.messages.some((m) => m.type === "audio" && m.scope === "conversation"),
+    ).toBe(true);
+    expect(request).not.toHaveBeenCalled();
+    await x.director.stop();
+  });
 });

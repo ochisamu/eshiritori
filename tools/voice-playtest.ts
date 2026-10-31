@@ -62,7 +62,10 @@ s = reducer(
     seed: "voice-real-play-2026",
     settings: {
       ...s.settings,
-      mode: "practice",
+      mode:
+        process.env.VOICE_PLAYTEST_REFILL === "1"
+          ? "refillPractice"
+          : "practice",
       opponent: "turns",
       tutorialSeen: true,
       muted: false,
@@ -298,9 +301,22 @@ try {
     .toBeGreaterThan(0);
   if (process.env.VOICE_PLAYTEST_CHAT_ONLY === "1") {
     await page.getByRole("button", { name: "会話の操作を開く" }).click();
-    await page.getByLabel("話す頻度").selectOption("quiet");
+    const duringPlay = process.env.VOICE_PLAYTEST_DURING_PLAY === "1";
+    await page
+      .getByLabel("話す頻度")
+      .selectOption(duringPlay ? "normal" : "quiet");
     await page.getByLabel("表情（Decisions）").uncheck();
     await page.waitForTimeout(3000);
+    if (duringPlay) {
+      await page
+        .getByRole("button", { name: "ゲームに戻る", exact: true })
+        .click();
+      const resumePlay = page.getByRole("button", {
+        name: "つづきから遊ぶ",
+        exact: true,
+      });
+      if (await resumePlay.isVisible()) await resumePlay.click();
+    }
     for (const name of [
       "chatColor",
       "chatRemember",
@@ -312,7 +328,35 @@ try {
         t.answers = [];
         return { assistant: t.assistant, played: t.audioPlayed };
       });
-      await phrase(name);
+      if (duringPlay) {
+        await expect
+          .poll(async () => (await saved()).phase, { timeout: 15000 })
+          .toBe("playerTurn");
+        const speaking = phrase(name);
+        await page.waitForTimeout(900);
+        const state = await saved();
+        const move =
+          legalMoves(assets, position(state)).find(
+            (m) =>
+              m.reading.kind === "basic" && tailKana(m.reading.kana) !== "ん",
+          ) ??
+          chooseCpu(assets, position(state), "normal", "voice-during-play")
+            .move;
+        expect(move, "a legal move while talking").toBeTruthy();
+        const card = page.locator(
+          '[data-asset-id="' + move!.assetId + '"] .picture-card',
+        );
+        if (move!.reading.kind !== "basic") {
+          await card.press("Shift+Enter");
+          await page
+            .getByRole("textbox", { name: "かなで回答" })
+            .fill(move!.reading.kana);
+          await page.getByRole("button", { name: "回答", exact: true }).click();
+        } else await card.click();
+        moves++;
+        await speaking;
+        checks[name + "DuringPlay"] = true;
+      } else await phrase(name);
       try {
         await expect
           .poll(
@@ -356,9 +400,10 @@ try {
       "inputMeterDetectedSpeech",
     ])
       expect(checks[key], key).toBe(true);
-    await page
-      .getByRole("button", { name: "ゲームに戻る", exact: true })
-      .click();
+    if (!duringPlay)
+      await page
+        .getByRole("button", { name: "ゲームに戻る", exact: true })
+        .click();
   } else {
     await phrase("reject");
     await page.waitForTimeout(3500);

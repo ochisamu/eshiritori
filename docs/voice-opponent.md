@@ -112,7 +112,7 @@ Viteの開発プロキシを使う場合は、開発時はVOICE_PORT=4174の統�
 
 音声APIはPWAキャッシュの対象外です。サーバーはdistの配信だけを行い、リポジトリや.envを配信しません。端末認可にはHttpOnly・SameSiteのCookie、変更要求にはCSRF検証、HTTPSではSecure属性を使います。Originは完全一致で検査します。
 
-通常会話と開始操作の改善は[会話検証](../reports/voice-conversation/verification.md)。統合版の追加確認は[統合UXの検証](../reports/voice-unified/verification.md)。初回の実API・自然さの検証範囲は [初回検証報告](../reports/voice/verification.md) を参照してください。
+対戦中の手番変更と返答の修正は[対戦中の会話検証](../reports/voice-during-play/verification.md)。通常会話と開始操作の改善は[会話検証](../reports/voice-conversation/verification.md)。統合版の追加確認は[統合UXの検証](../reports/voice-unified/verification.md)。初回の実API・自然さの検証範囲は [初回検証報告](../reports/voice/verification.md) を参照してください。
 
 ## 実装上の接続方式
 

@@ -1,6 +1,6 @@
 {
   "status": "implemented",
-  "buildHash": "de2e21665ccb4b642ea6e791a802f9a00204a515efb01f9e65bc79f14ff96af9",
+  "buildHash": "aa45ecd95300264b167be628434e232c9a06ba2a81ab694c37ce62030fd15cc9",
   "contentVersion": "pixel-0df1e7d32469",
   "blockers": [],
   "remaining": [
@@ -13,10 +13,11 @@
     "HTTPS/WSS, certificate preparation, Windows/WSL guide and secret-free archives",
     "200 unit cases, scoped three-engine UI, 12 PWA cases and real-API synthetic multi-board play",
     "Unified game/voice startup, host GUI key settings and code-free localhost/LAN invite flow",
-    "One-action voice game start, local microphone feedback and real-API ordinary conversation with memory"
+    "One-action voice game start, local microphone feedback and real-API ordinary conversation with memory",
+    "Normal spoken replies survive game moves; regression and real-API during-play tests"
   ],
-  "latestVerification": "reports/voice-conversation/verification.json",
-  "latestReport": "reports/voice-conversation/verification.md",
+  "latestVerification": "reports/voice-during-play/verification.json",
+  "latestReport": "reports/voice-during-play/verification.md",
   "initialRelease": {
     "blockers": [],
     "status": "complete",

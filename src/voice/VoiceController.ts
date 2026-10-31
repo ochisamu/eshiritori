@@ -87,6 +87,7 @@ export class VoiceController {
   private heartbeat?: ReturnType<typeof setInterval>;
   private moodTimer?: ReturnType<typeof setTimeout>;
   private connectedAt = 0;
+  private outputScope: "game" | "conversation" = "game";
   private view?: GameVoiceView;
   private epoch = "";
   private generation = 0;
@@ -199,6 +200,8 @@ export class VoiceController {
     const previous = this.view;
     if (
       previous &&
+      this.outputScope !== "conversation" &&
+      !this.ui.inputActive &&
       (previous.boardEpoch !== view.boardEpoch ||
         previous.moveCount !== view.moveCount ||
         (view.phase === "paused" && previous.phase !== "paused") ||
@@ -241,8 +244,9 @@ export class VoiceController {
     }
     if (message.type === "audio") {
       if (
-        message.boardEpoch !== this.view?.boardEpoch ||
-        message.revision !== this.view?.revision
+        message.scope !== "conversation" &&
+        (message.boardEpoch !== this.view?.boardEpoch ||
+          message.revision !== this.view?.revision)
       )
         return;
       if (
@@ -251,6 +255,8 @@ export class VoiceController {
         message.rate !== 24000
       )
         return;
+      this.outputScope =
+        message.scope === "conversation" ? "conversation" : "game";
       const bytes = Uint8Array.from(atob(message.data), (c) => c.charCodeAt(0));
       const samples = new Float32Array(bytes.length / 2),
         data = new DataView(bytes.buffer);
@@ -261,16 +267,27 @@ export class VoiceController {
       ]);
     }
     if (message.type === "caption") {
+      if (
+        message.direction === "assistant" &&
+        message.scope === "game" &&
+        (message.boardEpoch !== this.view?.boardEpoch ||
+          message.revision !== this.view?.revision)
+      )
+        return;
       if (message.direction === "assistant")
         this.change({ caption: message.text });
       else this.change({ userCaption: message.text });
     }
     if (message.type === "discard") {
+      this.outputScope = "game";
       this.output?.port.postMessage({ type: "discard" });
       this.change({ caption: "", mood: undefined });
     }
-    if (message.type === "permit")
+    if (message.type === "permit") {
+      this.outputScope =
+        message.scope === "conversation" ? "conversation" : "game";
       this.output?.port.postMessage({ type: "permit" });
+    }
     if (message.type === "usage") this.change({ usage: message.usage });
     if (message.type === "notice") this.notice(message.code);
     if (message.type === "error") {
@@ -600,6 +617,7 @@ export class VoiceController {
   }
   private async cleanup() {
     this.change({ inputLevel: 0, inputActive: false, step: undefined });
+    this.outputScope = "game";
     if (this.heartbeat) clearInterval(this.heartbeat);
     if (this.moodTimer) clearTimeout(this.moodTimer);
     this.ws?.close();

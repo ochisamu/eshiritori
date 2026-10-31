@@ -71,6 +71,7 @@ export class ConversationDirector {
   private lastPlayback = 0;
   private blockedOutput = false;
   private awaitingFacts = false;
+  private conversationInput = false;
   private appendIds = new Set<string>();
   private transcriptIds = new Set<string>();
   private input = "";
@@ -161,7 +162,11 @@ export class ConversationDirector {
   }
   private allowSpeech() {
     this.blockedOutput = false;
-    this.send({ type: "permit", connectionEpoch: this.epoch });
+    this.send({
+      type: "permit",
+      scope: this.conversationInput ? "conversation" : "game",
+      connectionEpoch: this.epoch,
+    });
   }
   inputActivity(active: boolean, sequence: number) {
     if (sequence < this.speechSequence || this.closing) return;
@@ -172,6 +177,7 @@ export class ConversationDirector {
         this.activeDelegation = null;
         this.input = "";
         this.awaitingFacts = false;
+        this.conversationInput = true;
         this.inputVersion++;
         this.metrics.inputTurns++;
       }
@@ -180,12 +186,11 @@ export class ConversationDirector {
       this.blockedOutput = true;
       this.send({ type: "discard", connectionEpoch: this.epoch });
       if (this.inputGateTimer) clearTimeout(this.inputGateTimer);
-      const generation = this.generation;
       this.inputGateTimer = setTimeout(() => {
         if (
           !this.closing &&
           sequence === this.speechSequence &&
-          generation === this.generation &&
+          this.conversationInput &&
           !this.awaitingFacts
         )
           this.allowSpeech();
@@ -324,7 +329,10 @@ export class ConversationDirector {
       (before?.phase === "cpuThinking" && view.phase !== "cpuThinking") ||
       (!!view.result && !before?.result) ||
       !view.eligible;
-    if (barrier) this.invalidate();
+    if (barrier)
+      this.invalidate(
+        this.conversationInput && !this.awaitingFacts && view.eligible,
+      );
     if (!view.eligible) {
       void this.stop();
       return;
@@ -368,11 +376,12 @@ export class ConversationDirector {
         const gap = this.options.chatter === "chatty" ? 1800 : 4500;
         if (
           (Date.now() - this.lastTalk < gap && !view.result) ||
-          Date.now() - this.lastInputAt < 1600 ||
+          Date.now() - this.lastInputAt < 7000 ||
           this.backendBusy ||
           this.userSpeaking
         )
           return;
+        this.conversationInput = false;
         this.metrics.proactive++;
         this.lastTalk = Date.now();
         this.speechUntil = Date.now() + 5500;
@@ -394,7 +403,7 @@ export class ConversationDirector {
       this.options.chatter === "quiet" ||
       this.userSpeaking ||
       this.backendBusy ||
-      Date.now() - this.lastInputAt < 1600
+      Date.now() - this.lastInputAt < 7000
     )
       return;
     if (this.options.chatter === "normal" && this.searchSequence % 2 === 0)
@@ -411,9 +420,12 @@ export class ConversationDirector {
       this.closing ||
       generation !== this.generation ||
       this.view?.phase !== "cpuThinking" ||
-      this.view.moveCount !== view.moveCount
+      this.view.moveCount !== view.moveCount ||
+      this.userSpeaking ||
+      Date.now() - this.lastInputAt < 7000
     )
       return;
+    this.conversationInput = false;
     this.lastTalk = Date.now();
     this.metrics.proactive++;
     this.metrics.searchOpportunities++;
@@ -426,24 +438,28 @@ export class ConversationDirector {
         "」から探す、1秒ほどの短い独り言をひとこと。答えや具体的な札はまだ言わない。毎回同じ言い方をしない。",
     );
   }
-  private invalidate() {
+  private invalidate(keepConversation = false) {
     this.generation++;
     this.currentSearchAudio = false;
     this.speechUntil = 0;
-    this.output = "";
-    this.blockedOutput = true;
-    this.lastPlayback = 0;
+    if (!keepConversation) {
+      this.output = "";
+      this.blockedOutput = true;
+      this.lastPlayback = 0;
+    }
     this.backendAbort?.abort();
     this.decisionsAbort?.abort();
     this.pendingDecision = undefined;
     if (this.decisionTimer) clearTimeout(this.decisionTimer);
     this.decisionSequence++;
-    this.send({ type: "discard", connectionEpoch: this.epoch });
-    if (this.link)
-      void this.append(
-        "instructions",
-        "手番や盤面が変わりました。古い探索・反応の発話を中断して静かにし、最新の確定状態だけを使う。中断した発話は相手に聞こえた前提にしない。",
-      );
+    if (!keepConversation) {
+      this.send({ type: "discard", connectionEpoch: this.epoch });
+      if (this.link && !this.closing)
+        void this.append(
+          "instructions",
+          "手番や盤面が変わりました。古い盤面に関する実況だけを切り上げ、最新の確定状態を参照する。プレイヤーからの質問や雑談には引き続き自然に返答する。静かにするのは頼まれていない実況だけ。",
+        );
+    }
     for (const [id, p] of this.pending) {
       clearTimeout(p.timer);
       p.resolve({
@@ -501,6 +517,7 @@ export class ConversationDirector {
           type: "audio",
           rate: 24000,
           data: event.delta,
+          scope: this.conversationInput ? "conversation" : "game",
           boardEpoch: this.view?.boardEpoch,
           revision: this.view?.revision,
           connectionEpoch: this.epoch,
@@ -549,6 +566,13 @@ export class ConversationDirector {
         this.transcriptIds.delete(this.transcriptIds.values().next().value!);
 
       this.input = (this.input + event.delta).slice(-1500);
+      // Board-bound replies must still be invalidated; ordinary conversation is
+      // tied to the spoken turn and remains valid when a card is taken.
+      this.conversationInput =
+        !allowedIntent(this.input, this.view?.hint.level ?? 0) &&
+        !/(この|今の|いまの|直前の).*(札|パネル|絵|文字).*(何|なに|どれ|読み|名前|教えて)/.test(
+          this.input,
+        );
       // Gate only speculative narration while a game-fact request is being recognized.
       // This is not a hint operation; incomplete and negated speech still consumes nothing.
       if (
@@ -573,15 +597,13 @@ export class ConversationDirector {
         connectionEpoch: this.epoch,
       });
       if (this.inputPermitTimer) clearTimeout(this.inputPermitTimer);
-      const version = this.inputVersion,
-        generation = this.generation;
+      const version = this.inputVersion;
       this.inputPermitTimer = setTimeout(() => {
         if (
           !this.closing &&
           !this.userSpeaking &&
           this.endedSequence === this.speechSequence &&
           version === this.inputVersion &&
-          generation === this.generation &&
           !this.awaitingFacts
         )
           this.allowSpeech();
@@ -596,6 +618,9 @@ export class ConversationDirector {
         type: "caption",
         direction: "assistant",
         text: this.output,
+        scope: this.conversationInput ? "conversation" : "game",
+        boardEpoch: this.view?.boardEpoch,
+        revision: this.view?.revision,
         connectionEpoch: this.epoch,
       });
       this.outputTimer = setTimeout(() => {
