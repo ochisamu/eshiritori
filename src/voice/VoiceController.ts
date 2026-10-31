@@ -13,6 +13,7 @@ import {
 export interface VoiceUI {
   state: "off" | "pairing" | "connecting" | "active" | "closing" | "error";
   status?: VoiceStatus;
+  step?: "audio" | "microphone" | "transport" | "api";
   code?: string;
   usage?: VoiceUsage;
   caption: string;
@@ -34,7 +35,14 @@ const labels: Record<string, string> = {
   rate_limit: "APIの利用枠・混雑を確認してください。",
   api_configuration: "音声APIの設定を確認してください。",
   pair_required: "ホストに表示されたコードで接続してください。",
-  invalid_pair_code: "コードが違うか、有効期限が切れています。",
+  invalid_pair_code:
+    "接続リンクが使用済みか期限切れです。ホストで新しいQRを表示してください。",
+  microphone_timeout:
+    "マイクの許可待ちが続いています。ブラウザの権限表示を確認してください。表示されない場合はChromeやEdgeで開いてください。",
+  settings_busy: "会話を終了してからキーを変更してください。",
+  invalid_key_format: "APIキーの形式を確認してください。",
+  host_only: "キーの設定はホストPCのlocalhost画面で行ってください。",
+  lan_https_required: "端末用リンクにはLANのHTTPS設定が必要です。",
   pair_rate_limit: "コードの試行回数が上限です。少し待ってください。",
   mode_unavailable: "会話はCPUと交互の時間なしで使えます。",
   key_not_configured: "ホストにAPIキーが設定されていません。",
@@ -91,21 +99,63 @@ export class VoiceController {
   private notice(code: string) {
     this.change({ code: labels[code] ?? "接続を確認してください。" });
   }
+  private inviteToken?: string;
   async status() {
     try {
-      const status = (await (
-        await fetch("/voice-api/status", {
-          cache: "no-store",
-          credentials: "same-origin",
-        })
-      ).json()) as VoiceStatus;
+      if (location.hash.startsWith("#connect=")) {
+        this.inviteToken = location.hash.slice(9);
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+      let status = (await this.api("/voice-api/status", "GET")) as VoiceStatus;
       this.csrf = status.csrf ?? "";
-      this.change({ status });
+      if (!status.paired && (status.hostSettings || this.inviteToken)) {
+        const result = status.hostSettings
+          ? await this.api("/voice-api/host-access", "POST", {})
+          : await this.api("/voice-api/pair-invite", "POST", {
+              token: this.inviteToken,
+            });
+        this.inviteToken = undefined;
+        this.csrf = result.csrf;
+        status = (await this.api("/voice-api/status", "GET")) as VoiceStatus;
+      }
+      this.csrf = status.csrf ?? "";
+      this.inviteToken = undefined;
+      this.change({ status, code: undefined });
       return status;
-    } catch {
+    } catch (error) {
+      this.inviteToken = undefined;
+      this.change({ status: undefined });
+      if (error instanceof Error && error.message === "invalid_pair_code")
+        this.notice(error.message);
+      else
+        this.change({
+          code: "ゲームサーバーを確認できません。「接続状態を更新」で再確認してください。",
+        });
+      return undefined;
+    }
+  }
+  async saveKey(apiKey: string, remember: boolean) {
+    try {
+      await this.api("/voice-api/host-settings", "POST", { apiKey, remember });
+      await this.status();
       this.change({
-        code: "会話を使うにはホストで npm run voice を起動してください。",
+        code: remember
+          ? "このPCにキーを保存しました。"
+          : "今回の起動中だけキーを設定しました。",
       });
+      return true;
+    } catch (error) {
+      this.notice(error instanceof Error ? error.message : "connection_failed");
+      return false;
+    }
+  }
+  async createInvite(): Promise<
+    { url: string; qr: string; expires: number } | undefined
+  > {
+    try {
+      return await this.api("/voice-api/invite", "POST", {});
+    } catch (error) {
+      this.notice(error instanceof Error ? error.message : "connection_failed");
       return undefined;
     }
   }
@@ -123,6 +173,7 @@ export class VoiceController {
       method,
       credentials: "same-origin",
       cache: "no-store",
+      signal: AbortSignal.timeout(path === "/voice-api/session" ? 30000 : 8000),
       headers: {
         "Content-Type": "application/json",
         "X-Voice-CSRF": this.csrf,
@@ -253,11 +304,19 @@ export class VoiceController {
     }
   }
   async start() {
-    if (!["off", "error"].includes(this.ui.state) || !this.view?.eligible)
+    if (!["off", "error"].includes(this.ui.state)) return;
+    if (!this.view?.eligible) {
+      this.notice("mode_unavailable");
       return;
+    }
     const generation = ++this.generation;
     this.stopPromise = undefined;
-    this.change({ state: "connecting", code: undefined, usage: undefined });
+    this.change({
+      state: "connecting",
+      step: "audio",
+      code: undefined,
+      usage: undefined,
+    });
     try {
       // Unlock during the actual button gesture, before permission/network awaits (iOS/PWA).
       this.audio = new AudioContext();
@@ -273,13 +332,39 @@ export class VoiceController {
       if (status.busy) throw Error("voice_slot_required");
       if (!isSecureContext || !navigator.mediaDevices?.getUserMedia)
         throw Error("secure_context");
-      this.mic = await navigator.mediaDevices.getUserMedia({
+      this.change({ step: "microphone" });
+      let abandonedMic = false;
+      const micPromise = navigator.mediaDevices.getUserMedia({
         audio: {
           echoCancellation: true,
           noiseSuppression: true,
           autoGainControl: true,
         },
       });
+      micPromise.then(
+        (stream) => {
+          if (abandonedMic || generation !== this.generation)
+            stream.getTracks().forEach((t) => t.stop());
+        },
+        () => {},
+      );
+      let micTimer: ReturnType<typeof setTimeout> | undefined;
+      try {
+        this.mic = await Promise.race([
+          micPromise,
+          new Promise<never>((_, reject) => {
+            micTimer = setTimeout(
+              () => reject(Error("microphone_timeout")),
+              20000,
+            );
+          }),
+        ]);
+      } catch (error) {
+        abandonedMic = true;
+        throw error;
+      } finally {
+        if (micTimer) clearTimeout(micTimer);
+      }
       if (generation !== this.generation) {
         this.mic.getTracks().forEach((t) => t.stop());
         return;
@@ -313,6 +398,7 @@ export class VoiceController {
           active: e.data.active,
           sequence: e.data.sequence,
         });
+      this.change({ step: "transport" });
       this.ws = new WebSocket(
         (location.protocol === "https:" ? "wss://" : "ws://") +
           location.host +
@@ -400,6 +486,7 @@ export class VoiceController {
           }
         });
       });
+      this.change({ step: "api" });
       const answer = await this.api("/voice-api/session", "POST", {
         sdp: pc.localDescription?.sdp,
       });
@@ -419,7 +506,8 @@ export class VoiceController {
         this.send({ type: "media.ready" });
     } catch (error) {
       if (generation === this.generation) {
-        await this.api("/voice-api/session", "DELETE").catch(() => {});
+        if (this.epoch)
+          await this.api("/voice-api/session", "DELETE").catch(() => {});
         await this.cleanup();
         this.change({ state: "error" });
         const code =

@@ -1,6 +1,7 @@
 import { randomBytes, randomInt, timingSafeEqual } from "node:crypto";
 export class Pairing {
   code = "";
+  invite = "";
   expires = 0;
   private attempts = new Map<string, { count: number; since: number }>();
   private devices = new Map<string, { csrf: string; expires: number }>();
@@ -8,6 +9,7 @@ export class Pairing {
     this.rotate();
   }
   rotate() {
+    this.invite = randomBytes(32).toString("hex");
     this.code = String(randomInt(100000, 1000000));
     this.expires = this.now() + 300000;
     return this.code;
@@ -30,10 +32,21 @@ export class Pairing {
       !timingSafeEqual(Buffer.from(code), Buffer.from(this.code))
     )
       throw Error("invalid_pair_code");
+    this.expires = 0;
+    return this.issueDevice();
+  }
+  pairInvite(token: unknown, address: string) {
+    // Count invalid links against the same bounded attempt window as legacy pairing.
+    const valid =
+      typeof token === "string" &&
+      /^[a-f0-9]{64}$/.test(token) &&
+      timingSafeEqual(Buffer.from(token), Buffer.from(this.invite));
+    return this.pair(valid ? this.code : "", address);
+  }
+  issueDevice() {
     const id = randomBytes(32).toString("hex"),
       csrf = randomBytes(24).toString("hex");
     this.devices.set(id, { csrf, expires: this.now() + 3600000 });
-    this.expires = 0;
     for (const [key, value] of this.devices)
       if (value.expires < this.now()) this.devices.delete(key);
     return { id, csrf };

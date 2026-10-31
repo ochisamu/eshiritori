@@ -39,7 +39,8 @@ try {
     route.fulfill({
       json: {
         available: true,
-        paired: false,
+        paired: true,
+        hostSettings: true,
         busy: false,
         lan: false,
         maxSeconds: 900,
@@ -53,12 +54,7 @@ try {
   await expect(page.locator(".picture-card").first()).toBeEnabled();
   await page.getByRole("button", { name: "ひとやすみ", exact: true }).click();
   await page.getByRole("button", { name: "会話する", exact: true }).click();
-  await expect(page.getByRole("form"))
-    .toHaveCount(0)
-    .catch(() => {}); // The pairing control remains disconnected.
-  await expect(
-    page.getByRole("button", { name: "ペアリング", exact: true }),
-  ).toBeVisible();
+  await expect(page.getByText("ホスト設定", { exact: false })).toBeVisible();
   await page.screenshot({ path: "docs/screenshots/voice-options.png" });
   writeFileSync(
     "docs/screenshots/voice-options.json",

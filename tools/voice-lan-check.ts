@@ -48,13 +48,18 @@ const trusted = await getStatus(true);
 const wrongOrigin = await getStatus(true, "https://other.invalid");
 if (trusted.status !== 200 || wrongOrigin.status !== 403 || !untrustedRejected)
   throw Error("TLS/origin check failed");
-const codes = [
-  ...readFileSync(".cache/voice-lan.log", "utf8").matchAll(
-    /Pairing code \(5 minutes, one use\): (\d{6})/g,
-  ),
-];
-const code = codes.at(-1)?.[1];
-if (!code) throw Error("Host pairing code not found");
+// Supply the host GUI's one-use link in a private, ignored file, never logs.
+const inviteFile =
+  process.env.VOICE_TEST_INVITE_FILE ?? ".voice/lan-test-invite.txt";
+let inviteUrl: string;
+try {
+  inviteUrl = readFileSync(inviteFile, "utf8").trim();
+  const parsed = new URL(inviteUrl);
+  if (parsed.origin !== origin || !/^#connect=[a-f0-9]{64}$/.test(parsed.hash))
+    throw Error();
+} catch {
+  throw Error("Provide a fresh host-GUI invite in the private invite file");
+}
 const browser = await chromium.launch({
   executablePath: "/usr/bin/google-chrome",
   ignoreDefaultArgs: ["--mute-audio"],
@@ -172,7 +177,7 @@ const errors: string[] = [];
 page.on("pageerror", () => errors.push("browser_exception"));
 let result: Record<string, unknown> = {};
 try {
-  await page.goto(origin);
+  await page.goto(inviteUrl);
   expect(await page.evaluate(() => isSecureContext)).toBe(true);
   await page
     .getByRole("button", { name: "つづきから遊ぶ", exact: true })
@@ -182,8 +187,6 @@ try {
   });
   await page.getByRole("button", { name: "ひとやすみ", exact: true }).click();
   await page.getByRole("button", { name: "会話する", exact: true }).click();
-  await page.getByLabel("ホストのターミナルに表示された接続コード").fill(code);
-  await page.getByRole("button", { name: "ペアリング", exact: true }).click();
   await expect(
     page.getByRole("button", { name: "会話を開始", exact: true }),
   ).toBeEnabled();

@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-31",
+  "status": "implemented",
+  "buildHash": "85c8a4eb5bf06fed8640f6d24e25776574204708722955c558d18a4cd97cdf0d",
+  "voiceServerHash": "1687c066b29a25575d2c72346c9cd32b088b5d66a631ea7098dd2c6936ea1bed",
+  "scope": [
+    "Unified game/voice/host GUI server on 4173",
+    "Host-only key settings; .env or local file; no browser storage or key retrieval",
+    "Automatic localhost access; one-use 5-minute LAN invite in QR/fragment",
+    "Title-to-board preparation, clear start steps and bounded microphone wait"
+  ],
+  "tests": {
+    "unitPassed": 204,
+    "coreBranchPercent": 90.89692101740295,
+    "resolvedUiUnique": 60,
+    "pwaPassed": 12,
+    "engines": ["Chromium", "Firefox", "WebKit"],
+    "note": "Layout and mock API UI cases isolate service workers. Dedicated PWA suite exercises real caching. WebKit microphone fixture corrected with an explicit MediaDevices replacement."
+  },
+  "realApi": {
+    "syntheticOnly": true,
+    "wallSeconds": 77.52,
+    "usage": {
+      "seconds": 69,
+      "finalized": true,
+      "backend": {
+        "calls": 5,
+        "input": 9245,
+        "output": 93,
+        "cached": 0,
+        "uncertain": 0
+      },
+      "decisions": {
+        "calls": 14,
+        "input": 3033,
+        "output": 0,
+        "cached": 0,
+        "uncertain": 0
+      },
+      "estimatedUSD": 0.058774299999999995,
+      "priceDate": "2026-10-31",
+      "liveModel": "gpt-live-1",
+      "backendModel": "gpt-6-luna",
+      "decisionsModel": "gpt-6-luna"
+    },
+    "metrics": {
+      "assistantDeltas": 65,
+      "userDeltas": 46,
+      "moodUpdates": 14,
+      "operations": 4,
+      "playingObservations": 19,
+      "audioVoicedFrames": 3353,
+      "audioPlayedFrames": 3165,
+      "audioPeak": 0.17233409153142495
+    },
+    "checks": {
+      "rejectNoConsume": true,
+      "repeatNoConsume": true,
+      "answerLevel3": true,
+      "referenceUnchanged": true
+    },
+    "apiTestServerHash": "4ed9e37b9daab36968796269c4d9bba4adceb2c5a71a592cbcb636e216370cdb",
+    "subsequentChanges": "Static hidden-file guard and startup message only; no further voice semantics changed."
+  },
+  "budget": {
+    "authorizedUSD": 5,
+    "incrementEstimateUSD": 0.11124036666666667,
+    "automatedTrialsConservativeAggregateUSD": 2.4356582666666666,
+    "invoiceVerified": false
+  },
+  "limitations": [
+    "Physical LAN phone/tablet QR and certificate trust have not been tested.",
+    "In-app browser microphone permission and human speaker audition still require user testing; automated permission refusal/timeout cases use fixtures.",
+    "First additional-hint live trial failed on model-selected wrong tool mode; explicit hint tool/schema are now constrained to the recognized request and the follow-up passed.",
+    "Initial API fixture and rotation checks hit Service Worker interception; UI fixtures were isolated and real PWA coverage run separately.",
+    "A new saved key is validated for format but not billed/tested automatically; API errors surface when voice starts."
+  ],
+  "distributionRestore": {
+    "passed": true,
+    "sourceRebuild": {
+      "buildHash": "85c8a4eb5bf06fed8640f6d24e25776574204708722955c558d18a4cd97cdf0d",
+      "voiceServerHash": "1687c066b29a25575d2c72346c9cd32b088b5d66a631ea7098dd2c6936ea1bed"
+    },
+    "dependencyRestore": "fresh npm ci --offline, without reusing node_modules",
+    "playUnifiedStart": true,
+    "keyless": true,
+    "paidApiCalls": 0,
+    "hostSecretsExcluded": true
+  }
+}

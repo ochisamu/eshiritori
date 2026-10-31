@@ -1,9 +1,11 @@
+// Layout tests isolate service workers; offline/caching behavior has a dedicated PWA suite.
 import { openGameControl, resumeFromMenu, test, expect } from "./_test";
 import { activeAssets as assets } from "../../src/game/content";
 import { initialState, position } from "../../src/game/state";
 import { CPU_VERSION } from "../../src/game/cpu";
 import { legalMoves } from "../../src/game/rules";
 import { SAVE_KEY } from "../../src/storage/save";
+test.use({ serviceWorkers: "block" });
 const views = [
   { width: 320, height: 568 },
   { width: 360, height: 640 },

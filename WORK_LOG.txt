@@ -114,3 +114,7 @@ Live/Responses/Decisionsをホスト側へ追加。交互の時間なし/補充�
 単体200件、関連UI102種類（初回101成功、WebKit早押し15件を再確認）、PWA12件。実API合成会話で10分6盤面49回答、追加3盤面18回答、最終版短時間確認。US$5予算に対し保守的見積もりUS$2.50以内。WindowsホストLAN IP→WSL ChromeのHTTPS会話を確認。物理端末のマイク・OS信頼設定・人の自然さ/聴感は未確認。詳細 reports/voice/verification.md。
 
 配布play/sourceを隔離展開し、npm ci --offlineから依存を新規復元。クライアントと音声サーバーのSHA256一致、play版キーなし起動・API接続0を確認。全収録ファイルCRC/ハッシュと実キー非公開照合が成功。
+
+## 2026-10-31 統合サーバーとコード不要UX
+
+ゲーム・会話・ホスト管理をnpm start/serveの1プロセスへ統合（4173）。.envまたはlocalhost専用GUIでキー設定。キーの再取得API・ブラウザ保存なし。localhostは自動認可、LANは一回/5分のQR・フラグメントリンク。対戦準備導線とマイク待ち20秒の案内を追加。共有ヒントの明確な要求はツール/enumを段階に固定。単体204、UI60種類、PWA12と実API短時間を確認。物理端末と人の聴感は未確認。詳細 reports/voice-unified/verification.md。

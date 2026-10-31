@@ -80,10 +80,6 @@ try {
   });
   await page.getByRole("button", { name: "ひとやすみ", exact: true }).click();
   await page.getByRole("button", { name: "会話する", exact: true }).click();
-  await page
-    .getByLabel("ホストのターミナルに表示された接続コード")
-    .fill(app.pairing.code);
-  await page.getByRole("button", { name: "ペアリング", exact: true }).click();
   await expect(
     page.getByRole("button", { name: "会話を開始", exact: true }),
   ).toBeEnabled();

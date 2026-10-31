@@ -4,29 +4,25 @@
 
 採点・CPUの選択・勝敗・発見・乱数・保存は既存エンジンが担当します。手詰まりでは盤面クリアへ進みます。会話は操作待ちの理由になりません。
 
-## ローカルで起動
+## 起動とキー設定
 
-Node.js 22.12以上を用意し、プロジェクトのルートで実行します。
+ゲーム・会話・管理画面は1つのサーバーです。別に会話サーバーを起動する必要はありません。
 
 ```sh
 npm ci
 npm run build
-npm run voice:build
+npm start
 ```
 
-.env.exampleを.envへコピーし、ホストPC上でOPENAI_API_KEYを設定します。既存の.envがある場合は上書きせず、必要な設定だけ追加してください。VITE_変数にはキーを入れません。
+http://localhost:4173 を開き、「会話する」を選びます。このPCではコード入力不要です。既存の.envにOPENAI_API_KEYがあれば、そのまま使用します。
 
-```sh
-npm run voice
-```
+キーがなければ「ホスト設定」で入力してください。「このPCに保存する」は無視対象の.voice/settings.jsonへ保存します。保存しない場合は起動中のメモリだけに保持します。保存済み設定は.envより優先します。変更は会話を終了してから行います。設定だけでは有料APIを呼びません。
 
-ターミナルのURL（既定は http://localhost:4174 ）を開きます。通常版の4173と同時に起動できます。ゲームの「会話する」からホストのターミナルに表示された6桁のコードでペアリングし、対応モードで「会話を開始」を押してください。
+タイトルの「時間なしの対戦を準備」は、盤面を作って会話パネルを開きます。その後「会話を開始」でマイクを許可してください。無効なモード・認可不足で押せないボタンを置かず、次に必要な操作を表示します。
 
-コードは1回限り・5分間有効です。成功すると新しいコードをホスト側へ表示します。期限切れのコードはホスト側で更新されます。同時に使える音声接続は1台です。
+開始中は音声の準備・マイク許可待ち・API接続を区別します。マイクの許可が来ない場合は20秒で案内を表示。内蔵ブラウザに権限表示が出ない場合は、同じURLをChrome／Edgeなどで開いてください。
 
-![接続コードとマイク・相手の声を個別に設定する会話パネル](screenshots/voice-options.png)
-
-画像は会話未接続の設定画面です。
+![未接続の会話設定](screenshots/voice-options.png)
 
 ## 操作と利用量
 
@@ -66,21 +62,21 @@ node tools/create-voice-certificate.mjs 192.168.1.20 my-game-pc
 
 ```dotenv
 VOICE_LAN=true
-VOICE_PORT=4174
+VOICE_PORT=4173
 VOICE_TLS_CERT=.voice/certificates/server.crt
 VOICE_TLS_KEY=.voice/certificates/server.key
-VOICE_ALLOWED_ORIGINS=https://192.168.1.20:4174,https://my-game-pc:4174
+VOICE_ALLOWED_ORIGINS=https://192.168.1.20:4173,https://my-game-pc:4173,https://localhost:4173
 ```
 
 ```sh
-npm run voice
+npm start
 ```
 
-ホストのターミナルに表示するQRコードは接続URLだけを含みます。接続コード・Cookie・APIキーは含みません。スマホからURLを開いて証明書が正常なことを確認し、「会話する」でコードを入力、マイクを許可します。ホスト側にも接続料金が発生します。
+ホストPCのlocalhost画面の「会話する」から「端末用QRを表示」を選びます。スマホでQRを読むか接続リンクを開くと、自動で端末を認可します。リンクは5分間・1回だけ有効な接続トークンをURLのフラグメントに含み、使用時にアドレス欄から消します。APIキーは含みません。QRやリンクを他人へ公開しないでください。証明書を正しく信頼した後、マイクを許可して会話を開始します。
 
 ### 3. Windows／WSLを使う場合
 
-**WindowsのNode.jsで起動する経路**：ビルド済みのプロジェクトでWindows PowerShellからnpm run voiceを実行すれば、Windows上のサーバーへLAN接続できます。作業フォルダがWSLのUNCパス（\\wsl.localhost\\…）にある場合は、npmの子シェルの制限を避けて **node dist-voice/server/voice/index.js** を直接実行します。WSL内で作った証明書のパスは、Windowsから読めるパスにしてください。
+**WindowsのNode.jsで起動する経路**：ビルド済みのプロジェクトでWindows PowerShellからnpm run voiceを実行すれば、Windows上のサーバーへLAN接続できます。作業フォルダがWSLのUNCパス（\\wsl.localhost\\…）にある場合は、npmの子シェルの制限を避けて **node tools/start.mjs** を直接実行します。WSL内で作った証明書のパスは、Windowsから読めるパスにしてください。
 
 **WSL内で起動する経路**：localhostの転送とLAN端末からの到達性は別です。WSLのネットワーク方式に応じて、ミラーネットワークまたはホスト側の転送設定が必要です。転送しても、ブラウザが開くURLと証明書SAN・許可Originを一致させます。
 
@@ -102,19 +98,19 @@ npm run voice:dev
 
 開発サーバーにも.env・.voice・.cache・証明書の配信拒否を設定しています。旧静的サーバーのリポジトリ全体を配信する--devは使用できません。
 
-Viteの開発プロキシを使う場合は、音声サーバー側のVOICE_ALLOWED_ORIGINSへhttp://localhost:5173を明示追加し、npm run devも起動します。LANの音声確認は本番ビルドのHTTPS配信を使用してください。
+Viteの開発プロキシを使う場合は、開発時はVOICE_PORT=4174の統合ゲームサーバーを使い、VOICE_ALLOWED_ORIGINSへhttp://localhost:5173を明示追加してnpm run devを起動します。通常利用はnpm startだけです。LANの音声確認は本番ビルドのHTTPS配信を使用してください。
 
 キー不正、モデル権限、利用枠、マイク許可、HTTPS、接続切断を区別して案内します。Live障害時は標準のタップ操作へ戻り、Decisions障害時は既存の表情へ戻します。自動で有料セッションを作り直しません。
 
-テストは通常のnpm testに音声の境界・認可試験を含みます。実API試験は通常テストから実行されません。試験専用ツールを使う場合は、キー・予算・合成音声素材を明示的に準備してください。Windowsの日本語合成音声を使うtools/prepare-voice-test.ps1は、個人の会話を録音せず、試験素材を無視対象の.cache/voiceへ作ります。tools/voice-playtest.tsは専用ブラウザの保存領域で試遊します。実行にはVOICE_TEST_BUDGET_USD=5の明示指定が必要です。通常のnpm testでは課金しません。
+テストは通常のnpm testに音声の境界・認可試験を含みます。実API試験は通常テストから実行されません。試験専用ツールを使う場合は、キー・予算・合成音声素材を明示的に準備してください。Windowsの日本語合成音声を使うtools/prepare-voice-test.ps1は、個人の会話を録音せず、試験素材を無視対象の.cache/voiceへ作ります。tools/voice-playtest.tsは専用ブラウザの保存領域で試遊します。実行にはVOICE_TEST_BUDGET_USD=5の明示指定が必要です。通常のnpm testでは課金しません。LAN実API用のtools/voice-lan-check.tsは、ホストGUIで作った新しい接続リンクを無視対象の.voice/lan-test-invite.txtから読みます（VOICE_TEST_INVITE_FILEで変更可）。リンクをログやGitへ保存しないでください。
 
 ## 秘密と保存
 
-キーはホストの.env／環境変数だけで扱います。ブラウザにはSDPとアプリ用の認可情報だけを渡します。音声・全文文字起こしの保存機能は初期版にありません。会話は接続中のメモリだけに保持し、ゲームのセーブ・再挑戦コード・図鑑へ混ぜません。
+キーはホストの.env／環境変数、またはホスト専用の設定ファイルで扱います。ホストPCのlocalhost管理画面でだけキーを入力でき、同じPCのサーバーへPOST後に入力欄を消去します。既存キーをブラウザへ読み出すAPIはありません。LAN端末にはキー入力欄を出さず、設定APIも拒否します。音声・全文文字起こしの保存機能は初期版にありません。会話は接続中のメモリだけに保持し、ゲームのセーブ・再挑戦コード・図鑑へ混ぜません。
 
 音声APIはPWAキャッシュの対象外です。サーバーはdistの配信だけを行い、リポジトリや.envを配信しません。端末認可にはHttpOnly・SameSiteのCookie、変更要求にはCSRF検証、HTTPSではSecure属性を使います。Originは完全一致で検査します。
 
-検証範囲と未確認事項は [検証報告](../reports/voice/verification.md) を参照してください。
+統合版の追加確認は[統合UXの検証](../reports/voice-unified/verification.md)。初回の実API・自然さの検証範囲は [初回検証報告](../reports/voice/verification.md) を参照してください。
 
 ## 実装上の接続方式
 
@@ -126,7 +122,7 @@ Viteの開発プロキシを使う場合は、音声サーバー側のVOICE_ALLO
 
 ## 秘密を含めず配布する
 
-Gitの作業コピーで本番ビルド・音声サーバービルド後、Python 3.9以上とGitを使って次を実行します。
+Gitの作業コピーで本番ビルド・統合ゲームサーバービルド後、Python 3.9以上とGitを使って次を実行します。
 
 ```sh
 python3 tools/package-voice.py
@@ -136,9 +132,8 @@ artifacts/eshiritori-voice-play.zip、eshiritori-voice-source.zipと、ZIP外の
 
 ```sh
 npm ci --omit=dev
-npm run serve
-# 会話を使う場合は自分の.envを用意して次を実行
-npm run voice
+npm start
+# 「会話する」のホスト設定か自分の.envでキーを設定
 ```
 
 配布には.env.exampleだけを含め、.env、.voice、証明書・秘密鍵、Cookie、音声、会話、キャッシュ、node_modulesを含めません。ホストのキーがファイルへ紛れ込んでいないかも作成時に照合します。受取人が自分のキーとLAN証明書を設定する方式です。

@@ -2,6 +2,8 @@ import { test, expect } from "./_test";
 import { initialState } from "../../src/game/state";
 import { activeAssets as assets } from "../../src/game/content";
 import { SAVE_KEY } from "../../src/storage/save";
+// API fixtures must not be bypassed by a previously activated service worker.
+test.use({ serviceWorkers: "block" });
 test("standard game never opens paid sessions and optional voice remains keyless", async ({
   page,
 }) => {
@@ -31,8 +33,8 @@ test("standard game never opens paid sessions and optional voice remains keyless
     page.getByRole("dialog", { name: "会話できる対戦相手" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("button", { name: "会話を開始", exact: true }),
-  ).toBeDisabled();
+    page.getByRole("button", { name: "時間なしの対戦を準備", exact: true }),
+  ).toBeEnabled();
   await expect(page.locator(".voice-panel")).toContainText("ホストPC");
   expect(external).toEqual([]);
 });
@@ -123,32 +125,200 @@ for (const size of [
     },
   );
 }
-test("the title voice option chooses untimed alternating without a paid connection", async ({
+
+test("title prepares a playable untimed board without silently starting paid voice", async ({
   page,
 }) => {
+  let paired = false,
+    paid = 0;
   await page.route("**/voice-api/status", (route) =>
     route.fulfill({
       json: {
-        available: false,
-        paired: false,
+        available: true,
+        paired,
+        hostSettings: true,
         busy: false,
         lan: false,
         maxSeconds: 900,
+        csrf: paired ? "test-csrf" : undefined,
       },
     }),
   );
-  await page.setViewportSize({ width: 390, height: 844 });
+  await page.route("**/voice-api/host-access", (route) => {
+    paired = true;
+    return route.fulfill({ json: { csrf: "test-csrf" } });
+  });
+  await page.route("**/voice-api/session", (route) => {
+    paid++;
+    return route.fulfill({ status: 400, json: { error: "test_only" } });
+  });
+  await page.addInitScript(() => {
+    navigator.mediaDevices.getUserMedia = async () => {
+      throw new DOMException("denied", "NotAllowedError");
+    };
+  });
   await page.goto("/");
   await page.getByRole("button", { name: "会話する", exact: true }).click();
-  await page.getByRole("button", { name: "交互・時間なしを選ぶ" }).click();
   await expect(
-    page
-      .getByRole("group", { name: "制限時間", exact: true })
-      .getByRole("button", { name: "なし", exact: true }),
-  ).toHaveAttribute("aria-pressed", "true");
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollHeight <= innerHeight + 1,
-    ),
-  ).toBe(true);
+    page.getByLabel("ホストのターミナルに表示された接続コード"),
+  ).toHaveCount(0);
+  await page.getByRole("button", { name: "時間なしの対戦を準備" }).click();
+  const tutorial = page.getByRole("button", { name: "さあ、はじめよう" });
+  if (await tutorial.isVisible()) await tutorial.click();
+  await expect(
+    page.getByRole("button", { name: "会話を開始", exact: true }),
+  ).toBeEnabled({ timeout: 20000 });
+  expect(paid).toBe(0);
+  await page.getByRole("button", { name: "会話を開始", exact: true }).click();
+  await expect(
+    page.getByRole("status").filter({ hasText: "マイクの許可がありません" }),
+  ).toBeVisible({ timeout: 10000 });
+  expect(paid).toBe(0);
+});
+test("host key form stays blank, clears input after submit and does not persist in browser storage", async ({
+  page,
+}) => {
+  const key = "sk-fake-browser-test-value-123456789";
+  let configured = false,
+    writes = 0;
+  await page.route("**/voice-api/status", (route) =>
+    route.fulfill({
+      json: {
+        available: configured,
+        paired: true,
+        hostSettings: true,
+        busy: false,
+        lan: false,
+        maxSeconds: 900,
+        csrf: "test",
+      },
+    }),
+  );
+  await page.route("**/voice-api/host-settings", (route) => {
+    const data = route.request().postDataJSON();
+    expect(data.apiKey).toBe(key);
+    writes++;
+    configured = true;
+    return route.fulfill({ json: { configured: true } });
+  });
+  await page.goto("/");
+  await page.getByRole("button", { name: "会話する", exact: true }).click();
+  const input = page.getByLabel("OpenAI APIキー", { exact: true });
+  await expect(input).toHaveValue("");
+  await input.fill(key);
+  await page.getByRole("button", { name: "キーを設定", exact: true }).click();
+  await expect(page.locator(".voice-notice")).toContainText("キーを保存");
+  expect(writes).toBe(1);
+  expect(await input.inputValue()).toBe("");
+  expect(await page.evaluate(() => JSON.stringify(localStorage))).not.toContain(
+    key,
+  );
+});
+
+test("pending microphone permission times out visibly without creating a paid session", async ({
+  page,
+}) => {
+  let paid = 0;
+  await page.route("**/voice-api/status", (route) =>
+    route.fulfill({
+      json: {
+        available: true,
+        paired: true,
+        hostSettings: true,
+        busy: false,
+        lan: false,
+        maxSeconds: 900,
+        csrf: "test",
+      },
+    }),
+  );
+  await page.route("**/voice-api/session", (route) => {
+    paid++;
+    return route.fulfill({ json: {} });
+  });
+  const state = initialState();
+  state.phase = "playerTurn";
+  state.actor = "player";
+  state.head = "か";
+  state.settings = {
+    ...state.settings,
+    mode: "practice",
+    opponent: "turns",
+    tutorialSeen: true,
+  };
+  state.board = {
+    ids: assets.slice(0, 24).map((a) => a.id),
+    head: "か",
+    seed: "mic-timeout",
+    version: "test",
+    fallback: false,
+  };
+  await page.addInitScript(
+    ({ state, key }) => {
+      localStorage.setItem(key, JSON.stringify(state));
+      AudioContext.prototype.resume = async () => {};
+      navigator.mediaDevices.getUserMedia = () => new Promise(() => {});
+    },
+    { state, key: SAVE_KEY },
+  );
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "つづきから遊ぶ", exact: true })
+    .click();
+  await page.getByRole("button", { name: "ひとやすみ", exact: true }).click();
+  await page.getByRole("button", { name: "会話する", exact: true }).click();
+  await page.clock.install();
+  await page.evaluate(() => {
+    Object.defineProperty(navigator, "mediaDevices", {
+      configurable: true,
+      value: { getUserMedia: () => new Promise(() => {}) },
+    });
+  });
+  await page.getByRole("button", { name: "会話を開始", exact: true }).click();
+  await expect(page.locator(".voice-session-row")).toContainText(
+    "マイクの許可を待っています",
+  );
+  await page.clock.runFor(21000);
+  await expect(page.locator(".voice-notice")).toContainText(
+    "マイクの許可待ちが続いています",
+  );
+  expect(paid).toBe(0);
+});
+
+test("LAN invite authorizes without code entry and removes the fragment before requests", async ({
+  page,
+}) => {
+  const token = "a".repeat(64);
+  let paired = false,
+    redeemed = 0;
+  await page.route("**/voice-api/status", (route) =>
+    route.fulfill({
+      json: {
+        available: true,
+        paired,
+        hostSettings: false,
+        busy: false,
+        lan: true,
+        maxSeconds: 900,
+        csrf: paired ? "test" : undefined,
+      },
+    }),
+  );
+  await page.route("**/voice-api/pair-invite", (route) => {
+    expect(route.request().postDataJSON().token).toBe(token);
+    expect(route.request().headers().referer).not.toContain(token);
+    redeemed++;
+    paired = true;
+    return route.fulfill({ json: { csrf: "test" } });
+  });
+  await page.goto("/#connect=" + token);
+  await page.getByRole("button", { name: "会話する", exact: true }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect.poll(() => redeemed).toBe(1);
+  await expect(page.getByLabel("OpenAI APIキー", { exact: true })).toHaveCount(
+    0,
+  );
+  await expect(
+    page.getByText("ホストのターミナルに表示された接続コード"),
+  ).toHaveCount(0);
 });

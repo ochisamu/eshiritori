@@ -5625,3 +5625,11 @@ body:has(.landing-screen) {
     padding: 8px;
   }
 }
+
+.voice-host-settings { border: 1px solid var(--line, #d4ddc9); border-radius: 12px; padding: 12px; }
+.voice-host-settings summary { cursor: pointer; font-weight: 700; }
+.voice-host-settings form { display: grid; gap: 10px; margin-top: 12px; }
+.voice-host-settings input[type="password"] { min-width: 0; width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #aebda6; border-radius: 8px; background: white; }
+.voice-remember { display: flex; align-items: center; gap: 8px; }
+.voice-invite { display: grid; justify-items: center; gap: 8px; margin-top: 12px; }
+.voice-invite img { image-rendering: pixelated; background: white; border-radius: 8px; }

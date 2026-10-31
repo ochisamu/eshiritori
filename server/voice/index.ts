@@ -1,3 +1,5 @@
+import { gzipSync } from "node:zlib";
+import { HostSettings, isHostRequest } from "./hostSettings.js";
 import http from "node:http";
 import https from "node:https";
 import { readFile, realpath, stat } from "node:fs/promises";
@@ -62,10 +64,12 @@ export async function createVoiceServer(
     adapter?: OpenAILiveAdapter;
     onPairCode?: (code: string) => void;
     dist?: string;
+    hostSettings?: HostSettings;
   } = {},
 ) {
   const pairing = new Pairing();
-  const adapter = settings.adapter ?? new OpenAILiveAdapter(config);
+  const hostSettings = settings.hostSettings ?? new HostSettings();
+  let adapter = settings.adapter ?? new OpenAILiveAdapter(config);
   let active:
     | {
         owner: string;
@@ -83,6 +87,7 @@ export async function createVoiceServer(
     ReturnType<ConversationDirector["usage"]["snapshot"]>
   >();
   const root = await realpath(settings.dist ?? "dist");
+  const compressed = new Map<string, Buffer>();
   const allowedHosts = new Set(
     config.origins.map((origin) => new URL(origin).host),
   );
@@ -129,8 +134,6 @@ export async function createVoiceServer(
   ) => {
     try {
       const url = new URL(req.url ?? "/", "http://localhost");
-      if (!allowedHosts.has(req.headers.host ?? ""))
-        return json(res, 403, { error: "unexpected_host" });
       if (url.pathname.startsWith("/voice-api/")) {
         if (!originAllowed(req, req.method !== "GET"))
           return json(res, 403, { error: "unexpected_origin" });
@@ -142,8 +145,45 @@ export async function createVoiceServer(
             busy: !!active && active.owner !== device?.id,
             lan: config.lan,
             maxSeconds: config.maxSeconds,
+            hostSettings: isHostRequest(req),
             ...(device ? { csrf: device.csrf } : {}),
           });
+        if (
+          url.pathname === "/voice-api/host-access" &&
+          req.method === "POST"
+        ) {
+          if (!isHostRequest(req))
+            return json(res, 403, { error: "host_only" });
+          const result = device ?? pairing.issueDevice();
+          res.setHeader(
+            "Set-Cookie",
+            "eshiritori_voice=" +
+              result.id +
+              "; HttpOnly; SameSite=Strict; Path=/voice-api; Max-Age=3600" +
+              (tls ? "; Secure" : ""),
+          );
+          return json(res, 200, { csrf: result.csrf });
+        }
+        if (
+          url.pathname === "/voice-api/pair-invite" &&
+          req.method === "POST"
+        ) {
+          const request = await body(req, 1024);
+          const result = pairing.pairInvite(
+            request.token,
+            req.socket.remoteAddress ?? "unknown",
+          );
+          res.setHeader(
+            "Set-Cookie",
+            "eshiritori_voice=" +
+              result.id +
+              "; HttpOnly; SameSite=Strict; Path=/voice-api; Max-Age=3600" +
+              (tls ? "; Secure" : ""),
+          );
+          json(res, 200, { csrf: result.csrf });
+          settings.onPairCode?.(pairing.rotate());
+          return;
+        }
         if (url.pathname === "/voice-api/pair" && req.method === "POST") {
           const request = await body(req, 1024);
           const result = pairing.pair(
@@ -165,6 +205,43 @@ export async function createVoiceServer(
         if (!device) return json(res, 401, { error: "pair_required" });
         if (req.method !== "GET" && req.headers["x-voice-csrf"] !== device.csrf)
           return json(res, 403, { error: "csrf_required" });
+        if (url.pathname === "/voice-api/invite" && req.method === "POST") {
+          if (!isHostRequest(req))
+            return json(res, 403, { error: "host_only" });
+          if (!config.lan)
+            return json(res, 409, { error: "lan_https_required" });
+          const origin = config.origins.find(
+            (o) =>
+              !["localhost", "127.0.0.1", "[::1]"].includes(
+                new URL(o).hostname,
+              ),
+          );
+          if (!origin) return json(res, 409, { error: "lan_https_required" });
+          pairing.rotate();
+          const inviteUrl = origin + "/#connect=" + pairing.invite;
+          return json(res, 200, {
+            url: inviteUrl,
+            qr: await QRCode.toDataURL(inviteUrl),
+            expires: pairing.expires,
+          });
+        }
+        if (
+          url.pathname === "/voice-api/host-settings" &&
+          req.method === "POST"
+        ) {
+          if (!isHostRequest(req))
+            return json(res, 403, { error: "host_only" });
+          if (active) return json(res, 409, { error: "settings_busy" });
+          const request = await body(req, 2048);
+          const key =
+            typeof request.apiKey === "string" ? request.apiKey.trim() : "";
+          if (!/^sk-[A-Za-z0-9_-]{16,500}$/.test(key))
+            return json(res, 400, { error: "invalid_key_format" });
+          if (request.remember === true) await hostSettings.saveKey(key);
+          config.apiKey = key;
+          adapter = new OpenAILiveAdapter(config);
+          return json(res, 200, { configured: true });
+        }
         if (url.pathname === "/voice-api/usage" && req.method === "GET")
           return json(res, 200, {
             usage:
@@ -214,6 +291,12 @@ export async function createVoiceServer(
       }
       if (req.method !== "GET" && req.method !== "HEAD")
         return json(res, 405, { error: "method_not_allowed" });
+      if (
+        decodeURIComponent(url.pathname)
+          .split("/")
+          .some((part) => part.startsWith("."))
+      )
+        return json(res, 404, { error: "not_found" });
       const path = resolve(
         root,
         "." +
@@ -228,7 +311,8 @@ export async function createVoiceServer(
         return json(res, 404, { error: "not_found" });
       const info = await stat(actual);
       if (!info.isFile()) return json(res, 404, { error: "not_found" });
-      res.writeHead(200, {
+      const etag = '"' + info.size + "-" + info.mtimeMs + '"';
+      const headers: Record<string, string> = {
         "Content-Type": mime[extname(actual)],
         "Cache-Control":
           actual.endsWith(".html") || actual.endsWith("sw.js")
@@ -238,8 +322,28 @@ export async function createVoiceServer(
         "Referrer-Policy": "same-origin",
         "Permissions-Policy": "microphone=(self)",
         "Cross-Origin-Resource-Policy": "same-origin",
-      });
-      res.end(req.method === "HEAD" ? undefined : await readFile(actual));
+        ETag: etag,
+      };
+      if (req.headers["if-none-match"] === etag) {
+        res.writeHead(304, headers).end();
+        return;
+      }
+      let data: Buffer | undefined =
+        req.method === "HEAD" ? undefined : await readFile(actual);
+      if (
+        data &&
+        /[.](js|css|json|html)$/.test(actual) &&
+        req.headers["accept-encoding"]?.includes("gzip")
+      ) {
+        const key = actual + etag;
+        data = compressed.get(key) ?? gzipSync(data);
+        if (compressed.size >= 16) compressed.clear();
+        compressed.set(key, data);
+        headers["Content-Encoding"] = "gzip";
+        headers.Vary = "Accept-Encoding";
+      }
+      res.writeHead(200, headers);
+      res.end(data);
     } catch (error) {
       if (
         error &&
@@ -264,6 +368,7 @@ export async function createVoiceServer(
             "invalid_pair_code",
             "body_too_large",
             "invalid_json",
+            "host_settings_unreadable",
           ].includes(code)
             ? code
             : "request_failed",
@@ -419,35 +524,40 @@ export async function createVoiceServer(
     printPairing: () => settings.onPairCode?.(pairing.code),
   };
 }
-async function main() {
+export async function main() {
   loadHostEnv();
   const config = loadConfig();
-  const app = await createVoiceServer(config, {
-    onPairCode: (code) =>
-      console.log("Pairing code (5 minutes, one use): " + code),
+  try {
+    const storedKey = await new HostSettings().readKey();
+    if (storedKey !== undefined) config.apiKey = storedKey;
+  } catch {
+    config.apiKey = "";
+    console.error(
+      "Host key settings unavailable. Standard game remains available; configure the key in the host GUI.",
+    );
+  }
+  const app = await createVoiceServer(config);
+  app.server.listen(config.port, "0.0.0.0", async () => {
+    console.log(
+      "えしりとり: " +
+        config.origins[0] +
+        " (host API charges; start is explicit)",
+    );
+    console.log(
+      config.apiKey
+        ? "Host API key configured. Start voice in the game."
+        : "Set the API key in the host game settings to enable voice.",
+    );
+    console.log(
+      await QRCode.toString(config.origins[0], {
+        type: "terminal",
+        small: true,
+      }),
+    );
   });
-  app.server.listen(
-    config.port,
-    config.lan ? "0.0.0.0" : "127.0.0.1",
-    async () => {
-      console.log(
-        "Voice game: " +
-          config.origins[0] +
-          " (host API charges; start is explicit)",
-      );
-      console.log("Pairing code (5 minutes, one use): " + app.pairing.code);
-      console.log(
-        await QRCode.toString(config.origins[0], {
-          type: "terminal",
-          small: true,
-        }),
-      );
-    },
-  );
   const rotate = setInterval(() => {
     if (Date.now() > app.pairing.expires) {
-      const code = app.pairing.rotate();
-      console.log("Pairing code (5 minutes, one use): " + code);
+      app.pairing.rotate();
     }
   }, 60000);
   const shutdown = () => {

@@ -57,6 +57,7 @@ export async function backendRequest(
   signal: AbortSignal,
   discoveries: string[] = [],
 ) {
+  const intent = allowedIntent(text, view.hint.level);
   const prior =
     history.at(-1)?.role === "user" && history.at(-1)?.content === text
       ? history.slice(0, -1)
@@ -82,11 +83,23 @@ export async function backendRequest(
         ...prior.slice(-8),
         { role: "user", content: text },
       ],
-      tools: backendTools,
+      tools: backendTools.map((t) =>
+        t.name === "game_request_hint" && intent?.action === "hint"
+          ? {
+              ...t,
+              parameters: {
+                ...t.parameters,
+                properties: { mode: { type: "string", enum: [intent.mode] } },
+              },
+            }
+          : t,
+      ),
       tool_choice:
-        allowedIntent(text, view.hint.level)?.action === "explain"
+        intent?.action === "explain"
           ? { type: "function", name: "game_explain_last_move" }
-          : "auto",
+          : intent?.action === "hint"
+            ? { type: "function", name: "game_request_hint" }
+            : "auto",
     },
     { signal },
   );

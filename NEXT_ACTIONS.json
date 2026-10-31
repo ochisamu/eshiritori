@@ -1,6 +1,6 @@
 {
   "status": "implemented",
-  "buildHash": "ce4b6b4707ebf75cd079ea61322726c30e73612406fe5eb65a2b106621c8b531",
+  "buildHash": "85c8a4eb5bf06fed8640f6d24e25776574204708722955c558d18a4cd97cdf0d",
   "contentVersion": "pixel-0df1e7d32469",
   "blockers": [],
   "remaining": [
@@ -11,10 +11,11 @@
     "Optional API-key Live/Responses/Decisions opponent with host-only key and single-owner pairing",
     "Shared hints, public context, stale output rejection, unchanged engine authority",
     "HTTPS/WSS, certificate preparation, Windows/WSL guide and secret-free archives",
-    "200 unit cases, scoped three-engine UI, 12 PWA cases and real-API synthetic multi-board play"
+    "200 unit cases, scoped three-engine UI, 12 PWA cases and real-API synthetic multi-board play",
+    "Unified game/voice startup, host GUI key settings and code-free localhost/LAN invite flow"
   ],
-  "latestVerification": "reports/voice/verification.json",
-  "latestReport": "reports/voice/verification.md",
+  "latestVerification": "reports/voice-unified/verification.json",
+  "latestReport": "reports/voice-unified/verification.md",
   "initialRelease": {
     "blockers": [],
     "status": "complete",
@@ -175,7 +176,7 @@
     "remote": "https://github.com/ochisamu/eshiritori.git",
     "documentation": "README.md"
   },
-  "voiceServerHash": "0ea758e3efc2aed6ca7dfe8c226d9dab221b09a0e24333a3527a67b2a07f925f",
+  "voiceServerHash": "1687c066b29a25575d2c72346c9cd32b088b5d66a631ea7098dd2c6936ea1bed",
   "previousVoiceBaseline": {
     "status": "complete",
     "buildHash": "bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a",
@@ -194,5 +195,6 @@
       "Rankings remain local to this origin/device.",
       "Earlier release ZIPs are unchanged; current dist and the running LAN game are updated."
     ]
-  }
+  },
+  "previousVoiceApiVerification": "reports/voice/verification.json"
 }

@@ -16,9 +16,11 @@
     "audit": "tsx tools/audit.ts",
     "check-acceptance": "node tools/check-acceptance.mjs",
     "voice:build": "tsc -p tsconfig.voice.json",
-    "voice": "node dist-voice/server/voice/index.js",
+    "voice": "node tools/start.mjs",
     "voice:dev": "tsx server/voice/index.ts",
-    "voice:smoke": "tsx tools/live-smoke.ts"
+    "voice:smoke": "tsx tools/live-smoke.ts",
+    "postbuild": "npm run voice:build",
+    "start": "node tools/start.mjs"
   },
   "dependencies": {
     "lucide-react": "1.61.0",

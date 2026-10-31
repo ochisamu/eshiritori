@@ -39,8 +39,8 @@ def bundle(root, destination, files, interrupt_after=None):
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--source',action='store_true'); args=parser.parse_args()
     os.chdir(ROOT)
-    if args.source and (ROOT/'server/voice').exists():
-        raise SystemExit('Use python3 tools/package-voice.py for source exports with the optional voice server; the legacy source walker is disabled to protect local secrets.')
+    if (ROOT/'server/voice').exists():
+        raise SystemExit('Use python3 tools/package-voice.py for play/source exports with the optional voice server; the legacy source walker is disabled to protect local secrets.')
     runtime=json.loads(subprocess.check_output(['node','--input-type=module','-e',"import {runtimeFiles,runtimeHash} from './tools/runtime-files.mjs'; console.log(JSON.stringify({files:runtimeFiles(),hash:runtimeHash()}))"],text=True))
     files=['dist/'+p for p in runtime['files']]+['tools/serve.mjs','README.md','LICENSES.md']
     files += [str(p.relative_to(ROOT)) for p in (ROOT/'licenses').glob('*') if p.is_file()] if (ROOT/'licenses').exists() else []

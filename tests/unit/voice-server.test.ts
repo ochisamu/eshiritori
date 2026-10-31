@@ -1,3 +1,7 @@
+import { HostSettings } from "../../server/voice/hostSettings";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { describe, it, expect } from "vitest";
 import http from "node:http";
 import { once } from "node:events";
@@ -255,4 +259,143 @@ describe("voice host authorization and transport", () => {
       await app.stop();
     }
   }, 15000);
+  it("bootstraps only the host GUI, requires CSRF for key writes, and never echoes the key", async () => {
+    const folder = await mkdtemp(join(tmpdir(), "eshiritori-settings-http-"));
+    const config = loadConfig({});
+    config.origins.push("http://192.168.0.10:4174");
+    const store = new HostSettings(join(folder, "settings.json"));
+    const app = await createVoiceServer(config, { hostSettings: store });
+    await new Promise<void>((r) => app.server.listen(0, "127.0.0.1", r));
+    const port = (app.server.address() as { port: number }).port;
+    try {
+      const status = await request(port, "/voice-api/status");
+      expect(status.body).toMatchObject({
+        hostSettings: true,
+        paired: false,
+        available: false,
+      });
+      expect(
+        (
+          await request(
+            port,
+            "/voice-api/host-access",
+            "POST",
+            {},
+            { Origin: "http://elsewhere.example" },
+          )
+        ).status,
+      ).toBe(403);
+      const local = await request(
+        port,
+        "/voice-api/host-access",
+        "POST",
+        {},
+        { Origin: "http://localhost:4174" },
+      );
+      expect(local.status).toBe(200);
+      const auth = {
+        Cookie: local.cookie!,
+        Origin: "http://localhost:4174",
+        "X-Voice-CSRF": local.body.csrf,
+      };
+      const key = "sk-this-is-only-a-fake-unit-test-key";
+      expect(
+        (
+          await request(
+            port,
+            "/voice-api/host-settings",
+            "POST",
+            { apiKey: key },
+            { ...auth, "X-Voice-CSRF": "bad" },
+          )
+        ).status,
+      ).toBe(403);
+      const saved = await request(
+        port,
+        "/voice-api/host-settings",
+        "POST",
+        { apiKey: key, remember: true },
+        auth,
+      );
+      expect(saved.status).toBe(200);
+      expect(JSON.stringify(saved.body)).not.toContain(key);
+      expect(await store.readKey()).toBe(key);
+      expect(
+        (
+          await request(port, "/voice-api/status", "GET", undefined, {
+            Cookie: local.cookie!,
+          })
+        ).body.available,
+      ).toBe(true);
+      const lan = {
+        ...auth,
+        Host: "192.168.0.10:4174",
+        Origin: "http://192.168.0.10:4174",
+      };
+      expect(
+        (await request(port, "/voice-api/host-access", "POST", {}, lan)).status,
+      ).toBe(403);
+      expect(
+        (
+          await request(
+            port,
+            "/voice-api/host-settings",
+            "POST",
+            { apiKey: key },
+            lan,
+          )
+        ).status,
+      ).toBe(403);
+      expect(
+        (
+          await request(
+            port,
+            "/voice-api/host-settings",
+            "GET",
+            undefined,
+            auth,
+          )
+        ).status,
+      ).toBe(404);
+      expect((await request(port, "/.voice/settings.json")).status).toBe(404);
+      config.lan = true;
+      config.origins.push("https://192.168.0.10:4174");
+      const invite = await request(port, "/voice-api/invite", "POST", {}, auth);
+      expect(invite.status).toBe(200);
+      expect(invite.body.qr).toMatch(/^data:image\/png;base64,/);
+      expect(invite.body.url).not.toContain(key);
+      const token = new URL(invite.body.url).hash.slice(9);
+      expect(token).toMatch(/^[a-f0-9]{64}$/);
+      const remoteAuth = {
+        Host: "192.168.0.10:4174",
+        Origin: "https://192.168.0.10:4174",
+      };
+      expect(
+        (
+          await request(
+            port,
+            "/voice-api/pair-invite",
+            "POST",
+            { token },
+            remoteAuth,
+          )
+        ).status,
+      ).toBe(200);
+      expect(
+        (
+          await request(
+            port,
+            "/voice-api/pair-invite",
+            "POST",
+            { token },
+            remoteAuth,
+          )
+        ).status,
+      ).toBe(403);
+      expect(app.usageSummaries()).toHaveLength(0);
+    } finally {
+      await app.stop();
+      await rm(folder, { recursive: true, force: true });
+    }
+  });
 });

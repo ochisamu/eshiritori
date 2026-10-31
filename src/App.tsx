@@ -173,6 +173,7 @@ export default function App() {
   const clockLast = useRef(performance.now());
   const [modal, setModalValue] = useState<Modal>(null);
   const requestedModal = useRef<Modal>(null);
+  const prepareVoice = useRef(false);
   const setModal = useCallback((value: Modal) => {
     // A close can arrive before the previous render's pause effect runs.
     requestedModal.current = value;
@@ -719,6 +720,16 @@ export default function App() {
       pauseGame();
     }
   }, [modal, s.phase]);
+  useEffect(() => {
+    if (
+      prepareVoice.current &&
+      !modal &&
+      ["playerTurn", "cpuThinking"].includes(s.phase)
+    ) {
+      prepareVoice.current = false;
+      openModal("voice");
+    }
+  }, [s.phase, modal, openModal]);
   const submit = (assetId: string, input?: string, readingId?: string) => {
     let current = sRef.current;
     const now = performance.now();
@@ -772,14 +783,14 @@ export default function App() {
     pauseGame();
     setDetail(a);
   };
-  const start = () => {
+  const start = (settings = draft) => {
     sound("tap", s.settings.muted);
     dispatch({
       type: "START",
       seed: sessionSeed(seed),
       preserveRecent: !seed.trim(),
       settings: {
-        ...draft,
+        ...settings,
         muted: s.settings.muted,
         reducedMotion: s.settings.reducedMotion,
         tutorialSeen: s.settings.tutorialSeen,
@@ -872,7 +883,7 @@ export default function App() {
             assets={assets}
             draft={draft}
             onChange={setDraft}
-            onStart={start}
+            onStart={() => start()}
             onMenu={openModal}
             found={foundAssets}
             bestScore={Math.max(
@@ -1689,8 +1700,17 @@ export default function App() {
             onPlay={
               !phaseIsGame
                 ? () => {
-                    setDraft({ ...draft, opponent: "turns", mode: "practice" });
+                    const settings = {
+                      ...draft,
+                      opponent: "turns" as const,
+                      mode: (["refill", "refillPractice"].includes(draft.mode)
+                        ? "refillPractice"
+                        : "practice") as typeof draft.mode,
+                    };
+                    setDraft(settings);
                     closeModal();
+                    prepareVoice.current = true;
+                    start(settings);
                   }
                 : undefined
             }

@@ -108,6 +108,7 @@ export interface GameVoiceEvent {
 }
 export interface VoiceStatus {
   available: boolean;
+  hostSettings?: boolean;
   paired: boolean;
   busy: boolean;
   lan: boolean;

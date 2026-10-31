@@ -22,7 +22,6 @@ export function VoicePanel({
   onPlay?: () => void;
   onClose: () => void;
 }) {
-  const [code, setCode] = useState("");
   useEffect(() => {
     void controller.status();
   }, [controller]);
@@ -56,41 +55,31 @@ export function VoicePanel({
           ホストにAPIキーが設定されていません。標準ゲームはそのまま遊べます。
         </p>
       )}
-      {!eligible && (
+      {ui.status?.hostSettings && (
+        <HostSettingsPanel controller={controller} ui={ui} active={active} />
+      )}
+      {!ui.status && (
+        <button className="secondary" onClick={() => void controller.status()}>
+          接続状態を更新
+        </button>
+      )}
+      {!eligible && !onPlay && (
         <p>
-          時間あり・ひとり・早押しでは会話を利用できません。
-          {onPlay && <button onClick={onPlay}>交互・時間なしを選ぶ</button>}
+          会話は「CPUと交互・時間なし」で使えます。タイトルで対戦方式を選んでください。
         </p>
       )}
-      {ui.status && !ui.status.paired && (
-        <form
-          className="voice-pair"
-          onSubmit={(e) => {
-            e.preventDefault();
-            void controller.pair(code);
-            setCode("");
-          }}
-        >
-          <label htmlFor="voice-pair-code">
-            ホストのターミナルに表示された接続コード
-          </label>
-          <div>
-            <input
-              id="voice-pair-code"
-              inputMode="numeric"
-              autoComplete="off"
-              pattern="[0-9]{6}"
-              maxLength={6}
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-              placeholder="6桁"
-              required
-            />
-            <button type="submit" className="secondary">
-              ペアリング
-            </button>
-          </div>
-        </form>
+      {ui.status && !ui.status.paired && !ui.status.hostSettings && (
+        <p className="voice-notice">
+          ホストPCで「端末用QRを表示」を選び、そのQRか接続リンクから開いてください。コード入力は不要です。
+          <button onClick={() => void controller.status()}>
+            接続状態を更新
+          </button>
+        </p>
+      )}
+      {onPlay && (
+        <p className="voice-disclosure">
+          まず時間なしの盤面を準備します。準備後にこの画面からマイクを許可して会話を開始できます。
+        </p>
       )}
       <div className="voice-controls">
         <button
@@ -149,10 +138,18 @@ export function VoicePanel({
               ? "聞いています"
               : "マイク停止中"
             : ui.state === "connecting"
-              ? "接続しています…"
+              ? ui.step === "microphone"
+                ? "マイクの許可を待っています…"
+                : ui.step === "api"
+                  ? "音声APIに接続しています…"
+                  : "接続を準備しています…"
               : ui.state === "closing"
                 ? "終了・利用量を確認中…"
-                : "未接続"}
+                : onPlay
+                  ? "対戦の準備前"
+                  : ui.status?.available && ui.status.paired
+                    ? "会話を開始できます（未接続）"
+                    : "接続準備が必要です"}
         </span>
         <span>
           接続 {ui.elapsed}秒 / 上限 {ui.status?.maxSeconds ?? 900}秒
@@ -205,6 +202,11 @@ export function VoicePanel({
             <Square size={17} />
             会話を終了
           </button>
+        ) : onPlay ? (
+          <button className="primary" onClick={onPlay}>
+            <Play size={17} />
+            時間なしの対戦を準備
+          </button>
         ) : (
           <button
             className="primary"
@@ -228,6 +230,107 @@ export function VoicePanel({
         LAN端末では、ホストのQRコードのURLと信頼済みHTTPSを使用します。起動・証明書の手順は同梱の音声ガイドをご覧ください。
       </p>
     </section>
+  );
+}
+function HostSettingsPanel({
+  controller,
+  ui,
+  active,
+}: {
+  controller: VoiceController;
+  ui: VoiceUI;
+  active: boolean;
+}) {
+  const [key, setKey] = useState(""),
+    [remember, setRemember] = useState(true),
+    [saving, setSaving] = useState(false);
+  const [invite, setInvite] = useState<{
+    url: string;
+    qr: string;
+    expires: number;
+  }>();
+  return (
+    <div className="voice-host-settings">
+      <details open={!ui.status?.available || undefined}>
+        <summary>
+          ホスト設定 ·{" "}
+          {ui.status?.available ? "APIキー設定済み" : "APIキーを設定"}
+        </summary>
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const value = key;
+            setKey("");
+            setSaving(true);
+            try {
+              await controller.saveKey(value, remember);
+            } finally {
+              setSaving(false);
+            }
+          }}
+        >
+          <label htmlFor="host-api-key">OpenAI APIキー</label>
+          <input
+            id="host-api-key"
+            type="password"
+            autoComplete="off"
+            spellCheck={false}
+            value={key}
+            onChange={(e) => setKey(e.target.value)}
+            placeholder="sk-…"
+            minLength={19}
+            maxLength={512}
+            required
+            disabled={active || saving}
+          />
+          <label className="voice-remember">
+            <input
+              type="checkbox"
+              checked={remember}
+              onChange={(e) => setRemember(e.target.checked)}
+              disabled={active || saving}
+            />
+            このPCに保存する
+          </label>
+          <p className="voice-disclosure">
+            入力はこのPCのサーバーにだけ送信します。キーの読み出しやLAN端末での設定はできません。既存の.envも使えます。
+          </p>
+          <button
+            className="secondary"
+            type="submit"
+            disabled={active || saving || !key.trim()}
+          >
+            {saving ? "設定中…" : "キーを設定"}
+          </button>
+        </form>
+      </details>
+      {ui.status?.lan && (
+        <div>
+          <button
+            className="secondary"
+            onClick={async () => setInvite(await controller.createInvite())}
+          >
+            端末用QRを表示
+          </button>
+          {invite && (
+            <div className="voice-invite">
+              <img
+                src={invite.qr}
+                width="180"
+                height="180"
+                alt="LAN端末用の一回限りの接続QR"
+              />
+              <p>スマホで読み取るだけ。5分間・1回だけ有効です。</p>
+              <button
+                onClick={() => void navigator.clipboard.writeText(invite.url)}
+              >
+                接続リンクをコピー
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 export function VoiceCaption({
