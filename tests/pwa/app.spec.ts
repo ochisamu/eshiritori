@@ -1,3 +1,4 @@
+import { mkdir, writeFile, unlink } from "node:fs/promises";
 import { selectGameMode } from "../e2e/_test";
 import { test, expect } from "../e2e/_test";
 import { activeAssets as assets } from "../../src/game/content";
@@ -105,14 +106,12 @@ test("picture cache is bounded while installation guidance and fullscreen remain
       }),
     )
     .toBe(128);
-  await page
-    .getByRole("button", { name: "アプリにする", exact: true })
-    .click();
+  await page.getByRole("button", { name: "アプリにする", exact: true }).click();
   await expect(
     page.getByRole("dialog", { name: "アプリとして使う" }),
   ).toContainText("ホーム画面");
   await page.keyboard.press("Escape");
-  await selectGameMode(page,"practice");
+  await selectGameMode(page, "practice");
   await page.getByRole("button", { name: "さっそく、あそぶ" }).click();
   await page.getByRole("button", { name: "さあ、はじめよう" }).click();
   await expect(page.locator(".board-overlay")).toHaveCount(0, {
@@ -138,4 +137,40 @@ test("picture cache is bounded while installation guidance and fullscreen remain
     .getByRole("button", { name: "アプリとして使う", exact: true })
     .click();
   await expect(page.getByRole("dialog")).toContainText("画面の広さは端末");
+});
+
+test("voice API JSON is never retained in installed-app caches", async ({
+  page,
+}) => {
+  // A harmless real HTTP fixture also works in WebKit, whose service-worker requests bypass page.route.
+  const fixture = "dist/voice-api/cache-probe.json";
+  await mkdir("dist/voice-api", { recursive: true });
+  await writeFile(fixture, JSON.stringify({ probe: "non-secret-test" }), {
+    flag: "wx",
+  });
+  try {
+    await controlled(page);
+    const result = await page.evaluate(async () => {
+      const response = await fetch("/voice-api/cache-probe.json");
+      return { status: response.status, body: await response.json() };
+    });
+    expect(result).toEqual({ status: 200, body: { probe: "non-secret-test" } });
+    await page.waitForTimeout(200);
+    expect(
+      await page.evaluate(async () => {
+        for (const name of await caches.keys()) {
+          const cache = await caches.open(name);
+          if (
+            (await cache.keys()).some((r) =>
+              new URL(r.url).pathname.startsWith("/voice-api/"),
+            )
+          )
+            return false;
+        }
+        return true;
+      }),
+    ).toBe(true);
+  } finally {
+    await unlink(fixture);
+  }
 });

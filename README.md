@@ -96,9 +96,20 @@ npm run serve
 
 LAN内のHTTP接続でもブラウザで遊べます。保存先はURLごとに分かれます。
 
+## 会話できる対戦相手（追加モード）
+
+ホストPCのOpenAI APIキーで、同じ盤面を見ながら話す相手を追加できます。交互対戦の時間なし・時間なし補充に対応し、自発的な反応、日本語音声・字幕、会話ヒント、Decisionsの表情を使えます。キーはホストにだけ保持し、開始ボタンを押すまで有料接続を作りません。
+
+```sh
+npm run voice:build
+npm run voice
+```
+
+上のコマンドの前に本番ビルドと.envの設定が必要です。LAN端末の音声には信頼済みHTTPSとペアリングを使います。[音声モードの起動・証明書・利用量・配布手順](docs/voice-opponent.md)
+
 ## 開発する
 
-React・TypeScript・Viteで構成しています。効果音はWeb Audioで合成し、ゲーム実行時の外部API・CDN・フォント取得はありません。
+React・TypeScript・Viteで構成しています。効果音はWeb Audioで合成し、標準ゲームでは外部API・CDN・フォント取得を行いません。追加の会話モードだけがOpenAI APIを使います。
 
 ```sh
 npm run dev          # 開発サーバー（通常 http://localhost:5173）
@@ -119,7 +130,9 @@ npm run build        # 辞書生成・型検査・本番ビルド
 
 ### 検証記録
 
-現行ゲームの検証は、単体167件、UI321件、PWA9件、シミュレーション450試合を解決済みです。実施条件と再確認の内訳は [検証報告](reports/race-score/verification.md) に記録しています。Gitの基準版は [クリーンなチェックアウトからの再現確認](reports/git-baseline/verification.md) も行っています。
+会話モードの実API・LAN・秘密情報・互換性の確認は[音声追加の検証報告](reports/voice/verification.md)にまとめています。実機スマホのマイクと、人による会話の自然さ・音質評価は未確認です。
+
+音声追加前のゲームの検証は、単体167件、UI321件、PWA9件、シミュレーション450試合を解決済みです。実施条件と再確認の内訳は [検証報告](reports/race-score/verification.md) に記録しています。Gitの基準版は [クリーンなチェックアウトからの再現確認](reports/git-baseline/verification.md) も行っています。
 
 スマホ・タブレットの表示はブラウザ自動操作で確認しています。実機iOS／仮想キーボードと、スピーカー出力の聴感評価は未実施です。
 

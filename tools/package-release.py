@@ -7,13 +7,23 @@ def bundle(root, destination, files, interrupt_after=None):
     root=Path(root).resolve(); destination=Path(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
     temporary=destination.with_suffix(destination.suffix+'.part')
+    keys=[os.environ["OPENAI_API_KEY"].encode()] if os.environ.get("OPENAI_API_KEY") else []
+    env=root/'.env'
+    if env.exists():
+        for line in env.read_text().splitlines():
+            if line.startswith('OPENAI_API_KEY='):
+                value=line.split('=',1)[1].strip().strip(chr(34)+chr(39))
+                if value:keys.append(value.encode())
     entries=[]
     with zipfile.ZipFile(temporary,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
         for count, name in enumerate(sorted(set(files)),1):
             path=(root/name).resolve()
             if not path.is_relative_to(root) or not path.is_file():
                 raise ValueError('Missing/unsafe archive source '+str(name))
+            if path.name.startswith('.env') and path.name!='.env.example' or '.voice' in path.relative_to(root).parts or path.suffix.lower() in {'.key','.pem','.crt','.cer','.p12','.pfx'}:
+                raise ValueError('Private file rejected from archive')
             data=path.read_bytes()
+            if any(key in data for key in keys):raise ValueError("Host secret rejected from archive")
             archive.writestr(str(name).replace('\\','/'),data)
             entries.append({'path':str(name).replace('\\','/'),'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
             if interrupt_after is not None and count==interrupt_after:
@@ -29,6 +39,8 @@ def bundle(root, destination, files, interrupt_after=None):
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--source',action='store_true'); args=parser.parse_args()
     os.chdir(ROOT)
+    if args.source and (ROOT/'server/voice').exists():
+        raise SystemExit('Use python3 tools/package-voice.py for source exports with the optional voice server; the legacy source walker is disabled to protect local secrets.')
     runtime=json.loads(subprocess.check_output(['node','--input-type=module','-e',"import {runtimeFiles,runtimeHash} from './tools/runtime-files.mjs'; console.log(JSON.stringify({files:runtimeFiles(),hash:runtimeHash()}))"],text=True))
     files=['dist/'+p for p in runtime['files']]+['tools/serve.mjs','README.md','LICENSES.md']
     files += [str(p.relative_to(ROOT)) for p in (ROOT/'licenses').glob('*') if p.is_file()] if (ROOT/'licenses').exists() else []

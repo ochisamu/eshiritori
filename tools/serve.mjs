@@ -2,7 +2,9 @@ import http from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { resolve, extname, sep } from "node:path";
 import { gzipSync } from "node:zlib";
-const root = resolve(process.argv.includes("--dev") ? "." : "dist");
+if (process.argv.includes("--dev"))
+  throw Error("Use npm run dev. This server only serves dist.");
+const root = resolve("dist");
 const port = Number(process.env.PORT ?? 4173);
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -17,7 +19,15 @@ const compressed = new Map();
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, "http://localhost");
-    const path = resolve(root, "." + decodeURIComponent(url.pathname));
+    const decoded = decodeURIComponent(url.pathname);
+    if (
+      decoded.split("/").some((part) => part.startsWith(".")) ||
+      /[.](key|pem|crt|cer|p12|pfx)$/i.test(decoded)
+    ) {
+      res.writeHead(404).end();
+      return;
+    }
+    const path = resolve(root, "." + decoded);
     if (path !== root && !path.startsWith(root + sep)) {
       res.writeHead(403).end();
       return;

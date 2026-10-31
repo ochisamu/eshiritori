@@ -9,6 +9,7 @@ import {
   HelpCircle,
   Home,
   Check,
+  MessageCircle,
 } from "lucide-react";
 import type { Asset, Settings } from "../game/types";
 import { shuffle, rng } from "../game/rng";
@@ -28,7 +29,7 @@ export function TitleScreen({
   onChange: (s: Settings) => void;
   onStart: () => void;
   onMenu: (
-    name: "catalog" | "ranking" | "settings" | "rules" | "install",
+    name: "catalog" | "ranking" | "settings" | "rules" | "install" | "voice",
   ) => void;
   found: number;
   bestScore: number;
@@ -188,7 +189,11 @@ export function TitleScreen({
           <Play size={21} fill="currentColor" />
           さっそく、あそぶ
         </button>
-        <nav className="arcade-menu" aria-label="メインメニュー">
+        <nav className="arcade-menu with-voice" aria-label="メインメニュー">
+          <button onClick={() => onMenu("voice")}>
+            <MessageCircle size={21} />
+            <span>会話する</span>
+          </button>
           <button onClick={() => onMenu("catalog")}>
             <BookOpen size={21} />
             <span>発見ずかん</span>
