@@ -101,3 +101,8 @@ Added PWA manifest, 192/512/180px icons, secure-context service worker, home-scr
 ユーザーの依頼により、現行ゲームをmainブランチの初回コミットへ整理。原画・配信用画像・辞書・審査ログ・ソース・テストは追跡。node_modules/.cache/dist/artifacts/重複画像/検証の途中出力/試作をignoreにした。Windows付加情報2ファイルを削除。検証途中のreportsへ依存していた旧辞書と比較用fallback入力をtests/fixturesへ分離。行末を整え、仕様原文と原画・プロンプトのハッシュ対象バイトは維持した。
 
 Gitインデックスの追跡ファイルのみを展開してビルドと167単体テストを確認。再現した実行本体は既存の bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a と一致。既存依存を再利用し、npm ciのネットワーク再取得は行っていない。現在のLANサーバーとブラウザ保存データは維持。リモート登録/pushは行わずローカル管理。詳細はdocs/version-control.md、reports/git-baseline/verification.md。
+
+## 2026-10-31 GitHub向けREADME・紹介画像
+
+ユーザー指定のorigin https://github.com/ochisamu/eshiritori.git を設定。初めて見る人向けに遊び方・3モード・得点/連勝・図鑑・LAN/PWA・起動手順を整理し、開発手順と過去の制作記録をdocsへ分離。本番ゲームのPC/スマホ/早押し/タイトル/図鑑を5枚撮影。図鑑は紹介用発見状態と明記。撮影ツールと寸法・runtime hashを保存。ゲーム本体は変更せず既存LANサーバーを維持。
+確認: 撮影ツールの型検査、5画面の画像デコード・ページスクロール検査・実行時エラー検査、39件のローカル文書リンク、PNG寸法/容量、git diff --checkが成功。実行本体SHA256はbdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0aで変更なし。

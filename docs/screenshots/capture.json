@@ -1,0 +1,37 @@
+{
+  "sourceCommit": "ca33a59489bc6b5257029b12d79a83a59553d8dd",
+  "buildHash": "bdb958f95bce7efafc5f2c92037eb9f479a46e5081b73ec862a49c2533407f0a",
+  "files": [
+    {
+      "name": "title.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 149208
+    },
+    {
+      "name": "game-desktop.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 442654
+    },
+    {
+      "name": "game-mobile.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 175213
+    },
+    {
+      "name": "race.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 437456
+    },
+    {
+      "name": "collection.png",
+      "width": 1440,
+      "height": 1000,
+      "bytes": 274973
+    }
+  ],
+  "collectionNote": "Only the collection screenshot uses a sample discovery state to demonstrate missing/found/complete panels. Gameplay captures use production-generated boards and actual UI answers in isolated browser contexts."
+}

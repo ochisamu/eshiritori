@@ -165,8 +165,10 @@
   "history": [],
   "repository": {
     "branch": "main",
-    "localOnly": true,
+    "localOnly": false,
     "policy": "docs/version-control.md",
-    "baselineVerification": "reports/git-baseline/verification.json"
+    "baselineVerification": "reports/git-baseline/verification.json",
+    "remote": "https://github.com/ochisamu/eshiritori.git",
+    "documentation": "README.md"
   }
 }
