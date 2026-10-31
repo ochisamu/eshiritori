@@ -108,7 +108,7 @@ describe("race score and visible win streak", () => {
       type: "SUBMIT",
       actor: "cpu",
       assetId: umbrella.id,
-      input: "あまがさ",
+      input: "あめのやね",
       moveId: "alternate",
     });
     expect(cpuRoundScore(n).points).toBe(350);

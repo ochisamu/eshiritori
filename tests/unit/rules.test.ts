@@ -17,27 +17,34 @@ const p = (head = "か"): Position => ({
 });
 const find = (key: string) => assets.find((a) => a.conceptKey === key)!;
 describe("shared move validation", () => {
-  it("tap selects fixed editorial order, including terminal choices, while CPU/hints enumerate only continuations", () => {
+  it("tap selects the approved reading for each initial, including terminal choices, while CPU/hints enumerate only continuations", () => {
     const a = find("umbrella");
     expect(tapReading(a, p("か"))?.kana).toBe("かさ");
-    expect(tapReading(a, p("あ"))?.kana).toBe("あまがさ");
+    expect(tapReading(a, p("あ"))?.kana).toBe("あめのやね");
     expect(tapReading(find("lemon"), p("れ"))?.kana).toBe("れもん");
     expect(
       legalMoves(assets, p("れ")).some((m) => m.reading.kana === "れもん"),
     ).toBe(false);
     expect(tapReading(find("lemon"), p("か"))?.kana).toBe("かんきつ");
-    expect(tapReading(find('baseball-glove'),p('て'))?.kana).toBe('てぶくろ');
+    expect(tapReading(find("baseball-glove"), p("て"))?.kana).toBe("てぶくろ");
   });
   it("never enumerates hidden explicit readings", () => {
-    const a = find("sleeping-cat");
+    // Historical/synthetic multi-reading data still must not leak hidden words,
+    // even though released panels now have exactly one reading per initial.
+    const base = find("sleeping-cat");
+    const hidden: Reading = {
+      ...base.readings[0],
+      id: "hidden-legacy-cat",
+      kana: "ねむる",
+      display: "ねむる",
+      kind: "action",
+      priority: 999,
+    };
+    const a = { ...base, readings: [...base.readings, hidden] };
     const pos = p("ね");
-    expect(
-      legalMoves(assets, pos).filter((m) => m.assetId === a.id),
-    ).toHaveLength(1);
-    pos.discovered = [a.readings[1].id];
-    expect(
-      legalMoves(assets, pos).filter((m) => m.assetId === a.id),
-    ).toHaveLength(2);
+    expect(legalMoves([a], pos)).toHaveLength(1);
+    pos.discovered = [hidden.id];
+    expect(legalMoves([a], pos)).toHaveLength(2);
     expect(tapReading(a, pos)?.kana).toBe("ねこ");
   });
   it("a known safe alternative can escape a terminal primary, but the tap never silently changes the primary name", () => {

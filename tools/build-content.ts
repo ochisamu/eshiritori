@@ -7,6 +7,7 @@ import {
 } from "node:fs";
 import { createHash } from "node:crypto";
 import { assets, validateContent } from "./content-source";
+import { validateDistinctReadingHeads } from "../src/game/contentSchema";
 import editorial from "../content/editorial-difficulty.json" with { type: "json" };
 import {
   headKana,
@@ -26,6 +27,7 @@ const approved = assets
     readings: a.readings.filter((r) => r.reviewStatus === "approved"),
   }));
 validateContent(approved);
+validateDistinctReadingHeads(approved);
 mkdirSync("src/generated", { recursive: true });
 for (const a of approved)
   for (const path of [a.image, a.detail])

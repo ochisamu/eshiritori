@@ -69,3 +69,25 @@ export function validateContent(data: readonly Asset[]): void {
     if (categories > 1) throw new Error(`Multiple categories on ${a.id}`);
   }
 }
+
+export function validateDistinctReadingHeads(data: readonly Asset[]): void {
+  for (const asset of data) {
+    const seen = new Map<string, string>();
+    for (const reading of asset.readings) {
+      const head = headKana(reading.kana);
+      if (seen.has(head))
+        throw Error(
+          "Duplicate reading head " +
+            asset.id +
+            ":" +
+            head +
+            " (" +
+            seen.get(head) +
+            ", " +
+            reading.kana +
+            ")",
+        );
+      seen.set(head, reading.kana);
+    }
+  }
+}

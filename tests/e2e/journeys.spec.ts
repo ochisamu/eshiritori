@@ -91,7 +91,7 @@ test("hidden kana answer respects IME composition and discovers the approved rea
     .click();
   await expect(page.locator(".detail-head")).toContainText("あ");
   const field = page.getByRole("textbox", { name: "かなで回答" });
-  await field.fill("あまがささ");
+  await field.fill("あめのやねさ");
   await field.press("Enter");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.locator(".feedback-bar")).toContainText(
@@ -105,7 +105,7 @@ test("hidden kana answer respects IME composition and discovers the approved rea
   await page
     .getByRole("button", { name: "札15を拡大・読みを入力", exact: true })
     .click();
-  await field.fill("アマガサ");
+  await field.fill("アメノヤネ");
   await field.dispatchEvent("compositionstart");
   await field.press("Enter");
   expect((await saved(page)).moves.length).toBe(0);
@@ -115,60 +115,29 @@ test("hidden kana answer respects IME composition and discovers the approved rea
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect
     .poll(async () => (await saved(page)).moves[0]?.word)
-    .toBe("あまがさ");
+    .toBe("あめのやね");
   expect((await saved(page)).discovered).toContain(
-    assets[14].readings.find((r) => r.kana === "あまがさ")!.id,
+    assets[14].readings.find((r) => r.kana === "あめのやね")!.id,
   );
 });
-test("known alternative with another tail is selected explicitly", async ({
+test("known readings have distinct initials and the matching alternate remains selectable", async ({
   page,
 }) => {
-  const a = assets.find((a) =>
-    a.readings.some(
-      (r, i) =>
-        tailKana(r.kana) !== "ん" &&
-        a.readings
-          .slice(i + 1)
-          .some(
-            (q) =>
-              headKana(q.kana) === headKana(r.kana) &&
-              tailKana(q.kana) !== tailKana(r.kana) &&
-              tailKana(q.kana) !== "ん",
-          ),
-    ),
-  )!;
-  const pair = a.readings
-    .filter((r) => tailKana(r.kana) !== "ん")
-    .find((r) =>
-      a.readings.some(
-        (q) =>
-          q !== r &&
-          headKana(q.kana) === headKana(r.kana) &&
-          tailKana(q.kana) !== tailKana(r.kana) &&
-          tailKana(q.kana) !== "ん",
-      ),
-    )!;
-  const other = a.readings.find(
-    (r) =>
-      r !== pair &&
-      headKana(r.kana) === headKana(pair.kana) &&
-      tailKana(r.kana) !== tailKana(pair.kana) &&
-      tailKana(r.kana) !== "ん",
-  )!;
-  const s = fixture(headKana(pair.kana));
+  const a = assets.find((a) => a.conceptKey === "umbrella")!;
+  const alternate = a.readings.find((r) => r.kana === "あめのやね")!;
+  expect(new Set(a.readings.map((r) => headKana(r.kana))).size).toBe(
+    a.readings.length,
+  );
+  const s = fixture(headKana(alternate.kana));
   s.board!.ids = [
     a.id,
     ...assets
       .filter((q) => q.id !== a.id)
       .slice(0, 23)
-      .map((a) => a.id),
+      .map((q) => q.id),
   ];
-  s.discovered = [pair.id, other.id];
+  s.discovered = a.readings.map((r) => r.id);
   s.board!.initialDiscovered = [...s.discovered];
-  const normal = legalMoves(assets, position(s)).find(
-    (m) => m.assetId === a.id && !m.explicit,
-  )!;
-  const alternate = normal.reading.id === pair.id ? other : pair;
   await restore(page, s);
   await page
     .getByRole("button", { name: "拡大・かな入力", exact: true })
@@ -176,6 +145,9 @@ test("known alternative with another tail is selected explicitly", async ({
   await page
     .getByRole("button", { name: "札1を拡大・読みを入力", exact: true })
     .click();
+  await expect(page.locator(".known-readings button")).toHaveCount(
+    a.readings.length,
+  );
   await page
     .locator(".known-readings button")
     .filter({ hasText: alternate.display })

@@ -1639,7 +1639,7 @@ export default function App() {
             </span>
           </div>
           <p className="dialog-note">
-            「かさ」は「あまがさ」とも読める。ひとつの絵に、ちがう入り口があります。迷ったらヒントをどうぞ。
+            「かさ」は「こうもりがさ」とも読める。ひとつの絵に、ちがう入り口があります。迷ったらヒントをどうぞ。
           </p>
           <button className="primary full" onClick={tutorialClose}>
             さあ、はじめよう

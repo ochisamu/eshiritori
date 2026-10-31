@@ -15,7 +15,12 @@ const readingPolicy = policyData.panels as Record<
   string,
   {
     alternatives: string[];
-    additions: { kana: string; kind: ReadingKind; explanation: string }[];
+    additions: {
+      kana: string;
+      kind: ReadingKind;
+      explanation: string;
+      priority?: number;
+    }[];
   }
 >;
 const semanticPath = "content/semantic-reviews.jsonl";
@@ -65,7 +70,9 @@ export const assets: Asset[] = concepts.map(
                   (playfulWords.has(normalizeReading(kana)) || added))
               ? "advanced"
               : "additional",
-        priority: j,
+        priority:
+          policy?.additions.find((r) => r.kana === normalizeReading(kana))
+            ?.priority ?? j,
         explanation,
         evidence: j === 0 ? description : explanation,
         hints: [

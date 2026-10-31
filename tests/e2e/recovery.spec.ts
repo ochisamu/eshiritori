@@ -6,6 +6,8 @@ import { legalMoves } from "../../src/game/rules";
 import { CPU_VERSION } from "../../src/game/cpu";
 import { SAVE_KEY } from "../../src/storage/save";
 import type { GameState } from "../../src/game/types";
+// Request interception must reach the network rather than a service-worker cache.
+test.use({ serviceWorkers: "block" });
 function fixture(head = "か"): GameState {
   const s = initialState();
   return {
@@ -147,7 +149,7 @@ test("kana entry and confirmation fit a reduced viewport and rotation", async ({
     { width: 844, height: 390 },
   ]) {
     await page.setViewportSize(viewport);
-    await field.fill("あまがさ");
+    await field.fill("あめのやね");
     await submit.scrollIntoViewIfNeeded();
     const a = await field.boundingBox(),
       b = await submit.boundingBox();
@@ -165,7 +167,7 @@ test("kana entry and confirmation fit a reduced viewport and rotation", async ({
   await field.press("Enter");
   await expect
     .poll(async () => (await saved(page)).moves[0]?.word)
-    .toBe("あまがさ");
+    .toBe("あめのやね");
 });
 test("image-load failure is recoverable without recording a loss", async ({
   page,

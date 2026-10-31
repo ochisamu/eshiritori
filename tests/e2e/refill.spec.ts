@@ -38,7 +38,7 @@ test("replacement mode deals by difficulty and replaces in the same slot across 
 }, info) => {
   await page.clock.install();
   await page.goto("/");
-  await selectGameMode(page,"refill");
+  await selectGameMode(page, "refill");
   await page.getByRole("button", { name: "むずかしい", exact: true }).click();
   // Opening preferences must preserve the mode/difficulty still pending on title.
   await openGameControl(page, "設定");
@@ -49,7 +49,9 @@ test("replacement mode deals by difficulty and replaces in the same slot across 
     .getByRole("checkbox", { name: "音を鳴らす", exact: true })
     .uncheck();
   await page.getByRole("button", { name: "とじる", exact: true }).click();
-  await expect(page.getByRole("button",{name:"補充あり",exact:true})).toHaveAttribute("aria-pressed","true");
+  await expect(
+    page.getByRole("button", { name: "補充あり", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
   await expect(
     page.getByRole("button", { name: "むずかしい", exact: true }),
   ).toHaveClass(/selected/);
@@ -191,16 +193,26 @@ test("catalog masks each unknown reading by its kana length and reveals only by 
 }) => {
   await page.goto("/");
   await openGameControl(page, "発見ずかん");
-  const a=assets.find(a=>a.readings.some(r=>r.display==="あるくおうち"))!;
-  await page.getByRole("textbox",{name:"図鑑を検索"}).fill(String(assets.indexOf(a)+1));
+  const a = assets.find((a) =>
+    a.readings.some((r) => r.display === "あるくおうち"),
+  )!;
+  await page
+    .getByRole("textbox", { name: "図鑑を検索" })
+    .fill(String(assets.indexOf(a) + 1));
   await page.locator(".collection-tile").click();
   const values = await page.locator(".undiscovered").allTextContents();
-  expect(values).toEqual(a.readings.map(r=>"？".repeat([...r.kana].length)));
+  expect(values).toEqual(
+    a.readings.map((r) => "？".repeat([...r.kana].length)),
+  );
   await expect(page.getByText("あるくおうち", { exact: true })).toHaveCount(0);
   await page.getByRole("checkbox", { name: /答えも表示/ }).check();
   await expect(page.getByText("あるくおうち", { exact: true })).toBeVisible();
-  const s = await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),SAVE_KEY);
-  expect(s.answerReferenced).toBe(true);expect(s.discovered).toEqual([]);
+  const s = await page.evaluate(
+    (key) => JSON.parse(localStorage.getItem(key)!),
+    SAVE_KEY,
+  );
+  expect(s.answerReferenced).toBe(true);
+  expect(s.discovered).toEqual([]);
 });
 test("choosing a terminal word immediately loses and survives reload without double-counting", async ({
   page,
@@ -261,7 +273,15 @@ test("alternative readings have their own effect and the most recent panel remai
   const s = fixture();
   s.settings.mode = "practice";
   s.head = "あ";
-  s.board = { ...s.board!, reserve: undefined, head: "あ" };
+  s.board = {
+    ...s.board!,
+    reserve: undefined,
+    head: "あ",
+    ids: [
+      ...s.board!.ids.slice(0, 23),
+      assets.find((a) => a.conceptKey === "sleeping-cat")!.id,
+    ],
+  };
   await page.addInitScript(
     ({ key, s }) => {
       if (!localStorage.getItem(key))
@@ -284,7 +304,9 @@ test("alternative readings have their own effect and the most recent panel remai
     "NEW!",
   );
   await expect(page.locator(".alternative-particles i")).toHaveCount(24);
-  await expect(page.locator(".last-picked .used-word")).toHaveText("あまがさ");
+  await expect(page.locator(".last-picked .used-word")).toHaveText(
+    "あめのやね",
+  );
   await page.screenshot({
     path: `reports/alternative-effect-${info.project.name}.png`,
     fullPage: true,
@@ -294,7 +316,9 @@ test("alternative readings have their own effect and the most recent panel remai
     .click();
   await page.clock.runFor(400);
   await expect(page.locator(".last-picked")).toHaveCount(1);
-  await expect(page.locator(".last-picked .used-word")).toHaveText("あまがさ");
+  await expect(page.locator(".last-picked .used-word")).toHaveText(
+    "あめのやね",
+  );
   await expect(page.locator(".word-relay.has-last img")).toHaveCount(1);
   await expect(page.locator(".cpu-searching")).toHaveCount(1);
 });
