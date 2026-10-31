@@ -2,9 +2,6 @@
 
 - Game code, UI text and sound synthesis were newly written for this project. No source or media from the referenced game was copied.
 - Card raster artwork: generated with the built-in `image_gen.imagegen` tool for this project. Original outputs, prompts, transformations and per-image hashes are under `content`. Provider model/seed/cost fields are recorded as unknown when not returned.
-- OpenAI Node SDK: Apache-2.0, https://github.com/openai/openai-node
-- ws: MIT, https://github.com/websockets/ws
-- node-qrcode: MIT, https://github.com/soldair/node-qrcode
 - React / React DOM: MIT, https://github.com/facebook/react
 - Vite: MIT, https://github.com/vitejs/vite
 - TypeScript: Apache-2.0, https://github.com/microsoft/TypeScript

@@ -4,18 +4,9 @@ export default defineConfig({
   ...base,
   testDir: "tests/pwa",
   outputDir: "test-results/pwa",
-  use: {
-    ...base.use,
-    baseURL: process.env.PWA_BASE_URL ?? "http://127.0.0.1:4174",
-  },
+  use: { ...base.use, baseURL: "http://127.0.0.1:4174" },
   reporter: [
     ["list"],
-    [
-      "json",
-      {
-        outputFile:
-          process.env.PWA_JSON_OUTPUT ?? "reports/roomy-board/pwa.json",
-      },
-    ],
+    ["json", { outputFile: process.env.PWA_JSON_OUTPUT ?? "reports/roomy-board/pwa.json" }],
   ],
 });

@@ -61,14 +61,3 @@ blob-report/
 .DS_Store
 Thumbs.db
 *Zone.Identifier
-
-# Local voice runtime, certificates, pairing state and private captures
-/dist-voice/
-/.voice/
-*.crt
-*.cer
-*.p12
-*.pfx
-
-*.csr
-*.srl

@@ -14,29 +14,18 @@
     "test:coverage": "vitest run --coverage --reporter=default --reporter=json --outputFile=reports/unit-results.json && node tools/check-core-coverage.mjs",
     "test:e2e": "playwright test",
     "audit": "tsx tools/audit.ts",
-    "check-acceptance": "node tools/check-acceptance.mjs",
-    "voice:build": "tsc -p tsconfig.voice.json",
-    "voice": "node tools/start.mjs",
-    "voice:dev": "tsx server/voice/index.ts",
-    "voice:smoke": "tsx tools/live-smoke.ts",
-    "postbuild": "npm run voice:build",
-    "start": "node tools/start.mjs"
+    "check-acceptance": "node tools/check-acceptance.mjs"
   },
   "dependencies": {
     "lucide-react": "1.61.0",
-    "openai": "7.46.0",
-    "qrcode": "1.5.4",
     "react": "19.3.1",
-    "react-dom": "19.3.1",
-    "ws": "8.22.0"
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",
     "@types/node": "26.6.5",
-    "@types/qrcode": "1.5.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "@types/ws": "8.18.2",
     "@vitejs/plugin-react": "6.1.2",
     "@vitest/coverage-v8": "5.0.5",
     "prettier": "3.9.10",

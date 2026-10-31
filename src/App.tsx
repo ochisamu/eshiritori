@@ -26,7 +26,6 @@ import {
   X,
   MousePointer2,
   Layers3,
-  MessageCircle,
 } from "lucide-react";
 import { activeAssets as assets } from "./game/content";
 import { chooseCpu, LEGACY_CPU_VERSION } from "./game/cpu";
@@ -59,10 +58,7 @@ import {
   cpuSelectionStage,
 } from "./game/cpuPresentation";
 import { sessionSeed } from "./game/sessionSeed";
-import { hintActions, hintPresentation } from "./game/hintPresentation";
-import { useVoice } from "./voice/useVoice";
-import { VoicePanel, VoiceCaption } from "./voice/VoicePanel";
-import { voiceEligible } from "./voice/projectGameView";
+import { readingHint } from "./ui/readingHint";
 import { CpuCompanion, opponentFor, type CpuMood } from "./ui/CpuCompanion";
 import { DiscoveryStamp } from "./ui/DiscoveryStamp";
 import { AppInstallInfo, useAppAccess } from "./ui/AppAccess";
@@ -74,7 +70,6 @@ import { answerDisplayDuration } from "./game/answerPresentation";
 import { discoveryProgress } from "./game/discovery";
 
 type Modal =
-  | "voice"
   | "install"
   | "rules"
   | "settings"
@@ -173,7 +168,6 @@ export default function App() {
   const clockLast = useRef(performance.now());
   const [modal, setModalValue] = useState<Modal>(null);
   const requestedModal = useRef<Modal>(null);
-  const prepareVoice = useRef(false);
   const setModal = useCallback((value: Modal) => {
     // A close can arrive before the previous render's pause effect runs.
     requestedModal.current = value;
@@ -300,21 +294,6 @@ export default function App() {
                     ? "nervous"
                     : "looking"
                 : "watching"));
-  const voice = useVoice(
-    s,
-    assets,
-    (action) => {
-      sRef.current = reducer(sRef.current, action, assets);
-      dispatch(action);
-    },
-    () => sRef.current,
-    () => setShowHint(true),
-    opponent.id,
-    detail?.id,
-    selectionStage,
-  );
-  const displayedCpuMood =
-    cpuMood === "watching" ? (voice.ui.mood ?? cpuMood) : cpuMood;
   const lastAsset = s.lastMove
     ? assets.find((a) => a.id === s.lastMove!.assetId)
     : undefined;
@@ -720,16 +699,6 @@ export default function App() {
       pauseGame();
     }
   }, [modal, s.phase]);
-  useEffect(() => {
-    if (
-      prepareVoice.current &&
-      !modal &&
-      ["playerTurn", "cpuThinking"].includes(s.phase)
-    ) {
-      prepareVoice.current = false;
-      openModal("voice");
-    }
-  }, [s.phase, modal, openModal]);
   const submit = (assetId: string, input?: string, readingId?: string) => {
     let current = sRef.current;
     const now = performance.now();
@@ -783,14 +752,14 @@ export default function App() {
     pauseGame();
     setDetail(a);
   };
-  const start = (settings = draft) => {
+  const start = () => {
     sound("tap", s.settings.muted);
     dispatch({
       type: "START",
       seed: sessionSeed(seed),
       preserveRecent: !seed.trim(),
       settings: {
-        ...settings,
+        ...draft,
         muted: s.settings.muted,
         reducedMotion: s.settings.reducedMotion,
         tutorialSeen: s.settings.tutorialSeen,
@@ -805,13 +774,10 @@ export default function App() {
     });
     closeModal();
   };
-  const selectedHint = hintPresentation(s, assets);
-  const requestScreenHint = (mode: "open" | "next") => {
-    for (const action of hintActions(sRef.current, mode)) {
-      sRef.current = reducer(sRef.current, action, assets);
-      dispatch(action);
-    }
-  };
+  const selectedHint =
+    s.phase === "playerTurn" && s.hintLevel > 0
+      ? legalMoves(assets, position(s))[0]
+      : undefined;
   const errorFeedback = s.mistakes.length > 0;
   const phaseIsGame = !["title", "finishedSession"].includes(s.phase);
   const reduced = s.settings.reducedMotion;
@@ -876,14 +842,13 @@ export default function App() {
           </button>
         </div>
       )}
-      <VoiceCaption ui={voice.ui} onOpen={() => openModal("voice")} />
       <main>
         {!phaseIsGame ? (
           <TitleScreen
             assets={assets}
             draft={draft}
             onChange={setDraft}
-            onStart={() => start()}
+            onStart={start}
             onMenu={openModal}
             found={foundAssets}
             bestScore={Math.max(
@@ -1015,10 +980,7 @@ export default function App() {
                 <div>
                   <span className="live-dot" />
                   {s.settings.opponent !== "solo" && (
-                    <CpuCompanion
-                      mood={displayedCpuMood}
-                      variant={opponent.id}
-                    />
+                    <CpuCompanion mood={cpuMood} variant={opponent.id} />
                   )}
                   <span
                     className={`match-score ${s.settings.opponent === "race" ? "race-score" : ""}`}
@@ -1240,7 +1202,7 @@ export default function App() {
                   disabled={s.phase !== "playerTurn"}
                   onClick={() => {
                     setShowHint((v) => !v);
-                    requestScreenHint("open");
+                    if (s.hintLevel === 0) dispatch({ type: "HINT" });
                   }}
                 >
                   <Lightbulb size={18} />
@@ -1269,12 +1231,16 @@ export default function App() {
                       </button>
                     </header>
                     <p className="hint-message" role="status">
-                      {selectedHint.text}
+                      {s.hintLevel === 1
+                        ? `この絵に注目：${assets.find((a) => a.id === selectedHint.assetId)!.description}`
+                        : s.hintLevel === 2
+                          ? readingHint(selectedHint.reading)
+                          : `ひとつの答えは「${selectedHint.reading.display}」です。`}
                     </p>
                     {s.hintUsed < 3 && (
                       <button
                         className="hint-next"
-                        onClick={() => requestScreenHint("next")}
+                        onClick={() => dispatch({ type: "HINT" })}
                       >
                         {s.hintUsed === 2 ? "答えを見る" : "もう少しヒント"}
                         <ArrowRight size={16} />
@@ -1406,10 +1372,6 @@ export default function App() {
                         {access.fullscreen ? "全画面を終了" : "全画面で遊ぶ"}
                       </button>
                     )}
-                    <button onClick={() => openModal("voice")}>
-                      <MessageCircle size={20} />
-                      会話する
-                    </button>
                     <button onClick={() => openModal("install")}>
                       <Home size={20} />
                       アプリとして使う
@@ -1688,33 +1650,6 @@ export default function App() {
       {modal === "install" && (
         <Dialog title="アプリとして使う" onClose={closeModal}>
           <AppInstallInfo access={access} />
-        </Dialog>
-      )}
-      {modal === "voice" && (
-        <Dialog title="会話できる対戦相手" onClose={closeModal}>
-          <VoicePanel
-            controller={voice.controller}
-            ui={voice.ui}
-            eligible={voiceEligible(s)}
-            onClose={closeModal}
-            onPlay={
-              !phaseIsGame
-                ? () => {
-                    const settings = {
-                      ...draft,
-                      opponent: "turns" as const,
-                      mode: (["refill", "refillPractice"].includes(draft.mode)
-                        ? "refillPractice"
-                        : "practice") as typeof draft.mode,
-                    };
-                    setDraft(settings);
-                    closeModal();
-                    prepareVoice.current = true;
-                    start(settings);
-                  }
-                : undefined
-            }
-          />
         </Dialog>
       )}
       {modal === "settings" && (
